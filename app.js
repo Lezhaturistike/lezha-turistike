@@ -10,3 +10,13 @@ const grid=document.getElementById('gallery-grid'),filterRow=document.getElement
 if(Array.isArray(config.extraSections)){const contact=document.getElementById('kontakt');config.extraSections.forEach((entry,index)=>{if(entry.visible===false||!entry.title)return;const id='seksion-'+index,section=document.createElement('section');section.className='section extra-section';section.id=id;const small=document.createElement('span');small.className='overline';small.textContent='LEZHA TURISTIKE';const h=document.createElement('h2');h.textContent=entry.title;const p=document.createElement('p');p.textContent=entry.text||'';section.append(small,h,p);if(entry.image){const image=document.createElement('img');image.src=entry.image;image.alt=entry.alt||entry.title;image.loading='lazy';section.append(image)}contact.before(section);const link=document.createElement('a');link.href='#'+id;link.textContent=entry.title;nav.insertBefore(link,nav.querySelector('a[href="#kontakt"]'))})}
 
 const backToTop=document.querySelector('.back-to-top');function updateBackToTop(){backToTop.classList.toggle('visible',window.scrollY>240)}window.addEventListener('scroll',updateBackToTop,{passive:true});updateBackToTop();
+
+const gisFrame=document.getElementById('gis-iframe'),gisOriginal=document.getElementById('gis-original'),gisTitle=document.getElementById('gis-embed-title');
+const gisTabs=[...document.querySelectorAll('.gis-tab')];
+function loadGisFrame(){if(gisFrame.dataset.src){gisFrame.src=gisFrame.dataset.src;delete gisFrame.dataset.src}}
+gisTabs.forEach(tab=>tab.addEventListener('click',()=>{
+  gisTabs.forEach(item=>{const active=item===tab;item.classList.toggle('active',active);item.setAttribute('aria-pressed',String(active))});
+  gisFrame.title=tab.dataset.gisTitle;gisTitle.textContent=tab.dataset.gisTitle;
+  gisOriginal.href=tab.dataset.gisOriginal||tab.dataset.gisUrl;gisFrame.src=tab.dataset.gisUrl;delete gisFrame.dataset.src;
+}));
+if('IntersectionObserver' in window){const gisObserver=new IntersectionObserver(entries=>{if(entries[0].isIntersecting){loadGisFrame();gisObserver.disconnect()}},{rootMargin:'200px'});gisObserver.observe(gisFrame)}else loadGisFrame();
