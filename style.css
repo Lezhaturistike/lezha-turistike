@@ -60,3 +60,19 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 .back-to-top{font-size:0}
 .back-to-top::before{content:'';width:22px;height:22px;background:currentColor;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 19 7-14 7 14M7.5 14h9' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m5 19 7-14 7 14M7.5 14h9' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
 @media(max-width:620px){.quick a b{display:inline-block;margin:8px auto 0;font-size:0;width:15px;height:15px;background:#30635a;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M8 5h11v11' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 19 19 5M8 5h11v11' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}}
+
+/* Separate pages and a concise home directory. */
+.home-directory{background:#f7f8f5}
+.directory-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.directory-card{display:flex;position:relative;flex-direction:column;min-height:210px;padding:26px;background:#fff;border:1px solid #dfe7df;text-decoration:none;transition:transform .2s ease,border-color .2s ease}
+.directory-card:hover{transform:translateY(-4px);border-color:#bb8554}
+.directory-card:focus-visible{outline:3px solid #bb8554;outline-offset:2px}
+.directory-card>span:first-child{color:#bb8554;font-size:.7rem;font-weight:800;letter-spacing:.12em}
+.directory-card h2{font-size:1.55rem;letter-spacing:-.035em;margin:23px 0 9px}
+.directory-card p{font-size:.85rem;color:#60716a;margin:0 18px 0 0}
+.directory-arrow{position:absolute;right:25px;bottom:18px;font-size:1.5rem;color:#b47d4b}
+.nav a[aria-current="page"]{color:#b47d4b}
+@media(max-width:850px){.directory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.directory-grid{grid-template-columns:1fr}.directory-card{min-height:165px;padding:22px}.directory-card h2{margin-top:16px}}
+/* Simple upward arrow, with a stem and chevron. */
+.back-to-top::before{mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 20V4M5 11l7-7 7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 20V4M5 11l7-7 7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
