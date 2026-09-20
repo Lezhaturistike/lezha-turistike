@@ -116,9 +116,7 @@ export default function DestinacioneClient({
           className={`nav${menuOpen ? ' open' : ''}`}
           id="nav"
         >
-          <Link
-            href="/destinacione"
-            aria-current="page"
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>\n\n          <Link\n            href="/destinacione"\n            aria-current="page"
             onClick={() => setMenuOpen(false)}
           >
             Destinacione
@@ -179,6 +177,7 @@ export default function DestinacioneClient({
           >
             Kontakt
           </Link>
+                  <span className="language-switch"><Link href="/destinacione">SQ</Link><span> / </span><Link href="/en/destinacione">EN</Link></span>
         </nav>
 
         <button
