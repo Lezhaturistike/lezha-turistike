@@ -129,7 +129,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
           </div>
 
           <div className="hero-count">
-            <span>{content.text11}</span>
+            
 
             <span className="hero-slide-caption">{activeSlide.caption || ""}</span>
           </div>
@@ -210,21 +210,16 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             </span>
           </Link>
 
-          <p>
-            Një qytet për t’u zbuluar.
-            <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave
-            dhe rrëfimeve.
-          </p>
+          <p>{t.footerText.split("\n").map((line, i) => <span key={line}>{i > 0 && <br />}{line}</span>)}</p>
 
-          <span className="footer-location">LEZHË · SHQIPËRI</span>
+          <span className="footer-location">{t.location}</span>
         </div>
 
         <nav
           className="footer-navigation"
           aria-label="Navigimi në fund të faqes"
         >
-          <h2>Eksploro</h2>
+          <h2>{t.explore}</h2>
 
           <div className="footer-links">
             <Link href="/destinacione">Destinacione</Link>
@@ -246,9 +241,9 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
         </nav>
 
         <div className="footer-contact">
-          <h2>Le të lidhemi</h2>
+          <h2>{t.connect}</h2>
 
-          <p>Për informacion dhe bashkëpunime.</p>
+          <p>{t.info}</p>
 
           <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
             lezhalezha2024@gmail.com{" "}
@@ -259,14 +254,10 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             </span>
           </a>
 
-          <p>
-            Rruga e Kalasë
-            <br />
-            Lezhë, Shqipëri
-          </p>
+          <p>{t.address.split("\n").map((line, i) => <span key={line}>{i > 0 && <br />}{line}</span>)}</p>
 
           <Link className="footer-contact-link" href="/kontakt">
-            Na kontakto{" "}
+            {t.contactUs}{" "}
             <span aria-hidden="true">
               <span className="arrow-icon" aria-hidden="true">
                 ↗
@@ -278,7 +269,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
         <div className="footer-bottom">
           <span>© 2026 Lezha Turistike.</span>
 
-          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
+          <span>{t.motto}</span>
         </div>
       </footer>
     </>
