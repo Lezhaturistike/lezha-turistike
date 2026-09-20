@@ -8,10 +8,8 @@ export default async function DestinacionePage() {
     *[_type == "destinacion"] | order(_createdAt asc) {
       _id,
       titulli,
-      titulliEn,
       kategoria,
       pershkrimi,
-      pershkrimiEn,
       "fotoUrl": foto.asset->url,
       "galeriaUrls": galeria[].asset->url,
       burimi,
