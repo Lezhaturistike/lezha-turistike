@@ -222,21 +222,14 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
           <h2>{t.explore}</h2>
 
           <div className="footer-links">
-            <Link href="/destinacione">Destinacione</Link>
-
-            <Link href="/histori">Histori</Link>
-
-            <Link href="/arkeologji">Arkeologji</Link>
-
-            <Link href="/webgis">Web GIS</Link>
-
-            <Link href="/shkenca">Punime shkencore</Link>
-
-            <Link href="/kulinari">Kulinari</Link>
-
-            <Link href="/partneret">Partnerët</Link>
-
-            <Link href="/galeri">Galeri</Link>
+            <Link href={localizedPath("/destinacione", locale)}>{t.destinations}</Link>
+            <Link href={localizedPath("/histori", locale)}>{t.history}</Link>
+            <Link href={localizedPath("/arkeologji", locale)}>{t.archaeology}</Link>
+            <Link href={localizedPath("/webgis", locale)}>Web GIS</Link>
+            <Link href={localizedPath("/shkenca", locale)}>{t.science}</Link>
+            <Link href={localizedPath("/kulinari", locale)}>{t.cuisine}</Link>
+            <Link href={localizedPath("/partneret", locale)}>{t.partners}</Link>
+            <Link href={localizedPath("/galeri", locale)}>{t.gallery}</Link>
           </div>
         </nav>
 
@@ -256,7 +249,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
 
           <p>{t.address.split("\n").map((line, i) => <span key={line}>{i > 0 && <br />}{line}</span>)}</p>
 
-          <Link className="footer-contact-link" href="/kontakt">
+          <Link className="footer-contact-link" href={localizedPath("/kontakt", locale)}>
             {t.contactUs}{" "}
             <span aria-hidden="true">
               <span className="arrow-icon" aria-hidden="true">
