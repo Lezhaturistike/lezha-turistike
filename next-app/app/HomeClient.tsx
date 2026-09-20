@@ -5,7 +5,9 @@ import BackToTop from "@/app/components/BackToTop";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function HomePage({ content }: { content: typeof defaults }) {
+type HomeContent = typeof defaults & { heroSlides?: Array<{_key?: string; image?: string; alt?: string; caption?: string}> };
+
+export default function HomePage({ content }: { content: HomeContent }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:content.text12}];
   const [slide, setSlide] = useState(0);
@@ -37,7 +39,9 @@ export default function HomePage({ content }: { content: typeof defaults }) {
           id="nav"
           aria-label="Navigimi kryesor"
         >
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>\n\n          <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+
+          <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
             Destinacione
           </Link>
 
