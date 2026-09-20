@@ -136,7 +136,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
           <div className="hero-count">
             <span>{content.text11}</span>
 
-            <span>{content.text12}</span>
+            <span className="hero-slide-caption">{activeSlide.caption || ""}</span>
           </div>
         </section>
 
