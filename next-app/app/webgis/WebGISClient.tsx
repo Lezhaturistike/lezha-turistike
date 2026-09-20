@@ -31,6 +31,7 @@ export default function WebGISPage({ content }: { content: typeof defaults }) {
         </Link>
 
         <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/">Home</Link>>
           <Link href="/destinacione">Destinacione</Link>
           <Link href="/galeri">Galeri</Link>
           <Link href="/histori">Histori</Link>
@@ -42,7 +43,7 @@ export default function WebGISPage({ content }: { content: typeof defaults }) {
           <Link href="/kulinari">Kulinari</Link>
           <Link href="/partneret">Partnerët</Link>
           <Link href="/kontakt">Kontakt</Link>
-        </nav>
+        <span className="language-switch"><Link href="/webgis">SQ</Link><span> / </span><Link href="/en/webgis">EN</Link></span></nav>
 
         <MenuButton />
 
