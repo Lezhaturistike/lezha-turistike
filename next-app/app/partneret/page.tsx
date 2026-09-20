@@ -27,6 +27,7 @@ export default async function PartneretPage() {
         </Link>
 
         <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/">Home</Link>>
           <Link href="/destinacione">Destinacione</Link>
           <Link href="/galeri">Galeri</Link>
           <Link href="/histori">Histori</Link>
@@ -40,7 +41,7 @@ export default async function PartneretPage() {
           </Link>
 
           <Link href="/kontakt">Kontakt</Link>
-        </nav>
+        <span className="language-switch"><Link href="/partneret">SQ</Link><span> / </span><Link href="/en/partneret">EN</Link></span></nav>
 
         <MenuButton />
 
