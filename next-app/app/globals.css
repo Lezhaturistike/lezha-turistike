@@ -244,3 +244,10 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 #kulinari .culinary-rating small,#kulinari .culinary-price small{color:#84938d;font-size:.66rem}
 #kulinari .culinary-price{margin-left:auto;color:#183c38}
 #kulinari .culinary-price b{font-family:var(--font-serif,Georgia,serif);font-size:1rem;font-weight:700}
+
+/* Real visitor reviews */
+#kulinari .visitor-review{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+#kulinari .visitor-stars{display:flex;gap:1px}
+#kulinari .visitor-stars button{appearance:none;border:0;background:transparent;padding:0 1px;color:#c8cec9;font-size:1rem;line-height:1;cursor:pointer;transition:color .15s ease,transform .15s ease}
+#kulinari .visitor-stars button:hover,#kulinari .visitor-stars button.active{color:#c78c3d;transform:translateY(-1px)}
+#kulinari .visitor-review small{color:#71827b;font-size:.68rem;white-space:nowrap}
