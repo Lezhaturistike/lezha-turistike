@@ -1,4 +1,5 @@
 'use client'
+import LocaleHeader from "@/app/components/LocaleHeader";
 
 import Link from 'next/link'
 import { useState } from 'react'
@@ -33,7 +34,6 @@ export default function DestinacioneClient({
 }: {
   destinacionet: Destinacion[]
 }) {
-  const [menuOpen, setMenuOpen] = useState(false)
   const [filter, setFilter] = useState('all')
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
   const [selectedPhoto, setSelectedPhoto] = useState(0)
@@ -95,108 +95,7 @@ export default function DestinacioneClient({
 
   return (
     <>
-      <header className="header">
-        <Link
-          href="/"
-          className="logo"
-          aria-label="Lezha Turistike"
-        >
-          <span className="logo-mark">
-            L<span>✦</span>
-          </span>
-
-          <span>
-            LEZHA
-            <br />
-            <b>TURISTIKE</b>
-          </span>
-        </Link>
-
-        <nav
-          className={`nav${menuOpen ? ' open' : ''}`}
-          id="nav"
-        >
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
-
-          <Link
-            href="/destinacione"
-            aria-current="page"
-            onClick={() => setMenuOpen(false)}
-          >
-            Destinacione
-          </Link>
-
-          <Link
-            href="/galeri"
-            onClick={() => setMenuOpen(false)}
-          >
-            Galeri
-          </Link>
-
-          <Link
-            href="/histori"
-            onClick={() => setMenuOpen(false)}
-          >
-            Histori
-          </Link>
-
-          <Link
-            href="/arkeologji"
-            onClick={() => setMenuOpen(false)}
-          >
-            Arkeologji
-          </Link>
-
-          <Link
-            href="/webgis"
-            onClick={() => setMenuOpen(false)}
-          >
-            Web GIS
-          </Link>
-
-          <Link
-            href="/shkenca"
-            onClick={() => setMenuOpen(false)}
-          >
-            Punime shkencore
-          </Link>
-
-          <Link
-            href="/kulinari"
-            onClick={() => setMenuOpen(false)}
-          >
-            Kulinari
-          </Link>
-
-          <Link
-            href="/partneret"
-            onClick={() => setMenuOpen(false)}
-          >
-            Partnerët
-          </Link>
-
-          <Link
-            href="/kontakt"
-            onClick={() => setMenuOpen(false)}
-          >
-            Kontakt
-          </Link>
-                  <span className="language-switch"><Link href="/destinacione">SQ</Link><span> / </span><Link href="/en/destinacione">EN</Link></span>
-        </nav>
-
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          Menu <span>☰</span>
-        </button>
-
-        <Link className="nav-cta" href="/webgis">
-          Hap hartën <span>↗</span>
-        </Link>
-      </header>
+      <LocaleHeader locale="sq" current="destinacione" />
 
       <main id="home">
         <section

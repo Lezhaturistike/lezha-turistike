@@ -1,7 +1,7 @@
 'use client'
+import LocaleHeader from "@/app/components/LocaleHeader";
 
-import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SiteFooter from '@/app/components/SiteFooter'
 
 type Destinacion = {
@@ -36,13 +36,12 @@ export default function DestinacioneEnClient({
 }: {
   destinacionet: Destinacion[]
 }) {
-  const [menuOpen, setMenuOpen] = useState(false)
   const [filter, setFilter] = useState('all')
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
   const [selectedPhoto, setSelectedPhoto] = useState(0)
 
   const places: Place[] = destinacionet.map((item, index) => {
-    const meta = categoryMeta[item.kategoria] ?? {tag: 'DESTINACION'}
+    const meta = categoryMeta[item.kategoria] ?? {tag: 'DESTINATION'}
     return {
       ...item,
       titulli: item.titulliEn || item.titulli,
@@ -73,16 +72,15 @@ export default function DestinacioneEnClient({
   })
 
   function openPlace(place: Place) {
-    console.log('KLIKOVA:', place.titulli)
     setSelectedPlace(place)
     setSelectedPhoto(0)
-    document.body.style.overflow = 'hidden'
+
   }
 
   function closePlace() {
     setSelectedPlace(null)
     setSelectedPhoto(0)
-    document.body.style.overflow = ''
+
   }
 
   const gallery =
@@ -98,52 +96,29 @@ export default function DestinacioneEnClient({
     selectedPlace?.fotoUrl ||
     ''
 
+
+ useEffect(() => {
+   if (!selectedPlace) return;
+   const previous = document.activeElement as HTMLElement | null;
+   const overflow = document.body.style.overflow;
+   document.body.style.overflow = "hidden";
+   const dialog = document.querySelector<HTMLElement>('[role="dialog"]');
+   dialog?.querySelector<HTMLElement>('button')?.focus();
+   const keydown = (event: KeyboardEvent) => {
+     if (event.key === "Escape") setSelectedPlace(null);
+     if (event.key === "Tab" && dialog) {
+       const items = Array.from(dialog.querySelectorAll<HTMLElement>('button, a[href], [tabindex="0"]'));
+       const first = items[0], last = items[items.length - 1];
+       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+     }
+   };
+   document.addEventListener("keydown", keydown);
+   return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); previous?.focus(); };
+ }, [selectedPlace]);
   return (
     <>
-      <header className="header">
-        <Link
-          href="/en"
-          className="logo"
-          aria-label="Lezha Turistike"
-        >
-          <span className="logo-mark">
-            L<span>✦</span>
-          </span>
-
-          <span>
-            LEZHA
-            <br />
-            <b>TURISTIKE</b>
-          </span>
-        </Link>
-
-        <nav className={`nav${menuOpen ? ' open' : ''}`} id="nav">
-          <Link href="/en" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link href="/en/destinacione" aria-current="page" onClick={() => setMenuOpen(false)}>Destinations</Link>
-          <Link href="/en/galeri" onClick={() => setMenuOpen(false)}>Gallery</Link>
-          <Link href="/en/histori" onClick={() => setMenuOpen(false)}>History</Link>
-          <Link href="/en/arkeologji" onClick={() => setMenuOpen(false)}>Archaeology</Link>
-          <Link href="/en/webgis" onClick={() => setMenuOpen(false)}>Web GIS</Link>
-          <Link href="/en/shkenca" onClick={() => setMenuOpen(false)}>Scientific research</Link>
-          <Link href="/en/kulinari" onClick={() => setMenuOpen(false)}>Cuisine</Link>
-          <Link href="/en/partneret" onClick={() => setMenuOpen(false)}>Partners</Link>
-          <Link href="/en/kontakt" onClick={() => setMenuOpen(false)}>Contact</Link>
-          <span className="language-switch"><Link href="/destinacione">SQ</Link><span> / </span><Link href="/en/destinacione">EN</Link></span>
-        </nav>
-
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          Menu <span>☰</span>
-        </button>
-
-        <Link className="nav-cta" href="/webgis">
-          Open map <span>↗</span>
-        </Link>
-      </header>
+      <LocaleHeader locale="en" current="destinacione" />
 
       <main id="home">
         <section

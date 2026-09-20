@@ -63,10 +63,29 @@ test('all local fallback image references exist; public pages use dynamic render
     const data = require(`../sanity/content/${page}.json`);
     function visit(fields, value) {for (const field of fields) {
       if (field.type === 'image' && value[field.name]) assert.ok(fs.existsSync(path.join(root, 'public', value[field.name])));
-      if (field.type === 'array') for (const item of value[field.name]) visit(field.fields, item);
+      if (field.type === 'array') for (const item of (value[field.name] || [])) visit(field.fields, item);
     }}
     visit(definition.fields, data);
     const pageSource = fs.readFileSync(path.join(root,'app',page==='home'?'':page,'page.tsx'),'utf8');
     assert.match(pageSource, /dynamic\s*=\s*['"]force-dynamic['"]/);
   }
+});
+
+test('English content uses nested CMS translations and preserves media, IDs and Albanian fallback', () => {
+  const {localizeContent} = load(path.join(root, 'sanity/lib/localize.ts'));
+  const source = {title:'Shqip',titleEn:'English',description:'Pa përkthim',descriptionEn:'',items:[{_key:'stable',title:'Vend',titleEn:'Place',image:'/assets/photo.jpg',embed:'https://example.org/map'}]};
+  const original = JSON.stringify(source);
+  assert.equal(localizeContent(source, 'sq'), source);
+  assert.deepEqual(plain(localizeContent(source, 'en')), {title:'English',description:'Pa përkthim',items:[{_key:'stable',title:'Place',image:'/assets/photo.jpg',embed:'https://example.org/map'}]});
+  assert.equal(JSON.stringify(source), original);
+});
+
+test('English internal links retain the matching page, query and fragment without rewriting assets', () => {
+  const {localizedPath} = load(path.join(root, 'sanity/lib/localize.ts'));
+  for (const slug of ['', 'destinacione', 'galeri', 'histori', 'arkeologji', 'webgis', 'shkenca', 'kulinari', 'partneret', 'kontakt']) {
+    const route = '/' + slug;
+    assert.equal(localizedPath(route, 'sq'), route);
+    assert.equal(localizedPath(route + '?test=1#section', 'en'), '/en' + (slug ? '/' + slug : '') + '?test=1#section');
+  }
+  for (const url of ['/en/galeri', '/assets/map.pdf', '/api/reviews', '//example.com', 'https://example.com', 'mailto:hello@example.com', '#photos']) assert.equal(localizedPath(url, 'en'), url);
 });

@@ -4,7 +4,7 @@ import defaults from "@/sanity/content/kontakt.json";
 import BackToTop from "@/app/components/BackToTop";
 import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
-import {localizeContent} from "@/sanity/lib/localize";
+import {localizeContent, localizedPath} from "@/sanity/lib/localize";
 import Link from "next/link";
 
 export default async function EnglishKontaktPage() {
@@ -23,7 +23,7 @@ export default async function EnglishKontaktPage() {
             <p>{content.text3}</p>
 
             <div className="contact-actions">
-              <Link className="button dark" href={content.href4}>
+              <Link className="button dark" href={localizedPath(content.href4, "en")}>
                 {content.text5}{" "}
                 <span className="arrow-icon" aria-hidden="true">
                   ↗
@@ -66,7 +66,7 @@ export default async function EnglishKontaktPage() {
         </section>
       </main>
 
-      <BackToTop />
+      <BackToTop locale="en" />
 
       <SiteFooter locale="en"/>
     </>

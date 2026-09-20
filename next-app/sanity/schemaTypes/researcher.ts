@@ -5,8 +5,11 @@ export const researcher = defineType({
   fields:[
     defineField({name:"name",title:"Emri dhe mbiemri",type:"string",validation:r=>r.required()}),
     defineField({name:"academicTitle",title:"Titulli akademik",type:"string"}),
+    defineField({name:"roleEn",title:"Role / expertise (EN)",type:"string"}),
     defineField({name:"role",title:"Roli / ekspertiza në projekt",type:"string"}),
+    defineField({name:"institutionEn",title:"Institution / affiliation (EN)",type:"string"}),
     defineField({name:"institution",title:"Institucioni / afiliacioni",type:"string"}),
+    defineField({name:"bioEn",title:"Short biography (EN)",type:"text"}),
     defineField({name:"bio",title:"Përshkrim i shkurtër",type:"text",rows:3}),
     defineField({name:"photo",title:"Fotografia profesionale",type:"image",options:{hotspot:true}}),
     defineField({name:"researchGate",title:"ResearchGate",type:"url"}),

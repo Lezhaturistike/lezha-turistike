@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function BackToTop() {
+export default function BackToTop({locale="sq"}:{locale?:"sq"|"en"}) {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const update = () => setVisible(window.scrollY > 300);
@@ -13,8 +13,8 @@ export default function BackToTop() {
     <a
       className={`back-to-top${visible ? " visible" : ""}`}
       href="#home"
-      aria-label="Ngjitu në krye të faqes"
-      title="Ngjitu lart"
+      aria-label={locale === "en" ? "Back to top" : "Ngjitu në krye të faqes"}
+      title={locale === "en" ? "Back to top" : "Ngjitu lart"}
     >
       ↑
     </a>

@@ -15,3 +15,13 @@ export function localizeContent<T>(value: T, locale: Locale): T {
   }
   return result as T;
 }
+
+// Only translate known page routes. Keep files, APIs, external URLs and anchors intact.
+const pageRoutes = new Set(["/", "/destinacione", "/galeri", "/histori", "/arkeologji", "/webgis", "/shkenca", "/kulinari", "/partneret", "/kontakt"]);
+export function localizedPath(path: string, locale: Locale): string {
+  if (locale !== "en") return path;
+  const [pathname] = path.split(/[?#]/);
+  const normalized = pathname.length > 1 ? pathname.replace(/\/$/, "") : pathname;
+  if (!pageRoutes.has(normalized)) return path;
+  return `/en${normalized === "/" ? "" : normalized}${path.slice(pathname.length)}`;
+}

@@ -17,6 +17,7 @@ export const kulinari = defineType({
         {title:'Tjetër',value:'tjeter'},
       ]}
     }),
+    defineField({name:'titulliEn', title:'Name (EN)', type:'string'}),
     defineField({name:'pershkrimi', title:'Përshkrimi', type:'text', rows:6}),
     defineField({name:'pershkrimiEn', title:'Description (EN)', type:'text', rows:6}),
     defineField({name:'adresaEn', title:'Address (EN)', type:'string'}),

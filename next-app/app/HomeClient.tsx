@@ -1,4 +1,5 @@
 "use client";
+import LocaleHeader from "@/app/components/LocaleHeader";
 
 import defaults from "@/sanity/content/home.json";
 import BackToTop from "@/app/components/BackToTop";
@@ -19,7 +20,6 @@ const localizedPath = (path: string, locale: HomeLocale) => locale === "en" && p
 export default function HomePage({ content, locale = "sq" }: { content: HomeContent; locale?: HomeLocale }) {
 
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const t = ui[locale];
   const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:""}];
   const [slide, setSlide] = useState(0);
@@ -29,69 +29,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   return (
     <>
       {/* HEADER */}
-      <header className="header">
-        <Link
-          href={locale === "en" ? "/en#home" : "/#home"}
-          className="logo"
-          aria-label={locale === "en" ? "Lezha Turistike, homepage" : "Lezha Turistike, faqja kryesore"}
-        >
-          <span className="logo-mark">
-            L<span>✦</span>
-          </span>
-
-          <span>
-            LEZHA
-            <br />
-            <b>TURISTIKE</b>
-          </span>
-        </Link>
-
-        <nav
-          className={`nav ${menuOpen ? "open" : ""}`}
-          id="nav"
-          aria-label="Navigimi kryesor"
-        >
-          <Link href={locale === "en" ? "/en" : "/"} onClick={() => setMenuOpen(false)}>{t.home}</Link>
-
-          <Link href={localizedPath("/destinacione", locale)} onClick={() => setMenuOpen(false)}>{t.destinations}</Link>
-
-          <Link href={localizedPath("/galeri", locale)} onClick={() => setMenuOpen(false)}>{t.gallery}</Link>
-
-          <Link href={localizedPath("/histori", locale)} onClick={() => setMenuOpen(false)}>{t.history}</Link>
-
-          <Link href={localizedPath("/arkeologji", locale)} onClick={() => setMenuOpen(false)}>{t.archaeology}</Link>
-
-          <Link href={localizedPath("/webgis", locale)} onClick={() => setMenuOpen(false)}>Web GIS</Link>
-
-          <Link href={localizedPath("/shkenca", locale)} onClick={() => setMenuOpen(false)}>{t.science}</Link>
-
-          <Link href={localizedPath("/kulinari", locale)} onClick={() => setMenuOpen(false)}>{t.culinary}</Link>
-
-          <Link href={localizedPath("/partneret", locale)} onClick={() => setMenuOpen(false)}>{t.partners}</Link>
-
-          <Link href={localizedPath("/kontakt", locale)} onClick={() => setMenuOpen(false)}>{t.contact}</Link>
-          <span className="language-switch" aria-label="Language"><Link href="/">SQ</Link><span> / </span><Link href="/en">EN</Link></span>
-        </nav>
-
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded={menuOpen}
-          aria-controls="nav"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          Menu <span>☰</span>
-        </button>
-
-        <Link className="nav-cta" href={localizedPath("/webgis", locale)}>
-          {t.map}{" "}
-          <span>
-            <span className="arrow-icon" aria-hidden="true">
-              ↗
-            </span>
-          </span>
-        </Link>
-      </header>
+      <LocaleHeader locale={locale} current="" />
 
       {/* MAIN */}
       <main id="home">
@@ -189,7 +127,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       </main>
 
       {/* BACK TO TOP */}
-      <BackToTop />
+      <BackToTop locale={locale} />
 
       {/* FOOTER */}
       <footer className="site-footer" aria-label="Fundi i faqes">

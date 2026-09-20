@@ -75,7 +75,7 @@ function schemaField(field: FieldDefinition): SanityField {
     ...(field.name === "role"
       ? { options: { list: ["FINANCUES", "ZBATUES"] } }
       : {}),
-    validation: (rule) => (optional.has(field.name) ? rule : rule.required()),
+    validation: (rule) => ((optional.has(field.name) || field.name.endsWith("En")) ? rule : rule.required()),
   });
 }
 function initialValue(

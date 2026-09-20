@@ -25,10 +25,10 @@ export default async function EnglishPartneretPage() {
           </div>
 
           <div className="partner-grid">
-            {content.partners.map((item) => (
+            {content.partners.map((item, index) => (
               <a
                 key={item._key}
-                className={`partner-card${item.role === "FINANCUES" ? " funder" : ""}${!item.image ? " partner-text" : ""}`}
+                className={`partner-card${raw.partners[index]?.role === "FINANCUES" ? " funder" : ""}${!item.image ? " partner-text" : ""}`}
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default async function EnglishPartneretPage() {
         </section>
       </main>
 
-      <BackToTop />
+      <BackToTop locale="en" />
 
       <SiteFooter locale="en"/>
     </>

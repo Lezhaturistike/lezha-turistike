@@ -1,59 +1,16 @@
+import LocaleHeader from "@/app/components/LocaleHeader";
 import { getPageContent } from "@/sanity/lib/content";
 export const dynamic = "force-dynamic";
 import defaults from "@/sanity/content/partneret.json";
 import BackToTop from "@/app/components/BackToTop";
-import MenuButton from "@/app/components/MenuButton";
+
 import Link from "next/link";
 
 export default async function PartneretPage() {
   const content = await getPageContent("partneret", defaults);
   return (
     <>
-      <header className="header">
-        <Link
-          href="/"
-          className="logo"
-          aria-label="Lezha Turistike, faqja kryesore"
-        >
-          <span className="logo-mark">
-            L<span>✦</span>
-          </span>
-
-          <span>
-            LEZHA
-            <br />
-            <b>TURISTIKE</b>
-          </span>
-        </Link>
-
-        <nav className="nav" id="nav" aria-label="Navigimi kryesor">
-          <Link href="/">Home</Link>
-          <Link href="/destinacione">Destinacione</Link>
-          <Link href="/galeri">Galeri</Link>
-          <Link href="/histori">Histori</Link>
-          <Link href="/arkeologji">Arkeologji</Link>
-          <Link href="/webgis">Web GIS</Link>
-          <Link href="/shkenca">Punime shkencore</Link>
-          <Link href="/kulinari">Kulinari</Link>
-
-          <Link href="/partneret" aria-current="page">
-            Partnerët
-          </Link>
-
-          <Link href="/kontakt">Kontakt</Link>
-        <span className="language-switch"><Link href="/partneret">SQ</Link><span> / </span><Link href="/en/partneret">EN</Link></span></nav>
-
-        <MenuButton />
-
-        <Link className="nav-cta" href="/webgis">
-          Hap hartën{" "}
-          <span>
-            <span className="arrow-icon" aria-hidden="true">
-              ↗
-            </span>
-          </span>
-        </Link>
-      </header>
+      <LocaleHeader locale="sq" current="partneret" />
 
       <main id="home">
         <section id="partneret" className="section partners">

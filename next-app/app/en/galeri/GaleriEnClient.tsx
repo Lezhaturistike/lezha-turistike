@@ -1,8 +1,8 @@
 "use client";
 import LocaleHeader from "@/app/components/LocaleHeader";
 
-import Link from "next/link";
-import { useState } from "react";
+import SiteFooter from "@/app/components/SiteFooter";
+import { useEffect, useState } from "react";
 
 type Destinacion = {
   _id: string;
@@ -29,42 +29,19 @@ type Gallery = {
   photos: GalleryPhoto[];
 };
 
-type GalleryId = "kalaja" | "akrolisi" | "skenderbeu" | "kunevain";
-
-function getGalleryId(titulli: string): GalleryId | null {
-  if (titulli === "Kalaja e Lezhës") return "kalaja";
-  if (titulli === "Akrolisi") return "akrolisi";
-  if (titulli === "Vendvarrimi i Skënderbeut") return "skenderbeu";
-  if (titulli === "Kune–Vain–Tale" || titulli === "Kune-Vain-Tale") {
-    return "kunevain";
-  }
-
-  return null;
+type GalleryId = string;
+function getTag(category?: string) {
+  return ({histori: "HISTORIC HERITAGE", arkeologji: "ARCHAEOLOGY", natyre: "NATURE"} as Record<string,string>)[category || ""] || "DESTINATION";
 }
 
-function getTag(id: GalleryId) {
-  if (id === "kalaja") return "TRASHËGIMI HISTORIKE";
-  if (id === "akrolisi") return "ARKEOLOGJI";
-  if (id === "skenderbeu") return "MEMORIAL";
-  return "NATYRË";
-}
-
-function fallbackSource(id: GalleryId) {
-  if (id === "skenderbeu") {
-    return "https://lezha.gov.al/resurset-turistike/";
-  }
-
-  return "https://lezhaturistike.wordpress.com/vizito/";
-}
-
-export default function GaleriClient({
+export default function GaleriEnClient({
   destinacionet,
 }: {
   destinacionet: Destinacion[];
 }) {
   const galleries = destinacionet.reduce(
     (result, destinacion) => {
-      const id = getGalleryId(destinacion.titulli);
+      const id = destinacion._id;
 
       if (!id) return result;
 
@@ -77,13 +54,13 @@ export default function GaleriClient({
 
       result[id] = {
         title: destinacion.titulli,
-        tag: getTag(id),
+        tag: getTag(destinacion.kategoria),
         text: destinacion.pershkrimi || "",
-        source: destinacion.burimi || fallbackSource(id),
+        source: destinacion.burimi || "",
         harta: destinacion.harta,
         photos: urls.map((src, index) => ({
           src,
-          alt: `${destinacion.titulli} - fotografia ${index + 1}`,
+          alt: `${destinacion.titulli} - photo ${index + 1}`,
         })),
       };
 
@@ -121,24 +98,43 @@ export default function GaleriClient({
     setSelected(null);
   }
 
+
+ useEffect(() => {
+   if (!selected) return;
+   const previous = document.activeElement as HTMLElement | null;
+   const overflow = document.body.style.overflow;
+   document.body.style.overflow = "hidden";
+   const dialog = document.querySelector<HTMLElement>('[role="dialog"]');
+   dialog?.querySelector<HTMLElement>('button')?.focus();
+   const keydown = (event: KeyboardEvent) => {
+     if (event.key === "Escape") setSelected(null);
+     if (event.key === "Tab" && dialog) {
+       const items = Array.from(dialog.querySelectorAll<HTMLElement>('button, a[href], [tabindex="0"]'));
+       const first = items[0], last = items[items.length - 1];
+       if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+       else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+     }
+   };
+   document.addEventListener("keydown", keydown);
+   return () => { document.body.style.overflow = overflow; document.removeEventListener("keydown", keydown); previous?.focus(); };
+ }, [selected]);
   return (
     <>
       {/* HEADER */}
-      <LocaleHeader locale="sq" current="galeri" />
+      <LocaleHeader locale="en" current="galeri" />
 
       {/* MAIN */}
       <main id="home">
         <section id="galeri" className="section gallery-section">
           <div className="section-top">
             <div>
-              <span className="overline">FOTOGRAFI NGA LEZHA</span>
+              <span className="overline">PHOTOGRAPHS OF LEZHË</span>
 
-              <h2>Shiko vendet nga afër.</h2>
+              <h2>Take a closer look.</h2>
             </div>
 
             <p>
-              Pamje nga Kalaja, Akrolisi, Vendvarrimi i Skënderbeut dhe
-              Kune–Vaini. Përzgjidh një fotografi për ta parë më të madhe.
+              Explore photographs of Lezhë’s destinations. Select a photograph to view it in full size.
             </p>
           </div>
 
@@ -147,7 +143,7 @@ export default function GaleriClient({
             id="gallery-filters"
             className="filters"
             role="group"
-            aria-label="Fotografi sipas vendit"
+            aria-label="Photos by place"
           >
             <button
               type="button"
@@ -157,7 +153,7 @@ export default function GaleriClient({
               aria-pressed={activeGallery === "all"}
               onClick={() => setActiveGallery("all")}
             >
-              Të gjitha
+              All
             </button>
 
             {galleryEntries.map(([id, gallery]) => (
@@ -183,7 +179,7 @@ export default function GaleriClient({
                   key={`${id}-${photo.src}-${index}`}
                   type="button"
                   className="gallery-photo"
-                  aria-label={`Hap fotografinë ${
+                  aria-label={`Open photo ${
                     photo.alt || gallery.title
                   }`}
                   onClick={() =>
@@ -211,98 +207,14 @@ export default function GaleriClient({
       <a
         className="back-to-top"
         href="#home"
-        aria-label="Ngjitu në krye të faqes"
-        title="Ngjitu lart"
+        aria-label="Back to top"
+        title="Back to top"
       >
         ↑
       </a>
 
       {/* FOOTER */}
-      <footer className="site-footer" aria-label="Fundi i faqes">
-        <div className="footer-main">
-          <Link
-            href="/"
-            className="logo"
-            aria-label="Lezha Turistike, faqja kryesore"
-          >
-            <span className="logo-mark">
-              L<span>✦</span>
-            </span>
-
-            <span>
-              LEZHA
-              <br />
-              <b>TURISTIKE</b>
-            </span>
-          </Link>
-
-          <p>
-            Një qytet për t’u zbuluar.
-            <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes
-            hartave dhe rrëfimeve.
-          </p>
-
-          <span className="footer-location">LEZHË · SHQIPËRI</span>
-        </div>
-
-        <nav
-          className="footer-navigation"
-          aria-label="Navigimi në fund të faqes"
-        >
-          <h2>Eksploro</h2>
-
-          <div className="footer-links">
-            <Link href="/destinacione">Destinacione</Link>
-            <Link href="/histori">Histori</Link>
-            <Link href="/arkeologji">Arkeologji</Link>
-            <Link href="/webgis">Web GIS</Link>
-            <Link href="/shkenca">Punime shkencore</Link>
-            <Link href="/kulinari">Kulinari</Link>
-            <Link href="/partneret">Partnerët</Link>
-            <Link href="/galeri">Galeri</Link>
-          </div>
-        </nav>
-
-        <div className="footer-contact">
-          <h2>Le të lidhemi</h2>
-
-          <p>Për informacion dhe bashkëpunime.</p>
-
-          <a
-            className="footer-email"
-            href="mailto:lezhalezha2024@gmail.com"
-          >
-            lezhalezha2024@gmail.com{" "}
-            <span aria-hidden="true">
-              <span className="arrow-icon" aria-hidden="true">
-                ↗
-              </span>
-            </span>
-          </a>
-
-          <p>
-            Rruga e Kalasë
-            <br />
-            Lezhë, Shqipëri
-          </p>
-
-          <Link className="footer-contact-link" href="/kontakt">
-            Na kontakto{" "}
-            <span aria-hidden="true">
-              <span className="arrow-icon" aria-hidden="true">
-                ↗
-              </span>
-            </span>
-          </Link>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 Lezha Turistike.</span>
-
-          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
-        </div>
-      </footer>
+      <SiteFooter locale="en" />
 
       {/* MODALI */}
       {selected && selectedGallery && selectedPhoto && (
@@ -317,7 +229,7 @@ export default function GaleriClient({
             <button
               className="dialog-close"
               type="button"
-              aria-label="Mbyll"
+              aria-label="Close"
               onClick={closeDialog}
             >
               ×
@@ -334,7 +246,7 @@ export default function GaleriClient({
 
               <div
                 className="dialog-gallery"
-                aria-label="Fotografi të vendit"
+                aria-label="Photos of this place"
               >
                 {selectedGallery.photos.map((photo, index) => (
                   <button
@@ -343,7 +255,7 @@ export default function GaleriClient({
                     className={`gallery-thumb ${
                       selected.index === index ? "selected" : ""
                     }`}
-                    aria-label={`Shfaq fotografinë ${index + 1}: ${
+                    aria-label={`Show photo ${index + 1}: ${
                       photo.alt
                     }`}
                     onClick={() =>
@@ -370,22 +282,22 @@ export default function GaleriClient({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Shiko vendndodhjen{" "}
+                  View location{" "}
                   <span className="arrow-icon" aria-hidden="true">
                     ↗
                   </span>
                 </a>
 
-                <a
+                {selectedGallery.source && <a
                   href={selectedGallery.source}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Më shumë informacion{" "}
+                  More information{" "}
                   <span className="arrow-icon" aria-hidden="true">
                     ↗
                   </span>
-                </a>
+                </a>}
               </div>
             </div>
           </div>

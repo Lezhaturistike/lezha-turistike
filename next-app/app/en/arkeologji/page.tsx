@@ -51,7 +51,7 @@ export default async function EnglishArkeologjiPage() {
         </section>
       </main>
 
-      <BackToTop />
+      <BackToTop locale="en" />
 
       <SiteFooter locale="en"/>
     </>
