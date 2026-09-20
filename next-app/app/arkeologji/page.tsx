@@ -26,6 +26,7 @@ export default async function ArkeologjiPage() {
         </Link>
 
         <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/">Home</Link>>
           <Link href="/destinacione">Destinacione</Link>
           <Link href="/galeri">Galeri</Link>
           <Link href="/histori">Histori</Link>
@@ -37,7 +38,7 @@ export default async function ArkeologjiPage() {
           <Link href="/kulinari">Kulinari</Link>
           <Link href="/partneret">Partnerët</Link>
           <Link href="/kontakt">Kontakt</Link>
-        </nav>
+        <span className="language-switch"><Link href="/arkeologji">SQ</Link><span> / </span><Link href="/en/arkeologji">EN</Link></span></nav>
 
         <MenuButton />
 
