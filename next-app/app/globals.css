@@ -251,3 +251,27 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 #kulinari .visitor-stars button{appearance:none;border:0;background:transparent;padding:0 1px;color:#c8cec9;font-size:1rem;line-height:1;cursor:pointer;transition:color .15s ease,transform .15s ease}
 #kulinari .visitor-stars button:hover,#kulinari .visitor-stars button.active{color:#c78c3d;transform:translateY(-1px)}
 #kulinari .visitor-review small{color:#71827b;font-size:.68rem;white-space:nowrap}
+
+
+/* Scientific research team */
+.research-team{margin:72px 0 18px;padding-top:10px}
+.research-team .video-heading{max-width:760px;margin-bottom:28px}
+.research-team .video-heading h3{font-size:clamp(1.8rem,3.2vw,2.7rem);margin:12px 0}
+.research-team .video-heading p{color:#60716a}
+.researcher-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.researcher-card{background:#fff;border:1px solid #dfe7df;border-radius:16px;overflow:hidden;box-shadow:0 10px 32px rgba(20,55,50,.06);transition:transform .2s ease,box-shadow .2s ease}
+.researcher-card:hover{transform:translateY(-3px);box-shadow:0 16px 38px rgba(20,55,50,.1)}
+.researcher-avatar{height:155px;background:linear-gradient(145deg,#173d39,#6f8e83);display:grid;place-items:center;overflow:hidden}
+.researcher-avatar img{width:100%;height:100%;object-fit:cover}
+.researcher-avatar span{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;border:1px solid #ffffff66;color:#fff;font-family:Manrope,Arial,sans-serif;font-size:1.35rem;font-weight:700;letter-spacing:.08em}
+.researcher-body{padding:22px}
+.researcher-title{color:#a8794b;font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800}
+.researcher-body h4{font-family:Manrope,Arial,sans-serif;font-size:1.3rem;margin:8px 0 7px;letter-spacing:-.035em}
+.researcher-role{font-size:.8rem;font-weight:700;color:#315a52;margin-bottom:7px;line-height:1.45}
+.researcher-institution,.researcher-bio{font-size:.76rem;color:#6a7973;line-height:1.55;margin-bottom:14px}
+.researcher-links{display:flex;flex-wrap:wrap;gap:7px}
+.researcher-links a{font-size:.68rem;font-weight:800;text-decoration:none;border:1px solid #d9e2dc;border-radius:999px;padding:7px 10px;color:#173d39}
+.researcher-links a:hover{background:#173d39;color:#fff;border-color:#173d39}
+.research-team-source{margin-top:18px;font-size:.72rem;color:#78877f}
+@media(max-width:1000px){.researcher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.research-team{margin-top:52px}.researcher-grid{grid-template-columns:1fr}.researcher-avatar{height:190px}}
