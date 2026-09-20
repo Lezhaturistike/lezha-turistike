@@ -45,9 +45,7 @@ export default defineConfig({
       pageSchemas.some((page) => page.name === context.schemaType)
         ? actions.filter(
             (action) =>
-              !["delete", "duplicate", "unpublish"].includes(
-                action.action || "",
-              ),
+              !["delete", "duplicate"].includes(action.action || ""),
           )
         : actions,
   },
