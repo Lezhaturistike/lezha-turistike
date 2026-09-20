@@ -116,7 +116,11 @@ export default function DestinacioneClient({
           className={`nav${menuOpen ? ' open' : ''}`}
           id="nav"
         >
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>\n\n          <Link\n            href="/destinacione"\n            aria-current="page"
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+
+          <Link
+            href="/destinacione"
+            aria-current="page"
             onClick={() => setMenuOpen(false)}
           >
             Destinacione
