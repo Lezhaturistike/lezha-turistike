@@ -9,7 +9,7 @@ type HomeContent = typeof defaults & { heroSlides?: Array<{_key?: string; image?
 
 export default function HomePage({ content }: { content: HomeContent }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:content.text12}];
+  const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:""}];
   const [slide, setSlide] = useState(0);
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
   const activeSlide = slides[slide] || slides[0];
