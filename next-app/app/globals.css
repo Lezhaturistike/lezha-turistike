@@ -296,3 +296,15 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
  .researcher-card:active .researcher-role,.researcher-card:active .researcher-institution,.researcher-card:active .researcher-bio,.researcher-card:active .researcher-links{opacity:1;transform:none}
 }
 @media(prefers-reduced-motion:reduce){.researcher-body,.researcher-avatar img,.researcher-role,.researcher-institution,.researcher-bio,.researcher-links{transition:none}}
+
+
+/* History book navigation — preserves the existing split layout */
+.history-book{position:relative}
+.history-book .story-copy{position:relative}
+.history-book-nav{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22)}
+.history-book-nav button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:inherit;font-size:22px;line-height:1;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease}
+.history-book-nav button:hover,.history-book-nav button:focus-visible{transform:translateX(3px);background:#fff;color:#173d39;outline:none}
+.history-book-nav button:first-child:hover,.history-book-nav button:first-child:focus-visible{transform:translateX(-3px)}
+.history-book-nav span{font-size:12px;letter-spacing:.16em;min-width:58px;text-align:center}
+.history-book .story-photo img{transition:opacity .25s ease,transform .45s ease}
+@media(max-width:720px){.history-book-nav{justify-content:space-between}.history-book-nav button{width:46px;height:46px}}
