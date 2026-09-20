@@ -1,9 +1,11 @@
 import {client} from '@/sanity/lib/client'
 import DestinacioneClient from './DestinacioneClient'
 
+export const dynamic = 'force-dynamic'
+
 export default async function DestinacionePage() {
   const destinacionet = await client.fetch(`
-    *[_type == "destinacion"]{
+    *[_type == "destinacion"] | order(_createdAt asc) {
       _id,
       titulli,
       kategoria,
@@ -15,5 +17,9 @@ export default async function DestinacionePage() {
     }
   `)
 
-  return <DestinacioneClient destinacionet={destinacionet} />
+  return (
+    <DestinacioneClient
+      destinacionet={destinacionet}
+    />
+  )
 }
