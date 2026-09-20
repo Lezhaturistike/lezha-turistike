@@ -3,10 +3,14 @@
 import defaults from "@/sanity/content/home.json";
 import BackToTop from "@/app/components/BackToTop";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomePage({ content }: { content: typeof defaults }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:content.text12}];
+  const [slide, setSlide] = useState(0);
+  useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
+  const activeSlide = slides[slide] || slides[0];
 
   return (
     <>
@@ -33,7 +37,7 @@ export default function HomePage({ content }: { content: typeof defaults }) {
           id="nav"
           aria-label="Navigimi kryesor"
         >
-          <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
+          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>\n\n          <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
             Destinacione
           </Link>
 
@@ -94,7 +98,7 @@ export default function HomePage({ content }: { content: typeof defaults }) {
       <main id="home">
         {/* HERO */}
         <section className="hero">
-          <img src={content.src1} alt={content.alt2} fetchPriority="high" />
+          <img key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fetchPriority="high" />
 
           <div className="hero-shade"></div>
 
