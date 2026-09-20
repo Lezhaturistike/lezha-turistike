@@ -316,3 +316,9 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
  .history-book .story-photo img{position:relative;width:100%;height:auto;min-height:0;object-fit:contain;object-position:center;display:block}
  .history-book .story-copy{min-height:0}
 }
+
+
+/* Homepage hero slideshow */
+.hero-slide-image{animation:heroSlideFade .65s ease both}
+@keyframes heroSlideFade{from{opacity:.25;transform:scale(1.015)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.hero-slide-image{animation:none}}
