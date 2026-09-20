@@ -308,3 +308,11 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 .history-book-nav span{font-size:12px;letter-spacing:.16em;min-width:58px;text-align:center}
 .history-book .story-photo img{transition:opacity .25s ease,transform .45s ease}
 @media(max-width:720px){.history-book-nav{justify-content:space-between}.history-book-nav button{width:46px;height:46px}}
+
+
+/* History book mobile image: show the complete photograph instead of cropping it */
+@media(max-width:720px){
+ .history-book .story-photo{height:auto;min-height:0;background:#102f2c}
+ .history-book .story-photo img{position:relative;width:100%;height:auto;min-height:0;object-fit:contain;object-position:center;display:block}
+ .history-book .story-copy{min-height:0}
+}
