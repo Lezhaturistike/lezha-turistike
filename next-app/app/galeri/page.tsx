@@ -8,8 +8,10 @@ export default async function GaleriPage() {
     *[_type == "destinacion"] | order(_createdAt asc) {
       _id,
       titulli,
+      titulliEn,
       kategoria,
       pershkrimi,
+      pershkrimiEn,
       "fotoUrl": foto.asset->url,
       "galeriaUrls": galeria[].asset->url,
       burimi,
