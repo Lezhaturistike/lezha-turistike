@@ -52,8 +52,8 @@ export default function DestinacioneClient({
       titulli: en && item.titulliEn ? item.titulliEn : item.titulli,
       pershkrimi: en && item.pershkrimiEn ? item.pershkrimiEn : item.pershkrimi,
       tag: meta.tag,
-      cardText: item.pershkrimi || 'Zbulo këtë destinacion në Lezhë.',
-      alt: item.titulli,
+      cardText: (en && item.pershkrimiEn ? item.pershkrimiEn : item.pershkrimi) || (en ? 'Discover this destination in Lezhë.' : 'Zbulo këtë destinacion në Lezhë.'),
+      alt: en && item.titulliEn ? item.titulliEn : item.titulli,
       big: index === 0,
       natureId: item.kategoria === 'natyre',
     }
@@ -120,9 +120,7 @@ export default function DestinacioneClient({
             </div>
 
             <p>
-              Njih historinë e qytetit përmes pikave të tij
-              më të rëndësishme dhe peizazheve që e
-              rrethojnë.
+              {en?'Discover the history of the city through its most important landmarks and the landscapes that surround it.':'Njih historinë e qytetit përmes pikave të tij më të rëndësishme dhe peizazheve që e rrethojnë.'}
             </p>
           </div>
 
@@ -158,7 +156,7 @@ export default function DestinacioneClient({
               type="button"
               onClick={() => setFilter('natyre')}
             >
-              Natyrë
+              {en?'Nature':'Natyrë'}
             </button>
           </div>
 
