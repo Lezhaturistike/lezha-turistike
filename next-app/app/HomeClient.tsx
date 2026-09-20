@@ -7,8 +7,20 @@ import { useEffect, useState } from "react";
 
 type HomeContent = typeof defaults & { heroSlides?: Array<{_key?: string; image?: string; alt?: string; caption?: string}> };
 
-export default function HomePage({ content }: { content: HomeContent }) {
+export type HomeLocale = "sq" | "en";
+
+const ui = {
+  sq: { home: "Home", destinations: "{t.destinations}", gallery: "{t.gallery}", history: "{t.history}", archaeology: "{t.archaeology}", science: "{t.science}", culinary: "{t.culinary}", partners: "{t.partners}", contact: "{t.contact}", map: "Hap hartën", explore: "Eksploro", connect: "Le të lidhemi", info: "Për informacion dhe bashkëpunime.", contactUs: "Na kontakto", footerText: "Një qytet për t’u zbuluar.\nHistori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.", location: "LEZHË · SHQIPËRI", address: "Rruga e Kalasë\nLezhë, Shqipëri", motto: "Njih historinë. Eksploro natyrën. Zbulo Lezhën." },
+  en: { home: "Home", destinations: "Destinations", gallery: "Gallery", history: "History", archaeology: "Archaeology", science: "Scientific research", culinary: "Cuisine", partners: "Partners", contact: "Contact", map: "Open map", explore: "Explore", connect: "Get in touch", info: "For information and collaborations.", contactUs: "Contact us", footerText: "A city waiting to be discovered.\nHistory, nature and cultural heritage, connected through maps and stories.", location: "LEZHË · ALBANIA", address: "Castle Road\nLezhë, Albania", motto: "Know the history. Explore nature. Discover Lezhë." }
+} as const;
+
+const localizedPath = (path: string, locale: HomeLocale) => locale === "en" && path.startsWith("/") ? `/en${path === "/" ? "" : path}` : path;
+
+export default function HomePage({ content, locale = "sq" }: { content: HomeContent; locale?: HomeLocale }) {
+
+
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = ui[locale];
   const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:""}];
   const [slide, setSlide] = useState(0);
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
@@ -19,9 +31,9 @@ export default function HomePage({ content }: { content: HomeContent }) {
       {/* HEADER */}
       <header className="header">
         <Link
-          href="/#home"
+          href={locale === "en" ? "/en#home" : "/#home"}
           className="logo"
-          aria-label="Lezha Turistike, faqja kryesore"
+          aria-label={locale === "en" ? "Lezha Turistike, homepage" : "Lezha Turistike, faqja kryesore"}
         >
           <span className="logo-mark">
             L<span>✦</span>
@@ -39,7 +51,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
           id="nav"
           aria-label="Navigimi kryesor"
         >
-          <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link href={locale === "en" ? "/en" : "/"} onClick={() => setMenuOpen(false)}>{t.home}</Link>
 
           <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
             Destinacione
@@ -76,6 +88,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
           <Link href="/kontakt" onClick={() => setMenuOpen(false)}>
             Kontakt
           </Link>
+          <span className="language-switch" aria-label="Language"><Link href="/">SQ</Link><span> / </span><Link href="/en">EN</Link></span>
         </nav>
 
         <button
@@ -88,8 +101,8 @@ export default function HomePage({ content }: { content: HomeContent }) {
           Menu <span>☰</span>
         </button>
 
-        <Link className="nav-cta" href="/webgis">
-          Hap hartën{" "}
+        <Link className="nav-cta" href={localizedPath("/webgis", locale)}>
+          {t.map}{" "}
           <span>
             <span className="arrow-icon" aria-hidden="true">
               ↗
@@ -118,7 +131,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
             <p>{content.text6}</p>
 
             <div className="hero-actions">
-              <Link className="button primary" href={content.href7}>
+              <Link className="button primary" href={localizedPath(content.href7, locale)}>
                 {content.text8}{" "}
                 <span>
                   <span className="arrow-icon" aria-hidden="true">
@@ -127,7 +140,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
                 </span>
               </Link>
 
-              <Link className="button ghost" href={content.href9}>
+              <Link className="button ghost" href={localizedPath(content.href9, locale)}>
                 {content.text10}
               </Link>
             </div>
@@ -144,19 +157,19 @@ export default function HomePage({ content }: { content: HomeContent }) {
         <section className="quick" aria-label="Eksploro sipas interesit">
           <span className="quick-intro">{content.text13}</span>
 
-          <Link href={content.href14}>
+          <Link href={localizedPath(content.href14, locale)}>
             <span>◈</span>
             {content.text15}
             <b aria-hidden="true">↗</b>
           </Link>
 
-          <Link href={content.href16}>
+          <Link href={localizedPath(content.href16, locale)}>
             <span>≈</span>
             {content.text17}
             <b aria-hidden="true">↗</b>
           </Link>
 
-          <Link href={content.href18}>
+          <Link href={localizedPath(content.href18, locale)}>
             <span>◎</span>
             {content.text19}
             <b aria-hidden="true">↗</b>
@@ -180,7 +193,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
 
           <div className="directory-grid">
             {content.directory.map((item) => (
-              <Link key={item._key} className="directory-card" href={item.url}>
+              <Link key={item._key} className="directory-card" href={localizedPath(item.url, locale)}>
                 <span>{item.label}</span>
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
@@ -200,7 +213,7 @@ export default function HomePage({ content }: { content: HomeContent }) {
       <footer className="site-footer" aria-label="Fundi i faqes">
         <div className="footer-main">
           <Link
-            href="/#home"
+            href={locale === "en" ? "/en#home" : "/#home"}
             className="logo"
             aria-label="Lezha Turistike, faqja kryesore"
           >
