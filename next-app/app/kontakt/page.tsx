@@ -1,0 +1,277 @@
+import Link from "next/link";
+
+export default function KontaktPage() {
+  return (
+    <>
+      <header className="header">
+        <Link
+          href="/"
+          className="logo"
+          aria-label="Lezha Turistike, faqja kryesore"
+        >
+          <span className="logo-mark">
+            L<span>✦</span>
+          </span>
+
+          <span>
+            LEZHA
+            <br />
+            <b>TURISTIKE</b>
+          </span>
+        </Link>
+
+        <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/destinacione">Destinacione</Link>
+          <Link href="/galeri">Galeri</Link>
+          <Link href="/histori">Histori</Link>
+          <Link href="/arkeologji">Arkeologji</Link>
+          <Link href="/webgis">Web GIS</Link>
+          <Link href="/shkenca">Punime shkencore</Link>
+          <Link href="/kulinari">Kulinari</Link>
+          <Link href="/partneret">Partnerët</Link>
+
+          <Link href="/kontakt" aria-current="page">
+            Kontakt
+          </Link>
+        </nav>
+
+        <button
+          className="menu-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav"
+        >
+          Menu <span>☰</span>
+        </button>
+
+        <Link className="nav-cta" href="/webgis">
+          Hap hartën{" "}
+          <span>
+            <span className="arrow-icon" aria-hidden="true">
+              ↗
+            </span>
+          </span>
+        </Link>
+      </header>
+
+      <main id="home">
+        <section id="kontakt" className="contact section">
+          <div>
+            <span className="overline">
+              PLANIFIKO ZBULIMIN
+            </span>
+
+            <h2>Lezha të pret.</h2>
+
+            <p>
+              Nis eksplorimin nga destinacionet, ose hape hartën
+              për t’i parë në kontekstin e qytetit.
+            </p>
+
+            <div className="contact-actions">
+              <Link
+                className="button dark"
+                href="/destinacione"
+              >
+                Shiko destinacionet{" "}
+                <span
+                  className="arrow-icon"
+                  aria-hidden="true"
+                >
+                  ↗
+                </span>
+              </Link>
+
+              <a
+                className="button outline"
+                href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hap hartën interaktive{" "}
+                <span
+                  className="arrow-icon"
+                  aria-hidden="true"
+                >
+                  ↗
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div className="contact-info">
+            <span>
+              KONTAKT NGA PORTALI EKZISTUES
+            </span>
+
+            <a href="mailto:lezhalezha2024@gmail.com">
+              lezhalezha2024@gmail.com{" "}
+              <span
+                className="arrow-icon"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </a>
+
+            <p>
+              Rruga e Kalasë, Lezhë, Shqipëri
+            </p>
+
+            <a
+              href="https://lezhaturistike.wordpress.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Vizito faqen origjinale{" "}
+              <span
+                className="arrow-icon"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <a
+        className="back-to-top"
+        href="#home"
+        aria-label="Ngjitu në krye të faqes"
+        title="Ngjitu lart"
+      >
+        ↑
+      </a>
+
+      <footer
+        className="site-footer"
+        aria-label="Fundi i faqes"
+      >
+        <div className="footer-main">
+          <Link
+            href="/"
+            className="logo"
+            aria-label="Lezha Turistike, faqja kryesore"
+          >
+            <span className="logo-mark">
+              L<span>✦</span>
+            </span>
+
+            <span>
+              LEZHA
+              <br />
+              <b>TURISTIKE</b>
+            </span>
+          </Link>
+
+          <p>
+            Një qytet për t’u zbuluar.
+            <br />
+            Histori, natyrë dhe trashëgimi kulturore, të lidhura
+            përmes hartave dhe rrëfimeve.
+          </p>
+
+          <span className="footer-location">
+            LEZHË · SHQIPËRI
+          </span>
+        </div>
+
+        <nav
+          className="footer-navigation"
+          aria-label="Navigimi në fund të faqes"
+        >
+          <h2>Eksploro</h2>
+
+          <div className="footer-links">
+            <Link href="/destinacione">
+              Destinacione
+            </Link>
+
+            <Link href="/histori">
+              Histori
+            </Link>
+
+            <Link href="/arkeologji">
+              Arkeologji
+            </Link>
+
+            <Link href="/webgis">
+              Web GIS
+            </Link>
+
+            <Link href="/shkenca">
+              Punime shkencore
+            </Link>
+
+            <Link href="/kulinari">
+              Kulinari
+            </Link>
+
+            <Link href="/partneret">
+              Partnerët
+            </Link>
+
+            <Link href="/galeri">
+              Galeri
+            </Link>
+          </div>
+        </nav>
+
+        <div className="footer-contact">
+          <h2>Le të lidhemi</h2>
+
+          <p>
+            Për informacion dhe bashkëpunime.
+          </p>
+
+          <a
+            className="footer-email"
+            href="mailto:lezhalezha2024@gmail.com"
+          >
+            lezhalezha2024@gmail.com{" "}
+            <span aria-hidden="true">
+              <span
+                className="arrow-icon"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </span>
+          </a>
+
+          <p>
+            Rruga e Kalasë
+            <br />
+            Lezhë, Shqipëri
+          </p>
+
+          <Link
+            className="footer-contact-link"
+            href="/kontakt"
+          >
+            Na kontakto{" "}
+            <span aria-hidden="true">
+              <span
+                className="arrow-icon"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </span>
+          </Link>
+        </div>
+
+        <div className="footer-bottom">
+          <span>
+            © 2026 Lezha Turistike.
+          </span>
+
+          <span>
+            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
+          </span>
+        </div>
+      </footer>
+    </>
+  );
+}
