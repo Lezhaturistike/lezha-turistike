@@ -27,6 +27,7 @@ export default async function KontaktPage() {
         </Link>
 
         <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/">Home</Link>>
           <Link href="/destinacione">Destinacione</Link>
           <Link href="/galeri">Galeri</Link>
           <Link href="/histori">Histori</Link>
@@ -39,7 +40,7 @@ export default async function KontaktPage() {
           <Link href="/kontakt" aria-current="page">
             Kontakt
           </Link>
-        </nav>
+        <span className="language-switch"><Link href="/kontakt">SQ</Link><span> / </span><Link href="/en/kontakt">EN</Link></span></nav>
 
         <MenuButton />
 
