@@ -64,6 +64,28 @@
         "type": "string"
       },
       {
+        "name": "heroSlides",
+        "title": "Fotografitë e ballinës",
+        "type": "array",
+        "fields": [
+          {
+            "name": "image",
+            "title": "Fotografia",
+            "type": "image"
+          },
+          {
+            "name": "alt",
+            "title": "Përshkrimi i fotos",
+            "type": "string"
+          },
+          {
+            "name": "caption",
+            "title": "Etiketa / përshkrimi poshtë",
+            "type": "string"
+          }
+        ]
+      },
+      {
         "name": "text13",
         "title": "Etiketa — ÇFARË DO TË ZBULOSH?",
         "type": "string"
