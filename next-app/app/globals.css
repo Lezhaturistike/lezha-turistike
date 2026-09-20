@@ -275,3 +275,24 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 .research-team-source{margin-top:18px;font-size:.72rem;color:#78877f}
 @media(max-width:1000px){.researcher-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.research-team{margin-top:52px}.researcher-grid{grid-template-columns:1fr}.researcher-avatar{height:190px}}
+
+
+/* Research team — portrait-first interactive cards */
+.researcher-card{position:relative;min-height:390px;background:#173d39}
+.researcher-avatar{position:absolute;inset:0;height:auto;background:linear-gradient(145deg,#173d39,#6f8e83)}
+.researcher-avatar:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(10,34,32,.18) 62%,rgba(10,34,32,.78) 100%);pointer-events:none}
+.researcher-avatar img{transition:transform .45s ease}
+.researcher-card:hover .researcher-avatar img{transform:scale(1.035)}
+.researcher-body{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:21px 22px;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:translateY(calc(100% - 96px));transition:transform .36s cubic-bezier(.2,.75,.25,1);max-height:88%;overflow:auto}
+.researcher-card:hover .researcher-body,.researcher-card:focus-within .researcher-body{transform:translateY(0)}
+.researcher-body h4{margin-bottom:12px}
+.researcher-role,.researcher-institution,.researcher-bio,.researcher-links{opacity:0;transform:translateY(8px);transition:opacity .22s ease .08s,transform .22s ease .08s}
+.researcher-card:hover .researcher-role,.researcher-card:hover .researcher-institution,.researcher-card:hover .researcher-bio,.researcher-card:hover .researcher-links,.researcher-card:focus-within .researcher-role,.researcher-card:focus-within .researcher-institution,.researcher-card:focus-within .researcher-bio,.researcher-card:focus-within .researcher-links{opacity:1;transform:none}
+@media(max-width:620px){
+ .researcher-card{min-height:430px;cursor:pointer}
+ .researcher-avatar{height:auto}
+ .researcher-body{transform:translateY(calc(100% - 100px));max-height:90%}
+ .researcher-card:active .researcher-body,.researcher-card:focus-within .researcher-body{transform:translateY(0)}
+ .researcher-card:active .researcher-role,.researcher-card:active .researcher-institution,.researcher-card:active .researcher-bio,.researcher-card:active .researcher-links{opacity:1;transform:none}
+}
+@media(prefers-reduced-motion:reduce){.researcher-body,.researcher-avatar img,.researcher-role,.researcher-institution,.researcher-bio,.researcher-links{transition:none}}
