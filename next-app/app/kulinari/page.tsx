@@ -10,7 +10,9 @@ export default async function KulinariPage() {
       "fotoUrl": foto.asset->url,
       "galeriaUrls": galeria[].asset->url,
       adresa, orari, telefoni, harta, menuja, website, social,
-      rezervimi, burimi, vleresimi, cmimiNga, monedha, cmimiPer, featured
+      rezervimi, burimi, cmimiNga, monedha, cmimiPer, featured,
+      "rating": math::avg(*[_type == "kulinariReview" && place._ref == ^._id].rating),
+      "reviewCount": count(*[_type == "kulinariReview" && place._ref == ^._id])
     }
   `);
   return <KulinariClient kulinari={kulinari} />;
