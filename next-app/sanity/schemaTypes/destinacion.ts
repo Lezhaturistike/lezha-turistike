@@ -13,6 +13,8 @@ export const destinacion = defineType({
       validation: (Rule) => Rule.required(),
     }),
 
+    defineField({name:'titulliEn', title:'Title (EN)', type:'string'}),
+
     defineField({
       name: 'kategoria',
       title: 'Kategoria',
@@ -32,6 +34,8 @@ export const destinacion = defineType({
       type: 'text',
       rows: 5,
     }),
+
+    defineField({name:'pershkrimiEn', title:'Description (EN)', type:'text', rows:5}),
 
     defineField({
       name: 'foto',
