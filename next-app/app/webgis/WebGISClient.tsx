@@ -6,7 +6,8 @@ import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import { useState } from "react";
 
-export default function WebGISPage({ content, locale='sq' }: { content: typeof defaults; locale?: 'sq'|'en' }) {
+type WebGISContent = typeof defaults & Record<string, unknown>;
+export default function WebGISPage({ content, locale='sq' }: { content: WebGISContent; locale?: 'sq'|'en' }) {
   const gisApps = content.gisApps;
   const [activeKey, setActiveKey] = useState(gisApps[0]._key);
   const activeApp = gisApps.find((app) => app._key === activeKey) || gisApps[0];
