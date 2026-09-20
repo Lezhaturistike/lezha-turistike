@@ -7,7 +7,8 @@ import SiteFooter from "@/app/components/SiteFooter";
 import {localizeContent} from "@/sanity/lib/localize";
 
 export default async function EnglishPartneretPage() {
-  const raw = await getPageContent("partneret", defaults);\n  const content = localizeContent(raw, "en");
+  const raw = await getPageContent("partneret", defaults);
+  const content = localizeContent(raw, "en");
   return (
     <>
       <LocaleHeader locale="en" current="partneret"/>
