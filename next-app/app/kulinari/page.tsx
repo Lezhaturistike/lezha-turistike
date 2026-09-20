@@ -1,6 +1,20 @@
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
 
-export default function KulinariPage() {
+export const dynamic = "force-dynamic";
+
+export default async function KulinariPage() {
+  const kulinari = await client.fetch(`
+    *[_type == "kulinari"][0] {
+      _id,
+      titulli,
+      pershkrimi,
+      "fotoUrl": foto.asset->url,
+      burimi,
+      harta
+    }
+  `);
+
   return (
     <>
       <header className="header">
@@ -67,11 +81,8 @@ export default function KulinariPage() {
             </h2>
 
             <p>
-              Peizazhi i Lezhës lidhet me prodhimet e tokës,
-              bregdetit dhe vreshtave. Në Fishtë njihen përvojat e
-              agroturizmit me produkte sezonale; në Shëngjin gatimet
-              e peshkut dhe prodhimet e detit; në Kallmet tradita e
-              verës vendase.
+              {kulinari?.pershkrimi ||
+                "Peizazhi i Lezhës lidhet me prodhimet e tokës, bregdetit dhe vreshtave. Në Fishtë njihen përvojat e agroturizmit me produkte sezonale; në Shëngjin gatimet e peshkut dhe prodhimet e detit; në Kallmet tradita e verës vendase."}
             </p>
 
             <div className="food-tags">
@@ -82,7 +93,7 @@ export default function KulinariPage() {
 
             <a
               className="button primary"
-              href="https://visitlezha.al/en"
+              href={kulinari?.burimi || "https://visitlezha.al/en"}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -102,7 +113,7 @@ export default function KulinariPage() {
           <div className="culinary-image">
             <img
               loading="lazy"
-              src="/images/fishte-food.jpg"
+              src={kulinari?.fotoUrl || "/images/fishte-food.jpg"}
               alt="Tryezë me prodhime vendase pranë Fishtës, fotografi nga VisitLezha"
             />
           </div>
