@@ -205,6 +205,63 @@
         "name": "text12",
         "title": "Teksti — Teksti historik është përgatitur për shqyrtim shkencor nga Paulin",
         "type": "string"
+      },
+      {
+        "name": "stories",
+        "title": "Historitë për shfletim",
+        "type": "array",
+        "fields": [
+          {
+            "name": "image",
+            "title": "Fotografia",
+            "type": "image"
+          },
+          {
+            "name": "alt",
+            "title": "Përshkrimi i fotos",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "highlight",
+            "title": "Titulli i theksuar",
+            "type": "string"
+          },
+          {
+            "name": "text1",
+            "title": "Paragrafi 1",
+            "type": "text"
+          },
+          {
+            "name": "text2",
+            "title": "Paragrafi 2",
+            "type": "text"
+          },
+          {
+            "name": "sourceUrl",
+            "title": "Lidhja e burimit",
+            "type": "url"
+          },
+          {
+            "name": "sourceLabel",
+            "title": "Teksti i burimit",
+            "type": "string"
+          },
+          {
+            "name": "note",
+            "title": "Shënimi editorial",
+            "type": "text"
+          }
+        ]
       }
     ]
   },
