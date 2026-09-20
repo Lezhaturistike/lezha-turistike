@@ -1,16 +1,13 @@
 'use client'
 
+import Link from 'next/link'
 import { useState } from 'react'
-import LocaleHeader from '@/app/components/LocaleHeader'
-import SiteFooter from '@/app/components/SiteFooter'
 
 type Destinacion = {
   _id: string
   titulli: string
-  titulliEn?: string
   kategoria: string
   pershkrimi?: string
-  pershkrimiEn?: string
   fotoUrl?: string
   galeriaUrls?: string[]
   burimi?: string
@@ -33,12 +30,10 @@ const categoryMeta: Record<string, {tag: string}> = {
 
 export default function DestinacioneClient({
   destinacionet,
-  locale='sq',
 }: {
   destinacionet: Destinacion[]
-  locale?: 'sq'|'en'
 }) {
-  const en=locale==='en'
+  const [menuOpen, setMenuOpen] = useState(false)
   const [filter, setFilter] = useState('all')
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
   const [selectedPhoto, setSelectedPhoto] = useState(0)
@@ -47,11 +42,9 @@ export default function DestinacioneClient({
     const meta = categoryMeta[item.kategoria] ?? {tag: 'DESTINACION'}
     return {
       ...item,
-      titulli: en && item.titulliEn ? item.titulliEn : item.titulli,
-      pershkrimi: en && item.pershkrimiEn ? item.pershkrimiEn : item.pershkrimi,
       tag: meta.tag,
-      cardText: (en && item.pershkrimiEn ? item.pershkrimiEn : item.pershkrimi) || (en ? 'Discover this destination in Lezhë.' : 'Zbulo këtë destinacion në Lezhë.'),
-      alt: en && item.titulliEn ? item.titulliEn : item.titulli,
+      cardText: item.pershkrimi || 'Zbulo këtë destinacion në Lezhë.',
+      alt: item.titulli,
       big: index === 0,
       natureId: item.kategoria === 'natyre',
     }
@@ -102,7 +95,106 @@ export default function DestinacioneClient({
 
   return (
     <>
-      <LocaleHeader locale={locale} current="destinacione"/>
+      <header className="header">
+        <Link
+          href="/"
+          className="logo"
+          aria-label="Lezha Turistike"
+        >
+          <span className="logo-mark">
+            L<span>✦</span>
+          </span>
+
+          <span>
+            LEZHA
+            <br />
+            <b>TURISTIKE</b>
+          </span>
+        </Link>
+
+        <nav
+          className={`nav${menuOpen ? ' open' : ''}`}
+          id="nav"
+        >
+          <Link
+            href="/destinacione"
+            aria-current="page"
+            onClick={() => setMenuOpen(false)}
+          >
+            Destinacione
+          </Link>
+
+          <Link
+            href="/galeri"
+            onClick={() => setMenuOpen(false)}
+          >
+            Galeri
+          </Link>
+
+          <Link
+            href="/histori"
+            onClick={() => setMenuOpen(false)}
+          >
+            Histori
+          </Link>
+
+          <Link
+            href="/arkeologji"
+            onClick={() => setMenuOpen(false)}
+          >
+            Arkeologji
+          </Link>
+
+          <Link
+            href="/webgis"
+            onClick={() => setMenuOpen(false)}
+          >
+            Web GIS
+          </Link>
+
+          <Link
+            href="/shkenca"
+            onClick={() => setMenuOpen(false)}
+          >
+            Punime shkencore
+          </Link>
+
+          <Link
+            href="/kulinari"
+            onClick={() => setMenuOpen(false)}
+          >
+            Kulinari
+          </Link>
+
+          <Link
+            href="/partneret"
+            onClick={() => setMenuOpen(false)}
+          >
+            Partnerët
+          </Link>
+
+          <Link
+            href="/kontakt"
+            onClick={() => setMenuOpen(false)}
+          >
+            Kontakt
+          </Link>
+        </nav>
+
+        <button
+          className="menu-btn"
+          type="button"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          Menu <span>☰</span>
+        </button>
+
+        <Link className="nav-cta" href="/webgis">
+          Hap hartën <span>↗</span>
+        </Link>
+      </header>
+
       <main id="home">
         <section
           id="destinacione"
@@ -111,14 +203,16 @@ export default function DestinacioneClient({
           <div className="section-top">
             <div>
               <span className="overline">
-                {en?'EXPLORE LEZHË':'EKSPLORO LEZHËN'}
+                EKSPLORO LEZHËN
               </span>
 
-              <h2>{en?'Places to discover':'Vende për t’u zbuluar'}</h2>
+              <h2>Vende për t’u zbuluar</h2>
             </div>
 
             <p>
-              {en?'Discover the history of the city through its most important landmarks and the landscapes that surround it.':'Njih historinë e qytetit përmes pikave të tij më të rëndësishme dhe peizazheve që e rrethojnë.'}
+              Njih historinë e qytetit përmes pikave të tij
+              më të rëndësishme dhe peizazheve që e
+              rrethojnë.
             </p>
           </div>
 
@@ -134,7 +228,7 @@ export default function DestinacioneClient({
               type="button"
               onClick={() => setFilter('all')}
             >
-              {en?'All':'Të gjitha'}
+              Të gjitha
             </button>
 
             <button
@@ -144,7 +238,7 @@ export default function DestinacioneClient({
               type="button"
               onClick={() => setFilter('histori')}
             >
-              {en?'History & archaeology':<>Histori &amp; arkeologji</>}
+              Histori &amp; arkeologji
             </button>
 
             <button
@@ -154,7 +248,7 @@ export default function DestinacioneClient({
               type="button"
               onClick={() => setFilter('natyre')}
             >
-              {en?'Nature':'Natyrë'}
+              Natyrë
             </button>
           </div>
 
@@ -199,7 +293,7 @@ export default function DestinacioneClient({
     openPlace(place)
   }}
 >
-  {en?'Discover place':'Zbulo vendin'}{' '}
+  Zbulo vendin{' '}
   <span
     className="arrow-icon"
     aria-hidden="true"
@@ -222,7 +316,95 @@ export default function DestinacioneClient({
         ↑
       </a>
 
-      <SiteFooter locale={locale}/>
+      <footer className="site-footer">
+        <div className="footer-main">
+          <Link
+            href="/"
+            className="logo"
+            aria-label="Lezha Turistike"
+          >
+            <span className="logo-mark">
+              L<span>✦</span>
+            </span>
+
+            <span>
+              LEZHA
+              <br />
+              <b>TURISTIKE</b>
+            </span>
+          </Link>
+
+          <p>
+            Një qytet për t’u zbuluar.
+            <br />
+            Histori, natyrë dhe trashëgimi kulturore,
+            të lidhura përmes hartave dhe rrëfimeve.
+          </p>
+
+          <span className="footer-location">
+            LEZHË · SHQIPËRI
+          </span>
+        </div>
+
+        <nav className="footer-navigation">
+          <h2>Eksploro</h2>
+
+          <div className="footer-links">
+            <Link href="/destinacione">
+              Destinacione
+            </Link>
+            <Link href="/histori">Histori</Link>
+            <Link href="/arkeologji">
+              Arkeologji
+            </Link>
+            <Link href="/webgis">Web GIS</Link>
+            <Link href="/shkenca">
+              Punime shkencore
+            </Link>
+            <Link href="/kulinari">Kulinari</Link>
+            <Link href="/partneret">Partnerët</Link>
+            <Link href="/galeri">Galeri</Link>
+          </div>
+        </nav>
+
+        <div className="footer-contact">
+          <h2>Le të lidhemi</h2>
+
+          <p>
+            Për informacion dhe bashkëpunime.
+          </p>
+
+          <a
+            className="footer-email"
+            href="mailto:lezhalezha2024@gmail.com"
+          >
+            lezhalezha2024@gmail.com ↗
+          </a>
+
+          <p>
+            Rruga e Kalasë
+            <br />
+            Lezhë, Shqipëri
+          </p>
+
+          <Link
+            className="footer-contact-link"
+            href="/kontakt"
+          >
+            Na kontakto ↗
+          </Link>
+        </div>
+
+        <div className="footer-bottom">
+          <span>
+            © 2026 Lezha Turistike.
+          </span>
+
+          <span>
+            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
+          </span>
+        </div>
+      </footer>
 
       {selectedPlace && (
         <div
