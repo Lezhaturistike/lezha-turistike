@@ -5,9 +5,11 @@ import BackToTop from "@/app/components/BackToTop";
 import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import {localizeContent} from "@/sanity/lib/localize";
+import Link from "next/link";
 
 export default async function EnglishKontaktPage() {
-  const raw = await getPageContent("kontakt", defaults);\n  const content = localizeContent(raw, "en");
+  const raw = await getPageContent("kontakt", defaults);
+  const content = localizeContent(raw, "en");
   return (
     <>
       <LocaleHeader locale="en" current="kontakt"/>
