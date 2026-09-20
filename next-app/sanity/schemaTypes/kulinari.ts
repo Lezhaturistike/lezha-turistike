@@ -29,7 +29,6 @@ export const kulinari = defineType({
     defineField({name:'social', title:'Instagram / Facebook', type:'url'}),
     defineField({name:'rezervimi', title:'Rezervimi (link)', type:'url'}),
     defineField({name:'burimi', title:'Burimi / Më shumë informacion', type:'url'}),
-    defineField({name:'vleresimi', title:'Vlerësimi / Review', type:'number', description:'P.sh. 4.5 nga 5', validation:(Rule)=>Rule.min(0).max(5).precision(1)}),
     defineField({name:'cmimiNga', title:'Çmimi nga', type:'number', description:'P.sh. 12'}),
     defineField({name:'monedha', title:'Monedha', type:'string', options:{list:[{title:'€ EUR',value:'EUR'},{title:'$ USD',value:'USD'},{title:'Lek ALL',value:'ALL'}]}}),
     defineField({name:'cmimiPer', title:'Çmimi për', type:'string', options:{list:[{title:'Për person',value:'person'},{title:'Për natë',value:'night'},{title:'Për dhomë',value:'room'},{title:'Për vakt',value:'meal'}]}}),
