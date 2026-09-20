@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 import LocaleHeader from '@/app/components/LocaleHeader'
 import SiteFooter from '@/app/components/SiteFooter'
@@ -39,7 +38,6 @@ export default function DestinacioneClient({
   destinacionet: Destinacion[]
   locale?: 'sq'|'en'
 }) {
-  const [menuOpen, setMenuOpen] = useState(false)
   const en=locale==='en'
   const [filter, setFilter] = useState('all')
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
