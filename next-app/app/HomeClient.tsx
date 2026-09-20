@@ -10,7 +10,7 @@ type HomeContent = typeof defaults & { heroSlides?: Array<{_key?: string; image?
 export type HomeLocale = "sq" | "en";
 
 const ui = {
-  sq: { home: "Home", destinations: "{t.destinations}", gallery: "{t.gallery}", history: "{t.history}", archaeology: "{t.archaeology}", science: "{t.science}", culinary: "{t.culinary}", partners: "{t.partners}", contact: "{t.contact}", map: "Hap hartën", explore: "Eksploro", connect: "Le të lidhemi", info: "Për informacion dhe bashkëpunime.", contactUs: "Na kontakto", footerText: "Një qytet për t’u zbuluar.\nHistori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.", location: "LEZHË · SHQIPËRI", address: "Rruga e Kalasë\nLezhë, Shqipëri", motto: "Njih historinë. Eksploro natyrën. Zbulo Lezhën." },
+  sq: { home: "Home", destinations: "Destinacione", gallery: "Galeri", history: "Histori", archaeology: "Arkeologji", science: "Punime shkencore", culinary: "Kulinari", partners: "Partnerët", contact: "Kontakt", map: "Hap hartën", explore: "Eksploro", connect: "Le të lidhemi", info: "Për informacion dhe bashkëpunime.", contactUs: "Na kontakto", footerText: "Një qytet për t’u zbuluar.\nHistori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.", location: "LEZHË · SHQIPËRI", address: "Rruga e Kalasë\nLezhë, Shqipëri", motto: "Njih historinë. Eksploro natyrën. Zbulo Lezhën." },
   en: { home: "Home", destinations: "Destinations", gallery: "Gallery", history: "History", archaeology: "Archaeology", science: "Scientific research", culinary: "Cuisine", partners: "Partners", contact: "Contact", map: "Open map", explore: "Explore", connect: "Get in touch", info: "For information and collaborations.", contactUs: "Contact us", footerText: "A city waiting to be discovered.\nHistory, nature and cultural heritage, connected through maps and stories.", location: "LEZHË · ALBANIA", address: "Castle Road\nLezhë, Albania", motto: "Know the history. Explore nature. Discover Lezhë." }
 } as const;
 
@@ -53,41 +53,23 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
         >
           <Link href={locale === "en" ? "/en" : "/"} onClick={() => setMenuOpen(false)}>{t.home}</Link>
 
-          <Link href="/destinacione" onClick={() => setMenuOpen(false)}>
-            Destinacione
-          </Link>
+          <Link href={localizedPath("/destinacione", locale)} onClick={() => setMenuOpen(false)}>{t.destinations}</Link>
 
-          <Link href="/galeri" onClick={() => setMenuOpen(false)}>
-            Galeri
-          </Link>
+          <Link href={localizedPath("/galeri", locale)} onClick={() => setMenuOpen(false)}>{t.gallery}</Link>
 
-          <Link href="/histori" onClick={() => setMenuOpen(false)}>
-            Histori
-          </Link>
+          <Link href={localizedPath("/histori", locale)} onClick={() => setMenuOpen(false)}>{t.history}</Link>
 
-          <Link href="/arkeologji" onClick={() => setMenuOpen(false)}>
-            Arkeologji
-          </Link>
+          <Link href={localizedPath("/arkeologji", locale)} onClick={() => setMenuOpen(false)}>{t.archaeology}</Link>
 
-          <Link href="/webgis" onClick={() => setMenuOpen(false)}>
-            Web GIS
-          </Link>
+          <Link href={localizedPath("/webgis", locale)} onClick={() => setMenuOpen(false)}>Web GIS</Link>
 
-          <Link href="/shkenca" onClick={() => setMenuOpen(false)}>
-            Punime shkencore
-          </Link>
+          <Link href={localizedPath("/shkenca", locale)} onClick={() => setMenuOpen(false)}>{t.science}</Link>
 
-          <Link href="/kulinari" onClick={() => setMenuOpen(false)}>
-            Kulinari
-          </Link>
+          <Link href={localizedPath("/kulinari", locale)} onClick={() => setMenuOpen(false)}>{t.culinary}</Link>
 
-          <Link href="/partneret" onClick={() => setMenuOpen(false)}>
-            Partnerët
-          </Link>
+          <Link href={localizedPath("/partneret", locale)} onClick={() => setMenuOpen(false)}>{t.partners}</Link>
 
-          <Link href="/kontakt" onClick={() => setMenuOpen(false)}>
-            Kontakt
-          </Link>
+          <Link href={localizedPath("/kontakt", locale)} onClick={() => setMenuOpen(false)}>{t.contact}</Link>
           <span className="language-switch" aria-label="Language"><Link href="/">SQ</Link><span> / </span><Link href="/en">EN</Link></span>
         </nav>
 
