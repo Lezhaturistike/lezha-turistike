@@ -22,53 +22,11 @@ type Place = Destinacion & {
   natureId?: boolean
 }
 
-const cardData: Record<
-  string,
-  {
-    tag: string
-    cardText: string
-    alt: string
-    big?: boolean
-    natureId?: boolean
-  }
-> = {
-  'Kalaja e Lezhës': {
-    tag: 'TRASHËGIMI HISTORIKE',
-    cardText:
-      'Një pikë vështrimi mbi qytetin dhe peizazhin përreth. Muret dhe strukturat e saj dëshmojnë periudha të ndryshme të historisë së Lezhës.',
-    alt: 'Kalaja e Lezhës',
-    big: true,
-  },
-
-  Akrolisi: {
-    tag: 'ARKEOLOGJI',
-    cardText:
-      'Fortifikimi i hershëm në lartësinë e Malit të Shëlbuemit, i lidhur me peizazhin arkeologjik të Lezhës.',
-    alt: 'Akrolisi',
-  },
-
-  'Vendvarrimi i Skënderbeut': {
-    tag: 'MEMORIAL',
-    cardText:
-      'Një vend kujtese në zemër të qytetit, i lidhur me historinë e Gjergj Kastriotit dhe Lezhës.',
-    alt: 'Vendvarrimi i Skënderbeut',
-  },
-
-  'Kune–Vain–Tale': {
-    tag: 'NATYRË',
-    cardText:
-      'Një peizazh ligatinor pranë detit, i njohur për habitatet dhe vëzhgimin e shpendëve.',
-    alt: 'Kune-Vain-Tale',
-    natureId: true,
-  },
+const categoryMeta: Record<string, {tag: string}> = {
+  histori: {tag: 'TRASHËGIMI HISTORIKE'},
+  arkeologji: {tag: 'ARKEOLOGJI'},
+  natyre: {tag: 'NATYRË'},
 }
-
-const order = [
-  'Kalaja e Lezhës',
-  'Akrolisi',
-  'Vendvarrimi i Skënderbeut',
-  'Kune–Vain–Tale',
-]
 
 export default function DestinacioneClient({
   destinacionet,
@@ -80,23 +38,17 @@ export default function DestinacioneClient({
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
   const [selectedPhoto, setSelectedPhoto] = useState(0)
 
-  const places: Place[] = destinacionet
-    .map((item) => {
-      const card = cardData[item.titulli]
-
-      if (!card) return null
-
-      return {
-        ...item,
-        ...card,
-      }
-    })
-    .filter((item): item is Place => item !== null)
-    .sort(
-      (a, b) =>
-        order.indexOf(a.titulli) -
-        order.indexOf(b.titulli)
-    )
+  const places: Place[] = destinacionet.map((item, index) => {
+    const meta = categoryMeta[item.kategoria] ?? {tag: 'DESTINACION'}
+    return {
+      ...item,
+      tag: meta.tag,
+      cardText: item.pershkrimi || 'Zbulo këtë destinacion në Lezhë.',
+      alt: item.titulli,
+      big: index === 0,
+      natureId: item.kategoria === 'natyre',
+    }
+  })
 
   const visiblePlaces = places.filter((place) => {
     if (filter === 'all') return true
