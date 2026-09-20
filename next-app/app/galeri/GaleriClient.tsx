@@ -141,6 +141,7 @@ export default function GaleriClient({
         </Link>
 
         <nav className="nav" id="nav" aria-label="Navigimi kryesor">
+          <Link href="/">Home</Link>>
           <Link href="/destinacione">Destinacione</Link>
 
           <Link href="/galeri" aria-current="page">
@@ -160,7 +161,7 @@ export default function GaleriClient({
           <Link href="/partneret">Partnerët</Link>
 
           <Link href="/kontakt">Kontakt</Link>
-        </nav>
+        <span className="language-switch"><Link href="/galeri">SQ</Link><span> / </span><Link href="/en/galeri">EN</Link></span></nav>
 
         <button
           className="menu-btn"
