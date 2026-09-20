@@ -1,4 +1,2 @@
-import KulinariClient from "@/app/kulinari/KulinariClient";
-import {client} from "@/sanity/lib/client";
-export const dynamic="force-dynamic";
-export default async function Page(){const data=await client.fetch(`*[_type=="kulinari"]|order(featured desc,_createdAt asc){_id,titulli,"titulliEn":coalesce(titulliEn,titulli),kategoria,pershkrimi,"pershkrimiEn":coalesce(pershkrimiEn,pershkrimi),"fotoUrl":foto.asset->url,"galeriaUrls":galeria[].asset->url,adresa,"adresaEn":coalesce(adresaEn,adresa),orari,"orariEn":coalesce(orariEn,orari),telefoni,harta,menuja,website,social,rezervimi,burimi,cmimiNga,monedha,cmimiPer,featured,"rating":math::avg(*[_type=="kulinariReview"&&place._ref==^._id].rating),"reviewCount":count(*[_type=="kulinariReview"&&place._ref==^._id])}`);return <KulinariClient kulinari={data} locale="en"/>;}
+import {redirect} from "next/navigation";
+export default function EnglishKulinariFallback(){redirect("/kulinari");}
