@@ -10,7 +10,7 @@ export default async function KulinariPage() {
       "fotoUrl": foto.asset->url,
       "galeriaUrls": galeria[].asset->url,
       adresa, orari, telefoni, harta, menuja, website, social,
-      rezervimi, burimi, featured
+      rezervimi, burimi, vleresimi, cmimiNga, monedha, cmimiPer, featured
     }
   `);
   return <KulinariClient kulinari={kulinari} />;
