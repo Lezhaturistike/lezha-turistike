@@ -169,8 +169,18 @@
         "type": "string"
       },
       {
+        "name": "alt2En",
+        "title": "Përshkrimi i fotos — Muret e Kalasë së Lezhës mbi qytet (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Etiketa — HISTORI",
+        "type": "string"
+      },
+      {
+        "name": "text3En",
+        "title": "Etiketa — HISTORI (EN)",
         "type": "string"
       },
       {
@@ -179,8 +189,18 @@
         "type": "string"
       },
       {
+        "name": "text4En",
+        "title": "Titulli — Nga Lissusi te (EN)",
+        "type": "string"
+      },
+      {
         "name": "text5",
         "title": "Titulli i theksuar — Besëlidhja e Lezhës.",
+        "type": "string"
+      },
+      {
+        "name": "text5En",
+        "title": "Titulli i theksuar — Besëlidhja e Lezhës. (EN)",
         "type": "string"
       },
       {
@@ -189,8 +209,18 @@
         "type": "text"
       },
       {
+        "name": "text6En",
+        "title": "Teksti — Lezha ruan gjurmë të qytetit antik Lissus dhe të fortifikimeve që (EN)",
+        "type": "text"
+      },
+      {
         "name": "text7",
         "title": "Teksti — Më 2 mars 1444 në Lezhë u mbajt Kuvendi i Lezhës, ku princat shqi",
+        "type": "text"
+      },
+      {
+        "name": "text7En",
+        "title": "Teksti — Më 2 mars 1444 në Lezhë u mbajt Kuvendi i Lezhës, ku princat shqi (EN)",
         "type": "text"
       },
       {
@@ -204,6 +234,11 @@
         "type": "string"
       },
       {
+        "name": "text9En",
+        "title": "Teksti i lidhjes — Lexo historinë në Bashkinë Lezhë (EN)",
+        "type": "string"
+      },
+      {
         "name": "href10",
         "title": "Lidhja — /arkeologji",
         "type": "url"
@@ -214,8 +249,18 @@
         "type": "string"
       },
       {
+        "name": "text11En",
+        "title": "Teksti i lidhjes — Shiko arkeologjinë (EN)",
+        "type": "string"
+      },
+      {
         "name": "text12",
         "title": "Teksti — Teksti historik është përgatitur për shqyrtim shkencor nga Paulin",
+        "type": "string"
+      },
+      {
+        "name": "text12En",
+        "title": "Teksti — Teksti historik është përgatitur për shqyrtim shkencor nga Paulin (EN)",
         "type": "string"
       },
       {
@@ -234,8 +279,18 @@
             "type": "string"
           },
           {
+            "name": "altEn",
+            "title": "Përshkrimi i fotos (EN)",
+            "type": "string"
+          },
+          {
             "name": "label",
             "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
             "type": "string"
           },
           {
@@ -244,8 +299,18 @@
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "highlight",
             "title": "Titulli i theksuar",
+            "type": "string"
+          },
+          {
+            "name": "highlightEn",
+            "title": "Titulli i theksuar (EN)",
             "type": "string"
           },
           {
@@ -254,8 +319,18 @@
             "type": "text"
           },
           {
+            "name": "text1En",
+            "title": "Paragrafi 1 (EN)",
+            "type": "text"
+          },
+          {
             "name": "text2",
             "title": "Paragrafi 2",
+            "type": "text"
+          },
+          {
+            "name": "text2En",
+            "title": "Paragrafi 2 (EN)",
             "type": "text"
           },
           {
@@ -269,8 +344,18 @@
             "type": "string"
           },
           {
+            "name": "sourceLabelEn",
+            "title": "Teksti i burimit (EN)",
+            "type": "string"
+          },
+          {
             "name": "note",
             "title": "Shënimi editorial",
+            "type": "text"
+          },
+          {
+            "name": "noteEn",
+            "title": "Shënimi editorial (EN)",
             "type": "text"
           }
         ]
@@ -287,13 +372,28 @@
         "type": "string"
       },
       {
+        "name": "text1En",
+        "title": "Etiketa — ARKEOLOGJI (EN)",
+        "type": "string"
+      },
+      {
         "name": "text2",
         "title": "Titulli — Gjurmët e Lissusit.",
         "type": "string"
       },
       {
+        "name": "text2En",
+        "title": "Titulli — Gjurmët e Lissusit. (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Teksti — Tre zona që ndihmojnë të lexohet zhvillimi i vendbanimit dhe sist",
+        "type": "string"
+      },
+      {
+        "name": "text3En",
+        "title": "Teksti — Tre zona që ndihmojnë të lexohet zhvillimi i vendbanimit dhe sist (EN)",
         "type": "string"
       },
       {
@@ -307,6 +407,11 @@
         "type": "string"
       },
       {
+        "name": "alt5En",
+        "title": "Përshkrimi i fotos — Relievi dhe gjurmët e Akrolisit (EN)",
+        "type": "string"
+      },
+      {
         "name": "archaeology",
         "title": "Zonat arkeologjike",
         "type": "array",
@@ -317,13 +422,28 @@
             "type": "string"
           },
           {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "description",
             "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "descriptionEn",
+            "title": "Përshkrimi (EN)",
             "type": "text"
           }
         ]
@@ -331,6 +451,11 @@
       {
         "name": "text6",
         "title": "Teksti — Burime:",
+        "type": "string"
+      },
+      {
+        "name": "text6En",
+        "title": "Teksti — Burime: (EN)",
         "type": "string"
       },
       {
@@ -344,6 +469,11 @@
         "type": "string"
       },
       {
+        "name": "text8En",
+        "title": "Teksti i lidhjes — Bashkia Lezhë (EN)",
+        "type": "string"
+      },
+      {
         "name": "href9",
         "title": "Lidhja — https://www.intechopen.com/online-first/1238994",
         "type": "url"
@@ -354,8 +484,18 @@
         "type": "string"
       },
       {
+        "name": "text10En",
+        "title": "Teksti i lidhjes — Studimi i projektit HDZA Lezha (EN)",
+        "type": "string"
+      },
+      {
         "name": "text11",
         "title": "Teksti — . Përshkrimet historike janë për shqyrtim nga Paulin Zefi.",
+        "type": "string"
+      },
+      {
+        "name": "text11En",
+        "title": "Teksti — . Përshkrimet historike janë për shqyrtim nga Paulin Zefi. (EN)",
         "type": "string"
       }
     ]
@@ -370,13 +510,28 @@
         "type": "string"
       },
       {
+        "name": "text1En",
+        "title": "Etiketa — STUDIME SHKENCORE (EN)",
+        "type": "string"
+      },
+      {
         "name": "text2",
         "title": "Titulli — Çfarë është studiuar deri tani?",
         "type": "string"
       },
       {
+        "name": "text2En",
+        "title": "Titulli — Çfarë është studiuar deri tani? (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Teksti — Dokumentimi bashkon të dhëna nga terreni, modelet 3D, prospektimi",
+        "type": "text"
+      },
+      {
+        "name": "text3En",
+        "title": "Teksti — Dokumentimi bashkon të dhëna nga terreni, modelet 3D, prospektimi (EN)",
         "type": "text"
       },
       {
@@ -390,13 +545,28 @@
             "type": "string"
           },
           {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "description",
             "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "descriptionEn",
+            "title": "Përshkrimi (EN)",
             "type": "text"
           },
           {
@@ -410,8 +580,18 @@
             "type": "string"
           },
           {
+            "name": "linkLabelEn",
+            "title": "Teksti i lidhjes (EN)",
+            "type": "string"
+          },
+          {
             "name": "caveat",
             "title": "Shënimi shkencor",
+            "type": "text"
+          },
+          {
+            "name": "caveatEn",
+            "title": "Shënimi shkencor (EN)",
             "type": "text"
           }
         ]
@@ -422,13 +602,28 @@
         "type": "string"
       },
       {
+        "name": "text4En",
+        "title": "Etiketa — PUNIME TË PUBLIKUARA (EN)",
+        "type": "string"
+      },
+      {
         "name": "text5",
         "title": "Titulli — Lexo kërkimin e plotë",
         "type": "string"
       },
       {
+        "name": "text5En",
+        "title": "Titulli — Lexo kërkimin e plotë (EN)",
+        "type": "string"
+      },
+      {
         "name": "text6",
         "title": "Teksti — Kapitulli mbi Akrolisin dhe Lissusin përshkruan matjet, përpunimi",
+        "type": "text"
+      },
+      {
+        "name": "text6En",
+        "title": "Teksti — Kapitulli mbi Akrolisin dhe Lissusin përshkruan matjet, përpunimi (EN)",
         "type": "text"
       },
       {
@@ -442,6 +637,11 @@
         "type": "string"
       },
       {
+        "name": "text8En",
+        "title": "Teksti i lidhjes — Kapitulli shkencor (EN)",
+        "type": "string"
+      },
+      {
         "name": "href9",
         "title": "Lidhja — #video-3d",
         "type": "url"
@@ -452,8 +652,18 @@
         "type": "string"
       },
       {
+        "name": "text10En",
+        "title": "Teksti i lidhjes — Shiko videot 3D ↓ (EN)",
+        "type": "string"
+      },
+      {
         "name": "text11",
         "title": "Etiketa — TRASHËGIMIA NË TRE DIMENSIONE",
+        "type": "string"
+      },
+      {
+        "name": "text11En",
+        "title": "Etiketa — TRASHËGIMIA NË TRE DIMENSIONE (EN)",
         "type": "string"
       },
       {
@@ -462,8 +672,18 @@
         "type": "string"
       },
       {
+        "name": "text12En",
+        "title": "Titulli — Eksploro modelet 3D (EN)",
+        "type": "string"
+      },
+      {
         "name": "text13",
         "title": "Teksti — Shiko dokumentimin digjital të Kalasë së Lezhës dhe Akrolisit, dr",
+        "type": "string"
+      },
+      {
+        "name": "text13En",
+        "title": "Teksti — Shiko dokumentimin digjital të Kalasë së Lezhës dhe Akrolisit, dr (EN)",
         "type": "string"
       },
       {
@@ -477,13 +697,28 @@
             "type": "string"
           },
           {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "description",
             "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "descriptionEn",
+            "title": "Përshkrimi (EN)",
             "type": "text"
           },
           {
@@ -494,6 +729,11 @@
           {
             "name": "linkLabel",
             "title": "Teksti i lidhjes",
+            "type": "string"
+          },
+          {
+            "name": "linkLabelEn",
+            "title": "Teksti i lidhjes (EN)",
             "type": "string"
           },
           {
@@ -515,13 +755,28 @@
         "type": "string"
       },
       {
+        "name": "text1En",
+        "title": "Etiketa — PROJEKTI HDZA LEZHA (EN)",
+        "type": "string"
+      },
+      {
         "name": "text2",
         "title": "Titulli — Financuesi dhe institucionet zbatuese",
         "type": "string"
       },
       {
+        "name": "text2En",
+        "title": "Titulli — Financuesi dhe institucionet zbatuese (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Teksti — Projekti “Hartografimi dhe Dokumentimi i Zonave me Potencial Arke",
+        "type": "text"
+      },
+      {
+        "name": "text3En",
+        "title": "Teksti — Projekti “Hartografimi dhe Dokumentimi i Zonave me Potencial Arke (EN)",
         "type": "text"
       },
       {
@@ -535,6 +790,11 @@
             "type": "string"
           },
           {
+            "name": "roleEn",
+            "title": "Roli (EN)",
+            "type": "string"
+          },
+          {
             "name": "image",
             "title": "Fotografia / logo",
             "type": "image"
@@ -545,13 +805,28 @@
             "type": "string"
           },
           {
+            "name": "altEn",
+            "title": "Përshkrimi i fotos (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "subtitle",
             "title": "Nëntitulli",
+            "type": "string"
+          },
+          {
+            "name": "subtitleEn",
+            "title": "Nëntitulli (EN)",
             "type": "string"
           },
           {
@@ -567,6 +842,11 @@
         "type": "string"
       },
       {
+        "name": "text4En",
+        "title": "Teksti — Lista e institucioneve zbatuese dhe financuesi: (EN)",
+        "type": "string"
+      },
+      {
         "name": "href5",
         "title": "Lidhja — https://www.intechopen.com/online-first/1238994",
         "type": "url"
@@ -574,6 +854,11 @@
       {
         "name": "text6",
         "title": "Teksti i lidhjes — falënderimet e botimit shkencor të projektit",
+        "type": "string"
+      },
+      {
+        "name": "text6En",
+        "title": "Teksti i lidhjes — falënderimet e botimit shkencor të projektit (EN)",
         "type": "string"
       }
     ]
@@ -588,8 +873,18 @@
         "type": "string"
       },
       {
+        "name": "text1En",
+        "title": "Etiketa — LEZHA WEB GIS (EN)",
+        "type": "string"
+      },
+      {
         "name": "text2",
         "title": "Titulli — Shihe Lezhën nga një kënd tjetër.",
+        "type": "string"
+      },
+      {
+        "name": "text2En",
+        "title": "Titulli — Shihe Lezhën nga një kënd tjetër. (EN)",
         "type": "string"
       },
       {
@@ -598,13 +893,28 @@
         "type": "string"
       },
       {
+        "name": "text3En",
+        "title": "Teksti — Harta 2D, skena 3D dhe rrëfimi interaktiv të çojnë nga një vend t (EN)",
+        "type": "string"
+      },
+      {
         "name": "text4",
         "title": "Etiketa — WEB GIS · LEZHË",
         "type": "string"
       },
       {
+        "name": "text4En",
+        "title": "Etiketa — WEB GIS · LEZHË (EN)",
+        "type": "string"
+      },
+      {
         "name": "text5",
         "title": "Teksti — Eksploro vendet në hartë",
+        "type": "string"
+      },
+      {
+        "name": "text5En",
+        "title": "Teksti — Eksploro vendet në hartë (EN)",
         "type": "string"
       },
       {
@@ -618,6 +928,11 @@
         "type": "string"
       },
       {
+        "name": "text7En",
+        "title": "Teksti i lidhjes — Hap Atlasin Interaktiv (EN)",
+        "type": "string"
+      },
+      {
         "name": "gisLinks",
         "title": "Lidhjet e hartave",
         "type": "array",
@@ -628,13 +943,28 @@
             "type": "string"
           },
           {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "description",
             "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "descriptionEn",
+            "title": "Përshkrimi (EN)",
             "type": "text"
           },
           {
@@ -650,8 +980,18 @@
         "type": "string"
       },
       {
+        "name": "text8En",
+        "title": "Etiketa — EKSPLORO NË FAQE (EN)",
+        "type": "string"
+      },
+      {
         "name": "text9",
         "title": "Titulli — Aplikacionet Web GIS",
+        "type": "string"
+      },
+      {
+        "name": "text9En",
+        "title": "Titulli — Aplikacionet Web GIS (EN)",
         "type": "string"
       },
       {
@@ -660,8 +1000,18 @@
         "type": "string"
       },
       {
+        "name": "text10En",
+        "title": "Teksti — Zgjidh një aplikacion për ta përdorur këtu. Mund ta hapësh edhe n (EN)",
+        "type": "string"
+      },
+      {
         "name": "text11",
         "title": "Teksti i lidhjes — Hap aplikacionin origjinal",
+        "type": "string"
+      },
+      {
+        "name": "text11En",
+        "title": "Teksti i lidhjes — Hap aplikacionin origjinal (EN)",
         "type": "string"
       },
       {
@@ -676,8 +1026,18 @@
             "type": "string"
           },
           {
+            "name": "nameEn",
+            "title": "Emri i skedës (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
             "type": "string"
           },
           {
@@ -709,13 +1069,28 @@
         "type": "string"
       },
       {
+        "name": "text1En",
+        "title": "Etiketa — PLANIFIKO ZBULIMIN (EN)",
+        "type": "string"
+      },
+      {
         "name": "text2",
         "title": "Titulli — Lezha të pret.",
         "type": "string"
       },
       {
+        "name": "text2En",
+        "title": "Titulli — Lezha të pret. (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Teksti — Nis eksplorimin nga destinacionet, ose hape hartën për t’i parë n",
+        "type": "string"
+      },
+      {
+        "name": "text3En",
+        "title": "Teksti — Nis eksplorimin nga destinacionet, ose hape hartën për t’i parë n (EN)",
         "type": "string"
       },
       {
@@ -729,6 +1104,11 @@
         "type": "string"
       },
       {
+        "name": "text5En",
+        "title": "Teksti i lidhjes — Shiko destinacionet (EN)",
+        "type": "string"
+      },
+      {
         "name": "href6",
         "title": "Lidhja — https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af",
         "type": "url"
@@ -739,8 +1119,18 @@
         "type": "string"
       },
       {
+        "name": "text7En",
+        "title": "Teksti i lidhjes — Hap hartën interaktive (EN)",
+        "type": "string"
+      },
+      {
         "name": "text8",
         "title": "Etiketa — KONTAKT NGA PORTALI EKZISTUES",
+        "type": "string"
+      },
+      {
+        "name": "text8En",
+        "title": "Etiketa — KONTAKT NGA PORTALI EKZISTUES (EN)",
         "type": "string"
       },
       {
@@ -754,8 +1144,18 @@
         "type": "string"
       },
       {
+        "name": "text10En",
+        "title": "Teksti i lidhjes — lezhalezha2024@gmail.com (EN)",
+        "type": "string"
+      },
+      {
         "name": "text11",
         "title": "Teksti — Rruga e Kalasë, Lezhë, Shqipëri",
+        "type": "string"
+      },
+      {
+        "name": "text11En",
+        "title": "Teksti — Rruga e Kalasë, Lezhë, Shqipëri (EN)",
         "type": "string"
       },
       {
@@ -766,6 +1166,11 @@
       {
         "name": "text13",
         "title": "Teksti i lidhjes — Vizito faqen origjinale",
+        "type": "string"
+      },
+      {
+        "name": "text13En",
+        "title": "Teksti i lidhjes — Vizito faqen origjinale (EN)",
         "type": "string"
       }
     ]
