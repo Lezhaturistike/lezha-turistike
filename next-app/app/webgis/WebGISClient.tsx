@@ -1,12 +1,11 @@
 "use client";
 
-import defaults from "@/sanity/content/webgis.json";
 import BackToTop from "@/app/components/BackToTop";
 import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import { useState } from "react";
 
-type WebGISContent = typeof defaults & Record<string, unknown>;
+type WebGISContent = {text1:string;text2:string;text3:string;text4:string;text5:string;href6:string;text7:string;backgroundImage:string;text8:string;text9:string;text10:string;text11:string;gisLinks:Array<{_key:string;label:string;title:string;description:string;url:string}>;gisApps:Array<{_key:string;name:string;title:string;embed:string;original:string}>};
 export default function WebGISPage({ content, locale='sq' }: { content: WebGISContent; locale?: 'sq'|'en' }) {
   const gisApps = content.gisApps;
   const [activeKey, setActiveKey] = useState(gisApps[0]._key);
