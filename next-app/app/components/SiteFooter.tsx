@@ -1,14 +1,16 @@
 import Link from "next/link";
 
-export default function SiteFooter(){
- return <footer className="site-footer" aria-label="Fundi i faqes">
-  <div className="footer-main">
-   <Link href="/" className="logo" aria-label="Lezha Turistike"><span className="logo-mark">L<span>✦</span></span><span>LEZHA<br/><b>TURISTIKE</b></span></Link>
-   <p>Një qytet për t’u zbuluar.<br/>Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.</p>
-   <span className="footer-location">LEZHË · SHQIPËRI</span>
-  </div>
-  <nav className="footer-navigation" aria-label="Navigimi në fund të faqes"><h2>Eksploro</h2><div className="footer-links"><Link href="/destinacione">Destinacione</Link><Link href="/histori">Histori</Link><Link href="/arkeologji">Arkeologji</Link><Link href="/webgis">Web GIS</Link><Link href="/shkenca">Punime shkencore</Link><Link href="/kulinari">Kulinari</Link><Link href="/partneret">Partnerët</Link><Link href="/galeri">Galeri</Link></div></nav>
-  <div className="footer-contact"><h2>Le të lidhemi</h2><p>Për informacion dhe bashkëpunime.</p><a className="footer-email" href="mailto:lezhalezha2024@gmail.com">lezhalezha2024@gmail.com <span className="arrow-icon" aria-hidden="true">↗</span></a><p>Rruga e Kalasë<br/>Lezhë, Shqipëri</p><Link className="footer-contact-link" href="/kontakt">Na kontakto <span className="arrow-icon" aria-hidden="true">↗</span></Link></div>
-  <div className="footer-bottom"><span>© 2026 Lezha Turistike.</span><span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span></div>
+type Locale="sq"|"en";
+const labels={
+ sq:{explore:"Eksploro",connect:"Le të lidhemi",info:"Për informacion dhe bashkëpunime.",location:"LEZHË · SHQIPËRI",address:"Rruga e Kalasë",country:"Lezhë, Shqipëri",contact:"Na kontakto",motto:"Njih historinë. Eksploro natyrën. Zbulo Lezhën.",desc:"Një qytet për t’u zbuluar.",desc2:"Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.",dest:"Destinacione",history:"Histori",arch:"Arkeologji",science:"Punime shkencore",food:"Kulinari",partners:"Partnerët",gallery:"Galeri"},
+ en:{explore:"Explore",connect:"Let's connect",info:"For information and collaboration.",location:"LEZHË · ALBANIA",address:"Castle Road",country:"Lezhë, Albania",contact:"Contact us",motto:"Know the history. Explore nature. Discover Lezhë.",desc:"A city waiting to be discovered.",desc2:"History, nature and cultural heritage connected through maps and stories.",dest:"Destinations",history:"History",arch:"Archaeology",science:"Scientific research",food:"Cuisine",partners:"Partners",gallery:"Gallery"}
+};
+export default function SiteFooter({locale="sq"}:{locale?:Locale}){
+ const t=labels[locale], p=(x:string)=>locale==="en"?"/en"+x:x;
+ return <footer className="site-footer" aria-label={locale==="en"?"Page footer":"Fundi i faqes"}>
+  <div className="footer-main"><Link href={p("")||"/"} className="logo" aria-label="Lezha Turistike"><span className="logo-mark">L<span>✦</span></span><span>LEZHA<br/><b>TURISTIKE</b></span></Link><p>{t.desc}<br/>{t.desc2}</p><span className="footer-location">{t.location}</span></div>
+  <nav className="footer-navigation" aria-label={locale==="en"?"Footer navigation":"Navigimi në fund të faqes"}><h2>{t.explore}</h2><div className="footer-links"><Link href={p("/destinacione")}>{t.dest}</Link><Link href={p("/histori")}>{t.history}</Link><Link href={p("/arkeologji")}>{t.arch}</Link><Link href={p("/webgis")}>Web GIS</Link><Link href={p("/shkenca")}>{t.science}</Link><Link href={p("/kulinari")}>{t.food}</Link><Link href={p("/partneret")}>{t.partners}</Link><Link href={p("/galeri")}>{t.gallery}</Link></div></nav>
+  <div className="footer-contact"><h2>{t.connect}</h2><p>{t.info}</p><a className="footer-email" href="mailto:lezhalezha2024@gmail.com">lezhalezha2024@gmail.com <span className="arrow-icon" aria-hidden="true">↗</span></a><p>{t.address}<br/>{t.country}</p><Link className="footer-contact-link" href={p("/kontakt")}>{t.contact} <span className="arrow-icon" aria-hidden="true">↗</span></Link></div>
+  <div className="footer-bottom"><span>© 2026 Lezha Turistike.</span><span>{t.motto}</span></div>
  </footer>
 }
