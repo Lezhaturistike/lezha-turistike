@@ -18,6 +18,9 @@ export const kulinari = defineType({
       ]}
     }),
     defineField({name:'pershkrimi', title:'Përshkrimi', type:'text', rows:6}),
+    defineField({name:'pershkrimiEn', title:'Description (EN)', type:'text', rows:6}),
+    defineField({name:'adresaEn', title:'Address (EN)', type:'string'}),
+    defineField({name:'orariEn', title:'Opening hours (EN)', type:'string'}),
     defineField({name:'foto', title:'Foto kryesore', type:'image', options:{hotspot:true}}),
     defineField({name:'galeria', title:'Galeria e fotove', type:'array', of:[{type:'image',options:{hotspot:true}}]}),
     defineField({name:'adresa', title:'Adresa', type:'string'}),
