@@ -5,11 +5,12 @@ export const dynamic = "force-dynamic";
 
 export default async function KulinariPage() {
   const kulinari = await client.fetch(`
-    *[_type == "kulinari"][0] {
+    *[_type == "kulinari"] | order(_createdAt asc) {
       _id,
       titulli,
       pershkrimi,
       "fotoUrl": foto.asset->url,
+      "galeriaUrls": galeria[].asset->url,
       burimi,
       harta
     }
@@ -70,52 +71,42 @@ export default async function KulinariPage() {
       </header>
 
       <main id="home">
-        <section id="kulinari" className="culinary">
-          <div>
-            <span className="overline light">KULINARI</span>
-
-            <h2>
-              Lezha shijohet
-              <br />
-              edhe në tryezë.
-            </h2>
-
-            <p>
-              {kulinari?.pershkrimi ||
-                "Peizazhi i Lezhës lidhet me prodhimet e tokës, bregdetit dhe vreshtave. Në Fishtë njihen përvojat e agroturizmit me produkte sezonale; në Shëngjin gatimet e peshkut dhe prodhimet e detit; në Kallmet tradita e verës vendase."}
-            </p>
-
-            <div className="food-tags">
-              <span>Fishtë · agroturizëm</span>
-              <span>Shëngjin · prodhime deti</span>
-              <span>Kallmet · verë</span>
+        <section id="kulinari" className="section destinations">
+          <div className="section-top">
+            <div>
+              <span className="overline">KULINARI</span>
+              <h2>Lezha shijohet edhe në tryezë.</h2>
             </div>
-
-            <a
-              className="button primary"
-              href={kulinari?.burimi || "https://visitlezha.al/en"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Zbulo përvojat kulinare{" "}
-              <span className="arrow-icon" aria-hidden="true">
-                ↗
-              </span>
-            </a>
-
-            <p className="food-source">
-              Përshkrimi mbështetet në portalin turistik të lidhur
-              nga Bashkia Lezhë; faqja e vjetër WordPress nuk ka
-              përmbajtje te rubrika “Kulinari”.
-            </p>
+            <p>Zbulo gatimet, produktet vendase dhe përvojat kulinare të Lezhës.</p>
           </div>
 
-          <div className="culinary-image">
-            <img
-              loading="lazy"
-              src={kulinari?.fotoUrl || "/images/fishte-food.jpg"}
-              alt="Tryezë me prodhime vendase pranë Fishtës, fotografi nga VisitLezha"
-            />
+          <div className="places">
+            {kulinari.map((item: any, index: number) => (
+              <article key={item._id} className={`place${index === 0 ? " big" : ""}`}>
+                <div className="place-image">
+                  {item.fotoUrl && (
+                    <img loading="lazy" src={item.fotoUrl} alt={item.titulli} />
+                  )}
+                </div>
+                <div className="place-body">
+                  <span className="tag">KULINARI</span>
+                  <h3>{item.titulli}</h3>
+                  <p>{item.pershkrimi}</p>
+                  <div className="dialog-actions">
+                    {item.burimi && (
+                      <a href={item.burimi} target="_blank" rel="noopener noreferrer">
+                        Më shumë informacion <span className="arrow-icon" aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                    {item.harta && (
+                      <a href={item.harta} target="_blank" rel="noopener noreferrer">
+                        Shiko vendndodhjen <span className="arrow-icon" aria-hidden="true">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
       </main>
