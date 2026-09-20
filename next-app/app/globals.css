@@ -235,3 +235,12 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
 .modern-footer .footer-bottom{margin-top:8px}
 @media(max-width:1000px){.modern-footer{grid-template-columns:1fr 1fr}.modern-footer .footer-main{grid-column:1/-1}}
 @media(max-width:620px){.modern-footer{grid-template-columns:1fr;gap:38px;padding-top:54px}.modern-footer .footer-main{grid-column:auto}.footer-socials{margin-top:20px}}
+
+/* Culinary rating and price */
+#kulinari .culinary-rating-price{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:10px 0 14px}
+#kulinari .culinary-rating,#kulinari .culinary-price{display:inline-flex;align-items:baseline;gap:4px;white-space:nowrap}
+#kulinari .culinary-rating .star{color:#c78c3d;font-size:1rem;line-height:1}
+#kulinari .culinary-rating b{color:#183c38;font-size:.88rem}
+#kulinari .culinary-rating small,#kulinari .culinary-price small{color:#84938d;font-size:.66rem}
+#kulinari .culinary-price{margin-left:auto;color:#183c38}
+#kulinari .culinary-price b{font-family:var(--font-serif,Georgia,serif);font-size:1rem;font-weight:700}
