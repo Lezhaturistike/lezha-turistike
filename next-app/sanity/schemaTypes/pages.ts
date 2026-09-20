@@ -93,7 +93,7 @@ function initialValue(
       if (field.type === "array")
         return [
           field.name,
-          (value as Record<string, unknown>[]).map((item) => ({
+          (Array.isArray(value) ? (value as Record<string, unknown>[]) : []).map((item) => ({
             _key: item._key,
             _type: `${field.name}Item`,
             ...initialValue(field.fields || [], item),
