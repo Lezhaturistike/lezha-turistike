@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --test scripts/content.test.cjs",
+    "import:pages": "node scripts/import-pages.mjs"
   },
   "dependencies": {
     "@sanity/vision": "^6.15.0",

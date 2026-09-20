@@ -1,6 +1,12 @@
+import { getPageContent } from "@/sanity/lib/content";
+export const dynamic = "force-dynamic";
+import defaults from "@/sanity/content/histori.json";
+import BackToTop from "@/app/components/BackToTop";
+import MenuButton from "@/app/components/MenuButton";
 import Link from "next/link";
 
-export default function HistoriPage() {
+export default async function HistoriPage() {
+  const content = await getPageContent("histori", defaults);
   return (
     <>
       <header className="header">
@@ -34,14 +40,7 @@ export default function HistoriPage() {
           <Link href="/kontakt">Kontakt</Link>
         </nav>
 
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav"
-        >
-          Menu <span>☰</span>
-        </button>
+        <MenuButton />
 
         <Link className="nav-cta" href="/webgis">
           Hap hartën{" "}
@@ -56,73 +55,44 @@ export default function HistoriPage() {
       <main id="home">
         <section id="histori" className="story-section">
           <div className="story-photo">
-            <img
-              loading="lazy"
-              src="/images/kala.jpeg"
-              alt="Muret e Kalasë së Lezhës mbi qytet"
-            />
+            <img loading="lazy" src={content.src1} alt={content.alt2} />
           </div>
 
           <div className="story-copy">
-            <span className="overline light">HISTORI</span>
+            <span className="overline light">{content.text3}</span>
 
             <h2>
-              Nga Lissusi te
+              {content.text4}
               <br />
-              <em>Besëlidhja e Lezhës.</em>
+              <em>{content.text5}</em>
             </h2>
 
-            <p>
-              Lezha ruan gjurmë të qytetit antik Lissus dhe të
-              fortifikimeve që kanë ndryshuar në periudha të ndryshme.
-              Pozicioni pranë Drinit dhe lidhja me bregdetin e kanë bërë
-              vendin një pikë të rëndësishme të peizazhit historik.
-            </p>
+            <p>{content.text6}</p>
 
-            <p>
-              Më 2 mars 1444 në Lezhë u mbajt Kuvendi i Lezhës, ku
-              princat shqiptarë u bashkuan nën drejtimin e Gjergj
-              Kastriotit. Ai u varros në Lezhë më 1468. Memoriali i
-              sotëm u ndërtua në vitin 1981 mbi zonën e kishës së Shën
-              Kollit.
-            </p>
+            <p>{content.text7}</p>
 
             <div className="story-links">
-              <a
-                href="https://lezha.gov.al/njihni-lezhen/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Lexo historinë në Bashkinë Lezhë{" "}
+              <a href={content.href8} target="_blank" rel="noopener noreferrer">
+                {content.text9}{" "}
                 <span className="arrow-icon" aria-hidden="true">
                   ↗
                 </span>
               </a>
 
-              <Link href="/arkeologji">
-                Shiko arkeologjinë{" "}
+              <Link href={content.href10}>
+                {content.text11}{" "}
                 <span className="arrow-icon" aria-hidden="true">
                   ↗
                 </span>
               </Link>
             </div>
 
-            <p className="editorial-note">
-              Teksti historik është përgatitur për shqyrtim shkencor nga
-              Paulin Zefi.
-            </p>
+            <p className="editorial-note">{content.text12}</p>
           </div>
         </section>
       </main>
 
-      <a
-        className="back-to-top"
-        href="#home"
-        aria-label="Ngjitu në krye të faqes"
-        title="Ngjitu lart"
-      >
-        ↑
-      </a>
+      <BackToTop />
 
       <footer className="site-footer" aria-label="Fundi i faqes">
         <div className="footer-main">
@@ -145,8 +115,8 @@ export default function HistoriPage() {
           <p>
             Një qytet për t’u zbuluar.
             <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes
-            hartave dhe rrëfimeve.
+            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave
+            dhe rrëfimeve.
           </p>
 
           <span className="footer-location">LEZHË · SHQIPËRI</span>
@@ -175,10 +145,7 @@ export default function HistoriPage() {
 
           <p>Për informacion dhe bashkëpunime.</p>
 
-          <a
-            className="footer-email"
-            href="mailto:lezhalezha2024@gmail.com"
-          >
+          <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
             lezhalezha2024@gmail.com{" "}
             <span aria-hidden="true">
               <span className="arrow-icon" aria-hidden="true">
@@ -205,9 +172,7 @@ export default function HistoriPage() {
 
         <div className="footer-bottom">
           <span>© 2026 Lezha Turistike.</span>
-          <span>
-            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
-          </span>
+          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
         </div>
       </footer>
     </>

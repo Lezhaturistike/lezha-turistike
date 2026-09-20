@@ -1,0 +1,64 @@
+{
+  "text1": "PROJEKTI HDZA LEZHA",
+  "text2": "Financuesi dhe institucionet zbatuese",
+  "text3": "Projekti “Hartografimi dhe Dokumentimi i Zonave me Potencial Arkeologjik të Lezhës (Lissus)” bashkon kërkimin shkencor dhe institucionet lokale.",
+  "partners": [
+    {
+      "_key": "partners-1",
+      "role": "FINANCUES",
+      "image": "/logos/akkshi.png",
+      "alt": "Logo AKKSHI",
+      "title": "Agjencia Kombëtare e Kërkimit Shkencor dhe Inovacionit",
+      "subtitle": "",
+      "url": "https://nasri.gov.al/"
+    },
+    {
+      "_key": "partners-2",
+      "role": "ZBATUES",
+      "image": "/logos/akademia.png",
+      "alt": "Logo Akademia e Shkencave e Shqipërisë",
+      "title": "Akademia e Shkencave e Shqipërisë",
+      "subtitle": "Komisioni i Historisë dhe Arkeologjisë",
+      "url": "https://akad.gov.al/"
+    },
+    {
+      "_key": "partners-3",
+      "role": "ZBATUES",
+      "image": "/logos/fgjm.png",
+      "alt": "Logo Fakulteti i Gjeologjisë dhe i Minierave",
+      "title": "Universiteti Politeknik i Tiranës",
+      "subtitle": "Fakulteti i Gjeologjisë dhe i Minierave",
+      "url": "https://fgjm.edu.al/"
+    },
+    {
+      "_key": "partners-4",
+      "role": "ZBATUES",
+      "image": "/logos/bashkia-lezhe.png",
+      "alt": "Logo Bashkia Lezhë",
+      "title": "Bashkia Lezhë",
+      "subtitle": "",
+      "url": "https://lezha.gov.al/"
+    },
+    {
+      "_key": "partners-5",
+      "role": "ZBATUES",
+      "image": "",
+      "alt": "",
+      "title": "Instituti i Arkeologjisë",
+      "subtitle": "Institucion kërkimor në fushën e arkeologjisë",
+      "url": "https://akad.gov.al/historiku-arkeologjia/"
+    },
+    {
+      "_key": "partners-6",
+      "role": "ZBATUES",
+      "image": "",
+      "alt": "",
+      "title": "Drejtoria Rajonale e Arsimit Parauniversitar Lezhë",
+      "subtitle": "",
+      "url": "https://lezhe.arsimiparauniversitar.gov.al/"
+    }
+  ],
+  "text4": "Lista e institucioneve zbatuese dhe financuesi:",
+  "href5": "https://www.intechopen.com/online-first/1238994",
+  "text6": "falënderimet e botimit shkencor të projektit"
+}

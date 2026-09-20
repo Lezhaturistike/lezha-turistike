@@ -1,0 +1,704 @@
+{
+  "home": {
+    "name": "homePage",
+    "title": "Faqja kryesore",
+    "fields": [
+      {
+        "name": "src1",
+        "title": "Fotografia — /images/lezha.jpeg",
+        "type": "image"
+      },
+      {
+        "name": "alt2",
+        "title": "Përshkrimi i fotos — Pamje ajrore e Kalasë së Lezhës dhe qytetit",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Etiketa — LEZHË, SHQIPËRI · HISTORI QË JETON",
+        "type": "string"
+      },
+      {
+        "name": "text4",
+        "title": "Titulli — Një qytet.",
+        "type": "string"
+      },
+      {
+        "name": "text5",
+        "title": "Titulli i theksuar — Shumë histori.",
+        "type": "string"
+      },
+      {
+        "name": "text6",
+        "title": "Teksti — Nga muret e lashta të Kalasë te peizazhi i Kune-Vainit, zbulo Lez",
+        "type": "string"
+      },
+      {
+        "name": "href7",
+        "title": "Lidhja — /destinacione",
+        "type": "url"
+      },
+      {
+        "name": "text8",
+        "title": "Teksti i lidhjes — Zbulo destinacionet",
+        "type": "string"
+      },
+      {
+        "name": "href9",
+        "title": "Lidhja — /webgis",
+        "type": "url"
+      },
+      {
+        "name": "text10",
+        "title": "Teksti i lidhjes — Eksploro hartën 2D",
+        "type": "string"
+      },
+      {
+        "name": "text11",
+        "title": "Etiketa — 01 / 04",
+        "type": "string"
+      },
+      {
+        "name": "text12",
+        "title": "Etiketa — Kalaja e Lezhës · Fotografi nga portali Lezha turistike",
+        "type": "string"
+      },
+      {
+        "name": "text13",
+        "title": "Etiketa — ÇFARË DO TË ZBULOSH?",
+        "type": "string"
+      },
+      {
+        "name": "href14",
+        "title": "Lidhja — /destinacione",
+        "type": "url"
+      },
+      {
+        "name": "text15",
+        "title": "Teksti i lidhjes — Vende historike",
+        "type": "string"
+      },
+      {
+        "name": "href16",
+        "title": "Lidhja — /destinacione#natyre",
+        "type": "url"
+      },
+      {
+        "name": "text17",
+        "title": "Teksti i lidhjes — Natyrë & peizazh",
+        "type": "string"
+      },
+      {
+        "name": "href18",
+        "title": "Lidhja — /webgis",
+        "type": "url"
+      },
+      {
+        "name": "text19",
+        "title": "Teksti i lidhjes — Harta interaktive",
+        "type": "string"
+      },
+      {
+        "name": "text20",
+        "title": "Etiketa — ZBULO SIPAS RUBRIKËS",
+        "type": "string"
+      },
+      {
+        "name": "text21",
+        "title": "Titulli — Zgjidh çfarë të eksplorosh.",
+        "type": "string"
+      },
+      {
+        "name": "text22",
+        "title": "Teksti — Çdo rubrikë hapet në faqen e saj, me fotografi, informacion dhe l",
+        "type": "string"
+      },
+      {
+        "name": "directory",
+        "title": "Rubrikat",
+        "type": "array",
+        "fields": [
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "title": "Lidhja",
+            "type": "url"
+          }
+        ]
+      }
+    ]
+  },
+  "histori": {
+    "name": "historiPage",
+    "title": "Histori",
+    "fields": [
+      {
+        "name": "src1",
+        "title": "Fotografia — /images/kala.jpeg",
+        "type": "image"
+      },
+      {
+        "name": "alt2",
+        "title": "Përshkrimi i fotos — Muret e Kalasë së Lezhës mbi qytet",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Etiketa — HISTORI",
+        "type": "string"
+      },
+      {
+        "name": "text4",
+        "title": "Titulli — Nga Lissusi te",
+        "type": "string"
+      },
+      {
+        "name": "text5",
+        "title": "Titulli i theksuar — Besëlidhja e Lezhës.",
+        "type": "string"
+      },
+      {
+        "name": "text6",
+        "title": "Teksti — Lezha ruan gjurmë të qytetit antik Lissus dhe të fortifikimeve që",
+        "type": "text"
+      },
+      {
+        "name": "text7",
+        "title": "Teksti — Më 2 mars 1444 në Lezhë u mbajt Kuvendi i Lezhës, ku princat shqi",
+        "type": "text"
+      },
+      {
+        "name": "href8",
+        "title": "Lidhja — https://lezha.gov.al/njihni-lezhen/",
+        "type": "url"
+      },
+      {
+        "name": "text9",
+        "title": "Teksti i lidhjes — Lexo historinë në Bashkinë Lezhë",
+        "type": "string"
+      },
+      {
+        "name": "href10",
+        "title": "Lidhja — /arkeologji",
+        "type": "url"
+      },
+      {
+        "name": "text11",
+        "title": "Teksti i lidhjes — Shiko arkeologjinë",
+        "type": "string"
+      },
+      {
+        "name": "text12",
+        "title": "Teksti — Teksti historik është përgatitur për shqyrtim shkencor nga Paulin",
+        "type": "string"
+      }
+    ]
+  },
+  "arkeologji": {
+    "name": "arkeologjiPage",
+    "title": "Arkeologji",
+    "fields": [
+      {
+        "name": "text1",
+        "title": "Etiketa — ARKEOLOGJI",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "title": "Titulli — Gjurmët e Lissusit.",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Teksti — Tre zona që ndihmojnë të lexohet zhvillimi i vendbanimit dhe sist",
+        "type": "string"
+      },
+      {
+        "name": "src4",
+        "title": "Fotografia — /images/akrolisi.jpeg",
+        "type": "image"
+      },
+      {
+        "name": "alt5",
+        "title": "Përshkrimi i fotos — Relievi dhe gjurmët e Akrolisit",
+        "type": "string"
+      },
+      {
+        "name": "archaeology",
+        "title": "Zonat arkeologjike",
+        "type": "array",
+        "fields": [
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "title": "Përshkrimi",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "name": "text6",
+        "title": "Teksti — Burime:",
+        "type": "string"
+      },
+      {
+        "name": "href7",
+        "title": "Lidhja — https://lezha.gov.al/resurset-turistike/",
+        "type": "url"
+      },
+      {
+        "name": "text8",
+        "title": "Teksti i lidhjes — Bashkia Lezhë",
+        "type": "string"
+      },
+      {
+        "name": "href9",
+        "title": "Lidhja — https://www.intechopen.com/online-first/1238994",
+        "type": "url"
+      },
+      {
+        "name": "text10",
+        "title": "Teksti i lidhjes — Studimi i projektit HDZA Lezha",
+        "type": "string"
+      },
+      {
+        "name": "text11",
+        "title": "Teksti — . Përshkrimet historike janë për shqyrtim nga Paulin Zefi.",
+        "type": "string"
+      }
+    ]
+  },
+  "shkenca": {
+    "name": "shkencaPage",
+    "title": "Punime shkencore",
+    "fields": [
+      {
+        "name": "text1",
+        "title": "Etiketa — STUDIME SHKENCORE",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "title": "Titulli — Çfarë është studiuar deri tani?",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Teksti — Dokumentimi bashkon të dhëna nga terreni, modelet 3D, prospektimi",
+        "type": "text"
+      },
+      {
+        "name": "studies",
+        "title": "Studimet",
+        "type": "array",
+        "fields": [
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "title": "Lidhja",
+            "type": "url"
+          },
+          {
+            "name": "linkLabel",
+            "title": "Teksti i lidhjes",
+            "type": "string"
+          },
+          {
+            "name": "caveat",
+            "title": "Shënimi shkencor",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "name": "text4",
+        "title": "Etiketa — PUNIME TË PUBLIKUARA",
+        "type": "string"
+      },
+      {
+        "name": "text5",
+        "title": "Titulli — Lexo kërkimin e plotë",
+        "type": "string"
+      },
+      {
+        "name": "text6",
+        "title": "Teksti — Kapitulli mbi Akrolisin dhe Lissusin përshkruan matjet, përpunimi",
+        "type": "text"
+      },
+      {
+        "name": "href7",
+        "title": "Lidhja — https://www.intechopen.com/online-first/1238994",
+        "type": "url"
+      },
+      {
+        "name": "text8",
+        "title": "Teksti i lidhjes — Kapitulli shkencor",
+        "type": "string"
+      },
+      {
+        "name": "href9",
+        "title": "Lidhja — #video-3d",
+        "type": "url"
+      },
+      {
+        "name": "text10",
+        "title": "Teksti i lidhjes — Shiko videot 3D ↓",
+        "type": "string"
+      },
+      {
+        "name": "text11",
+        "title": "Etiketa — TRASHËGIMIA NË TRE DIMENSIONE",
+        "type": "string"
+      },
+      {
+        "name": "text12",
+        "title": "Titulli — Eksploro modelet 3D",
+        "type": "string"
+      },
+      {
+        "name": "text13",
+        "title": "Teksti — Shiko dokumentimin digjital të Kalasë së Lezhës dhe Akrolisit, dr",
+        "type": "string"
+      },
+      {
+        "name": "videos",
+        "title": "Videot 3D",
+        "type": "array",
+        "fields": [
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "title": "Lidhja",
+            "type": "url"
+          },
+          {
+            "name": "linkLabel",
+            "title": "Teksti i lidhjes",
+            "type": "string"
+          },
+          {
+            "name": "embed",
+            "title": "Adresa e integruar",
+            "type": "url"
+          }
+        ]
+      }
+    ]
+  },
+  "partneret": {
+    "name": "partneretPage",
+    "title": "Partnerët",
+    "fields": [
+      {
+        "name": "text1",
+        "title": "Etiketa — PROJEKTI HDZA LEZHA",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "title": "Titulli — Financuesi dhe institucionet zbatuese",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Teksti — Projekti “Hartografimi dhe Dokumentimi i Zonave me Potencial Arke",
+        "type": "text"
+      },
+      {
+        "name": "partners",
+        "title": "Institucionet",
+        "type": "array",
+        "fields": [
+          {
+            "name": "role",
+            "title": "Roli",
+            "type": "string"
+          },
+          {
+            "name": "image",
+            "title": "Fotografia / logo",
+            "type": "image"
+          },
+          {
+            "name": "alt",
+            "title": "Përshkrimi i fotos",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "subtitle",
+            "title": "Nëntitulli",
+            "type": "string"
+          },
+          {
+            "name": "url",
+            "title": "Lidhja",
+            "type": "url"
+          }
+        ]
+      },
+      {
+        "name": "text4",
+        "title": "Teksti — Lista e institucioneve zbatuese dhe financuesi:",
+        "type": "string"
+      },
+      {
+        "name": "href5",
+        "title": "Lidhja — https://www.intechopen.com/online-first/1238994",
+        "type": "url"
+      },
+      {
+        "name": "text6",
+        "title": "Teksti i lidhjes — falënderimet e botimit shkencor të projektit",
+        "type": "string"
+      }
+    ]
+  },
+  "webgis": {
+    "name": "webgisPage",
+    "title": "Web GIS",
+    "fields": [
+      {
+        "name": "text1",
+        "title": "Etiketa — LEZHA WEB GIS",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "title": "Titulli — Shihe Lezhën nga një kënd tjetër.",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Teksti — Harta 2D, skena 3D dhe rrëfimi interaktiv të çojnë nga një vend t",
+        "type": "string"
+      },
+      {
+        "name": "text4",
+        "title": "Etiketa — WEB GIS · LEZHË",
+        "type": "string"
+      },
+      {
+        "name": "text5",
+        "title": "Teksti — Eksploro vendet në hartë",
+        "type": "string"
+      },
+      {
+        "name": "href6",
+        "title": "Lidhja — https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af",
+        "type": "url"
+      },
+      {
+        "name": "text7",
+        "title": "Teksti i lidhjes — Hap Atlasin Interaktiv",
+        "type": "string"
+      },
+      {
+        "name": "gisLinks",
+        "title": "Lidhjet e hartave",
+        "type": "array",
+        "fields": [
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "title": "Lidhja",
+            "type": "url"
+          }
+        ]
+      },
+      {
+        "name": "text8",
+        "title": "Etiketa — EKSPLORO NË FAQE",
+        "type": "string"
+      },
+      {
+        "name": "text9",
+        "title": "Titulli — Aplikacionet Web GIS",
+        "type": "string"
+      },
+      {
+        "name": "text10",
+        "title": "Teksti — Zgjidh një aplikacion për ta përdorur këtu. Mund ta hapësh edhe n",
+        "type": "string"
+      },
+      {
+        "name": "text11",
+        "title": "Teksti i lidhjes — Hap aplikacionin origjinal",
+        "type": "string"
+      },
+      {
+        "name": "gisApps",
+        "title": "Aplikacionet e integruara",
+        "type": "array",
+        "min": 1,
+        "fields": [
+          {
+            "name": "name",
+            "title": "Emri i skedës",
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "title": "Titulli",
+            "type": "string"
+          },
+          {
+            "name": "embed",
+            "title": "Adresa e integruar",
+            "type": "url"
+          },
+          {
+            "name": "original",
+            "title": "Lidhja origjinale",
+            "type": "url"
+          }
+        ]
+      },
+      {
+        "name": "backgroundImage",
+        "title": "Fotografia e hartës",
+        "type": "image"
+      }
+    ]
+  },
+  "kontakt": {
+    "name": "kontaktPage",
+    "title": "Kontakt",
+    "fields": [
+      {
+        "name": "text1",
+        "title": "Etiketa — PLANIFIKO ZBULIMIN",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "title": "Titulli — Lezha të pret.",
+        "type": "string"
+      },
+      {
+        "name": "text3",
+        "title": "Teksti — Nis eksplorimin nga destinacionet, ose hape hartën për t’i parë n",
+        "type": "string"
+      },
+      {
+        "name": "href4",
+        "title": "Lidhja — /destinacione",
+        "type": "url"
+      },
+      {
+        "name": "text5",
+        "title": "Teksti i lidhjes — Shiko destinacionet",
+        "type": "string"
+      },
+      {
+        "name": "href6",
+        "title": "Lidhja — https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af",
+        "type": "url"
+      },
+      {
+        "name": "text7",
+        "title": "Teksti i lidhjes — Hap hartën interaktive",
+        "type": "string"
+      },
+      {
+        "name": "text8",
+        "title": "Etiketa — KONTAKT NGA PORTALI EKZISTUES",
+        "type": "string"
+      },
+      {
+        "name": "href9",
+        "title": "Lidhja — mailto:lezhalezha2024@gmail.com",
+        "type": "url"
+      },
+      {
+        "name": "text10",
+        "title": "Teksti i lidhjes — lezhalezha2024@gmail.com",
+        "type": "string"
+      },
+      {
+        "name": "text11",
+        "title": "Teksti — Rruga e Kalasë, Lezhë, Shqipëri",
+        "type": "string"
+      },
+      {
+        "name": "href12",
+        "title": "Lidhja — https://lezhaturistike.wordpress.com/",
+        "type": "url"
+      },
+      {
+        "name": "text13",
+        "title": "Teksti i lidhjes — Vizito faqen origjinale",
+        "type": "string"
+      }
+    ]
+  }
+}

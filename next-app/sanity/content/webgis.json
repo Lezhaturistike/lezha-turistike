@@ -1,0 +1,74 @@
+{
+  "text1": "LEZHA WEB GIS",
+  "text2": "Shihe Lezhën nga një kënd tjetër.",
+  "text3": "Harta 2D, skena 3D dhe rrëfimi interaktiv të çojnë nga një vend te tjetri dhe të ndihmojnë të kuptosh si lidhen me qytetin.",
+  "text4": "WEB GIS · LEZHË",
+  "text5": "Eksploro vendet në hartë",
+  "href6": "https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed",
+  "text7": "Hap Atlasin Interaktiv ",
+  "gisLinks": [
+    {
+      "_key": "gisLinks-1",
+      "label": "01",
+      "title": "Map Tour Lezha",
+      "description": "Njihu me pikat e interesit hap pas hapi.",
+      "url": "https://arcg.is/Dnjbe"
+    },
+    {
+      "_key": "gisLinks-2",
+      "label": "02",
+      "title": "Atlasi Interaktiv 2D",
+      "description": "Shiko shtresat tematike dhe eksploro lirshëm.",
+      "url": "https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed"
+    },
+    {
+      "_key": "gisLinks-3",
+      "label": "03",
+      "title": "Lezha 3D",
+      "description": "Shiko monumentet në raport me relievin.",
+      "url": "https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=e08ad84d0eab4a75aa98e3a65e4d7ba6"
+    },
+    {
+      "_key": "gisLinks-4",
+      "label": "04",
+      "title": "StoryMap Lezha Turistike",
+      "description": "Ndiq rrëfimin digjital me harta dhe pamje.",
+      "url": "https://arcg.is/14Tzuv"
+    }
+  ],
+  "text8": "EKSPLORO NË FAQE",
+  "text9": "Aplikacionet Web GIS",
+  "text10": "Zgjidh një aplikacion për ta përdorur këtu. Mund ta hapësh edhe në faqen origjinale.",
+  "text11": "Hap aplikacionin origjinal ",
+  "gisApps": [
+    {
+      "_key": "app-1",
+      "name": "Atlasi 2D",
+      "title": "Atlasi Interaktiv 2D",
+      "embed": "https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed",
+      "original": "https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed"
+    },
+    {
+      "_key": "app-2",
+      "name": "Map Tour",
+      "title": "Map Tour Lezha",
+      "embed": "https://www.arcgis.com/apps/instant/exhibit/index.html?appid=9710eadf5bab46db8512c8bceee18dc8&slide=1",
+      "original": "https://arcg.is/Dnjbe"
+    },
+    {
+      "_key": "app-3",
+      "name": "Lezha 3D",
+      "title": "Lezha 3D",
+      "embed": "https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=e08ad84d0eab4a75aa98e3a65e4d7ba6",
+      "original": "https://www.arcgis.com/apps/instant/3dviewer/index.html?appid=e08ad84d0eab4a75aa98e3a65e4d7ba6"
+    },
+    {
+      "_key": "app-4",
+      "name": "StoryMap",
+      "title": "StoryMap Lezha Turistike",
+      "embed": "https://storymaps.arcgis.com/stories/136af9b1b3be4e889d61f2b25a7f64a4",
+      "original": "https://arcg.is/14Tzuv"
+    }
+  ],
+  "backgroundImage": "/images/akrolisi.jpeg"
+}

@@ -1,6 +1,12 @@
+import { getPageContent } from "@/sanity/lib/content";
+export const dynamic = "force-dynamic";
+import defaults from "@/sanity/content/partneret.json";
+import BackToTop from "@/app/components/BackToTop";
+import MenuButton from "@/app/components/MenuButton";
 import Link from "next/link";
 
-export default function PartneretPage() {
+export default async function PartneretPage() {
+  const content = await getPageContent("partneret", defaults);
   return (
     <>
       <header className="header">
@@ -36,14 +42,7 @@ export default function PartneretPage() {
           <Link href="/kontakt">Kontakt</Link>
         </nav>
 
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav"
-        >
-          Menu <span>☰</span>
-        </button>
+        <MenuButton />
 
         <Link className="nav-cta" href="/webgis">
           Hap hartën{" "}
@@ -59,162 +58,44 @@ export default function PartneretPage() {
         <section id="partneret" className="section partners">
           <div className="section-top">
             <div>
-              <span className="overline">
-                PROJEKTI HDZA LEZHA
-              </span>
+              <span className="overline">{content.text1}</span>
 
-              <h2>
-                Financuesi dhe institucionet zbatuese
-              </h2>
+              <h2>{content.text2}</h2>
             </div>
 
-            <p>
-              Projekti “Hartografimi dhe Dokumentimi i Zonave me
-              Potencial Arkeologjik të Lezhës (Lissus)” bashkon
-              kërkimin shkencor dhe institucionet lokale.
-            </p>
+            <p>{content.text3}</p>
           </div>
 
           <div className="partner-grid">
-            <a
-              className="partner-card funder"
-              href="https://nasri.gov.al/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>FINANCUES</span>
-
-              <img
-                src="/logos/akkshi.png"
-                alt="Logo AKKSHI"
-              />
-
-              <strong>
-                Agjencia Kombëtare e Kërkimit Shkencor dhe
-                Inovacionit
-              </strong>
-            </a>
-
-            <a
-              className="partner-card"
-              href="https://akad.gov.al/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>ZBATUES</span>
-
-              <img
-                src="/logos/akademia.png"
-                alt="Logo Akademia e Shkencave e Shqipërisë"
-              />
-
-              <strong>
-                Akademia e Shkencave e Shqipërisë
-              </strong>
-
-              <small>
-                Komisioni i Historisë dhe Arkeologjisë
-              </small>
-            </a>
-
-            <a
-              className="partner-card"
-              href="https://fgjm.edu.al/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>ZBATUES</span>
-
-              <img
-                src="/logos/fgjm.png"
-                alt="Logo Fakulteti i Gjeologjisë dhe i Minierave"
-              />
-
-              <strong>
-                Universiteti Politeknik i Tiranës
-              </strong>
-
-              <small>
-                Fakulteti i Gjeologjisë dhe i Minierave
-              </small>
-            </a>
-
-            <a
-              className="partner-card"
-              href="https://lezha.gov.al/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>ZBATUES</span>
-
-              <img
-                src="/logos/bashkia-lezhe.png"
-                alt="Logo Bashkia Lezhë"
-              />
-
-              <strong>
-                Bashkia Lezhë
-              </strong>
-            </a>
-
-            <a
-              className="partner-card partner-text"
-              href="https://akad.gov.al/historiku-arkeologjia/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>ZBATUES</span>
-
-              <strong>
-                Instituti i Arkeologjisë
-              </strong>
-
-              <small>
-                Institucion kërkimor në fushën e arkeologjisë
-              </small>
-            </a>
-
-            <a
-              className="partner-card partner-text"
-              href="https://lezhe.arsimiparauniversitar.gov.al/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>ZBATUES</span>
-
-              <strong>
-                Drejtoria Rajonale e Arsimit Parauniversitar Lezhë
-              </strong>
-            </a>
+            {content.partners.map((item) => (
+              <a
+                key={item._key}
+                className={`partner-card${item.role === "FINANCUES" ? " funder" : ""}${!item.image ? " partner-text" : ""}`}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>{item.role}</span>
+                {item.image && <img src={item.image} alt={item.alt} />}
+                <strong>{item.title}</strong>
+                {item.subtitle && <small>{item.subtitle}</small>}
+              </a>
+            ))}
           </div>
 
           <p className="source-line">
-            Lista e institucioneve zbatuese dhe financuesi:{" "}
-            <a
-              href="https://www.intechopen.com/online-first/1238994"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              falënderimet e botimit shkencor të projektit
+            {content.text4}{" "}
+            <a href={content.href5} target="_blank" rel="noopener noreferrer">
+              {content.text6}
             </a>
             .
           </p>
         </section>
       </main>
 
-      <a
-        className="back-to-top"
-        href="#home"
-        aria-label="Ngjitu në krye të faqes"
-        title="Ngjitu lart"
-      >
-        ↑
-      </a>
+      <BackToTop />
 
-      <footer
-        className="site-footer"
-        aria-label="Fundi i faqes"
-      >
+      <footer className="site-footer" aria-label="Fundi i faqes">
         <div className="footer-main">
           <Link
             href="/"
@@ -235,13 +116,11 @@ export default function PartneretPage() {
           <p>
             Një qytet për t’u zbuluar.
             <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura
-            përmes hartave dhe rrëfimeve.
+            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave
+            dhe rrëfimeve.
           </p>
 
-          <span className="footer-location">
-            LEZHË · SHQIPËRI
-          </span>
+          <span className="footer-location">LEZHË · SHQIPËRI</span>
         </div>
 
         <nav
@@ -251,59 +130,33 @@ export default function PartneretPage() {
           <h2>Eksploro</h2>
 
           <div className="footer-links">
-            <Link href="/destinacione">
-              Destinacione
-            </Link>
+            <Link href="/destinacione">Destinacione</Link>
 
-            <Link href="/histori">
-              Histori
-            </Link>
+            <Link href="/histori">Histori</Link>
 
-            <Link href="/arkeologji">
-              Arkeologji
-            </Link>
+            <Link href="/arkeologji">Arkeologji</Link>
 
-            <Link href="/webgis">
-              Web GIS
-            </Link>
+            <Link href="/webgis">Web GIS</Link>
 
-            <Link href="/shkenca">
-              Punime shkencore
-            </Link>
+            <Link href="/shkenca">Punime shkencore</Link>
 
-            <Link href="/kulinari">
-              Kulinari
-            </Link>
+            <Link href="/kulinari">Kulinari</Link>
 
-            <Link href="/partneret">
-              Partnerët
-            </Link>
+            <Link href="/partneret">Partnerët</Link>
 
-            <Link href="/galeri">
-              Galeri
-            </Link>
+            <Link href="/galeri">Galeri</Link>
           </div>
         </nav>
 
         <div className="footer-contact">
-          <h2>
-            Le të lidhemi
-          </h2>
+          <h2>Le të lidhemi</h2>
 
-          <p>
-            Për informacion dhe bashkëpunime.
-          </p>
+          <p>Për informacion dhe bashkëpunime.</p>
 
-          <a
-            className="footer-email"
-            href="mailto:lezhalezha2024@gmail.com"
-          >
+          <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
             lezhalezha2024@gmail.com{" "}
             <span aria-hidden="true">
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </span>
@@ -315,16 +168,10 @@ export default function PartneretPage() {
             Lezhë, Shqipëri
           </p>
 
-          <Link
-            className="footer-contact-link"
-            href="/kontakt"
-          >
+          <Link className="footer-contact-link" href="/kontakt">
             Na kontakto{" "}
             <span aria-hidden="true">
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </span>
@@ -332,13 +179,9 @@ export default function PartneretPage() {
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © 2026 Lezha Turistike.
-          </span>
+          <span>© 2026 Lezha Turistike.</span>
 
-          <span>
-            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
-          </span>
+          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
         </div>
       </footer>
     </>

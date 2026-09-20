@@ -1,6 +1,12 @@
+import { getPageContent } from "@/sanity/lib/content";
+export const dynamic = "force-dynamic";
+import defaults from "@/sanity/content/kontakt.json";
+import BackToTop from "@/app/components/BackToTop";
+import MenuButton from "@/app/components/MenuButton";
 import Link from "next/link";
 
-export default function KontaktPage() {
+export default async function KontaktPage() {
+  const content = await getPageContent("kontakt", defaults);
   return (
     <>
       <header className="header">
@@ -35,14 +41,7 @@ export default function KontaktPage() {
           </Link>
         </nav>
 
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav"
-        >
-          Menu <span>☰</span>
-        </button>
+        <MenuButton />
 
         <Link className="nav-cta" href="/webgis">
           Hap hartën{" "}
@@ -57,42 +56,28 @@ export default function KontaktPage() {
       <main id="home">
         <section id="kontakt" className="contact section">
           <div>
-            <span className="overline">
-              PLANIFIKO ZBULIMIN
-            </span>
+            <span className="overline">{content.text1}</span>
 
-            <h2>Lezha të pret.</h2>
+            <h2>{content.text2}</h2>
 
-            <p>
-              Nis eksplorimin nga destinacionet, ose hape hartën
-              për t’i parë në kontekstin e qytetit.
-            </p>
+            <p>{content.text3}</p>
 
             <div className="contact-actions">
-              <Link
-                className="button dark"
-                href="/destinacione"
-              >
-                Shiko destinacionet{" "}
-                <span
-                  className="arrow-icon"
-                  aria-hidden="true"
-                >
+              <Link className="button dark" href={content.href4}>
+                {content.text5}{" "}
+                <span className="arrow-icon" aria-hidden="true">
                   ↗
                 </span>
               </Link>
 
               <a
                 className="button outline"
-                href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=1528af467dae4f5094a5971b66df0aed"
+                href={content.href6}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hap hartën interaktive{" "}
-                <span
-                  className="arrow-icon"
-                  aria-hidden="true"
-                >
+                {content.text7}{" "}
+                <span className="arrow-icon" aria-hidden="true">
                   ↗
                 </span>
               </a>
@@ -100,34 +85,20 @@ export default function KontaktPage() {
           </div>
 
           <div className="contact-info">
-            <span>
-              KONTAKT NGA PORTALI EKZISTUES
-            </span>
+            <span>{content.text8}</span>
 
-            <a href="mailto:lezhalezha2024@gmail.com">
-              lezhalezha2024@gmail.com{" "}
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+            <a href={content.href9}>
+              {content.text10}{" "}
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </a>
 
-            <p>
-              Rruga e Kalasë, Lezhë, Shqipëri
-            </p>
+            <p>{content.text11}</p>
 
-            <a
-              href="https://lezhaturistike.wordpress.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vizito faqen origjinale{" "}
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+            <a href={content.href12} target="_blank" rel="noopener noreferrer">
+              {content.text13}{" "}
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </a>
@@ -135,19 +106,9 @@ export default function KontaktPage() {
         </section>
       </main>
 
-      <a
-        className="back-to-top"
-        href="#home"
-        aria-label="Ngjitu në krye të faqes"
-        title="Ngjitu lart"
-      >
-        ↑
-      </a>
+      <BackToTop />
 
-      <footer
-        className="site-footer"
-        aria-label="Fundi i faqes"
-      >
+      <footer className="site-footer" aria-label="Fundi i faqes">
         <div className="footer-main">
           <Link
             href="/"
@@ -168,13 +129,11 @@ export default function KontaktPage() {
           <p>
             Një qytet për t’u zbuluar.
             <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura
-            përmes hartave dhe rrëfimeve.
+            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave
+            dhe rrëfimeve.
           </p>
 
-          <span className="footer-location">
-            LEZHË · SHQIPËRI
-          </span>
+          <span className="footer-location">LEZHË · SHQIPËRI</span>
         </div>
 
         <nav
@@ -184,57 +143,33 @@ export default function KontaktPage() {
           <h2>Eksploro</h2>
 
           <div className="footer-links">
-            <Link href="/destinacione">
-              Destinacione
-            </Link>
+            <Link href="/destinacione">Destinacione</Link>
 
-            <Link href="/histori">
-              Histori
-            </Link>
+            <Link href="/histori">Histori</Link>
 
-            <Link href="/arkeologji">
-              Arkeologji
-            </Link>
+            <Link href="/arkeologji">Arkeologji</Link>
 
-            <Link href="/webgis">
-              Web GIS
-            </Link>
+            <Link href="/webgis">Web GIS</Link>
 
-            <Link href="/shkenca">
-              Punime shkencore
-            </Link>
+            <Link href="/shkenca">Punime shkencore</Link>
 
-            <Link href="/kulinari">
-              Kulinari
-            </Link>
+            <Link href="/kulinari">Kulinari</Link>
 
-            <Link href="/partneret">
-              Partnerët
-            </Link>
+            <Link href="/partneret">Partnerët</Link>
 
-            <Link href="/galeri">
-              Galeri
-            </Link>
+            <Link href="/galeri">Galeri</Link>
           </div>
         </nav>
 
         <div className="footer-contact">
           <h2>Le të lidhemi</h2>
 
-          <p>
-            Për informacion dhe bashkëpunime.
-          </p>
+          <p>Për informacion dhe bashkëpunime.</p>
 
-          <a
-            className="footer-email"
-            href="mailto:lezhalezha2024@gmail.com"
-          >
+          <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
             lezhalezha2024@gmail.com{" "}
             <span aria-hidden="true">
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </span>
@@ -246,16 +181,10 @@ export default function KontaktPage() {
             Lezhë, Shqipëri
           </p>
 
-          <Link
-            className="footer-contact-link"
-            href="/kontakt"
-          >
+          <Link className="footer-contact-link" href="/kontakt">
             Na kontakto{" "}
             <span aria-hidden="true">
-              <span
-                className="arrow-icon"
-                aria-hidden="true"
-              >
+              <span className="arrow-icon" aria-hidden="true">
                 ↗
               </span>
             </span>
@@ -263,13 +192,9 @@ export default function KontaktPage() {
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © 2026 Lezha Turistike.
-          </span>
+          <span>© 2026 Lezha Turistike.</span>
 
-          <span>
-            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
-          </span>
+          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
         </div>
       </footer>
     </>

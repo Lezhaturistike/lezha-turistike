@@ -1,0 +1,89 @@
+{
+  "src1": "/images/lezha.jpeg",
+  "alt2": "Pamje ajrore e Kalasë së Lezhës dhe qytetit",
+  "text3": "LEZHË, SHQIPËRI · HISTORI QË JETON",
+  "text4": "Një qytet.",
+  "text5": "Shumë histori.",
+  "text6": "Nga muret e lashta të Kalasë te peizazhi i Kune-Vainit, zbulo Lezhën nëpërmjet vendeve, rrëfimeve dhe hartave ndërvepruese.",
+  "href7": "/destinacione",
+  "text8": "Zbulo destinacionet",
+  "href9": "/webgis",
+  "text10": "Eksploro hartën 2D",
+  "text11": "01 / 04",
+  "text12": "Kalaja e Lezhës · Fotografi nga portali Lezha turistike",
+  "text13": "ÇFARË DO TË ZBULOSH?",
+  "href14": "/destinacione",
+  "text15": "Vende historike",
+  "href16": "/destinacione#natyre",
+  "text17": "Natyrë & peizazh",
+  "href18": "/webgis",
+  "text19": "Harta interaktive",
+  "text20": "ZBULO SIPAS RUBRIKËS",
+  "text21": "Zgjidh çfarë të eksplorosh.",
+  "text22": "Çdo rubrikë hapet në faqen e saj, me fotografi, informacion dhe lidhje për të vazhduar kërkimin.",
+  "directory": [
+    {
+      "_key": "directory-1",
+      "label": "01 / LEZHA",
+      "title": "Destinacione",
+      "description": "Kalaja, memoriali dhe peizazhet natyrore.",
+      "url": "/destinacione"
+    },
+    {
+      "_key": "directory-2",
+      "label": "02 / LEZHA",
+      "title": "Galeri",
+      "description": "Fotografi nga vendet që rrëfejnë Lezhën.",
+      "url": "/galeri"
+    },
+    {
+      "_key": "directory-3",
+      "label": "03 / LEZHA",
+      "title": "Histori",
+      "description": "Ngjarjet dhe monumentet në kujtesën e qytetit.",
+      "url": "/histori"
+    },
+    {
+      "_key": "directory-4",
+      "label": "04 / LEZHA",
+      "title": "Arkeologji",
+      "description": "Gjurmët e Lissusit dhe të Akrolisit.",
+      "url": "/arkeologji"
+    },
+    {
+      "_key": "directory-5",
+      "label": "05 / LEZHA",
+      "title": "Web GIS",
+      "description": "Harta 2D, skena 3D dhe rrëfime interaktive.",
+      "url": "/webgis"
+    },
+    {
+      "_key": "directory-6",
+      "label": "06 / LEZHA",
+      "title": "Studime shkencore",
+      "description": "Dokumentimi, gjeofizika dhe videot 3D.",
+      "url": "/shkenca"
+    },
+    {
+      "_key": "directory-7",
+      "label": "07 / LEZHA",
+      "title": "Kulinari",
+      "description": "Shijet dhe prodhimet e trevës.",
+      "url": "/kulinari"
+    },
+    {
+      "_key": "directory-8",
+      "label": "08 / LEZHA",
+      "title": "Partnerët",
+      "description": "Institucionet që mbështesin projektin.",
+      "url": "/partneret"
+    },
+    {
+      "_key": "directory-9",
+      "label": "09 / LEZHA",
+      "title": "Kontakt",
+      "description": "Lidhu me ne dhe planifiko vizitën.",
+      "url": "/kontakt"
+    }
+  ]
+}

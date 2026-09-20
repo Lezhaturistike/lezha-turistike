@@ -1,0 +1,64 @@
+{
+  "text1": "STUDIME SHKENCORE",
+  "text2": "Çfarë është studiuar deri tani?",
+  "text3": "Dokumentimi bashkon të dhëna nga terreni, modelet 3D, prospektimi gjeofizik dhe paraqitja Web GIS. Interpretimet arkeologjike lidhen me burimet e botuara.",
+  "studies": [
+    {
+      "_key": "studies-1",
+      "label": "01 / MATJE & MODELIM",
+      "title": "Dron, LiDAR dhe skanim lazer",
+      "description": "Fotogrametria dhe LiDAR-i u përdorën për të dokumentuar relievin, muret dhe strukturat. Nga përpunimi u përftuan modele digjitale të terrenit dhe pamje 3D për analizë e paraqitje.",
+      "url": "https://www.intechopen.com/online-first/1238994",
+      "linkLabel": "Lexo studimin",
+      "caveat": ""
+    },
+    {
+      "_key": "studies-2",
+      "label": "02 / PROSPEKTIM",
+      "title": "Studimet gjeofizike",
+      "description": "Pranë Vendvarrimit të Skënderbeut dhe Kalasë së Sipërme u kryen matje gjeoelektrike. Hartat e rezistivitetit në thellësi të ndryshme treguan anomali me interes për kërkimin arkeologjik.",
+      "url": "https://www.intechopen.com/online-first/1238994",
+      "linkLabel": "Metoda dhe rezultatet",
+      "caveat": "Anomalia nuk konfirmon vetë një mur ose objekt; kërkohen verifikime arkeologjike në terren."
+    },
+    {
+      "_key": "studies-3",
+      "label": "03 / HARTA & PUBLIKIM",
+      "title": "GIS dhe Web GIS",
+      "description": "Hartat e vjetra, matjet në terren dhe shtresat tematike u organizuan në GIS. Map Tour, skena 3D, Atlasi dhe StoryMap-i e bëjnë këtë dokumentim të konsultueshëm.",
+      "url": "/webgis",
+      "linkLabel": "Hap aplikacionet",
+      "caveat": ""
+    }
+  ],
+  "text4": "PUNIME TË PUBLIKUARA",
+  "text5": "Lexo kërkimin e plotë",
+  "text6": "Kapitulli mbi Akrolisin dhe Lissusin përshkruan matjet, përpunimin dhe prospektimin; videot më poshtë paraqesin modelet 3D të Kalasë dhe Akrolisit.",
+  "href7": "https://www.intechopen.com/online-first/1238994",
+  "text8": "Kapitulli shkencor",
+  "href9": "#video-3d",
+  "text10": "Shiko videot 3D ↓",
+  "text11": "TRASHËGIMIA NË TRE DIMENSIONE",
+  "text12": "Eksploro modelet 3D",
+  "text13": "Shiko dokumentimin digjital të Kalasë së Lezhës dhe Akrolisit, drejtpërdrejt këtu.",
+  "videos": [
+    {
+      "_key": "videos-1",
+      "label": "01 / KALAJA",
+      "title": "Modeli 3D i Kalasë së Lezhës",
+      "description": "Dokumentimi 3D · Jeton Pekmezi",
+      "url": "https://www.youtube.com/watch?v=JPuSdBiFkgM",
+      "linkLabel": "Shiko në YouTube",
+      "embed": "https://www.youtube-nocookie.com/embed/JPuSdBiFkgM?rel=0"
+    },
+    {
+      "_key": "videos-2",
+      "label": "02 / AKROLISI",
+      "title": "Modeli 3D i Akrolisit, Lezhë",
+      "description": "Dokumentimi 3D · Jeton Pekmezi",
+      "url": "https://www.youtube.com/watch?v=UuHWCk8ZzRM",
+      "linkLabel": "Shiko në YouTube",
+      "embed": "https://www.youtube-nocookie.com/embed/UuHWCk8ZzRM?rel=0"
+    }
+  ]
+}

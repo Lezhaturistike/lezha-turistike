@@ -1,6 +1,12 @@
+import { getPageContent } from "@/sanity/lib/content";
+export const dynamic = "force-dynamic";
+import defaults from "@/sanity/content/arkeologji.json";
+import BackToTop from "@/app/components/BackToTop";
+import MenuButton from "@/app/components/MenuButton";
 import Link from "next/link";
 
-export default function ArkeologjiPage() {
+export default async function ArkeologjiPage() {
+  const content = await getPageContent("arkeologji", defaults);
   return (
     <>
       <header className="header">
@@ -33,14 +39,7 @@ export default function ArkeologjiPage() {
           <Link href="/kontakt">Kontakt</Link>
         </nav>
 
-        <button
-          className="menu-btn"
-          type="button"
-          aria-expanded="false"
-          aria-controls="nav"
-        >
-          Menu <span>☰</span>
-        </button>
+        <MenuButton />
 
         <Link className="nav-cta" href="/webgis">
           Hap hartën{" "}
@@ -56,92 +55,42 @@ export default function ArkeologjiPage() {
         <section id="arkeologji" className="section archaeology">
           <div className="section-top">
             <div>
-              <span className="overline">ARKEOLOGJI</span>
-              <h2>Gjurmët e Lissusit.</h2>
+              <span className="overline">{content.text1}</span>
+              <h2>{content.text2}</h2>
             </div>
 
-            <p>
-              Tre zona që ndihmojnë të lexohet zhvillimi i vendbanimit
-              dhe sistemi i fortifikimit në raport me terrenin.
-            </p>
+            <p>{content.text3}</p>
           </div>
 
           <div className="archaeology-intro">
-            <img
-              loading="lazy"
-              src="/images/akrolisi.jpeg"
-              alt="Relievi dhe gjurmët e Akrolisit"
-            />
+            <img loading="lazy" src={content.src4} alt={content.alt5} />
           </div>
 
           <div className="archaeology-grid">
-            <article>
-              <span>01 / LARTËSIA</span>
-
-              <h3>Akrolisi</h3>
-
-              <p>
-                Fortifikim i hershëm në Malin e Shëlbuemit. Gjurmët e
-                mureve dhe relievi kërkojnë lexim të lidhur me vrojtimet
-                dhe dokumentimin arkeologjik.
-              </p>
-            </article>
-
-            <article>
-              <span>02 / KODRA</span>
-
-              <h3>Kalaja dhe Akropoli</h3>
-
-              <p>
-                Fortifikimet e pjesës së sipërme mbajnë dëshmi të
-                periudhave të ndryshme. Fotogrametria dhe LiDAR-i
-                ndihmojnë dokumentimin e mureve e të terrenit.
-              </p>
-            </article>
-
-            <article>
-              <span>03 / QYTETI</span>
-
-              <h3>Lissusi i poshtëm</h3>
-
-              <p>
-                Zona përreth Vendvarrimit lidhet me shtrirjen e qytetit
-                antik. Prospektimet gjeoelektrike kanë evidentuar
-                anomali që kërkojnë vlerësim me gërmime.
-              </p>
-            </article>
+            {content.archaeology.map((item) => (
+              <article key={item._key}>
+                <span>{item.label}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
           </div>
 
           <p className="source-line">
-            Burime:{" "}
-            <a
-              href="https://lezha.gov.al/resurset-turistike/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Bashkia Lezhë
+            {content.text6}{" "}
+            <a href={content.href7} target="_blank" rel="noopener noreferrer">
+              {content.text8}
             </a>
             {" · "}
-            <a
-              href="https://www.intechopen.com/online-first/1238994"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Studimi i projektit HDZA Lezha
+            <a href={content.href9} target="_blank" rel="noopener noreferrer">
+              {content.text10}
             </a>
-            . Përshkrimet historike janë për shqyrtim nga Paulin Zefi.
+            {content.text11}
           </p>
         </section>
       </main>
 
-      <a
-        className="back-to-top"
-        href="#home"
-        aria-label="Ngjitu në krye të faqes"
-        title="Ngjitu lart"
-      >
-        ↑
-      </a>
+      <BackToTop />
 
       <footer className="site-footer" aria-label="Fundi i faqes">
         <div className="footer-main">
@@ -164,13 +113,11 @@ export default function ArkeologjiPage() {
           <p>
             Një qytet për t’u zbuluar.
             <br />
-            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes
-            hartave dhe rrëfimeve.
+            Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave
+            dhe rrëfimeve.
           </p>
 
-          <span className="footer-location">
-            LEZHË · SHQIPËRI
-          </span>
+          <span className="footer-location">LEZHË · SHQIPËRI</span>
         </div>
 
         <nav
@@ -196,10 +143,7 @@ export default function ArkeologjiPage() {
 
           <p>Për informacion dhe bashkëpunime.</p>
 
-          <a
-            className="footer-email"
-            href="mailto:lezhalezha2024@gmail.com"
-          >
+          <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
             lezhalezha2024@gmail.com{" "}
             <span aria-hidden="true">
               <span className="arrow-icon" aria-hidden="true">
@@ -227,9 +171,7 @@ export default function ArkeologjiPage() {
         <div className="footer-bottom">
           <span>© 2026 Lezha Turistike.</span>
 
-          <span>
-            Njih historinë. Eksploro natyrën. Zbulo Lezhën.
-          </span>
+          <span>Njih historinë. Eksploro natyrën. Zbulo Lezhën.</span>
         </div>
       </footer>
     </>

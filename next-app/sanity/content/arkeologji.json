@@ -1,0 +1,33 @@
+{
+  "text1": "ARKEOLOGJI",
+  "text2": "Gjurmët e Lissusit.",
+  "text3": "Tre zona që ndihmojnë të lexohet zhvillimi i vendbanimit dhe sistemi i fortifikimit në raport me terrenin.",
+  "src4": "/images/akrolisi.jpeg",
+  "alt5": "Relievi dhe gjurmët e Akrolisit",
+  "archaeology": [
+    {
+      "_key": "archaeology-1",
+      "label": "01 / LARTËSIA",
+      "title": "Akrolisi",
+      "description": "Fortifikim i hershëm në Malin e Shëlbuemit. Gjurmët e mureve dhe relievi kërkojnë lexim të lidhur me vrojtimet dhe dokumentimin arkeologjik."
+    },
+    {
+      "_key": "archaeology-2",
+      "label": "02 / KODRA",
+      "title": "Kalaja dhe Akropoli",
+      "description": "Fortifikimet e pjesës së sipërme mbajnë dëshmi të periudhave të ndryshme. Fotogrametria dhe LiDAR-i ndihmojnë dokumentimin e mureve e të terrenit."
+    },
+    {
+      "_key": "archaeology-3",
+      "label": "03 / QYTETI",
+      "title": "Lissusi i poshtëm",
+      "description": "Zona përreth Vendvarrimit lidhet me shtrirjen e qytetit antik. Prospektimet gjeoelektrike kanë evidentuar anomali që kërkojnë vlerësim me gërmime."
+    }
+  ],
+  "text6": "Burime:",
+  "href7": "https://lezha.gov.al/resurset-turistike/",
+  "text8": "Bashkia Lezhë",
+  "href9": "https://www.intechopen.com/online-first/1238994",
+  "text10": "Studimi i projektit HDZA Lezha",
+  "text11": ". Përshkrimet historike janë për shqyrtim nga Paulin Zefi."
+}
