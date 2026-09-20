@@ -54,11 +54,6 @@
         "type": "string"
       },
       {
-        "name": "text12",
-        "title": "Etiketa — Kalaja e Lezhës · Fotografi nga portali Lezha turistike",
-        "type": "string"
-      },
-      {
         "name": "heroSlides",
         "title": "Fotografitë e ballinës",
         "type": "array",
