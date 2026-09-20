@@ -227,7 +227,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             <Link href={localizedPath("/arkeologji", locale)}>{t.archaeology}</Link>
             <Link href={localizedPath("/webgis", locale)}>Web GIS</Link>
             <Link href={localizedPath("/shkenca", locale)}>{t.science}</Link>
-            <Link href={localizedPath("/kulinari", locale)}>{t.cuisine}</Link>
+            <Link href={localizedPath("/kulinari", locale)}>{t.culinary}</Link>
             <Link href={localizedPath("/partneret", locale)}>{t.partners}</Link>
             <Link href={localizedPath("/galeri", locale)}>{t.gallery}</Link>
           </div>
