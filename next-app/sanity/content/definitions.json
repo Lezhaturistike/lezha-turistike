@@ -14,8 +14,18 @@
         "type": "string"
       },
       {
+        "name": "alt2En",
+        "title": "Përshkrimi i fotos — Pamje ajrore e Kalasë së Lezhës dhe qytetit (EN)",
+        "type": "string"
+      },
+      {
         "name": "text3",
         "title": "Etiketa — LEZHË, SHQIPËRI · HISTORI QË JETON",
+        "type": "string"
+      },
+      {
+        "name": "text3En",
+        "title": "Etiketa — LEZHË, SHQIPËRI · HISTORI QË JETON (EN)",
         "type": "string"
       },
       {
@@ -24,13 +34,28 @@
         "type": "string"
       },
       {
+        "name": "text4En",
+        "title": "Titulli — Një qytet. (EN)",
+        "type": "string"
+      },
+      {
         "name": "text5",
         "title": "Titulli i theksuar — Shumë histori.",
         "type": "string"
       },
       {
+        "name": "text5En",
+        "title": "Titulli i theksuar — Shumë histori. (EN)",
+        "type": "string"
+      },
+      {
         "name": "text6",
         "title": "Teksti — Nga muret e lashta të Kalasë te peizazhi i Kune-Vainit, zbulo Lez",
+        "type": "string"
+      },
+      {
+        "name": "text6En",
+        "title": "Teksti — Nga muret e lashta të Kalasë te peizazhi i Kune-Vainit, zbulo Lez (EN)",
         "type": "string"
       },
       {
@@ -44,6 +69,11 @@
         "type": "string"
       },
       {
+        "name": "text8En",
+        "title": "Teksti i lidhjes — Zbulo destinacionet (EN)",
+        "type": "string"
+      },
+      {
         "name": "href9",
         "title": "Lidhja — /webgis",
         "type": "url"
@@ -51,6 +81,11 @@
       {
         "name": "text10",
         "title": "Teksti i lidhjes — Eksploro hartën 2D",
+        "type": "string"
+      },
+      {
+        "name": "text10En",
+        "title": "Teksti i lidhjes — Eksploro hartën 2D (EN)",
         "type": "string"
       },
       {
@@ -69,8 +104,18 @@
             "type": "string"
           },
           {
+            "name": "altEn",
+            "title": "Përshkrimi i fotos (EN)",
+            "type": "string"
+          },
+          {
             "name": "caption",
             "title": "Etiketa / përshkrimi poshtë",
+            "type": "string"
+          },
+          {
+            "name": "captionEn",
+            "title": "Etiketa / përshkrimi poshtë (EN)",
             "type": "string"
           }
         ]
@@ -78,6 +123,11 @@
       {
         "name": "text13",
         "title": "Etiketa — ÇFARË DO TË ZBULOSH?",
+        "type": "string"
+      },
+      {
+        "name": "text13En",
+        "title": "Etiketa — ÇFARË DO TË ZBULOSH? (EN)",
         "type": "string"
       },
       {
@@ -91,6 +141,11 @@
         "type": "string"
       },
       {
+        "name": "text15En",
+        "title": "Teksti i lidhjes — Vende historike (EN)",
+        "type": "string"
+      },
+      {
         "name": "href16",
         "title": "Lidhja — /destinacione#natyre",
         "type": "url"
@@ -98,6 +153,11 @@
       {
         "name": "text17",
         "title": "Teksti i lidhjes — Natyrë & peizazh",
+        "type": "string"
+      },
+      {
+        "name": "text17En",
+        "title": "Teksti i lidhjes — Natyrë & peizazh (EN)",
         "type": "string"
       },
       {
@@ -111,8 +171,18 @@
         "type": "string"
       },
       {
+        "name": "text19En",
+        "title": "Teksti i lidhjes — Harta interaktive (EN)",
+        "type": "string"
+      },
+      {
         "name": "text20",
         "title": "Etiketa — ZBULO SIPAS RUBRIKËS",
+        "type": "string"
+      },
+      {
+        "name": "text20En",
+        "title": "Etiketa — ZBULO SIPAS RUBRIKËS (EN)",
         "type": "string"
       },
       {
@@ -121,8 +191,18 @@
         "type": "string"
       },
       {
+        "name": "text21En",
+        "title": "Titulli — Zgjidh çfarë të eksplorosh. (EN)",
+        "type": "string"
+      },
+      {
         "name": "text22",
         "title": "Teksti — Çdo rubrikë hapet në faqen e saj, me fotografi, informacion dhe l",
+        "type": "string"
+      },
+      {
+        "name": "text22En",
+        "title": "Teksti — Çdo rubrikë hapet në faqen e saj, me fotografi, informacion dhe l (EN)",
         "type": "string"
       },
       {
@@ -136,13 +216,28 @@
             "type": "string"
           },
           {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
             "name": "title",
             "title": "Titulli",
             "type": "string"
           },
           {
+            "name": "titleEn",
+            "title": "Titulli (EN)",
+            "type": "string"
+          },
+          {
             "name": "description",
             "title": "Përshkrimi",
+            "type": "text"
+          },
+          {
+            "name": "descriptionEn",
+            "title": "Përshkrimi (EN)",
             "type": "text"
           },
           {
