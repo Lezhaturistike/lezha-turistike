@@ -335,3 +335,47 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
   .nav.open{display:flex;max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain}
   .nav a{padding:9px;font-size:.92rem}
 }
+
+/* Let the hero grow with its text; reserve a separate row for photo captions. */
+.hero {
+  height:auto;
+  min-height:690px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:36px;
+  padding:clamp(64px,6vw,96px) clamp(28px,8vw,135px) 28px;
+  overflow:hidden;
+}
+.hero-content {
+  width:100%;
+  max-width:800px;
+  padding:0;
+}
+.hero h1 {
+  font-size:clamp(3.5rem,6vw,6.5rem);
+  overflow-wrap:break-word;
+}
+.hero-actions {flex-wrap:wrap}
+.hero-count {
+  position:relative;
+  inset:auto;
+  width:100%;
+  justify-content:flex-end;
+  flex-shrink:0;
+}
+.hero .hero-count .hero-slide-caption {
+  display:block;
+  max-width:min(100%,36rem);
+  text-align:right;
+  overflow-wrap:anywhere;
+  line-height:1.5;
+  text-shadow:0 1px 4px #000;
+}
+@media(max-width:850px) {
+  .hero {min-height:630px;padding:64px 28px 24px;gap:32px}
+}
+@media(max-width:620px) {
+  .hero {min-height:660px;padding:56px 23px 24px}
+  .hero h1 {font-size:clamp(2.75rem,11vw,3.6rem)}
+}
