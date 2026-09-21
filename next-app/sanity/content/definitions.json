@@ -1174,5 +1174,227 @@
         "type": "string"
       }
     ]
+  },
+  "privacy": {
+    "name": "privacyPage",
+    "title": "Politika e Privatësisë",
+    "fields": [
+      {
+        "name": "eyebrow",
+        "title": "Etiketa",
+        "type": "string"
+      },
+      {
+        "name": "eyebrowEn",
+        "title": "Etiketa (EN)",
+        "type": "string"
+      },
+      {
+        "name": "title",
+        "title": "Titulli",
+        "type": "string"
+      },
+      {
+        "name": "titleEn",
+        "title": "Titulli (EN)",
+        "type": "string"
+      },
+      {
+        "name": "intro",
+        "title": "Hyrja",
+        "type": "text"
+      },
+      {
+        "name": "introEn",
+        "title": "Hyrja (EN)",
+        "type": "text"
+      },
+      {
+        "name": "updated",
+        "title": "Data e përditësimit",
+        "type": "string"
+      },
+      {
+        "name": "updatedEn",
+        "title": "Data e përditësimit (EN)",
+        "type": "string"
+      },
+      {
+        "name": "sections",
+        "title": "Seksionet",
+        "type": "array",
+        "min": 1,
+        "fields": [
+          {
+            "name": "heading",
+            "title": "Titulli i seksionit",
+            "type": "string"
+          },
+          {
+            "name": "headingEn",
+            "title": "Titulli i seksionit (EN)",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "title": "Përmbajtja",
+            "type": "text"
+          },
+          {
+            "name": "bodyEn",
+            "title": "Përmbajtja (EN)",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "name": "termsPage",
+    "title": "Kushtet e Përdorimit",
+    "fields": [
+      {
+        "name": "eyebrow",
+        "title": "Etiketa",
+        "type": "string"
+      },
+      {
+        "name": "eyebrowEn",
+        "title": "Etiketa (EN)",
+        "type": "string"
+      },
+      {
+        "name": "title",
+        "title": "Titulli",
+        "type": "string"
+      },
+      {
+        "name": "titleEn",
+        "title": "Titulli (EN)",
+        "type": "string"
+      },
+      {
+        "name": "intro",
+        "title": "Hyrja",
+        "type": "text"
+      },
+      {
+        "name": "introEn",
+        "title": "Hyrja (EN)",
+        "type": "text"
+      },
+      {
+        "name": "updated",
+        "title": "Data e përditësimit",
+        "type": "string"
+      },
+      {
+        "name": "updatedEn",
+        "title": "Data e përditësimit (EN)",
+        "type": "string"
+      },
+      {
+        "name": "sections",
+        "title": "Seksionet",
+        "type": "array",
+        "min": 1,
+        "fields": [
+          {
+            "name": "heading",
+            "title": "Titulli i seksionit",
+            "type": "string"
+          },
+          {
+            "name": "headingEn",
+            "title": "Titulli i seksionit (EN)",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "title": "Përmbajtja",
+            "type": "text"
+          },
+          {
+            "name": "bodyEn",
+            "title": "Përmbajtja (EN)",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "cookies": {
+    "name": "cookiesPage",
+    "title": "Cookie Policy",
+    "fields": [
+      {
+        "name": "eyebrow",
+        "title": "Etiketa",
+        "type": "string"
+      },
+      {
+        "name": "eyebrowEn",
+        "title": "Etiketa (EN)",
+        "type": "string"
+      },
+      {
+        "name": "title",
+        "title": "Titulli",
+        "type": "string"
+      },
+      {
+        "name": "titleEn",
+        "title": "Titulli (EN)",
+        "type": "string"
+      },
+      {
+        "name": "intro",
+        "title": "Hyrja",
+        "type": "text"
+      },
+      {
+        "name": "introEn",
+        "title": "Hyrja (EN)",
+        "type": "text"
+      },
+      {
+        "name": "updated",
+        "title": "Data e përditësimit",
+        "type": "string"
+      },
+      {
+        "name": "updatedEn",
+        "title": "Data e përditësimit (EN)",
+        "type": "string"
+      },
+      {
+        "name": "sections",
+        "title": "Seksionet",
+        "type": "array",
+        "min": 1,
+        "fields": [
+          {
+            "name": "heading",
+            "title": "Titulli i seksionit",
+            "type": "string"
+          },
+          {
+            "name": "headingEn",
+            "title": "Titulli i seksionit (EN)",
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "title": "Përmbajtja",
+            "type": "text"
+          },
+          {
+            "name": "bodyEn",
+            "title": "Përmbajtja (EN)",
+            "type": "text"
+          }
+        ]
+      }
+    ]
   }
 }
