@@ -1,4 +1,5 @@
 "use client";
+import SiteFooter from "@/app/components/SiteFooter";
 import LocaleHeader from "@/app/components/LocaleHeader";
 
 import defaults from "@/sanity/content/home.json";
@@ -130,79 +131,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       <BackToTop locale={locale} />
 
       {/* FOOTER */}
-      <footer className="site-footer" aria-label="Fundi i faqes">
-        <div className="footer-main">
-          <Link
-            href={locale === "en" ? "/en#home" : "/#home"}
-            className="logo"
-            aria-label="Lezha Turistike, faqja kryesore"
-          >
-            <span className="logo-mark">
-              L<span>✦</span>
-            </span>
-
-            <span>
-              LEZHA
-              <br />
-              <b>TURISTIKE</b>
-            </span>
-          </Link>
-
-          <p>{t.footerText.split("\n").map((line, i) => <span key={line}>{i > 0 && <br />}{line}</span>)}</p>
-
-          <span className="footer-location">{t.location}</span>
-        </div>
-
-        <nav
-          className="footer-navigation"
-          aria-label="Navigimi në fund të faqes"
-        >
-          <h2>{t.explore}</h2>
-
-          <div className="footer-links">
-            <Link href={localizedPath("/destinacione", locale)}>{t.destinations}</Link>
-            <Link href={localizedPath("/histori", locale)}>{t.history}</Link>
-            <Link href={localizedPath("/arkeologji", locale)}>{t.archaeology}</Link>
-            <Link href={localizedPath("/webgis", locale)}>Web GIS</Link>
-            <Link href={localizedPath("/shkenca", locale)}>{t.science}</Link>
-            <Link href={localizedPath("/kulinari", locale)}>{t.culinary}</Link>
-            <Link href={localizedPath("/partneret", locale)}>{t.partners}</Link>
-            <Link href={localizedPath("/galeri", locale)}>{t.gallery}</Link>
-          </div>
-        </nav>
-
-        <div className="footer-contact">
-          <h2>{t.connect}</h2>
-
-          <p>{t.info}</p>
-
-          <a className="footer-email" href="mailto:lezhalezha2024@gmail.com">
-            lezhalezha2024@gmail.com{" "}
-            <span aria-hidden="true">
-              <span className="arrow-icon" aria-hidden="true">
-                ↗
-              </span>
-            </span>
-          </a>
-
-          <p>{t.address.split("\n").map((line, i) => <span key={line}>{i > 0 && <br />}{line}</span>)}</p>
-
-          <Link className="footer-contact-link" href={localizedPath("/kontakt", locale)}>
-            {t.contactUs}{" "}
-            <span aria-hidden="true">
-              <span className="arrow-icon" aria-hidden="true">
-                ↗
-              </span>
-            </span>
-          </Link>
-        </div>
-
-        <div className="footer-bottom">
-          <span>© 2026 Lezha Turistike.</span>
-
-          <span>{t.motto}</span>
-        </div>
-      </footer>
+      <SiteFooter locale={locale} />
     </>
   );
 }
