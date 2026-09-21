@@ -645,3 +645,27 @@ html[data-theme="dark"] .place-dialog .button.outline{
   border-color:#607a73;
   color:#edf2ef;
 }
+
+
+/* Culinary modal detail panels in dark mode */
+html[data-theme="dark"] .place-dialog .culinary-details div{
+  background:#19302c;
+  border:1px solid #294740;
+}
+html[data-theme="dark"] .place-dialog .culinary-details b{
+  color:#d69b64;
+}
+html[data-theme="dark"] .place-dialog .culinary-details span,
+html[data-theme="dark"] .place-dialog .culinary-details a{
+  color:#c0cec8;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions .button.dark{
+  background:#edbd85;
+  color:#153b38;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions>a:not(.button){
+  color:#edbd85;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions>a:not(.button):hover{
+  color:#f4d3aa;
+}
