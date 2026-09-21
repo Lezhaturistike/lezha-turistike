@@ -420,3 +420,15 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
     white-space: normal;
   }
 }
+
+
+/* Research team photo framing: taller portraits without changing card effects. */
+@media (min-width: 621px) {
+  .researcher-card {
+    min-height: 500px;
+  }
+
+  .researcher-avatar img {
+    object-position: center 22%;
+  }
+}
