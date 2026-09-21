@@ -11,6 +11,9 @@ import shkenca from "../content/shkenca.json";
 import partneret from "../content/partneret.json";
 import webgis from "../content/webgis.json";
 import kontakt from "../content/kontakt.json";
+import privacy from "../content/privacy.json";
+import terms from "../content/terms.json";
+import cookies from "../content/cookies.json";
 
 const defaults = {
   home,
@@ -20,6 +23,9 @@ const defaults = {
   partneret,
   webgis,
   kontakt,
+  privacy,
+  terms,
+  cookies,
 };
 const optional = new Set(["image", "alt", "subtitle", "caveat"]);
 function schemaField(field: FieldDefinition): SanityField {
