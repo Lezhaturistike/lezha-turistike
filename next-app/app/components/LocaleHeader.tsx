@@ -1,5 +1,6 @@
 import Link from "next/link";
 import MenuButton from "@/app/components/MenuButton";
+import ThemeToggle from "@/app/components/ThemeToggle";
 import {localizedPath, type Locale} from "@/sanity/lib/localize";
 
 const navigation = [
@@ -35,6 +36,7 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
           <Link href={localizedPath(currentPath, "en")} hrefLang="en" lang="en" aria-current={locale === "en" ? "true" : undefined}>EN</Link>
         </span>
       </nav>
+      <ThemeToggle />
       <MenuButton />
       <Link className="nav-cta" href={localizedPath("/webgis", locale)}>
         {locale === "en" ? "Open map" : "Hap hartën"} <span className="arrow-icon" aria-hidden="true">↗</span>
