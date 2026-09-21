@@ -1,0 +1,54 @@
+{
+  "eyebrow": "PRIVATËSIA",
+  "eyebrowEn": "PRIVACY",
+  "title": "Politika e Privatësisë",
+  "titleEn": "Privacy Policy",
+  "intro": "Kjo politikë shpjegon si Lezha Turistike trajton informacionin gjatë përdorimit të faqes.",
+  "introEn": "This policy explains how Lezha Turistike handles information when you use the website.",
+  "updated": "Përditësuar: 22 shtator 2026",
+  "updatedEn": "Updated: 22 September 2026",
+  "sections": [
+    {
+      "_key": "privacy-1",
+      "heading": "Të dhënat dhe qëllimi",
+      "headingEn": "Data and purpose",
+      "body": "Faqja nuk kërkon krijimin e një llogarie nga vizitorët. Kur na kontaktoni me email, informacioni që dërgoni përdoret për t’ju përgjigjur dhe për komunikimin që keni kërkuar. Infrastrukturat e hosting-ut dhe shërbimet teknike mund të përpunojnë të dhëna teknike, si adresa IP, koha e kërkesës, pajisja ose të dhëna të ngjashme, për siguri dhe funksionim.",
+      "bodyEn": "Visitors are not required to create an account. If you contact us by email, the information you send is used to respond and for the communication you requested. Hosting and technical infrastructure may process technical data such as IP address, request time, device information or similar data for security and operation."
+    },
+    {
+      "_key": "privacy-2",
+      "heading": "Preferencat dhe vlerësimet",
+      "headingEn": "Preferences and ratings",
+      "body": "Day/Night Mode ruan lokalisht në shfletues preferencën e temës. Te Kulinaria, shfletuesi ruan lokalisht faktin që një vend është vlerësuar, ndërsa vlerësimi 1–5 dërgohet në sistemin e faqes dhe ruhet në Sanity për llogaritjen e rezultatit të përgjithshëm. Ky funksion nuk kërkon emër apo email.",
+      "bodyEn": "Day/Night Mode stores the selected theme locally in your browser. In Cuisine, the browser locally remembers that a place has been rated, while the 1–5 rating is sent to the website system and stored in Sanity to calculate the aggregate rating. This feature does not request a name or email."
+    },
+    {
+      "_key": "privacy-3",
+      "heading": "Shërbime të jashtme",
+      "headingEn": "External services",
+      "body": "Faqja përmban ose lidh shërbime të palëve të treta, përfshirë ArcGIS/Web GIS dhe lidhje drejt faqeve, hartave, rrjeteve sociale ose burimeve shkencore. Kur hapni ose ndërveproni me këto shërbime, ofruesi përkatës mund të përpunojë të dhëna sipas politikave të veta.",
+      "bodyEn": "The website embeds or links to third-party services, including ArcGIS/Web GIS and links to websites, maps, social networks or scientific sources. When you open or interact with them, the relevant provider may process data under its own policies."
+    },
+    {
+      "_key": "privacy-4",
+      "heading": "Ruajtja dhe siguria",
+      "headingEn": "Retention and security",
+      "body": "Synojmë të kufizojmë të dhënat në atë që nevojitet për funksionimin, sigurinë, komunikimin dhe funksionet që kërkon vizitori. Të dhënat mbahen vetëm për aq kohë sa nevojiten për qëllimin përkatës ose sa kërkohet nga detyrimet ligjore.",
+      "bodyEn": "We aim to limit data to what is necessary for operation, security, communication and visitor-requested functions. Data is retained only as long as necessary for the relevant purpose or legal obligations."
+    },
+    {
+      "_key": "privacy-5",
+      "heading": "Të drejtat tuaja",
+      "headingEn": "Your rights",
+      "body": "Në varësi të legjislacionit të zbatueshëm, mund të kërkoni informacion, akses, korrigjim ose fshirje të të dhënave personale që kontrollohen nga ne, si dhe të kundërshtoni ose kufizoni përpunimin kur këto të drejta zbatohen.",
+      "bodyEn": "Depending on applicable law, you may request information, access, correction or deletion of personal data controlled by us, and object to or restrict processing where those rights apply."
+    },
+    {
+      "_key": "privacy-6",
+      "heading": "Kontakti",
+      "headingEn": "Contact",
+      "body": "Për pyetje mbi privatësinë ose për ushtrimin e të drejtave, kontaktoni: lezhalezha2024@gmail.com. Identiteti formal i operatorit/përgjegjësit të faqes do të plotësohet sapo të përcaktohet zyrtarisht.",
+      "bodyEn": "For privacy questions or rights requests, contact: lezhalezha2024@gmail.com. The formal identity of the website operator/controller will be added once officially determined."
+    }
+  ]
+}
