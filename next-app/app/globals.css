@@ -573,3 +573,16 @@ html[data-theme="dark"] #kulinari .place-link-button:focus-visible{
   color:#f4d3aa;
   border-color:#f4d3aa;
 }
+
+
+/* Culinary category label in dark mode */
+html[data-theme="dark"] #kulinari .place-body .tag{
+  display:inline-flex;
+  align-items:center;
+  width:auto;
+  padding:7px 11px;
+  border:1px solid rgba(237,189,133,.48);
+  border-radius:999px;
+  background:rgba(237,189,133,.08);
+  color:#edbd85;
+}
