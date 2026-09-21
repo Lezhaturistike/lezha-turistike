@@ -539,3 +539,24 @@ html[data-theme="dark"] .footer-contact a{color:#edf2ef}
   html[data-theme="dark"] .nav a{color:#f1f5f2}
   html[data-theme="dark"] .language-switch{border-color:#3a5650}
 }
+
+
+/* Dark theme refinements for home directory and embedded Web GIS */
+html[data-theme="dark"] .home-directory{background:#0d1817}
+html[data-theme="dark"] .directory-card{background:#142724;border-color:#294740;color:#edf2ef}
+html[data-theme="dark"] .directory-card:hover{background:#19312d;border-color:#bb8554}
+html[data-theme="dark"] .directory-card h2{color:#f1f5f2}
+html[data-theme="dark"] .directory-card p{color:#b4c2bc}
+html[data-theme="dark"] .directory-card>span:first-child,
+html[data-theme="dark"] .directory-arrow{color:#d69b64}
+
+html[data-theme="dark"] .gis-embed{background:#142724;border-color:#294740;color:#edf2ef}
+html[data-theme="dark"] .gis-embed-heading h3{color:#f1f5f2}
+html[data-theme="dark"] .gis-embed-heading p{color:#b4c2bc}
+html[data-theme="dark"] .gis-embed-tabs{background:#142724}
+html[data-theme="dark"] .gis-tab{background:#10201e;border-color:#49635d;color:#e7efeb}
+html[data-theme="dark"] .gis-tab.active,
+html[data-theme="dark"] .gis-tab:hover{background:#edbd85;border-color:#edbd85;color:#153b38}
+html[data-theme="dark"] .gis-frame{background:#0a1513;border-top:1px solid #294740;border-bottom:1px solid #294740}
+html[data-theme="dark"] .gis-embed-bottom{background:#142724;color:#edf2ef}
+html[data-theme="dark"] .gis-embed-bottom a{color:#edbd85}
