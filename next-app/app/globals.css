@@ -444,3 +444,11 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
     object-position: center 22%;
   }
 }
+
+
+/* Home hero vertical balance: lower the main copy and CTAs on desktop. */
+@media (min-width: 851px) {
+  .hero-content {
+    transform: translateY(26px);
+  }
+}
