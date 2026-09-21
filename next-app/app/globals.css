@@ -432,3 +432,15 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
     object-position: center 22%;
   }
 }
+
+
+/* Research team mobile photo framing: keep portraits consistent and more visible. */
+@media (max-width: 620px) {
+  .researcher-card {
+    min-height: 510px;
+  }
+
+  .researcher-avatar img {
+    object-position: center 22%;
+  }
+}
