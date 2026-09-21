@@ -379,3 +379,44 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
   .hero {min-height:660px;padding:56px 23px 24px}
   .hero h1 {font-size:clamp(2.75rem,11vw,3.6rem)}
 }
+
+
+/* Home hero desktop layout fix: keep CTAs and photo caption in separate lanes. */
+@media (min-width: 851px) {
+  .hero {
+    min-height: 760px;
+    padding-bottom: 32px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .hero-actions .button {
+    min-height: 58px;
+    padding: 16px 24px;
+    white-space: nowrap;
+  }
+
+  .hero-count {
+    position: absolute;
+    left: auto;
+    right: clamp(28px, 8vw, 135px);
+    bottom: 34px;
+    width: auto;
+    max-width: 36rem;
+    z-index: 2;
+  }
+
+  .hero .hero-count .hero-slide-caption {
+    text-align: right;
+    white-space: normal;
+  }
+}
