@@ -27,63 +27,105 @@
       "label": "01 / LEZHA",
       "title": "Destinacione",
       "description": "Kalaja, memoriali dhe peizazhet natyrore.",
-      "url": "/destinacione"
+      "url": "/destinacione",
+      "labelEn": "01 / LEZHË",
+      "titleEn": "Destinations",
+      "descriptionEn": "The castle, memorial and natural landscapes."
     },
     {
       "_key": "directory-2",
       "label": "02 / LEZHA",
       "title": "Galeri",
       "description": "Fotografi nga vendet që rrëfejnë Lezhën.",
-      "url": "/galeri"
+      "url": "/galeri",
+      "labelEn": "02 / LEZHË",
+      "titleEn": "Gallery",
+      "descriptionEn": "Photographs from the places that tell the story of Lezhë."
     },
     {
       "_key": "directory-3",
       "label": "03 / LEZHA",
       "title": "Histori",
       "description": "Ngjarjet dhe monumentet në kujtesën e qytetit.",
-      "url": "/histori"
+      "url": "/histori",
+      "labelEn": "03 / LEZHË",
+      "titleEn": "History",
+      "descriptionEn": "Events and monuments in the memory of the city."
     },
     {
       "_key": "directory-4",
       "label": "04 / LEZHA",
       "title": "Arkeologji",
       "description": "Gjurmët e Lissusit dhe të Akrolisit.",
-      "url": "/arkeologji"
+      "url": "/arkeologji",
+      "labelEn": "04 / LEZHË",
+      "titleEn": "Archaeology",
+      "descriptionEn": "Traces of Lissus and Akrolis."
     },
     {
       "_key": "directory-5",
       "label": "05 / LEZHA",
       "title": "Web GIS",
       "description": "Harta 2D, skena 3D dhe rrëfime interaktive.",
-      "url": "/webgis"
+      "url": "/webgis",
+      "labelEn": "05 / LEZHË",
+      "titleEn": "Web GIS",
+      "descriptionEn": "2D maps, 3D scenes and interactive stories."
     },
     {
       "_key": "directory-6",
       "label": "06 / LEZHA",
       "title": "Studime shkencore",
       "description": "Dokumentimi, gjeofizika dhe videot 3D.",
-      "url": "/shkenca"
+      "url": "/shkenca",
+      "labelEn": "06 / LEZHË",
+      "titleEn": "Scientific research",
+      "descriptionEn": "Documentation, geophysics and 3D videos."
     },
     {
       "_key": "directory-7",
       "label": "07 / LEZHA",
       "title": "Kulinari",
       "description": "Shijet dhe prodhimet e trevës.",
-      "url": "/kulinari"
+      "url": "/kulinari",
+      "labelEn": "07 / LEZHË",
+      "titleEn": "Cuisine",
+      "descriptionEn": "Local flavours and products."
     },
     {
       "_key": "directory-8",
       "label": "08 / LEZHA",
       "title": "Partnerët",
       "description": "Institucionet që mbështesin projektin.",
-      "url": "/partneret"
+      "url": "/partneret",
+      "labelEn": "08 / LEZHË",
+      "titleEn": "Partners",
+      "descriptionEn": "Institutions supporting the project."
     },
     {
       "_key": "directory-9",
       "label": "09 / LEZHA",
       "title": "Kontakt",
       "description": "Lidhu me ne dhe planifiko vizitën.",
-      "url": "/kontakt"
+      "url": "/kontakt",
+      "labelEn": "09 / LEZHË",
+      "titleEn": "Contact",
+      "descriptionEn": "Get in touch and plan your visit."
     }
-  ]
+  ],
+  "alt2En": "Aerial view of Lezhë Castle and the city",
+  "text3En": "LEZHË, ALBANIA · LIVING HISTORY",
+  "text4En": "One city.",
+  "text5En": "Many stories.",
+  "text6En": "From the ancient walls of Lezhë Castle to the landscape of Kune-Vain, discover Lezhë through places, stories and interactive maps.",
+  "text8En": "Discover destinations",
+  "text10En": "Explore the 2D map",
+  "text13En": "WHAT WOULD YOU LIKE TO DISCOVER?",
+  "text15En": "Historic places",
+  "text17En": "Nature & landscape",
+  "text19En": "Interactive maps",
+  "text20En": "EXPLORE BY CATEGORY",
+  "text21En": "Choose what to explore.",
+  "text22En": "Each section opens on its own page, with photographs, information and links to continue exploring.",
+  "heroSlides": []
 }
