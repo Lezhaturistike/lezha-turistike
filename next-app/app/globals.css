@@ -606,3 +606,42 @@ html[data-theme="dark"] #kulinari .place:hover,
 html[data-theme="dark"] .directory-card:hover{
   border-color:#49635d;
 }
+
+
+/* Dark mode for destination and culinary detail modals */
+html[data-theme="dark"] .place-dialog{
+  background:#142724;
+  color:#edf2ef;
+  border:1px solid #294740;
+}
+html[data-theme="dark"] .place-dialog .dialog-content{
+  background:#142724;
+  color:#edf2ef;
+}
+html[data-theme="dark"] .place-dialog h2,
+html[data-theme="dark"] .place-dialog h3{
+  color:#f1f5f2;
+}
+html[data-theme="dark"] .place-dialog p,
+html[data-theme="dark"] .place-dialog .dialog-details span,
+html[data-theme="dark"] .place-dialog .culinary-details span,
+html[data-theme="dark"] .place-dialog .culinary-details a{
+  color:#b4c2bc;
+}
+html[data-theme="dark"] .place-dialog .tag,
+html[data-theme="dark"] .place-dialog .overline{
+  color:#edbd85;
+}
+html[data-theme="dark"] .place-dialog .dialog-close{
+  background:#173d39;
+  color:#fff;
+  border:1px solid #36544e;
+}
+html[data-theme="dark"] .place-dialog .dialog-close:hover{
+  background:#edbd85;
+  color:#153b38;
+}
+html[data-theme="dark"] .place-dialog .button.outline{
+  border-color:#607a73;
+  color:#edf2ef;
+}
