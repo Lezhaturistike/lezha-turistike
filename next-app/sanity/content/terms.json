@@ -1,0 +1,61 @@
+{
+  "eyebrow": "KUSHTET",
+  "eyebrowEn": "TERMS",
+  "title": "Kushtet e Përdorimit",
+  "titleEn": "Terms & Conditions",
+  "intro": "Duke përdorur Lezha Turistike, pranoni këto kushte bazë të përdorimit të përmbajtjes dhe shërbimeve të faqes.",
+  "introEn": "By using Lezha Turistike, you agree to these basic terms governing use of the website and its content.",
+  "updated": "Përditësuar: 22 shtator 2026",
+  "updatedEn": "Updated: 22 September 2026",
+  "sections": [
+    {
+      "_key": "terms-1",
+      "heading": "Qëllimi i faqes",
+      "headingEn": "Purpose",
+      "body": "Lezha Turistike ofron informacion turistik, kulturor, historik, arkeologjik, shkencor dhe hartografik për qëllime informimi dhe promovimi.",
+      "bodyEn": "Lezha Turistike provides tourism, cultural, historical, archaeological, scientific and mapping information for information and promotional purposes."
+    },
+    {
+      "_key": "terms-2",
+      "heading": "Saktësia e informacionit",
+      "headingEn": "Accuracy",
+      "body": "Përpiqemi ta mbajmë informacionin të saktë dhe të përditësuar, por oraret, çmimet, kontaktet, kushtet e hyrjes, vendndodhjet dhe informacionet e subjekteve të treta mund të ndryshojnë. Për vendime udhëtimi ose rezervime, verifikoni informacionin te ofruesi përkatës.",
+      "bodyEn": "We aim to keep information accurate and current, but opening hours, prices, contacts, admission conditions, locations and third-party information can change. Verify travel or booking information with the relevant provider."
+    },
+    {
+      "_key": "terms-3",
+      "heading": "Hartat dhe Web GIS",
+      "headingEn": "Maps and Web GIS",
+      "body": "Hartat, koordinatat, aplikacionet Web GIS dhe vizualizimet kanë karakter informues dhe nuk zëvendësojnë dokumentacionin zyrtar, kadastral, ligjor, navigimin profesional ose udhëzimet e autoriteteve.",
+      "bodyEn": "Maps, coordinates, Web GIS applications and visualisations are informational and do not replace official, cadastral or legal documentation, professional navigation or instructions from authorities."
+    },
+    {
+      "_key": "terms-4",
+      "heading": "Pronësia intelektuale",
+      "headingEn": "Intellectual property",
+      "body": "Tekstet, dizajni, fotografitë, hartat, të dhënat dhe materialet mund të mbrohen nga të drejta autori ose licenca të autorëve, institucioneve dhe partnerëve përkatës. Materialet e palëve të treta mbeten pronë e mbajtësve të tyre të të drejtave.",
+      "bodyEn": "Text, design, photographs, maps, data and materials may be protected by copyright or licences belonging to their authors, institutions and partners. Third-party materials remain the property of their respective rights holders."
+    },
+    {
+      "_key": "terms-5",
+      "heading": "Lidhjet e jashtme",
+      "headingEn": "External links",
+      "body": "Faqja mund të lidhet me ArcGIS, Google Maps, faqe institucionale, rrjete sociale dhe burime të tjera. Lezha Turistike nuk kontrollon përmbajtjen, disponueshmërinë apo politikat e këtyre shërbimeve.",
+      "bodyEn": "The website may link to ArcGIS, Google Maps, institutional websites, social networks and other resources. Lezha Turistike does not control their content, availability or policies."
+    },
+    {
+      "_key": "terms-6",
+      "heading": "Përdorimi i pranueshëm",
+      "headingEn": "Acceptable use",
+      "body": "Mos përdorni faqen për ndërhyrje teknike, abuzim me funksionet, përpjekje për akses të paautorizuar ose përdorim që cenon të drejtat e të tjerëve.",
+      "bodyEn": "Do not use the website for technical interference, abuse of functions, unauthorised access attempts or uses that infringe the rights of others."
+    },
+    {
+      "_key": "terms-7",
+      "heading": "Ndryshimet",
+      "headingEn": "Changes",
+      "body": "Këto kushte mund të përditësohen kur ndryshojnë funksionet, përmbajtja ose kërkesat ligjore. Versioni i publikuar në këtë faqe është versioni aktual.",
+      "bodyEn": "These terms may be updated when features, content or legal requirements change. The version published on this page is the current version."
+    }
+  ]
+}
