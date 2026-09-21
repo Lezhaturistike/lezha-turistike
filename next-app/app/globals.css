@@ -560,3 +560,16 @@ html[data-theme="dark"] .gis-tab:hover{background:#edbd85;border-color:#edbd85;c
 html[data-theme="dark"] .gis-frame{background:#0a1513;border-top:1px solid #294740;border-bottom:1px solid #294740}
 html[data-theme="dark"] .gis-embed-bottom{background:#142724;color:#edf2ef}
 html[data-theme="dark"] .gis-embed-bottom a{color:#edbd85}
+
+
+/* Culinary card action contrast in dark mode */
+html[data-theme="dark"] #kulinari .place-link-button{
+  color:#edbd85;
+  border-color:#edbd85;
+}
+html[data-theme="dark"] #kulinari .place-link-button .arrow-icon{color:#edbd85}
+html[data-theme="dark"] #kulinari .place-link-button:hover,
+html[data-theme="dark"] #kulinari .place-link-button:focus-visible{
+  color:#f4d3aa;
+  border-color:#f4d3aa;
+}
