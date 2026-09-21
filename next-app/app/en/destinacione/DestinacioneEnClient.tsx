@@ -44,11 +44,11 @@ export default function DestinacioneEnClient({
     const meta = categoryMeta[item.kategoria] ?? {tag: 'DESTINATION'}
     return {
       ...item,
-      titulli: item.titulliEn || item.titulli,
-      pershkrimi: item.pershkrimiEn || item.pershkrimi,
+      titulli: item.titulli,
+      pershkrimi: item.pershkrimi,
       tag: meta.tag,
-      cardText: item.pershkrimiEn || item.pershkrimi || 'Discover this destination in Lezhë.',
-      alt: item.titulliEn || item.titulli,
+      cardText: item.pershkrimi || 'Discover this destination in Lezhë.',
+      alt: item.titulli,
       big: index === 0,
       natureId: item.kategoria === 'natyre',
     }
@@ -303,7 +303,7 @@ export default function DestinacioneEnClient({
                         onClick={() =>
                           setSelectedPhoto(index)
                         }
-                        aria-label={`Foto ${
+                        aria-label={`Photo ${
                           index + 1
                         }`}
                       >
@@ -325,7 +325,7 @@ export default function DestinacioneEnClient({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View location ↗
+                    View location <span className="arrow-icon" aria-hidden="true">↗</span>
                   </a>
                 )}
 
@@ -335,7 +335,7 @@ export default function DestinacioneEnClient({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    More information ↗
+                    More information <span className="arrow-icon" aria-hidden="true">↗</span>
                   </a>
                 )}
               </div>
