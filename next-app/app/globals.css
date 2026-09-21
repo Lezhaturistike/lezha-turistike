@@ -490,3 +490,52 @@ html[data-theme="dark"] input,
 html[data-theme="dark"] textarea,
 html[data-theme="dark"] select{background:#142724;color:#edf2ef;border-color:#36544e}
 @media(max-width:850px){.theme-toggle{margin-left:auto;margin-right:8px}}
+
+
+/* Complete dark theme coverage */
+html[data-theme="dark"] .nav{color:#eef4f0}
+html[data-theme="dark"] .nav a{color:#eef4f0}
+html[data-theme="dark"] .nav a:hover,
+html[data-theme="dark"] .nav a[aria-current="page"]{color:#edbd85}
+html[data-theme="dark"] .menu-btn{color:#eef4f0}
+html[data-theme="dark"] .nav-cta{background:#edbd85;color:#153b38}
+html[data-theme="dark"] .quick,
+html[data-theme="dark"] .place,
+html[data-theme="dark"] .gis-feature,
+html[data-theme="dark"] .partners,
+html[data-theme="dark"] .partner-card,
+html[data-theme="dark"] .archaeology-grid article,
+html[data-theme="dark"] dialog{background:#142724;color:#edf2ef;border-color:#294740}
+html[data-theme="dark"] .quick{border-bottom-color:#294740}
+html[data-theme="dark"] .quick a{border-left-color:#36534d}
+html[data-theme="dark"] .quick a span{background:#203b36;color:#d6e6df}
+html[data-theme="dark"] .gis-section,
+html[data-theme="dark"] .archaeology,
+html[data-theme="dark"] .contact,
+html[data-theme="dark"] .science{background:#0f1d1b;color:#edf2ef}
+html[data-theme="dark"] .place p,
+html[data-theme="dark"] .archaeology-grid p,
+html[data-theme="dark"] .source-line,
+html[data-theme="dark"] .contact p,
+html[data-theme="dark"] .gis-list small,
+html[data-theme="dark"] .research-links p,
+html[data-theme="dark"] .science-grid p{color:#afbeb8}
+html[data-theme="dark"] .place a,
+html[data-theme="dark"] .source-line a,
+html[data-theme="dark"] .research-links>a{color:#e8bd89}
+html[data-theme="dark"] .gis-list a{border-bottom-color:#34514b}
+html[data-theme="dark"] .filter{border-color:#49635d;color:#dce7e2}
+html[data-theme="dark"] .filter.active,
+html[data-theme="dark"] .filter:hover{background:#edbd85;border-color:#edbd85;color:#153b38}
+html[data-theme="dark"] .button.outline{border-color:#dce7e2;color:#edf2ef}
+html[data-theme="dark"] .contact-info{border-left-color:#3c5751}
+html[data-theme="dark"] .research-links{background:#19302c}
+html[data-theme="dark"] .science-highlight{background:#203b35!important}
+html[data-theme="dark"] .dialog-close{background:#203b36;color:#fff}
+html[data-theme="dark"] .footer-navigation a,
+html[data-theme="dark"] .footer-contact a{color:#edf2ef}
+@media(max-width:850px){
+  html[data-theme="dark"] .nav{background:#102321;box-shadow:0 18px 30px #0008}
+  html[data-theme="dark"] .nav a{color:#f1f5f2}
+  html[data-theme="dark"] .language-switch{border-color:#3a5650}
+}
