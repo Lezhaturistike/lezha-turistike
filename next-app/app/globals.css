@@ -586,3 +586,23 @@ html[data-theme="dark"] #kulinari .place-body .tag{
   background:rgba(237,189,133,.08);
   color:#edbd85;
 }
+
+
+/* Unified subtle card borders in dark mode */
+html[data-theme="dark"] .researcher-card,
+html[data-theme="dark"] #kulinari .place,
+html[data-theme="dark"] .science-grid article,
+html[data-theme="dark"] .archaeology-grid article,
+html[data-theme="dark"] .partner-card,
+html[data-theme="dark"] .directory-card{
+  border-color:#294740;
+}
+html[data-theme="dark"] .researcher-body,
+html[data-theme="dark"] #kulinari .culinary-card-meta{
+  border-color:#294740;
+}
+html[data-theme="dark"] .researcher-card:hover,
+html[data-theme="dark"] #kulinari .place:hover,
+html[data-theme="dark"] .directory-card:hover{
+  border-color:#49635d;
+}
