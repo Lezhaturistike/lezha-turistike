@@ -452,3 +452,41 @@ section[id],main[id],.research-videos{scroll-margin-top:100px}
     transform: translateY(26px);
   }
 }
+
+
+/* Global day / night theme */
+.theme-toggle{width:38px;height:38px;flex:0 0 38px;border:1px solid rgba(23,61,57,.18);border-radius:999px;background:rgba(255,255,255,.72);color:#173d39;display:grid;place-items:center;cursor:pointer;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .2s ease}
+.theme-toggle:hover{transform:translateY(-1px)}
+.theme-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.theme-icon-sun{display:none}
+.theme-icon-moon{display:block}
+
+html[data-theme="dark"]{color-scheme:dark}
+html[data-theme="dark"] body{background:#0d1817;color:#edf2ef}
+html[data-theme="dark"] .header{background:rgba(12,27,25,.94);color:#f3f5f2;border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .header .logo,
+html[data-theme="dark"] .header .nav a,
+html[data-theme="dark"] .header .language-switch{color:#f3f5f2}
+html[data-theme="dark"] .theme-toggle{background:#173d39;color:#f1c58f;border-color:rgba(255,255,255,.18)}
+html[data-theme="dark"] .theme-icon-moon{display:none}
+html[data-theme="dark"] .theme-icon-sun{display:block}
+html[data-theme="dark"] .section,
+html[data-theme="dark"] main{background:#0d1817;color:#edf2ef}
+html[data-theme="dark"] .section-top p,
+html[data-theme="dark"] .video-heading p,
+html[data-theme="dark"] .research-team .video-heading p,
+html[data-theme="dark"] .researcher-institution,
+html[data-theme="dark"] .researcher-bio,
+html[data-theme="dark"] .research-team-source{color:#aebdb7}
+html[data-theme="dark"] .science-grid article,
+html[data-theme="dark"] .research-links,
+html[data-theme="dark"] .video-card,
+html[data-theme="dark"] .researcher-body{background:rgba(20,43,40,.97);color:#edf2ef;border-color:#294b46}
+html[data-theme="dark"] .researcher-role{color:#a9d0c5}
+html[data-theme="dark"] .researcher-links a{color:#e7efeb;border-color:#45645e}
+html[data-theme="dark"] .researcher-links a:hover{background:#e7efeb;color:#173d39}
+html[data-theme="dark"] .site-footer{background:#081311;color:#e8efeb}
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select{background:#142724;color:#edf2ef;border-color:#36544e}
+@media(max-width:850px){.theme-toggle{margin-left:auto;margin-right:8px}}
