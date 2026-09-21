@@ -1,0 +1,1 @@
+import LegalPage from "@/app/components/LegalPage"; export default function Page(){return <LegalPage locale="en" kind="privacy"/>}
