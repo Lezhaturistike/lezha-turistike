@@ -73,6 +73,21 @@ export default async function ShkencaPage() {
             ))}
           </div>
 
+          {/* STUDY IMAGE MARQUEE */}
+          <div className="study-marquee" aria-label="Images from the HDZA Lezha studies">
+            <div className="study-marquee-track">
+              {[...content.studyGallery, ...content.studyGallery].map((item, index) => (
+                <figure className="study-marquee-item" key={`${item._key}-${index}`} aria-hidden={index >= content.studyGallery.length}>
+                  <img src={item.image} alt={index < content.studyGallery.length ? item.alt : ""} loading="lazy" />
+                  <figcaption>
+                    <span>{item.label}</span>
+                    <strong>{item.caption}</strong>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
           {/* PUBLIKIMI */}
           <div className="research-links">
             <div>
