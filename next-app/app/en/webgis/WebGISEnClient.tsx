@@ -49,7 +49,7 @@ export default function WebGISPage({ content }: { content: typeof defaults }) {
                   rel="noopener noreferrer"
                 >
                   {content.text7}
-                  <span>↗</span>
+                  <span className="arrow-icon" aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function WebGISPage({ content }: { content: typeof defaults }) {
                     <strong>{item.title}</strong>
                     <small>{item.description}</small>
                   </div>
-                  <b aria-hidden="true">↗</b>
+                  <b className="arrow-icon" aria-hidden="true">↗</b>
                 </a>
               ))}
             </div>
@@ -129,7 +129,7 @@ export default function WebGISPage({ content }: { content: typeof defaults }) {
                 rel="noopener noreferrer"
               >
                 {content.text11}
-                <span>↗</span>
+                <span className="arrow-icon" aria-hidden="true">↗</span>
               </a>
             </div>
             </>}
