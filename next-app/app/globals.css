@@ -992,3 +992,14 @@ html[data-theme="dark"] .study-marquee-item{border-color:#294740}
   html[data-theme="dark"] body .header .nav.open .language-switch,
   html[data-theme="dark"] body .header .nav.open .language-switch a{color:#f1f5f2 !important}
 }
+
+
+/* WCAG AA contrast refinements reported by Lighthouse. */
+.logo-text b{color:#a8662f}
+.home-directory .overline{color:#8a5a32}
+.directory-card>span:first-child{color:#8a5a32}
+.directory-arrow{color:#8a5a32}
+html[data-theme="dark"] .logo-text b{color:#edbd85}
+html[data-theme="dark"] .home-directory .overline,
+html[data-theme="dark"] .directory-card>span:first-child,
+html[data-theme="dark"] .directory-arrow{color:#edbd85}
