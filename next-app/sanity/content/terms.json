@@ -31,27 +31,34 @@
     },
     {
       "_key": "terms-4",
+      "heading": "Privatësia dhe analitika",
+      "headingEn": "Privacy and analytics",
+      "body": "Përdorimi i teknologjive të ruajtjes, Google Analytics dhe shërbimeve të jashtme përshkruhet në Politikën e Privatësisë dhe Politikën e Cookies. Kur kërkohet pëlqim për analitikën, zgjedhja për ta pranuar ose refuzuar trajtohet veçmas nga pranimi i këtyre kushteve të përdorimit.",
+      "bodyEn": "The use of storage technologies, Google Analytics and external services is described in the Privacy Policy and Cookie Policy. Where analytics consent is required, the choice to accept or reject analytics is handled separately from acceptance of these terms of use."
+    },
+    {
+      "_key": "terms-5",
       "heading": "Pronësia intelektuale",
       "headingEn": "Intellectual property",
       "body": "Tekstet, dizajni, fotografitë, hartat, të dhënat dhe materialet mund të mbrohen nga të drejta autori ose licenca të autorëve, institucioneve dhe partnerëve përkatës. Materialet e palëve të treta mbeten pronë e mbajtësve të tyre të të drejtave.",
       "bodyEn": "Text, design, photographs, maps, data and materials may be protected by copyright or licences belonging to their authors, institutions and partners. Third-party materials remain the property of their respective rights holders."
     },
     {
-      "_key": "terms-5",
+      "_key": "terms-6",
       "heading": "Lidhjet e jashtme",
       "headingEn": "External links",
       "body": "Faqja mund të lidhet me ArcGIS, Google Maps, faqe institucionale, rrjete sociale dhe burime të tjera. Lezha Turistike nuk kontrollon përmbajtjen, disponueshmërinë apo politikat e këtyre shërbimeve.",
       "bodyEn": "The website may link to ArcGIS, Google Maps, institutional websites, social networks and other resources. Lezha Turistike does not control their content, availability or policies."
     },
     {
-      "_key": "terms-6",
+      "_key": "terms-7",
       "heading": "Përdorimi i pranueshëm",
       "headingEn": "Acceptable use",
       "body": "Mos përdorni faqen për ndërhyrje teknike, abuzim me funksionet, përpjekje për akses të paautorizuar ose përdorim që cenon të drejtat e të tjerëve.",
       "bodyEn": "Do not use the website for technical interference, abuse of functions, unauthorised access attempts or uses that infringe the rights of others."
     },
     {
-      "_key": "terms-7",
+      "_key": "terms-8",
       "heading": "Ndryshimet",
       "headingEn": "Changes",
       "body": "Këto kushte mund të përditësohen kur ndryshojnë funksionet, përmbajtja ose kërkesat ligjore. Versioni i publikuar në këtë faqe është versioni aktual.",
