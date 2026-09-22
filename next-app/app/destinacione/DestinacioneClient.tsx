@@ -109,7 +109,7 @@ export default function DestinacioneClient({
                 EKSPLORO LEZHËN
               </span>
 
-              <h2>Vende për t’u zbuluar</h2>
+              <h1>Vende për t’u zbuluar</h1>
             </div>
 
             <p>
