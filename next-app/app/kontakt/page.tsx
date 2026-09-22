@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("kontakt", "sq");
 import SiteFooter from "@/app/components/SiteFooter";
 import LocaleHeader from "@/app/components/LocaleHeader";
 import { getPageContent } from "@/sanity/lib/content";
