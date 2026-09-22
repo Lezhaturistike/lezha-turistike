@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("kontakt", "en");
 import { getPageContent } from "@/sanity/lib/content";
 export const dynamic = "force-dynamic";
 import defaults from "@/sanity/content/kontakt.json";
