@@ -939,3 +939,21 @@ html[data-theme="dark"] .study-marquee-item{border-color:#294740}
     color:#f1f5f2 !important;
   }
 }
+
+
+/* Compact desktop/tablet menu: overlay instead of pushing the page down. */
+@media (min-width:621px) and (max-width:850px){
+  .header{position:relative;z-index:1000}
+  html[data-theme="dark"] body .header .nav.open,
+  body .header .nav.open{
+    position:absolute !important;
+    top:100% !important;
+    left:auto !important;
+    right:18px !important;
+    width:min(360px,calc(100vw - 36px)) !important;
+    max-height:calc(100vh - 92px) !important;
+    overflow-y:auto !important;
+    padding:18px 22px 20px !important;
+    box-shadow:0 18px 44px #0006 !important;
+  }
+}
