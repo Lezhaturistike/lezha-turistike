@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("kulinari", "sq");
 import KulinariClient from "./KulinariClient";
 import {client} from "@/sanity/lib/client";
 
