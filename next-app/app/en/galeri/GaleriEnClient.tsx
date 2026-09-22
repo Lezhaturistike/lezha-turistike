@@ -130,7 +130,7 @@ export default function GaleriEnClient({
             <div>
               <span className="overline">PHOTOGRAPHS OF LEZHË</span>
 
-              <h2>Take a closer look.</h2>
+              <h1>Take a closer look.</h1>
             </div>
 
             <p>
