@@ -163,7 +163,7 @@ export default async function ShkencaPage() {
             <div className="researcher-grid">
               {researchers.map((person:any)=>(
                 <article className="researcher-card" key={person._id || person.name}>
-                  <div className="researcher-avatar">{person.photoUrl?<img src={person.photoUrl} alt={person.name}/>:<span>{person.name.split(" ").map((x:string)=>x[0]).slice(0,2).join("")}</span>}</div>
+                  <div className="researcher-avatar">{person.photoUrl?<img src={person.photoUrl} alt={`${person.name} — ekipi kërkimor`} loading="lazy" decoding="async"/>:<span>{person.name.split(" ").map((x:string)=>x[0]).slice(0,2).join("")}</span>}</div>
                   <div className="researcher-body">
                     <span className="researcher-title">{person.academicTitle || "Researcher"}</span>
                     <h4>{person.name}</h4>
