@@ -3,8 +3,8 @@
   "eyebrowEn": "COOKIES & STORAGE",
   "title": "Politika e Cookies",
   "titleEn": "Cookie Policy",
-  "intro": "Kjo faqe shpjegon cookies, localStorage dhe përmbajtjen e jashtme që mund të përdoret nga Lezha Turistike.",
-  "introEn": "This page explains cookies, localStorage and external content that may be used by Lezha Turistike.",
+  "intro": "Kjo faqe shpjegon cookies, localStorage, Google Analytics dhe përmbajtjen e jashtme që mund të përdoret nga Lezha Turistike.",
+  "introEn": "This page explains cookies, localStorage, Google Analytics and external content that may be used by Lezha Turistike.",
   "updated": "Përditësuar: 22 shtator 2026",
   "updatedEn": "Updated: 22 September 2026",
   "sections": [
@@ -12,43 +12,57 @@
       "_key": "cookies-1",
       "heading": "Çfarë përdor faqja",
       "headingEn": "What this website uses",
-      "body": "Nga implementimi aktual, Lezha Turistike përdor localStorage për të mbajtur preferencën Day/Night Mode dhe për të kujtuar në atë shfletues nëse një vend i Kulinarisë është vlerësuar. localStorage nuk është cookie, por është ruajtje lokale në pajisjen tuaj.",
-      "bodyEn": "In the current implementation, Lezha Turistike uses localStorage to remember the Day/Night Mode preference and whether a Cuisine place has already been rated in that browser. localStorage is not a cookie; it is local storage on your device."
+      "body": "Lezha Turistike përdor teknologji lokale të shfletuesit për funksione të faqes dhe, me pëlqimin tuaj kur kërkohet, Google Analytics 4 për statistika të përdorimit. localStorage përdoret gjithashtu për të mbajtur preferencën Day/Night Mode, zgjedhjen tuaj të privatësisë dhe për të kujtuar në atë shfletues nëse një vend i Kulinarisë është vlerësuar. localStorage nuk është cookie, por ruajtje lokale në pajisjen tuaj.",
+      "bodyEn": "Lezha Turistike uses local browser technologies for website functions and, with your consent where required, Google Analytics 4 for usage statistics. localStorage is also used to remember the Day/Night Mode preference, your privacy choice and whether a Cuisine place has already been rated in that browser. localStorage is not a cookie; it is local storage on your device."
     },
     {
       "_key": "cookies-2",
-      "heading": "Cookies thelbësore",
+      "heading": "Teknologjitë thelbësore",
       "headingEn": "Essential technologies",
-      "body": "Infrastruktura teknike ose shërbimet që mundësojnë funksionimin dhe sigurinë e faqes mund të përdorin teknologji rreptësisht të nevojshme. Këto nuk përdoren nga ne për reklamim të personalizuar.",
-      "bodyEn": "Technical infrastructure or services enabling website operation and security may use strictly necessary technologies. We do not use these for personalised advertising."
+      "body": "Infrastruktura teknike ose shërbimet që mundësojnë funksionimin, sigurinë dhe ruajtjen e preferencave të faqes mund të përdorin teknologji rreptësisht të nevojshme. Këto nuk përdoren nga ne për reklama të personalizuara dhe funksionet bazë të faqes nuk varen nga pranimi i analitikës.",
+      "bodyEn": "Technical infrastructure or services enabling website operation, security and preference storage may use strictly necessary technologies. We do not use these for personalised advertising, and basic website functions do not depend on accepting analytics."
     },
     {
       "_key": "cookies-3",
-      "heading": "Analitika",
-      "headingEn": "Analytics",
-      "body": "Në implementimin e audituar aktualisht nuk kemi identifikuar Google Analytics ose Google Tag Manager. Nëse shtohen më vonë mjete analitike që kërkojnë pëlqim, kjo politikë dhe mekanizmi i pëlqimit do të përditësohen.",
-      "bodyEn": "In the implementation currently audited, we have not identified Google Analytics or Google Tag Manager. If consent-requiring analytics are added later, this policy and the consent mechanism will be updated."
+      "heading": "Google Analytics",
+      "headingEn": "Google Analytics",
+      "body": "Përdorim Google Analytics 4 për të matur në mënyrë të përmbledhur përdorimin e faqes, si vizitat, shikimet e faqeve, scroll-et, sesionet dhe ndërveprime të tjera të aktivizuara në konfigurimin e Analytics. Kur pëlqimi për analitikën kërkohet, ruajtja analitike aktivizohet vetëm sipas zgjedhjes suaj. Të dhënat e Analytics përpunohen nga Google sipas kushteve dhe politikave të Google.",
+      "bodyEn": "We use Google Analytics 4 to measure aggregate website usage, such as visits, page views, scrolls, sessions and other interactions enabled in the Analytics configuration. Where analytics consent is required, analytics storage is activated only according to your choice. Analytics data is processed by Google under Google’s terms and policies."
     },
     {
       "_key": "cookies-4",
+      "heading": "Pëlqimi për analitikën",
+      "headingEn": "Analytics consent",
+      "body": "Banneri i privatësisë ju lejon të pranoni ose refuzoni Google Analytics. Refuzimi nuk bllokon përmbajtjen bazë të Lezha Turistike. Zgjedhja ruhet në shfletues për të mos ju pyetur në çdo faqe. Mund ta rivendosni zgjedhjen duke fshirë të dhënat e ruajtura të kësaj faqeje në shfletues dhe duke zgjedhur përsëri kur shfaqet banneri.",
+      "bodyEn": "The privacy banner lets you accept or reject Google Analytics. Rejecting analytics does not block the core Lezha Turistike content. Your choice is stored in the browser so you are not asked on every page. You can reset your choice by clearing this website’s stored data in your browser and choosing again when the banner appears."
+    },
+    {
+      "_key": "cookies-5",
+      "heading": "Reklamat dhe personalizimi",
+      "headingEn": "Advertising and personalisation",
+      "body": "Konfigurimi aktual i Lezha Turistike nuk e përdor Google Analytics për reklama të personalizuara. Pëlqimi për analitikën nuk nënkupton pëlqim për marketing ose personalizim reklamash. Nëse në të ardhmen shtohen funksione reklamimi ose remarketing-u, kjo politikë dhe mekanizmi i pëlqimit do të përditësohen përpara përdorimit të tyre.",
+      "bodyEn": "The current Lezha Turistike configuration does not use Google Analytics for personalised advertising. Analytics consent does not mean consent to marketing or advertising personalisation. If advertising or remarketing features are added in the future, this policy and the consent mechanism will be updated before they are used."
+    },
+    {
+      "_key": "cookies-6",
       "heading": "Përmbajtja e palëve të treta",
       "headingEn": "Third-party content",
       "body": "Web GIS/ArcGIS dhe përmbajtje të tjera të jashtme mund të ngarkohen ose hapen nga faqja. Ofruesit e këtyre shërbimeve mund të përdorin cookies ose teknologji të ngjashme sipas politikave të tyre, të cilat ne nuk i kontrollojmë.",
       "bodyEn": "Web GIS/ArcGIS and other external content may be loaded or opened from the website. These providers may use cookies or similar technologies under their own policies, which we do not control."
     },
     {
-      "_key": "cookies-5",
+      "_key": "cookies-7",
       "heading": "Si t’i menaxhoni",
       "headingEn": "Managing storage",
-      "body": "Mund të fshini localStorage dhe cookies nga cilësimet e shfletuesit. Fshirja e localStorage mund të rivendosë Day/Night Mode dhe kujtesën lokale të vlerësimeve. Bllokimi i teknologjive të palëve të treta mund të ndikojë në hartat ose përmbajtjen e integruar.",
-      "bodyEn": "You can delete localStorage and cookies through your browser settings. Clearing localStorage may reset Day/Night Mode and the local rating memory. Blocking third-party technologies may affect maps or embedded content."
+      "body": "Mund të fshini localStorage dhe cookies nga cilësimet e shfletuesit. Fshirja mund të rivendosë Day/Night Mode, zgjedhjen e privatësisë dhe kujtesën lokale të vlerësimeve. Bllokimi i teknologjive të palëve të treta mund të ndikojë në hartat ose përmbajtjen e integruar.",
+      "bodyEn": "You can delete localStorage and cookies through your browser settings. Clearing them may reset Day/Night Mode, your privacy choice and local rating memory. Blocking third-party technologies may affect maps or embedded content."
     },
     {
-      "_key": "cookies-6",
+      "_key": "cookies-8",
       "heading": "Përditësimet",
       "headingEn": "Updates",
-      "body": "Nëse shtojmë analytics, marketing, embeds të rinj ose teknologji të tjera jo-thelbësore, do të rishikojmë këtë politikë dhe, kur kërkohet, do të kërkojmë pëlqim përpara aktivizimit.",
-      "bodyEn": "If we add analytics, marketing, new embeds or other non-essential technologies, we will review this policy and, where required, request consent before activation."
+      "body": "Nëse ndryshojmë mënyrën e përdorimit të analytics, shtojmë marketing, embeds të rinj ose teknologji të tjera jo-thelbësore, do të rishikojmë këtë politikë dhe mekanizmin e pëlqimit kur kërkohet.",
+      "bodyEn": "If we change how analytics is used or add marketing, new embeds or other non-essential technologies, we will review this policy and the consent mechanism where required."
     }
   ]
 }
