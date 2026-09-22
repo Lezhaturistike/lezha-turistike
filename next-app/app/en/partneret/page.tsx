@@ -36,7 +36,7 @@ export default async function EnglishPartneretPage() {
                 rel="noopener noreferrer"
               >
                 <span>{item.role}</span>
-                {item.image && <img src={item.image} alt={item.alt} />}
+                {item.image && <img src={item.image} alt={item.alt || item.title} loading="lazy" decoding="async" />}
                 <strong>{item.title}</strong>
                 {item.subtitle && <small>{item.subtitle}</small>}
               </a>
