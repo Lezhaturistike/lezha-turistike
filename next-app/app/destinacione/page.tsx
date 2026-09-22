@@ -19,9 +19,6 @@ export default async function DestinacionePage() {
     }
   `)
 
-  return (
-    <DestinacioneClient
-      destinacionet={destinacionet}
-    />
-  )
+  const jsonLd={"@context":"https://schema.org","@type":"ItemList",name:"Destinacione për t'u vizituar në Lezhë",itemListElement:destinacionet.map((item:any,index:number)=>({"@type":"ListItem",position:index+1,item:{"@type":"TouristAttraction",name:item.titulli,description:item.pershkrimi,image:item.fotoUrl}}))};
+  return (<><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,"\\u003c")}}/><DestinacioneClient destinacionet={destinacionet}/></>)
 }
