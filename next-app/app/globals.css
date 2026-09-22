@@ -882,3 +882,40 @@ html[data-theme="dark"] .study-marquee-item{border-color:#294740}
   .study-marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
   .study-marquee-track{animation:none}
 }
+
+
+/* Responsive navigation overlay: keep the compact menu readable in both themes. */
+@media(max-width:850px){
+  .nav.open{
+    position:absolute;
+    top:70px;
+    left:0;
+    right:0;
+    z-index:100;
+    padding:18px 26px 24px;
+    background:#fff;
+    color:#173d39;
+    border-top:1px solid #e1e7e2;
+    box-shadow:0 18px 30px #0002;
+  }
+  .nav.open a{color:#173d39}
+  .nav.open a:hover,
+  .nav.open a[aria-current="page"]{color:#b77f4d}
+  .nav.open .language-switch{
+    color:#173d39;
+    border-color:#d6dfd9;
+  }
+  html[data-theme="dark"] .nav.open{
+    background:#102321;
+    color:#f1f5f2;
+    border-top-color:#294740;
+    box-shadow:0 18px 36px #0009;
+  }
+  html[data-theme="dark"] .nav.open a{color:#f1f5f2}
+  html[data-theme="dark"] .nav.open a:hover,
+  html[data-theme="dark"] .nav.open a[aria-current="page"]{color:#edbd85}
+  html[data-theme="dark"] .nav.open .language-switch{
+    color:#f1f5f2;
+    border-color:#3a5650;
+  }
+}
