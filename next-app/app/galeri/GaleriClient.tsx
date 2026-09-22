@@ -98,7 +98,7 @@ export default function GaleriClient({ destinacionet }: { destinacionet: Destina
                 </button>
               ))}
             </div>
-            <div className="dialog-actions">
+            <div className="dialog-actions sq-dialog-actions">
               <a className="button dark" href={selectedGallery.harta || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedGallery.title}, Lezhë, Albania`)}`} target="_blank" rel="noopener noreferrer">
                 Shiko vendndodhjen <span className="arrow-icon" aria-hidden="true">↗</span>
               </a>
@@ -112,5 +112,19 @@ export default function GaleriClient({ destinacionet }: { destinacionet: Destina
         </div>
       </div>
     )}
+    <style jsx>{`
+      @media (max-width: 620px) {
+        .sq-dialog-actions {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+        .sq-dialog-actions > a {
+          margin: 0;
+          align-self: flex-start;
+        }
+      }
+    `}</style>
   </>;
 }
