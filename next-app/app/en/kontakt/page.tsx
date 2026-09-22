@@ -6,6 +6,7 @@ import BackToTop from "@/app/components/BackToTop";
 import ContactForm from "@/app/kontakt/ContactForm";
 import Link from "next/link";
 
+// English contact page shares the live website contact form and Resend endpoint.
 export default function EnglishKontaktPage() {
   return (
     <>
