@@ -131,7 +131,7 @@ export default function DestinacioneEnClient({
                 EXPLORE LEZHË
               </span>
 
-              <h2>Places to discover</h2>
+              <h1>Places to discover</h1>
             </div>
 
             <p>
