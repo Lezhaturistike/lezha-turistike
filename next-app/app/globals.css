@@ -697,3 +697,45 @@ html[data-theme="dark"] .legal-content>section{border-color:#294740}
 html[data-theme="dark"] .legal-note{background:#142724;border:1px solid #294740}
 html[data-theme="dark"] .legal-note a{color:#edbd85}
 @media(max-width:620px){.legal-page{padding-top:64px}.legal-hero{margin-bottom:38px}.legal-content>section{padding:24px 0}.footer-legal{gap:10px 12px}}
+
+
+/* Unified culinary actions: crisp arrows and systematic mobile layout */
+.culinary-actions>a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+}
+.culinary-actions>a .arrow-icon{
+  flex:0 0 15px;
+}
+@media(max-width:620px){
+  .culinary-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:9px;
+    width:100%;
+  }
+  .culinary-actions>a,
+  .culinary-actions>a:not(.button),
+  .culinary-actions .button{
+    width:100%;
+    min-height:46px;
+    margin:0;
+    padding:12px 14px;
+    border:1px solid #d7e0da;
+    border-radius:8px;
+    text-decoration:none;
+    text-align:left;
+  }
+  .culinary-actions>a:not(.button){
+    color:#215349;
+    background:#f7f9f6;
+  }
+  html[data-theme="dark"] .place-dialog .culinary-actions>a,
+  html[data-theme="dark"] .place-dialog .culinary-actions>a:not(.button){
+    background:#19302c;
+    border-color:#36544e;
+    color:#edbd85;
+  }
+}
