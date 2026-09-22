@@ -739,3 +739,65 @@ html[data-theme="dark"] .legal-note a{color:#edbd85}
     color:#edbd85;
   }
 }
+
+
+/* Culinary modal: uniform action panels on desktop and mobile */
+.place-dialog .culinary-actions{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  width:100%;
+  margin-top:30px;
+}
+.place-dialog .culinary-actions>a,
+.place-dialog .culinary-actions>a:not(.button),
+.place-dialog .culinary-actions .button{
+  width:100%;
+  min-height:72px;
+  margin:0;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  border:1px solid #d7e0da;
+  border-radius:0;
+  background:#f3f6f2;
+  color:#173d39;
+  font-size:.84rem;
+  font-weight:800;
+  text-decoration:none;
+  text-align:left;
+}
+.place-dialog .culinary-actions>a:hover,
+.place-dialog .culinary-actions>a:focus-visible{
+  border-color:#b98453;
+  background:#edf2ed;
+  color:#173d39;
+}
+.place-dialog .culinary-actions>a .arrow-icon{
+  color:#b27d4b;
+  flex:0 0 16px;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions>a,
+html[data-theme="dark"] .place-dialog .culinary-actions>a:not(.button),
+html[data-theme="dark"] .place-dialog .culinary-actions .button{
+  background:#19302c;
+  border-color:#36544e;
+  color:#edf2ef;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions>a:hover,
+html[data-theme="dark"] .place-dialog .culinary-actions>a:focus-visible{
+  background:#203a35;
+  border-color:#d69b64;
+  color:#f1f5f2;
+}
+html[data-theme="dark"] .place-dialog .culinary-actions>a .arrow-icon{
+  color:#edbd85;
+}
+@media(max-width:760px){
+  .place-dialog .culinary-actions{grid-template-columns:1fr;}
+  .place-dialog .culinary-actions>a,
+  .place-dialog .culinary-actions>a:not(.button),
+  .place-dialog .culinary-actions .button{min-height:50px;padding:12px 14px;}
+}
