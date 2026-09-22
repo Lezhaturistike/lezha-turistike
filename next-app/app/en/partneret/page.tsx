@@ -20,7 +20,7 @@ export default async function EnglishPartneretPage() {
             <div>
               <span className="overline">{content.text1}</span>
 
-              <h2>{content.text2}</h2>
+              <h1>{content.text2}</h1>
             </div>
 
             <p>{content.text3}</p>
