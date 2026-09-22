@@ -957,3 +957,38 @@ html[data-theme="dark"] .study-marquee-item{border-color:#294740}
     box-shadow:0 18px 44px #0006 !important;
   }
 }
+
+
+/* Unified compact navigation for every breakpoint where the Menu button is used. */
+@media (min-width:621px) and (max-width:1280px){
+  .header{position:sticky;top:0;z-index:1000}
+  body .header .nav.open{
+    position:absolute !important;
+    top:100% !important;
+    left:auto !important;
+    right:18px !important;
+    width:min(360px,calc(100vw - 36px)) !important;
+    max-height:calc(100dvh - 92px) !important;
+    overflow-y:auto !important;
+    padding:18px 22px 20px !important;
+    background:#fff !important;
+    color:#173d39 !important;
+    border:1px solid #dce4df !important;
+    box-shadow:0 18px 44px #0004 !important;
+  }
+  body .header .nav.open a{color:#173d39 !important}
+  body .header .nav.open a:hover,
+  body .header .nav.open a[aria-current="page"]{color:#b77f4d !important}
+
+  html[data-theme="dark"] body .header .nav.open{
+    background:#102321 !important;
+    color:#f1f5f2 !important;
+    border-color:#294740 !important;
+    box-shadow:0 18px 44px #0009 !important;
+  }
+  html[data-theme="dark"] body .header .nav.open a{color:#f1f5f2 !important}
+  html[data-theme="dark"] body .header .nav.open a:hover,
+  html[data-theme="dark"] body .header .nav.open a[aria-current="page"]{color:#edbd85 !important}
+  html[data-theme="dark"] body .header .nav.open .language-switch,
+  html[data-theme="dark"] body .header .nav.open .language-switch a{color:#f1f5f2 !important}
+}
