@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("kulinari", "en");
 import {localizeContent} from "@/sanity/lib/localize";
 import KulinariEnClient from "./KulinariEnClient";
 import {client} from "@/sanity/lib/client";
