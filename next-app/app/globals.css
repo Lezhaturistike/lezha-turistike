@@ -919,3 +919,23 @@ html[data-theme="dark"] .study-marquee-item{border-color:#294740}
     border-color:#3a5650;
   }
 }
+
+
+/* Dark mode compact navigation: higher-specificity override for the legacy mobile menu rules. */
+@media(max-width:850px){
+  html[data-theme="dark"] body .header .nav.open{
+    background:#102321 !important;
+    color:#f1f5f2 !important;
+  }
+  html[data-theme="dark"] body .header .nav.open a{
+    color:#f1f5f2 !important;
+  }
+  html[data-theme="dark"] body .header .nav.open a:hover,
+  html[data-theme="dark"] body .header .nav.open a[aria-current="page"]{
+    color:#edbd85 !important;
+  }
+  html[data-theme="dark"] body .header .nav.open .language-switch,
+  html[data-theme="dark"] body .header .nav.open .language-switch a{
+    color:#f1f5f2 !important;
+  }
+}
