@@ -801,3 +801,84 @@ html[data-theme="dark"] .place-dialog .culinary-actions>a .arrow-icon{
   .place-dialog .culinary-actions>a:not(.button),
   .place-dialog .culinary-actions .button{min-height:50px;padding:12px 14px;}
 }
+
+
+/* Science study gallery: continuous visual movement */
+.study-marquee{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  margin:28px 0 42px;
+  padding:8px 0;
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+}
+.study-marquee-track{
+  display:flex;
+  width:max-content;
+  gap:16px;
+  animation:studyMarquee 42s linear infinite;
+  will-change:transform;
+}
+.study-marquee:hover .study-marquee-track{animation-play-state:paused}
+.study-marquee-item{
+  position:relative;
+  flex:0 0 clamp(270px,30vw,430px);
+  height:250px;
+  margin:0;
+  overflow:hidden;
+  border:1px solid #dfe7df;
+  background:#173d39;
+}
+.study-marquee-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s ease;
+}
+.study-marquee-item:hover img{transform:scale(1.045)}
+.study-marquee-item:after{
+  content:'';
+  position:absolute;
+  inset:38% 0 0;
+  background:linear-gradient(transparent,rgba(8,29,27,.9));
+  pointer-events:none;
+}
+.study-marquee-item figcaption{
+  position:absolute;
+  z-index:1;
+  left:20px;
+  right:20px;
+  bottom:18px;
+  color:#fff;
+}
+.study-marquee-item figcaption span{
+  display:block;
+  margin-bottom:7px;
+  color:#edbd85;
+  font-size:.64rem;
+  font-weight:800;
+  letter-spacing:.14em;
+}
+.study-marquee-item figcaption strong{
+  display:block;
+  max-width:330px;
+  font-family:Manrope,Arial,sans-serif;
+  font-size:1rem;
+  line-height:1.35;
+}
+@keyframes studyMarquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 8px))}
+}
+html[data-theme="dark"] .study-marquee-item{border-color:#294740}
+@media(max-width:620px){
+  .study-marquee{margin:20px 0 34px}
+  .study-marquee-track{gap:11px;animation-duration:34s}
+  .study-marquee-item{flex-basis:78vw;height:215px}
+  .study-marquee-item figcaption{left:16px;right:16px;bottom:15px}
+}
+@media(prefers-reduced-motion:reduce){
+  .study-marquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}
+  .study-marquee-track{animation:none}
+}
