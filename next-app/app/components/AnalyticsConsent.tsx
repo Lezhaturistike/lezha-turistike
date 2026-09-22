@@ -47,7 +47,7 @@ export default function AnalyticsConsent(){
           <strong>Ju zgjidhni si përdoren të dhënat.</strong>
           <p>Përdorim Google Analytics vetëm me pëlqimin tuaj për të kuptuar në mënyrë të përmbledhur si përdoret Lezha Turistike. Nuk përdorim të dhënat për reklama të personalizuara.</p>
           <p className="lt-consent-en">We use Google Analytics only with your consent to understand aggregate website usage.</p>
-          <a className="lt-consent-policy" href="/cookies">Cookie Policy <span>↗</span></a>
+          <a className="lt-consent-policy" href="/cookies">Cookie Policy <span className="lt-external-arrow" aria-hidden="true" /></a>
         </div>
         <div className="lt-consent-actions">
           <button type="button" className="lt-consent-secondary" onClick={()=>choose("denied")}>Refuzo <small>Reject</small></button>
@@ -66,8 +66,9 @@ export default function AnalyticsConsent(){
       .lt-consent-copy strong{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:5px}
       .lt-consent-copy p{margin:0;color:#d3dfda;font-size:12.5px;line-height:1.55;max-width:720px}
       .lt-consent-copy .lt-consent-en{color:#9fb3aa;margin-top:2px;font-size:11.5px}
-      .lt-consent-policy{display:inline-block;color:#edbd85;margin-top:6px;font-size:11.5px;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(237,189,133,.55);padding-bottom:2px}
-      .lt-consent-policy span{margin-left:5px}
+      .lt-consent-policy{display:inline-flex;align-items:center;gap:7px;color:#edbd85;margin-top:6px;font-size:11.5px;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(237,189,133,.55);padding-bottom:2px}
+      .lt-external-arrow{display:inline-block;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;position:relative;flex:none}
+      .lt-external-arrow:after{content:"";position:absolute;width:9px;height:1.5px;background:currentColor;right:-1px;top:2.5px;transform:rotate(-45deg);transform-origin:right center}
       .lt-consent-actions{display:flex;align-items:stretch;gap:9px;white-space:nowrap}
       .lt-consent-actions button{border:0;min-height:48px;padding:10px 17px;font-weight:800;font-size:12px;transition:transform .18s ease,background .18s ease}
       .lt-consent-actions button:hover{transform:translateY(-1px)}
