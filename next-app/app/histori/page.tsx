@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("histori", "sq");
 import LocaleHeader from "@/app/components/LocaleHeader";
 import { getPageContent } from "@/sanity/lib/content";
 export const dynamic = "force-dynamic";
