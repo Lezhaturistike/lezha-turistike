@@ -695,46 +695,41 @@
         "name": "studyGallery",
         "title": "Fotot dinamike të studimeve",
         "type": "array",
-        "of": [
+        "fields": [
           {
-            "type": "object",
-            "fields": [
-              {
-                "name": "image",
-                "title": "URL e fotos",
-                "type": "string"
-              },
-              {
-                "name": "alt",
-                "title": "Përshkrimi i fotos",
-                "type": "string"
-              },
-              {
-                "name": "altEn",
-                "title": "Përshkrimi i fotos (EN)",
-                "type": "string"
-              },
-              {
-                "name": "label",
-                "title": "Etiketa",
-                "type": "string"
-              },
-              {
-                "name": "labelEn",
-                "title": "Etiketa (EN)",
-                "type": "string"
-              },
-              {
-                "name": "caption",
-                "title": "Titulli / përshkrimi",
-                "type": "string"
-              },
-              {
-                "name": "captionEn",
-                "title": "Titulli / përshkrimi (EN)",
-                "type": "string"
-              }
-            ]
+            "name": "image",
+            "title": "URL e fotos",
+            "type": "string"
+          },
+          {
+            "name": "alt",
+            "title": "Përshkrimi i fotos",
+            "type": "string"
+          },
+          {
+            "name": "altEn",
+            "title": "Përshkrimi i fotos (EN)",
+            "type": "string"
+          },
+          {
+            "name": "label",
+            "title": "Etiketa",
+            "type": "string"
+          },
+          {
+            "name": "labelEn",
+            "title": "Etiketa (EN)",
+            "type": "string"
+          },
+          {
+            "name": "caption",
+            "title": "Titulli / përshkrimi",
+            "type": "string"
+          },
+          {
+            "name": "captionEn",
+            "title": "Titulli / përshkrimi (EN)",
+            "type": "string"
           }
         ]
       },
