@@ -36,7 +36,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       <main id="home">
         {/* HERO */}
         <section className="hero">
-          <img key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fetchPriority="high" />
+          <img key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fetchPriority="high" decoding="async" />
 
           <div className="hero-shade"></div>
 
