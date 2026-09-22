@@ -114,14 +114,15 @@ export default function GaleriClient({ destinacionet }: { destinacionet: Destina
     )}
     <style jsx>{`
       @media (max-width:620px){
-        .sq-dialog-actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%;margin-top:26px}
-        .sq-dialog-actions>a{width:100%;min-height:56px;margin:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 18px;font-size:.86rem;font-weight:700;text-decoration:none}
-        .sq-dialog-actions .sq-info-link{border:1px solid #173d39;color:#173d39;background:transparent}
-        .sq-dialog-actions .arrow-icon{flex:0 0 auto;margin-left:auto}
+        .sq-dialog-actions{display:grid!important;grid-template-columns:1fr!important;gap:10px!important;width:100%!important;margin-top:26px}
+        .sq-dialog-actions>a{box-sizing:border-box;width:100%!important;min-height:56px;margin:0!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:16px;padding:15px 18px!important;font-size:.86rem;font-weight:700;text-decoration:none}
+        .sq-dialog-actions .sq-info-link{border:1px solid rgba(244,234,219,.35)!important;color:#fff!important;background:transparent!important}
+        .sq-dialog-actions .sq-info-link span{color:#fff!important}
+        .sq-dialog-actions .arrow-icon{flex:0 0 auto;margin-left:auto;color:#fff!important}
       }
       @media (prefers-color-scheme:dark){
-        .sq-dialog-actions .sq-info-link{border-color:#d8b27a;color:#f4eadb;background:rgba(255,255,255,.025)}
-        .sq-dialog-actions .sq-info-link .arrow-icon{color:#d8b27a}
+        .sq-dialog-actions .sq-info-link,.sq-dialog-actions .sq-info-link span,.sq-dialog-actions .sq-info-link .arrow-icon{color:#fff!important}
+        .sq-dialog-actions .sq-info-link{border-color:rgba(244,234,219,.35)!important;background:transparent!important}
       }
     `}</style>
   </>;
