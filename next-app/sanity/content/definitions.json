@@ -693,17 +693,17 @@
       },
       {
         "name": "studyGallery",
-        "title": "Fotot dinamike të studimeve",
+        "title": "Galeria dinamike e studimeve",
         "type": "array",
         "fields": [
           {
             "name": "image",
-            "title": "URL e fotos",
-            "type": "string"
+            "title": "Ngarko fotografinë",
+            "type": "image"
           },
           {
             "name": "alt",
-            "title": "Përshkrimi i fotos",
+            "title": "Përshkrimi i fotos (SQ)",
             "type": "string"
           },
           {
@@ -713,22 +713,22 @@
           },
           {
             "name": "label",
-            "title": "Etiketa",
+            "title": "Etiketa e fotos (SQ)",
             "type": "string"
           },
           {
             "name": "labelEn",
-            "title": "Etiketa (EN)",
+            "title": "Etiketa e fotos (EN)",
             "type": "string"
           },
           {
             "name": "caption",
-            "title": "Titulli / përshkrimi",
+            "title": "Titulli i fotos (SQ)",
             "type": "string"
           },
           {
             "name": "captionEn",
-            "title": "Titulli / përshkrimi (EN)",
+            "title": "Titulli i fotos (EN)",
             "type": "string"
           }
         ]
