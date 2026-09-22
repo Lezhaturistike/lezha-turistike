@@ -47,7 +47,7 @@ export default function AnalyticsConsent(){
           <strong>Ju zgjidhni si përdoren të dhënat.</strong>
           <p>Përdorim Google Analytics vetëm me pëlqimin tuaj për të kuptuar në mënyrë të përmbledhur si përdoret Lezha Turistike. Nuk përdorim të dhënat për reklama të personalizuara.</p>
           <p className="lt-consent-en">We use Google Analytics only with your consent to understand aggregate website usage.</p>
-          <a className="lt-consent-policy" href="/cookies">Cookie Policy <span className="lt-external-arrow" aria-hidden="true" /></a>
+          <a className="lt-consent-policy" href="/cookies"><span>Cookie Policy</span><svg className="lt-policy-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6.5 5H11V9.5" /></svg></a>
         </div>
         <div className="lt-consent-actions">
           <button type="button" className="lt-consent-secondary" onClick={()=>choose("denied")}>Refuzo <small>Reject</small></button>
@@ -66,9 +66,9 @@ export default function AnalyticsConsent(){
       .lt-consent-copy strong{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:5px}
       .lt-consent-copy p{margin:0;color:#d3dfda;font-size:12.5px;line-height:1.55;max-width:720px}
       .lt-consent-copy .lt-consent-en{color:#9fb3aa;margin-top:2px;font-size:11.5px}
-      .lt-consent-policy{display:inline-flex;align-items:center;gap:7px;color:#edbd85;margin-top:6px;font-size:11.5px;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(237,189,133,.55);padding-bottom:2px}
-      .lt-external-arrow{display:inline-block;width:8px;height:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;position:relative;flex:none}
-      .lt-external-arrow:after{content:"";position:absolute;width:9px;height:1.5px;background:currentColor;right:-1px;top:2.5px;transform:rotate(-45deg);transform-origin:right center}
+      .lt-consent-policy{display:inline-flex;align-items:center;gap:5px;color:#edbd85;margin-top:7px;font-size:11.5px;line-height:1;font-weight:700;text-decoration:none;padding-bottom:3px;border-bottom:1px solid rgba(237,189,133,.48)}
+      .lt-policy-arrow{display:block;width:12px;height:12px;flex:0 0 12px;overflow:visible}
+      .lt-policy-arrow path{fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
       .lt-consent-actions{display:flex;align-items:stretch;gap:9px;white-space:nowrap}
       .lt-consent-actions button{border:0;min-height:48px;padding:10px 17px;font-weight:800;font-size:12px;transition:transform .18s ease,background .18s ease}
       .lt-consent-actions button:hover{transform:translateY(-1px)}
@@ -85,6 +85,8 @@ export default function AnalyticsConsent(){
         .lt-consent-copy strong{font-size:15px}
         .lt-consent-copy p{font-size:11.5px;line-height:1.48}
         .lt-consent-copy .lt-consent-en{display:none}
+        .lt-consent-policy{gap:4px;margin-top:8px;padding-bottom:3px}
+        .lt-policy-arrow{width:11px;height:11px;flex-basis:11px}
         .lt-consent-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.15fr;width:100%;margin-top:2px}
         .lt-consent-actions button{min-height:46px}
       }
