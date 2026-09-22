@@ -7,6 +7,13 @@ const GA_ID = "G-5FMBPFYTNX";
 const STORAGE_KEY = "lt-analytics-consent";
 type Consent = "granted" | "denied" | null;
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 export default function AnalyticsConsent(){
   const [consent,setConsent]=useState<Consent>(null);
   const [ready,setReady]=useState(false);
@@ -17,24 +24,51 @@ export default function AnalyticsConsent(){
     setReady(true);
   },[]);
 
+  const updateGoogleConsent=(value: Exclude<Consent,null>)=>{
+    if(typeof window==="undefined") return;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=window.gtag||function(...args: unknown[]){window.dataLayer.push(args);};
+    window.gtag("consent","update",{
+      analytics_storage:value,
+      ad_storage:"denied",
+      ad_user_data:"denied",
+      ad_personalization:"denied"
+    });
+  };
+
   const choose=(value: Exclude<Consent,null>)=>{
     localStorage.setItem(STORAGE_KEY,value);
+    updateGoogleConsent(value);
     setConsent(value);
   };
 
   return <>
+    <Script id="google-consent-default" strategy="beforeInteractive">{`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = window.gtag || gtag;
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
+      });
+    `}</Script>
+
     {consent==="granted" && <>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
       <Script id="google-analytics" strategy="afterInteractive">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('consent', 'default', {
+        window.gtag = window.gtag || gtag;
+        gtag('consent', 'update', {
           analytics_storage: 'granted',
           ad_storage: 'denied',
           ad_user_data: 'denied',
           ad_personalization: 'denied'
         });
+        gtag('js', new Date());
         gtag('config', '${GA_ID}', { anonymize_ip: true });
       `}</Script>
     </>}
