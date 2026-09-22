@@ -27,6 +27,27 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   const [slide, setSlide] = useState(0);
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
   const activeSlide = slides[slide] || slides[0];
+  const experience = locale === "en" ? {
+    overline: "EXPLORE LEZHË",
+    title: "Choose your way to experience the city.",
+    description: "History, archaeology, landscape and digital maps come together in one journey.",
+    cta: "Explore all destinations",
+    cards: [
+      { n: "01", title: "Walk through history", text: "From Lissus and Akrolis to the Castle and the memory of the city.", href: "/histori", image: "/images/kala-3.jpeg" },
+      { n: "02", title: "Explore archaeology", text: "Discover documented sites, research and the ancient landscape of Lezhë.", href: "/arkeologji", image: "/images/akrolisi.jpeg" },
+      { n: "03", title: "Open the digital map", text: "Move from stories to place through 2D maps, 3D scenes and Web GIS.", href: "/webgis", image: "/images/lezha.jpeg" },
+    ]
+  } : {
+    overline: "EKSPLORO LEZHËN",
+    title: "Zgjidh mënyrën tënde për ta përjetuar qytetin.",
+    description: "Historia, arkeologjia, peizazhi dhe hartat digjitale bashkohen në një udhëtim të vetëm.",
+    cta: "Eksploro të gjitha destinacionet",
+    cards: [
+      { n: "01", title: "Ec nëpër histori", text: "Nga Lissusi dhe Akrolisi te Kalaja dhe kujtesa e qytetit.", href: "/histori", image: "/images/kala-3.jpeg" },
+      { n: "02", title: "Zbulo arkeologjinë", text: "Eksploro sitet e dokumentuara, kërkimin dhe peizazhin e lashtë të Lezhës.", href: "/arkeologji", image: "/images/akrolisi.jpeg" },
+      { n: "03", title: "Hap hartën digjitale", text: "Kalo nga rrëfimi te territori përmes hartave 2D, skenave 3D dhe Web GIS.", href: "/webgis", image: "/images/lezha.jpeg" },
+    ]
+  };
 
   return (
     <>
@@ -96,6 +117,36 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             {content.text19}
             <b aria-hidden="true">↗</b>
           </Link>
+        </section>
+
+        {/* IMMERSIVE EXPLORE */}
+        <section className="modern-explore" aria-labelledby="modern-explore-title">
+          <div className="modern-explore-head">
+            <div>
+              <span className="overline">${experience.overline}</span>
+              <h2 id="modern-explore-title">${experience.title}</h2>
+            </div>
+            <div className="modern-explore-intro">
+              <p>${experience.description}</p>
+              <Link href={localizedPath("/destinacione", locale)}>
+                ${experience.cta} <span className="arrow-icon" aria-hidden="true">↗</span>
+              </Link>
+            </div>
+          </div>
+          <div className="modern-explore-grid">
+            {experience.cards.map((card) => (
+              <Link key={card.n} href={localizedPath(card.href, locale)} className="modern-explore-card">
+                <Image src={card.image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" />
+                <span className="modern-explore-shade" />
+                <span className="modern-explore-number">{card.n}</span>
+                <span className="modern-explore-copy">
+                  <strong>{card.title}</strong>
+                  <small>{card.text}</small>
+                  <b aria-hidden="true"><span className="arrow-icon">↗</span></b>
+                </span>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* DIRECTORY */}
