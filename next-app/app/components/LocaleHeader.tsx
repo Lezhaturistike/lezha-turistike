@@ -7,11 +7,11 @@ const navigation = [
   ["", "Home", "Home"],
   ["destinacione", "Destinacione", "Destinations"],
   ["galeri", "Galeri", "Gallery"],
+  ["kulinari", "Kulinari", "Cuisine"],
   ["histori", "Histori", "History"],
   ["arkeologji", "Arkeologji", "Archaeology"],
   ["webgis", "Web GIS", "Web GIS"],
   ["shkenca", "Punime shkencore", "Scientific research"],
-  ["kulinari", "Kulinari", "Cuisine"],
   ["partneret", "Partnerët", "Partners"],
   ["kontakt", "Kontakt", "Contact"],
 ] as const;
