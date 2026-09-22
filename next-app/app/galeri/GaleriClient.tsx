@@ -100,11 +100,11 @@ export default function GaleriClient({ destinacionet }: { destinacionet: Destina
             </div>
             <div className="dialog-actions sq-dialog-actions">
               <a className="button dark" href={selectedGallery.harta || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${selectedGallery.title}, Lezhë, Albania`)}`} target="_blank" rel="noopener noreferrer">
-                Shiko vendndodhjen <span className="arrow-icon" aria-hidden="true">↗</span>
+                <span>Shiko vendndodhjen</span><span className="arrow-icon" aria-hidden="true">↗</span>
               </a>
               {selectedGallery.source && (
-                <a href={selectedGallery.source} target="_blank" rel="noopener noreferrer">
-                  Më shumë informacion <span className="arrow-icon" aria-hidden="true">↗</span>
+                <a className="sq-info-link" href={selectedGallery.source} target="_blank" rel="noopener noreferrer">
+                  <span>Më shumë informacion</span><span className="arrow-icon" aria-hidden="true">↗</span>
                 </a>
               )}
             </div>
@@ -113,17 +113,15 @@ export default function GaleriClient({ destinacionet }: { destinacionet: Destina
       </div>
     )}
     <style jsx>{`
-      @media (max-width: 620px) {
-        .sq-dialog-actions {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 14px;
-        }
-        .sq-dialog-actions > a {
-          margin: 0;
-          align-self: flex-start;
-        }
+      @media (max-width:620px){
+        .sq-dialog-actions{display:grid;grid-template-columns:1fr;gap:10px;width:100%;margin-top:26px}
+        .sq-dialog-actions>a{width:100%;min-height:56px;margin:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 18px;font-size:.86rem;font-weight:700;text-decoration:none}
+        .sq-dialog-actions .sq-info-link{border:1px solid #173d39;color:#173d39;background:transparent}
+        .sq-dialog-actions .arrow-icon{flex:0 0 auto;margin-left:auto}
+      }
+      @media (prefers-color-scheme:dark){
+        .sq-dialog-actions .sq-info-link{border-color:#d8b27a;color:#f4eadb;background:rgba(255,255,255,.025)}
+        .sq-dialog-actions .sq-info-link .arrow-icon{color:#d8b27a}
       }
     `}</style>
   </>;
