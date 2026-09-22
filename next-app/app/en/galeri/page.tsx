@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("galeri", "en");
 import {localizeContent} from "@/sanity/lib/localize";
 import {client} from '@/sanity/lib/client'
 import GaleriEnClient from './GaleriEnClient'
