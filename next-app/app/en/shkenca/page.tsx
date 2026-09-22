@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("shkenca", "en");
 import SiteFooter from "@/app/components/SiteFooter";
 import {localizeContent, localizedPath} from "@/sanity/lib/localize";
 import LocaleHeader from "@/app/components/LocaleHeader";
