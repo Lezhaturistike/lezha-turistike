@@ -133,7 +133,7 @@ export default function GaleriClient({
             <div>
               <span className="overline">FOTOGRAFI NGA LEZHA</span>
 
-              <h2>Shiko vendet nga afër.</h2>
+              <h1>Shiko vendet nga afër.</h1>
             </div>
 
             <p>
