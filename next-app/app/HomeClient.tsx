@@ -5,6 +5,7 @@ import LocaleHeader from "@/app/components/LocaleHeader";
 import defaults from "@/sanity/content/home.json";
 import BackToTop from "@/app/components/BackToTop";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type HomeContent = typeof defaults & { heroSlides?: Array<{_key?: string; image?: string; alt?: string; caption?: string}> };
@@ -36,7 +37,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       <main id="home">
         {/* HERO */}
         <section className="hero">
-          <img key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fetchPriority="high" decoding="async" />
+          <Image key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fill priority sizes="100vw" style={{objectFit:"cover"}} />
 
           <div className="hero-shade"></div>
 
