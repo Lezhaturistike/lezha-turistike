@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("webgis", "en");
 import {localizeContent} from "@/sanity/lib/localize";
 import WebGISEnClient from './WebGISEnClient';
 import defaults from '@/sanity/content/webgis.json';
