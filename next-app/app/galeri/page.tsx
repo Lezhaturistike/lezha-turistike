@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("galeri", "sq");
 import {client} from '@/sanity/lib/client'
 import GaleriClient from './GaleriClient'
 
