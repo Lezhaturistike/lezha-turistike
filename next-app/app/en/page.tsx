@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("", "en");
 import HomeClient from "../HomeClient";
 import defaults from "@/sanity/content/home.json";
 import { getPageContent } from "@/sanity/lib/content";
