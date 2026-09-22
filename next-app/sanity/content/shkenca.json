@@ -60,5 +60,57 @@
       "linkLabel": "Shiko në YouTube",
       "embed": "https://www.youtube-nocookie.com/embed/UuHWCk8ZzRM?rel=0"
     }
+  ],
+  "studyGallery": [
+    {
+      "_key": "study-gallery-1",
+      "image": "/images/lezha.jpeg",
+      "alt": "Pamje e zonës së studimit në Lezhë",
+      "altEn": "View of the study area in Lezhë",
+      "label": "01 / TERRITOR",
+      "labelEn": "01 / LANDSCAPE",
+      "caption": "Dokumentimi i territorit dhe kontekstit arkeologjik",
+      "captionEn": "Documentation of the landscape and archaeological context"
+    },
+    {
+      "_key": "study-gallery-2",
+      "image": "/images/kala-3.jpeg",
+      "alt": "Kalaja e Lezhës gjatë dokumentimit",
+      "altEn": "Lezhë Castle during documentation",
+      "label": "02 / KALAJA",
+      "labelEn": "02 / CASTLE",
+      "caption": "Matje, fotogrametri dhe modelim 3D",
+      "captionEn": "Surveying, photogrammetry and 3D modelling"
+    },
+    {
+      "_key": "study-gallery-3",
+      "image": "/images/akrolisi.jpeg",
+      "alt": "Akrolisi i Lezhës",
+      "altEn": "The Acropolis of Lezhë",
+      "label": "03 / AKROLISI",
+      "labelEn": "03 / ACROPOLIS",
+      "caption": "Dokumentim gjeohapësinor dhe interpretim",
+      "captionEn": "Geospatial documentation and interpretation"
+    },
+    {
+      "_key": "study-gallery-4",
+      "image": "/images/lezha.jpeg",
+      "alt": "Pamje nga studimet HDZA Lezha",
+      "altEn": "View from the HDZA Lezha studies",
+      "label": "04 / GIS",
+      "labelEn": "04 / GIS",
+      "caption": "Integrimi i të dhënave në GIS dhe Web GIS",
+      "captionEn": "Integration of data into GIS and Web GIS"
+    },
+    {
+      "_key": "study-gallery-5",
+      "image": "/images/kala-3.jpeg",
+      "alt": "Dokumentim i strukturave të Kalasë së Lezhës",
+      "altEn": "Documentation of structures at Lezhë Castle",
+      "label": "05 / MODELIM",
+      "labelEn": "05 / MODELLING",
+      "caption": "Nga terreni te modelet digjitale",
+      "captionEn": "From fieldwork to digital models"
+    }
   ]
 }
