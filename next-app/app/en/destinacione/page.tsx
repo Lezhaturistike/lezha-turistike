@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("destinacione", "en");
 import {client} from "@/sanity/lib/client";
 import DestinacioneEnClient from "./DestinacioneEnClient";
 import {localizeContent} from "@/sanity/lib/localize";
