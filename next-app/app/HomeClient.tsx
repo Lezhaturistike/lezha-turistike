@@ -25,6 +25,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   const t = ui[locale];
   const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:""}];
   const [slide, setSlide] = useState(0);
+  const [exploreActive, setExploreActive] = useState(0);
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
   const activeSlide = slides[slide] || slides[0];
   const experience = locale === "en" ? {
@@ -33,9 +34,9 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
     description: "History, archaeology, landscape and digital maps come together in one journey.",
     cta: "Explore all destinations",
     cards: [
-      { n: "01", title: "Walk through history", text: "From Lissus and Akrolis to the Castle and the memory of the city.", href: "/histori", image: "/images/kala-3.jpeg" },
-      { n: "02", title: "Explore archaeology", text: "Discover documented sites, research and the ancient landscape of Lezhë.", href: "/arkeologji", image: "/images/akrolisi.jpeg" },
-      { n: "03", title: "Open the digital map", text: "Move from stories to place through 2D maps, 3D scenes and Web GIS.", href: "/webgis", image: "/images/lezha.jpeg" },
+      { n: "01", title: "Lezhë Castle", text: "A panoramic landmark above the city and one of the essential stops for discovering Lezhë.", href: "/destinacione", image: "/images/kala-3.jpeg", x: 48, y: 27 },
+      { n: "02", title: "Akrolis", text: "Explore archaeology, research and the ancient landscape through the project's digital documentation.", href: "/arkeologji", image: "/images/akrolisi.jpeg", x: 62, y: 38 },
+      { n: "03", title: "Lissus", text: "Move from the ancient city to the territory through history, archaeology and Web GIS.", href: "/webgis", image: "/images/lezha.jpeg", x: 43, y: 53 },
     ]
   } : {
     overline: "EKSPLORO LEZHËN",
@@ -43,9 +44,9 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
     description: "Historia, arkeologjia, peizazhi dhe hartat digjitale bashkohen në një udhëtim të vetëm.",
     cta: "Eksploro të gjitha destinacionet",
     cards: [
-      { n: "01", title: "Ec nëpër histori", text: "Nga Lissusi dhe Akrolisi te Kalaja dhe kujtesa e qytetit.", href: "/histori", image: "/images/kala-3.jpeg" },
-      { n: "02", title: "Zbulo arkeologjinë", text: "Eksploro sitet e dokumentuara, kërkimin dhe peizazhin e lashtë të Lezhës.", href: "/arkeologji", image: "/images/akrolisi.jpeg" },
-      { n: "03", title: "Hap hartën digjitale", text: "Kalo nga rrëfimi te territori përmes hartave 2D, skenave 3D dhe Web GIS.", href: "/webgis", image: "/images/lezha.jpeg" },
+      { n: "01", title: "Kalaja e Lezhës", text: "Një pikë panoramike mbi qytet dhe një nga ndalesat kryesore për të zbuluar Lezhën.", href: "/destinacione", image: "/images/kala-3.jpeg", x: 48, y: 27 },
+      { n: "02", title: "Akrolisi", text: "Eksploro arkeologjinë, kërkimin dhe peizazhin e lashtë përmes dokumentimit digjital të projektit.", href: "/arkeologji", image: "/images/akrolisi.jpeg", x: 62, y: 38 },
+      { n: "03", title: "Lissusi", text: "Kalo nga qyteti antik te territori përmes historisë, arkeologjisë dhe Web GIS.", href: "/webgis", image: "/images/lezha.jpeg", x: 43, y: 53 },
     ]
   };
 
@@ -133,19 +134,55 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
               </Link>
             </div>
           </div>
-          <div className="modern-explore-grid">
-            {experience.cards.map((card) => (
-              <Link key={card.n} href={localizedPath(card.href, locale)} className="modern-explore-card">
-                <Image src={card.image} alt="" fill sizes="(max-width: 720px) 100vw, 33vw" />
-                <span className="modern-explore-shade" />
-                <span className="modern-explore-number">{card.n}</span>
-                <span className="modern-explore-copy">
-                  <strong>{card.title}</strong>
-                  <small>{card.text}</small>
-                  <b aria-hidden="true"><span className="arrow-icon">↗</span></b>
-                </span>
+          <div className="modern-map-experience">
+            <div className="modern-map-stage" aria-label={locale === "en" ? "Interactive Lezhë explorer" : "Eksplorues interaktiv i Lezhës"}>
+              <Image src="/images/lezha.jpeg" alt="" fill sizes="(max-width: 900px) 100vw, 60vw" />
+              <span className="modern-map-shade" />
+              <span className="modern-map-grid" aria-hidden="true" />
+              <div className="modern-map-kicker">{locale === "en" ? "DIGITAL TERRITORY · LEZHË" : "TERRITOR DIGJITAL · LEZHË"}</div>
+              {experience.cards.map((card, index) => (
+                <button
+                  key={card.n}
+                  type="button"
+                  className={`modern-map-marker${exploreActive === index ? " active" : ""}`}
+                  style={{left: `${card.x}%`, top: `${card.y}%`}}
+                  onMouseEnter={() => setExploreActive(index)}
+                  onFocus={() => setExploreActive(index)}
+                  onClick={() => setExploreActive(index)}
+                  aria-label={card.title}
+                >
+                  <span>{card.n}</span>
+                </button>
+              ))}
+              <div className="modern-map-place-card">
+                <span>{experience.cards[exploreActive].n} / {String(experience.cards.length).padStart(2,"0")}</span>
+                <strong>{experience.cards[exploreActive].title}</strong>
+                <p>{experience.cards[exploreActive].text}</p>
+                <Link href={localizedPath(experience.cards[exploreActive].href, locale)}>
+                  {locale === "en" ? "Explore" : "Eksploro"} <span className="arrow-icon" aria-hidden="true">↗</span>
+                </Link>
+              </div>
+            </div>
+            <div className="modern-map-list">
+              {experience.cards.map((card, index) => (
+                <button
+                  key={card.n}
+                  type="button"
+                  className={exploreActive === index ? "active" : ""}
+                  onMouseEnter={() => setExploreActive(index)}
+                  onFocus={() => setExploreActive(index)}
+                  onClick={() => setExploreActive(index)}
+                >
+                  <span>{card.n}</span>
+                  <div><strong>{card.title}</strong><small>{card.text}</small></div>
+                  <b aria-hidden="true">→</b>
+                </button>
+              ))}
+              <Link className="modern-map-open" href={localizedPath("/webgis", locale)}>
+                <span>{locale === "en" ? "OPEN FULL WEB GIS" : "HAP WEB GIS TË PLOTË"}</span>
+                <span className="arrow-icon" aria-hidden="true">↗</span>
               </Link>
-            ))}
+            </div>
           </div>
         </section>
 
