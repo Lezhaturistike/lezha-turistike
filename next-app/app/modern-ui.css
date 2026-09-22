@@ -1,0 +1,119 @@
+/* Global visual unification — presentation only; preserves content and behavior */
+:root{
+  --ui-ink:#173d39;
+  --ui-accent:#b27d4b;
+  --ui-surface:#fff;
+  --ui-line:#dfe7df;
+  --ui-soft:#f3f6f2;
+  --ui-radius:16px;
+  --ui-shadow:0 10px 32px rgba(20,55,50,.07);
+  --ui-shadow-hover:0 18px 42px rgba(20,55,50,.12);
+}
+
+/* Cards: same visual language as the refined Culinary / Contact areas */
+.place,.science-grid article,.archaeology-grid article,.researcher-card,
+.gis-feature,.contact-info,dialog,
+[class*="card"]{
+  border-radius:var(--ui-radius);
+  border-color:var(--ui-line);
+  box-shadow:var(--ui-shadow);
+}
+.place,.science-grid article,.archaeology-grid article,.researcher-card,
+.gis-feature,[class*="card"]{
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.place:hover,.science-grid article:hover,.archaeology-grid article:hover,
+.researcher-card:hover,.gis-feature:hover,[class*="card"]:hover{
+  transform:translateY(-3px);
+  box-shadow:var(--ui-shadow-hover);
+  border-color:#cfdbd2;
+}
+.place,.place-image,.gis-feature,.gis-visual,.science-grid article,
+.archaeology-grid article,[class*="card"]{overflow:hidden}
+
+/* Links and buttons: compact, rounded and consistent without altering actions */
+.button,.nav-cta,.filter,
+button:not(.menu-btn):not(.dialog-close):not(.history-book-nav button),
+a[class*="button"],a[class*="btn"]{
+  border-radius:999px;
+  transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease;
+}
+.button:hover,.nav-cta:hover,
+a[class*="button"]:hover,a[class*="btn"]:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(20,55,50,.14);
+}
+.button:focus-visible,.nav-cta:focus-visible,.filter:focus-visible,
+a:focus-visible,button:focus-visible{
+  outline:2px solid #c38a55;
+  outline-offset:3px;
+}
+
+/* Text links that behave as calls to action */
+.place a,.science-grid a,.story-links a,.gis-visual-overlay a,
+.researcher-links a{
+  text-underline-offset:5px;
+  transition:color .18s ease,border-color .18s ease,transform .18s ease;
+}
+
+/* GIS/map surfaces get the same polished container treatment */
+.gis-feature{border:1px solid var(--ui-line)}
+.gis-list a{transition:background-color .18s ease,padding .18s ease}
+.gis-list a:hover{background:var(--ui-soft);padding-left:10px;padding-right:10px}
+
+/* Lightweight CSS arrow for link affordances — no emoji glyphs */
+.ui-arrow,
+.place a span:last-child,
+.gis-list a b:last-child,
+.quick a b:last-child,
+.place-link-button .arrow-icon{
+  font-size:0!important;
+  width:18px;
+  height:18px;
+  display:inline-block;
+  position:relative;
+  flex:0 0 18px;
+}
+.ui-arrow::before,
+.place a span:last-child::before,
+.gis-list a b:last-child::before,
+.quick a b:last-child::before,
+.place-link-button .arrow-icon::before{
+  content:"";
+  position:absolute;
+  width:7px;
+  height:7px;
+  border-top:1.5px solid currentColor;
+  border-right:1.5px solid currentColor;
+  transform:rotate(45deg);
+  right:3px;
+  top:5px;
+}
+.ui-arrow::after,
+.place a span:last-child::after,
+.gis-list a b:last-child::after,
+.quick a b:last-child::after,
+.place-link-button .arrow-icon::after{
+  content:"";
+  position:absolute;
+  width:11px;
+  height:1.5px;
+  background:currentColor;
+  right:4px;
+  top:8px;
+}
+
+/* Keep dark/photo sections elegant while preserving their existing palette */
+.story-section,.culinary{overflow:hidden}
+@media(min-width:621px){.story-section,.culinary{border-radius:0}}
+
+@media(max-width:620px){
+  :root{--ui-radius:14px}
+  .button,.nav-cta{min-height:44px}
+  .gis-list a:hover{padding-left:7px;padding-right:7px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .place,.science-grid article,.archaeology-grid article,.researcher-card,
+  .gis-feature,[class*="card"],.button,.nav-cta,.filter{transition:none!important}
+}
