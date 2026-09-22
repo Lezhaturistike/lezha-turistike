@@ -1,3 +1,5 @@
+import {pageMetadata} from "@/app/seo";
+export const metadata = pageMetadata("webgis", "sq");
 import WebGISClient from './WebGISClient';
 import defaults from '@/sanity/content/webgis.json';
 import {getPageContent} from '@/sanity/lib/content';
