@@ -108,38 +108,6 @@ export default async function ShkencaPage() {
             <a href={localizedPath(content.href9, "en")}>{content.text10}</a>
           </div>
 
-          {/* RESEARCH TEAM */}
-          <section className="research-team" aria-labelledby="research-team-title">
-            <div className="video-heading">
-              <span className="overline">RESEARCH TEAM</span>
-              <h3 id="research-team-title">Project researchers and experts</h3>
-              <p>Authors of the HDZA Lezha scientific publication. Affiliations follow the IntechOpen publication.</p>
-            </div>
-            <div className="researcher-grid">
-              {researchers.map((person)=>(
-                <article className="researcher-card" key={person._id || person.name}>
-                  <div className="researcher-avatar">{person.photoUrl?<img src={person.photoUrl} alt={person.name}/>:<span>{person.name.split(" ").map((x:string)=>x[0]).slice(0,2).join("")}</span>}</div>
-                  <div className="researcher-body">
-                    <span className="researcher-title">{person.academicTitle || "Researcher"}</span>
-                    <h4>{person.name}</h4>
-                    <p className="researcher-role">{person.role}</p>
-                    <p className="researcher-institution">{person.institution}</p>
-                    {person.bio&&<p className="researcher-bio">{person.bio}</p>}
-                    <div className="researcher-links">
-                      {person.researchGate&&<a href={person.researchGate} target="_blank" rel="noopener noreferrer">ResearchGate</a>}
-                      {person.googleScholar&&<a href={person.googleScholar} target="_blank" rel="noopener noreferrer">Scholar</a>}
-                      {person.orcid&&<a href={person.orcid} target="_blank" rel="noopener noreferrer">ORCID</a>}
-                      {person.linkedin&&<a href={person.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
-                      {person.institutionalProfile&&<a href={person.institutionalProfile} target="_blank" rel="noopener noreferrer">Profile</a>}
-                      {person.email&&<a href={"mailto:"+person.email}>Email</a>}
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <p className="research-team-source">Source of authorship and affiliations: the project’s scientific chapter, IntechOpen, 2026.</p>
-          </section>
-
           {/* VIDEOT 3D */}
           <div className="research-videos" id="video-3d">
             <div className="video-heading">
@@ -184,6 +152,40 @@ export default async function ShkencaPage() {
               ))}
             </div>
           </div>
+
+
+          {/* RESEARCH TEAM */}
+          <section className="research-team" aria-labelledby="research-team-title">
+            <div className="video-heading">
+              <span className="overline">RESEARCH TEAM</span>
+              <h3 id="research-team-title">Project researchers and experts</h3>
+              <p>Authors of the HDZA Lezha scientific publication. Affiliations follow the IntechOpen publication.</p>
+            </div>
+            <div className="researcher-grid">
+              {researchers.map((person)=>(
+                <article className="researcher-card" key={person._id || person.name}>
+                  <div className="researcher-avatar">{person.photoUrl?<img src={person.photoUrl} alt={person.name}/>:<span>{person.name.split(" ").map((x:string)=>x[0]).slice(0,2).join("")}</span>}</div>
+                  <div className="researcher-body">
+                    <span className="researcher-title">{person.academicTitle || "Researcher"}</span>
+                    <h4>{person.name}</h4>
+                    <p className="researcher-role">{person.role}</p>
+                    <p className="researcher-institution">{person.institution}</p>
+                    {person.bio&&<p className="researcher-bio">{person.bio}</p>}
+                    <div className="researcher-links">
+                      {person.researchGate&&<a href={person.researchGate} target="_blank" rel="noopener noreferrer">ResearchGate</a>}
+                      {person.googleScholar&&<a href={person.googleScholar} target="_blank" rel="noopener noreferrer">Scholar</a>}
+                      {person.orcid&&<a href={person.orcid} target="_blank" rel="noopener noreferrer">ORCID</a>}
+                      {person.linkedin&&<a href={person.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>}
+                      {person.institutionalProfile&&<a href={person.institutionalProfile} target="_blank" rel="noopener noreferrer">Profile</a>}
+                      {person.email&&<a href={"mailto:"+person.email}>Email</a>}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="research-team-source">Source of authorship and affiliations: the project’s scientific chapter, IntechOpen, 2026.</p>
+          </section>
+
         </section>
       </main>
 
