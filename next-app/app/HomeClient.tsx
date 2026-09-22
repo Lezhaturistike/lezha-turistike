@@ -123,13 +123,13 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
         <section className="modern-explore" aria-labelledby="modern-explore-title">
           <div className="modern-explore-head">
             <div>
-              <span className="overline">${experience.overline}</span>
-              <h2 id="modern-explore-title">${experience.title}</h2>
+              <span className="overline">{experience.overline}</span>
+              <h2 id="modern-explore-title">{experience.title}</h2>
             </div>
             <div className="modern-explore-intro">
-              <p>${experience.description}</p>
+              <p>{experience.description}</p>
               <Link href={localizedPath("/destinacione", locale)}>
-                ${experience.cta} <span className="arrow-icon" aria-hidden="true">↗</span>
+                {experience.cta} <span className="arrow-icon" aria-hidden="true">↗</span>
               </Link>
             </div>
           </div>
