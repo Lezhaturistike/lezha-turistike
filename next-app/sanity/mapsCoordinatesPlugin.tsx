@@ -53,7 +53,7 @@ function LocationFromMapsInput(props:Props){
   <Card padding={3} radius={2} tone="transparent" border>
    <Flex gap={3} align="center" wrap="wrap">
     <Button text={loading?'Duke lexuar Google Maps…':'Merr koordinatat nga Linku i hartës'} tone="primary" mode="ghost" disabled={loading||!harta} onClick={extract}/>
-    {props.value&&<Text size={1} muted>{props.value.lat.toFixed(6)}, {props.value.lng.toFixed(6)}</Text>}
+    {Number.isFinite(props.value?.lat)&&Number.isFinite(props.value?.lng)&&<Text size={1} muted>{Number(props.value?.lat).toFixed(6)}, {Number(props.value?.lng).toFixed(6)}</Text>}
    </Flex>
    {message&&<Box marginTop={3}><Text size={1}>{message}</Text></Box>}
   </Card>
