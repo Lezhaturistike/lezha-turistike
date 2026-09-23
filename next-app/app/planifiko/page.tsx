@@ -3,7 +3,6 @@ import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import BackToTop from "@/app/components/BackToTop";
 import PlannerClient from "./PlannerClient";
-import LiveTourMap from "./LiveTourMap";
 
 export const metadata: Metadata = {
   title: "Planifiko vizitën | Lezha Turistike",
@@ -11,5 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function PlanifikoPage(){
-  return <><LocaleHeader locale="sq" current="kontakt"/><main id="home"><PlannerClient/><LiveTourMap/></main><BackToTop/><SiteFooter locale="sq"/></>;
+  return <><LocaleHeader locale="sq" current="kontakt"/><main id="home"><PlannerClient/></main><BackToTop/><SiteFooter locale="sq"/></>;
 }
