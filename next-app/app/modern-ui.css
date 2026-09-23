@@ -1,43 +1,100 @@
-/* Unified modern UI — presentation only; content and behavior stay intact */
-:root{--ui-radius:18px;--ui-line:#dfe7df;--ui-ink:#173d39;--ui-accent:#b27d4b;--ui-surface:#fff;--ui-soft:#f3f6f2;--ui-shadow:0 10px 30px rgba(20,55,50,.07);--ui-shadow-hover:0 18px 44px rgba(20,55,50,.13)}
-
-/* Cards used throughout both SQ and EN routes */
-.place,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,.gis-frame,.partner-card,.contact-card,.contact-panel,.gallery-card,.photo-card,.video-card,.publication-card,.project-card,.team-card,.info-card,.map-card,[class*="-card"]{border-radius:var(--ui-radius);border-color:var(--ui-line);box-shadow:var(--ui-shadow);overflow:hidden}
-.place,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,.partner-card,.gallery-card,.photo-card,.video-card,.publication-card,.project-card,.team-card,.info-card,.map-card,[class*="-card"]{transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
-.place:hover,.science-grid article:hover,.archaeology-grid article:hover,.researcher-card:hover,.gis-feature:hover,.gis-embed:hover,.partner-card:hover,.gallery-card:hover,.photo-card:hover,.video-card:hover,.publication-card:hover,.project-card:hover,.team-card:hover,.info-card:hover,.map-card:hover,[class*="-card"]:hover{transform:translateY(-3px);box-shadow:var(--ui-shadow-hover);border-color:#cbd9cf}
-
-/* Buttons, filters and interactive pills */
-.button,.nav-cta,.filter,.gis-tab,.place-link-button,.researcher-links a{border-radius:999px;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease}
-.button:hover,.nav-cta:hover,.gis-tab:hover,.place-link-button:hover,.researcher-links a:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(20,55,50,.14)}
-.button:focus-visible,.nav-cta:focus-visible,.filter:focus-visible,.gis-tab:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid #c38a55;outline-offset:3px}
-
-/* CTA text links */
-.place-link,.story-links a,.science-grid a,.gis-visual-overlay a,.gis-embed-bottom a{display:inline-flex;align-items:center;gap:9px;text-underline-offset:5px;transition:color .18s ease,transform .18s ease}
-.place-link:hover,.story-links a:hover,.science-grid a:hover,.gis-visual-overlay a:hover,.gis-embed-bottom a:hover{transform:translateX(2px)}
-
-/* Web GIS / maps */
-.gis-feature,.gis-embed{isolation:isolate;border:1px solid var(--ui-line)}
-.gis-list a{transition:background-color .18s ease,padding .18s ease;border-radius:10px}
-.gis-list a:hover{background:var(--ui-soft);padding-left:10px;padding-right:10px}
-.gis-frame{background:#fff}
-
-/* Thin CSS arrow replaces emoji-looking arrow glyphs wherever arrow-icon is used */
-.arrow-icon,.ui-arrow,.gis-list a>b:last-child,.quick a>b:last-child{font-size:0!important;width:18px!important;height:18px!important;display:inline-block!important;position:relative!important;flex:0 0 18px!important;line-height:1!important}
-.arrow-icon::before,.ui-arrow::before,.gis-list a>b:last-child::before,.quick a>b:last-child::before{content:"";position:absolute;width:7px;height:7px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);right:3px;top:5px}
-.arrow-icon::after,.ui-arrow::after,.gis-list a>b:last-child::after,.quick a>b:last-child::after{content:"";position:absolute;width:11px;height:1.5px;background:currentColor;right:4px;top:8px}
-
-/* Mobile visual system */
-@media(max-width:620px){
- :root{--ui-radius:16px;--ui-shadow:0 7px 24px rgba(20,55,50,.075)}
- .section{padding-left:20px!important;padding-right:20px!important}
- .place,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,.partner-card,.contact-card,.contact-panel,.gallery-card,.photo-card,.video-card,.publication-card,.project-card,.team-card,.info-card,.map-card,[class*="-card"]{border-radius:16px;box-shadow:var(--ui-shadow)}
- .place{margin-bottom:18px}.place-body{padding:22px!important}
- .button,.nav-cta,.gis-tab{min-height:46px}
- .filters{gap:8px}.filter{min-height:42px;padding:10px 16px}
- .gis-feature{display:block}.gis-visual{border-radius:16px 16px 0 0}.gis-list{padding:10px 14px}.gis-list a{min-height:94px;padding-left:8px;padding-right:8px}
- .gis-embed{margin-top:28px}.gis-embed-tabs{gap:8px}.gis-tab{padding:10px 14px}.gis-frame{border-radius:12px}
- .contact-actions .button{width:100%;justify-content:space-between}
- .researcher-links a{min-height:38px;display:inline-flex;align-items:center}
+/* Unified modern UI — presentation only. Content, links and behavior stay intact. */
+:root{
+  --ui-radius:20px;--ui-radius-sm:14px;--ui-line:rgba(23,61,57,.13);--ui-ink:#173d39;
+  --ui-accent:#b27d4b;--ui-surface:#fff;--ui-soft:#f4f7f4;
+  --ui-shadow:0 10px 34px rgba(20,55,50,.075);--ui-shadow-hover:0 20px 48px rgba(20,55,50,.14);
 }
-@media(max-width:390px){.section{padding-left:17px!important;padding-right:17px!important}.place-body{padding:19px!important}.button{gap:14px;padding-left:17px;padding-right:17px}}
-@media(prefers-reduced-motion:reduce){.place,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,[class*="-card"],.button,.nav-cta,.filter,.gis-tab{transition:none!important}}
+
+/* Shared card language: Contact/Culinary-inspired, restrained and clean */
+.place,.directory-card,.science-grid article,.archaeology-grid article,.researcher-card,
+.gis-feature,.gis-embed,.gis-frame,.partner-card,.contact-card,.contact-panel,.contact-form,
+.gallery-card,.photo-card,.video-card,.publication-card,.project-card,.team-card,.info-card,.map-card,
+.history-book,.history-book-shell,[class*="-card"]{
+  border-radius:var(--ui-radius);border-color:var(--ui-line);box-shadow:var(--ui-shadow);overflow:hidden;
+}
+.place,.directory-card,.science-grid article,.archaeology-grid article,.researcher-card,
+.gis-feature,.gis-embed,.partner-card,.gallery-card,.photo-card,.video-card,.publication-card,
+.project-card,.team-card,.info-card,.map-card,[class*="-card"]{
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+@media(hover:hover){
+ .place:hover,.directory-card:hover,.science-grid article:hover,.archaeology-grid article:hover,
+ .researcher-card:hover,.gis-feature:hover,.gis-embed:hover,.partner-card:hover,.gallery-card:hover,
+ .photo-card:hover,.video-card:hover,.publication-card:hover,.project-card:hover,.team-card:hover,
+ .info-card:hover,.map-card:hover,[class*="-card"]:hover{
+   transform:translateY(-4px);box-shadow:var(--ui-shadow-hover);border-color:rgba(23,61,57,.22);
+ }
+}
+
+/* Buttons / pills */
+.button,.nav-cta,.filter,.gis-tab,.place-link-button,.researcher-links a,
+.contact-actions a,.contact-actions button,a[class*="btn"],button[class*="btn"]{
+  border-radius:999px;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease;
+}
+@media(hover:hover){
+ .button:hover,.nav-cta:hover,.gis-tab:hover,.place-link-button:hover,.researcher-links a:hover,
+ .contact-actions a:hover,.contact-actions button:hover,a[class*="btn"]:hover,button[class*="btn"]:hover{
+   transform:translateY(-2px);box-shadow:0 9px 24px rgba(20,55,50,.14);
+ }
+}
+.button:focus-visible,.nav-cta:focus-visible,.filter:focus-visible,.gis-tab:focus-visible,a:focus-visible,button:focus-visible{
+ outline:2px solid #c38a55;outline-offset:3px;
+}
+
+/* CTA links */
+.place-link,.story-links a,.science-grid a,.gis-visual-overlay a,.gis-embed-bottom a{
+ display:inline-flex;align-items:center;gap:9px;text-underline-offset:5px;transition:color .18s ease,transform .18s ease;
+}
+@media(hover:hover){.place-link:hover,.story-links a:hover,.science-grid a:hover,.gis-visual-overlay a:hover,.gis-embed-bottom a:hover{transform:translateX(2px)}}
+
+/* Web GIS and map containers */
+.gis-feature,.gis-embed{isolation:isolate;border:1px solid var(--ui-line);background:var(--ui-surface)}
+.gis-list a{transition:background-color .18s ease,padding .18s ease;border-radius:12px}
+@media(hover:hover){.gis-list a:hover{background:var(--ui-soft);padding-left:10px;padding-right:10px}}
+.gis-frame{background:#fff;border:1px solid rgba(23,61,57,.08)}
+.gis-frame iframe{display:block;width:100%;border:0}
+
+/* Home directory is part of the same card system */
+.directory-card{border:1px solid var(--ui-line)}
+.directory-arrow{font-size:0!important;width:20px;height:20px;display:inline-block;position:relative}
+.directory-arrow::before{content:"";position:absolute;width:7px;height:7px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);right:3px;top:6px}
+.directory-arrow::after{content:"";position:absolute;width:12px;height:1.5px;background:currentColor;right:4px;top:9px}
+
+/* Thin CSS arrow: replaces emoji/glyph arrows visually without changing links */
+.arrow-icon,.ui-arrow,.gis-list a>b:last-child,.quick a>b:last-child{
+ font-size:0!important;width:18px!important;height:18px!important;display:inline-block!important;position:relative!important;flex:0 0 18px!important;line-height:1!important;
+}
+.arrow-icon::before,.ui-arrow::before,.gis-list a>b:last-child::before,.quick a>b:last-child::before{
+ content:"";position:absolute;width:7px;height:7px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);right:3px;top:5px;
+}
+.arrow-icon::after,.ui-arrow::after,.gis-list a>b:last-child::after,.quick a>b:last-child::after{
+ content:"";position:absolute;width:11px;height:1.5px;background:currentColor;right:4px;top:8px;
+}
+
+/* Mobile: comfortable spacing, full-width actions where useful, no desktop hover dependency */
+@media(max-width:760px){
+ :root{--ui-radius:17px;--ui-shadow:0 7px 24px rgba(20,55,50,.075)}
+ .section{padding-left:20px!important;padding-right:20px!important}
+ .section-top{gap:18px}
+ .place,.directory-card,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,
+ .partner-card,.contact-card,.contact-panel,.contact-form,.gallery-card,.photo-card,.video-card,.publication-card,
+ .project-card,.team-card,.info-card,.map-card,.history-book,.history-book-shell,[class*="-card"]{border-radius:17px;box-shadow:var(--ui-shadow)}
+ .place{margin-bottom:18px}.place-body{padding:22px!important}
+ .directory-grid{gap:14px}.directory-card{min-height:0}
+ .button,.nav-cta,.gis-tab{min-height:46px}
+ .hero-actions{gap:10px;flex-wrap:wrap}.hero-actions .button{min-height:46px}
+ .quick a{min-height:54px}
+ .filters{gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.filters::-webkit-scrollbar{display:none}.filter{min-height:42px;padding:10px 16px;white-space:nowrap}
+ .gis-feature{display:block}.gis-visual{border-radius:17px 17px 0 0}.gis-list{padding:10px 14px}.gis-list a{min-height:88px;padding-left:8px;padding-right:8px}
+ .gis-embed{margin-top:28px}.gis-embed-tabs{gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}.gis-embed-tabs::-webkit-scrollbar{display:none}.gis-tab{padding:10px 14px;white-space:nowrap}.gis-frame{border-radius:13px}
+ .contact-actions{display:grid;grid-template-columns:1fr;gap:10px}.contact-actions .button,.contact-actions a,.contact-actions button{width:100%;justify-content:space-between;min-height:46px}
+ .researcher-links a{min-height:40px;display:inline-flex;align-items:center}
+}
+@media(max-width:390px){
+ .section{padding-left:17px!important;padding-right:17px!important}.place-body{padding:19px!important}
+ .button{gap:12px;padding-left:17px;padding-right:17px}.hero-actions .button{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+ .place,.directory-card,.science-grid article,.archaeology-grid article,.researcher-card,.gis-feature,.gis-embed,
+ [class*="-card"],.button,.nav-cta,.filter,.gis-tab{transition:none!important}
+}
