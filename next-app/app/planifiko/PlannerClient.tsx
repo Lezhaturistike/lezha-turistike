@@ -1,5 +1,5 @@
 'use client';
-import {useMemo,useState} from 'react';
+import {useEffect,useMemo,useState} from 'react';
 import LiveTourMap,{type MapPlace} from './LiveTourMap';
 export type PlannerPlace={id:string;type:string;name:string;kind?:string;desc?:string;lat:number;lng:number;image?:string;duration?:string;time?:string;plannerFeatured?:boolean;tags?:string[]};
 type Stop=PlannerPlace&{kind:string;desc:string;duration:string;time:string;tags:string[]};
@@ -13,6 +13,7 @@ export default function PlannerClient({cmsPlaces=[]}:{cmsPlaces?:PlannerPlace[]}
  const source=useMemo(()=>cmsPlaces.length?cmsPlaces.map(norm):fallback,[cmsPlaces]);
  const initial=useMemo(()=>{const featured=source.filter(x=>x.plannerFeatured);return optimize((featured.length?featured:source).slice(0,5))},[source]);
  const[stops,setStops]=useState<Stop[]>(initial),[duration,setDuration]=useState('1 ditë'),[interest,setInterest]=useState('E kombinuar'),[query,setQuery]=useState(''),[active,setActive]=useState(0),[transport,setTransport]=useState('Makinë'),[notice,setNotice]=useState(''),[qr,setQr]=useState(false);
+ useEffect(()=>{const p=new URLSearchParams(window.location.search);const ids=(p.get('ndalesat')||'').split(',').filter(Boolean);if(ids.length){const shared=ids.map(id=>source.find(s=>s.id===id)).filter((s):s is Stop=>Boolean(s));if(shared.length){setStops(shared);setActive(0)}}const d=p.get('koha'),i=p.get('interesi'),t=p.get('transporti');if(d&&durations.includes(d))setDuration(d);if(i&&interests.includes(i))setInterest(i);if(t&&travel[t])setTransport(t)},[source]);
  const matches=useMemo(()=>{const q=query.trim().toLocaleLowerCase('sq');return q?source.filter(s=>(`${s.name} ${s.kind} ${s.desc} ${s.tags.join(' ')}`).toLocaleLowerCase('sq').includes(q)).slice(0,8):[]},[query,source]);
  const mapPlaces:MapPlace[]=stops.map(s=>({name:s.name,lat:s.lat,lng:s.lng,note:s.kind,description:s.desc,image:s.image}));
  const flash=(x:string)=>{setNotice(x);setTimeout(()=>setNotice(''),2400)};
@@ -20,7 +21,7 @@ export default function PlannerClient({cmsPlaces=[]}:{cmsPlaces?:PlannerPlace[]}
  const remove=(i:number)=>{setStops(v=>optimize(v.filter((_,x)=>x!==i)));setActive(0)};
  const buildSuggested=()=>{const x=source.filter(s=>interest==='E kombinuar'||s.tags.includes(interest)||(interest==='Kulinari'&&s.type==='kulinari')),limit=duration==='3–4 orë'?3:duration==='1 ditë'?5:duration==='2 ditë'?8:12;setStops(optimize(x.slice(0,limit)));setActive(0);flash('Turi u gjenerua dhe ndalesat u renditën për një rrugë më efikase.')};
  const mapUrl=()=>{if(!stops.length)return'https://www.google.com/maps';const a=stops[0],b=stops.at(-1)!,w=stops.slice(1,-1).map(s=>`${s.lat},${s.lng}`).join('|');return`https://www.google.com/maps/dir/?api=1&origin=${a.lat},${a.lng}&destination=${b.lat},${b.lng}${w?`&waypoints=${encodeURIComponent(w)}`:''}&travelmode=${travel[transport]||'driving'}`};
- const shareUrl=()=>typeof window==='undefined'?'https://www.lezhaturistike.com/planifiko':`${window.location.origin}/planifiko?koha=${encodeURIComponent(duration)}&interesi=${encodeURIComponent(interest)}&transporti=${encodeURIComponent(transport)}`;
+ const shareUrl=()=>{if(typeof window==='undefined')return'https://www.lezhaturistike.com/planifiko';const p=new URLSearchParams({koha:duration,interesi:interest,transporti:transport});if(stops.length)p.set('ndalesat',stops.map(s=>s.id).join(','));return window.location.origin+'/planifiko?'+p.toString()};
  const save=()=>{localStorage.setItem('lezha-turi-im',JSON.stringify({duration,interest,transport,stops}));flash('Itinerari u ruajt në këtë pajisje.')};
  const share=async()=>{const u=shareUrl();try{if(navigator.share)await navigator.share({title:'Turi im në Lezhë',url:u});else{await navigator.clipboard.writeText(u);flash('Linku u kopjua.')}}catch{}};
  const qrUrl=`https://quickchart.io/qr?size=280&margin=2&text=${encodeURIComponent(shareUrl())}`;
