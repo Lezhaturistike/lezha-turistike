@@ -17,4 +17,4 @@ const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"]] | order(co
  "tags":coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[coalesce(zona,""),coalesce(adresa,"")]
 }`;
 
-export default async function PlanifikoPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="sq" current="kontakt"/><main id="home"><PlannerClient cmsPlaces={places}/></main><BackToTop/><SiteFooter locale="sq"/></>}
+export default async function PlanifikoPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="sq" current="planifiko"/><main id="home"><PlannerClient cmsPlaces={places}/></main><BackToTop/><SiteFooter locale="sq"/></>}
