@@ -1003,3 +1003,9 @@ html[data-theme="dark"] .logo-text b{color:#edbd85}
 html[data-theme="dark"] .home-directory .overline,
 html[data-theme="dark"] .directory-card>span:first-child,
 html[data-theme="dark"] .directory-arrow{color:#edbd85}
+
+/* Home hero planner shortcut */
+.hero-planner-link{width:54px;height:54px;margin-top:26px;border-radius:50%;display:grid;place-items:center;background:rgba(247,243,236,.94);color:#173d39;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.16);transition:transform .2s ease,background .2s ease}
+.hero-planner-link:hover{transform:translateY(-2px) scale(1.03);background:#fff}
+.hero-planner-link svg{width:31px;height:31px}
+@media(max-width:620px){.hero-planner-link{width:48px;height:48px;margin-top:20px}.hero-planner-link svg{width:28px;height:28px}}
