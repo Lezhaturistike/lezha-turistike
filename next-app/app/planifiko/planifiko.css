@@ -8,7 +8,16 @@
 .planner .search input::placeholder{color:#71847d!important;opacity:1!important}
 .planner .search button{width:36px!important;height:36px!important;min-width:36px!important;border:0!important;border-radius:50%!important;background:#edf2ee!important;color:#173d39!important;display:grid!important;place-items:center!important;font-size:1.25rem!important;line-height:1!important}
 .planner .popular{color:#667a73!important;opacity:1!important;margin:13px 22px!important;font-size:.78rem!important}
-.planner .results{z-index:2000!important;background:#fff!important;color:#173d39!important;border:1px solid #dce5df!important;box-shadow:0 24px 65px rgba(14,48,44,.18)!important}
-.planner .results button{color:#173d39!important}
+.planner .results{z-index:2000!important;background:#fff!important;color:#173d39!important;border:1px solid #dce5df!important;border-radius:22px!important;box-shadow:0 24px 65px rgba(14,48,44,.18)!important;overflow:hidden!important}
+.planner .results button{color:#173d39!important;transition:background .18s ease,transform .18s ease!important}
+.planner .results button:hover{background:#f0f4f1!important;transform:translateX(2px)!important}
+.planner .results img{object-fit:cover!important}
 .planner .results em{color:#a66e42!important}
+/* Action cards: icons intentionally have no circular container. */
+.planner .actionGrid .action{align-items:center!important;justify-content:center!important;text-align:center!important;overflow:hidden!important}
+.planner .actionGrid .action>span{width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0 0 3px!important;display:grid!important;place-items:center!important}
+.planner .actionGrid .action>span::before,.planner .actionGrid .action>span::after{display:none!important;content:none!important}
+.planner .actionGrid .action svg{width:31px!important;height:31px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;transition:transform .22s ease!important}
+.planner .actionGrid .action:hover svg{transform:translateY(-3px) scale(1.09)!important}
+.planner .actionGrid .action b,.planner .actionGrid .action small{width:100%!important;text-align:center!important}
 @media(max-width:620px){.planner .hero{padding-top:62px!important;padding-bottom:48px!important}.planner .hero h1{font-size:clamp(3.1rem,16vw,4.2rem)!important}.planner .search{height:60px!important;padding-left:17px!important}.planner .searchBox{margin-top:28px!important}.planner .popular{margin-left:10px!important;margin-right:10px!important}}
