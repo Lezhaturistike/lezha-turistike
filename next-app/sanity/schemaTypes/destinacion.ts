@@ -8,7 +8,7 @@ export const destinacion=defineType({name:'destinacion',title:'Destinacione',typ
  defineField({name:'lokacioni',title:'Lokacioni për Planifiko vizitën',type:'geopoint',description:'Vendos pikën e saktë që përdoret nga itinerari dhe harta dinamike.'}),
  defineField({name:'zona',title:'Zona / lokaliteti',type:'string',description:'P.sh. Lezhë, Shëngjin, Tale, Kune-Vain. Përdoret edhe nga kërkimi.'}),
  defineField({name:'searchKeywords',title:'Fjalë kyçe për kërkim',type:'array',of:[{type:'string'}],description:'Sinonime dhe kërkime tipike, p.sh. kala, castle, panoramë, familje, perëndim.'}),
- defineField({name:'kohezgjatja',title:'Kohëzgjatja e rekomanduar',type:'string'}),defineField({name:'oraRekomanduar',title:'Ora / momenti i rekomanduar',type:'string'}),
+ defineField({name:'kohezgjatja',title:'Kohëzgjatja e rekomanduar',type:'string'}),defineField({name:'kohezgjatjaEn',title:'Recommended duration (EN)',type:'string'}),defineField({name:'oraRekomanduar',title:'Ora / momenti i rekomanduar',type:'string'}),defineField({name:'oraRekomanduarEn',title:'Recommended time (EN)',type:'string'}),
  defineField({name:'plannerTags',title:'Interesat në planner',type:'array',of:[{type:'string'}],options:{list:[{title:'Histori & Arkeologji',value:'Histori & Arkeologji'},{title:'Natyrë & Bregdet',value:'Natyrë & Bregdet'},{title:'Kulinari',value:'Kulinari'},{title:'Eksplorim',value:'Eksplorim'},{title:'E kombinuar',value:'E kombinuar'}]}}),
  defineField({name:'plannerFeatured',title:'Sugjero në Planifiko vizitën',type:'boolean',initialValue:false}),defineField({name:'plannerOrder',title:'Renditja në itinerar',type:'number'})
 ],preview:{select:{title:'titulli',subtitle:'kategoria',media:'foto'}}})
