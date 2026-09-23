@@ -1,7 +1,7 @@
 import {definePlugin} from 'sanity'
 import {useCallback,useState} from 'react'
 import {Box,Button,Card,Flex,Stack,Text} from '@sanity/ui'
-import {useFormValue} from 'sanity'
+import {set,useFormValue} from 'sanity'
 
 type GeoPoint={_type:'geopoint';lat:number;lng:number;alt?:number}
 type Props={value?:GeoPoint;onChange:(patch:any)=>void;renderDefault:(props:any)=>React.ReactNode}
@@ -43,7 +43,7 @@ function LocationFromMapsInput(props:Props){
   setLoading(true);setMessage('')
   try{
    const point=await resolveGoogleMapsUrl(harta)
-   props.onChange({type:'set',path:[],value:{_type:'geopoint',lat:point.lat,lng:point.lng}})
+   props.onChange(set({_type:'geopoint',lat:point.lat,lng:point.lng}))
    setMessage(`U morën koordinatat: ${point.lat.toFixed(6)}, ${point.lng.toFixed(6)}`)
   }catch(e){setMessage(e instanceof Error?e.message:'Koordinatat nuk u gjetën nga ky link.')}
   finally{setLoading(false)}
