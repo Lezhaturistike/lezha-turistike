@@ -6,6 +6,7 @@ import { pageDefinitions } from "./sanity/lib/content-model";
 import { kulinari } from "./sanity/schemaTypes/kulinari";
 import { kulinariReview } from "./sanity/schemaTypes/kulinariReview";
 import { researcher } from "./sanity/schemaTypes/researcher";
+import { akomodim } from "./sanity/schemaTypes/akomodim";
 
 export default defineConfig({
   name: "default",
@@ -32,7 +33,7 @@ export default defineConfig({
             ),
             S.divider(),
             ...S.documentTypeListItems().filter((item) =>
-              ["destinacion", "kulinari", "kulinariReview", "researcher"].includes(item.getId() || ""),
+              ["destinacion", "kulinari", "akomodim", "kulinariReview", "researcher"].includes(item.getId() || ""),
             ),
           ]),
     }),
@@ -52,6 +53,6 @@ export default defineConfig({
         : actions,
   },
   schema: {
-    types: [destinacion, kulinari, kulinariReview, researcher, ...pageSchemas],
+    types: [destinacion, kulinari, akomodim, kulinariReview, researcher, ...pageSchemas],
   },
 });
