@@ -4,6 +4,7 @@ import SiteFooter from "@/app/components/SiteFooter";
 import BackToTop from "@/app/components/BackToTop";
 import PlannerClient,{type PlannerPlace} from "./PlannerClient";
 import {client} from "@/sanity/lib/client";
+import "./planifiko.css";
 
 export const metadata: Metadata = {
   title: "Planifiko vizitën | Lezha Turistike",
