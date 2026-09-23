@@ -1,0 +1,14 @@
+.planner .hero{height:auto!important;min-height:0!important;position:relative!important;background:transparent!important;color:#173d39!important;overflow:visible!important;padding-top:96px!important;padding-bottom:72px!important}
+.planner .hero h1{color:#173d39!important;font-size:clamp(4rem,8vw,7.6rem)!important;line-height:.88!important;max-width:1050px!important;margin:20px 0 28px!important}
+.planner .hero p{color:#536b65!important;max-width:720px!important;font-size:1.08rem!important;line-height:1.65!important}
+.planner .searchBox{position:relative!important;max-width:900px!important;margin-top:36px!important;z-index:20!important}
+.planner .search{height:68px!important;width:100%!important;background:#fff!important;color:#173d39!important;border:1px solid #d9e2dc!important;border-radius:999px!important;display:flex!important;align-items:center!important;gap:14px!important;padding:0 18px 0 20px!important;box-shadow:0 16px 45px rgba(19,61,57,.10)!important;overflow:hidden!important}
+.planner .search>svg{display:block!important;width:22px!important;height:22px!important;min-width:22px!important;max-width:22px!important;min-height:22px!important;max-height:22px!important;flex:0 0 22px!important;overflow:visible!important}
+.planner .search input{min-width:0!important;width:100%!important;height:100%!important;background:transparent!important;color:#173d39!important;border:0!important;outline:0!important;font-size:1rem!important}
+.planner .search input::placeholder{color:#71847d!important;opacity:1!important}
+.planner .search button{width:36px!important;height:36px!important;min-width:36px!important;border:0!important;border-radius:50%!important;background:#edf2ee!important;color:#173d39!important;display:grid!important;place-items:center!important;font-size:1.25rem!important;line-height:1!important}
+.planner .popular{color:#667a73!important;opacity:1!important;margin:13px 22px!important;font-size:.78rem!important}
+.planner .results{z-index:2000!important;background:#fff!important;color:#173d39!important;border:1px solid #dce5df!important;box-shadow:0 24px 65px rgba(14,48,44,.18)!important}
+.planner .results button{color:#173d39!important}
+.planner .results em{color:#a66e42!important}
+@media(max-width:620px){.planner .hero{padding-top:62px!important;padding-bottom:48px!important}.planner .hero h1{font-size:clamp(3.1rem,16vw,4.2rem)!important}.planner .search{height:60px!important;padding-left:17px!important}.planner .searchBox{margin-top:28px!important}.planner .popular{margin-left:10px!important;margin-right:10px!important}}
