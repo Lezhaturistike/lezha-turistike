@@ -1005,17 +1005,14 @@ html[data-theme="dark"] .directory-card>span:first-child,
 html[data-theme="dark"] .directory-arrow{color:#edbd85}
 
 /* Home hero planner shortcut */
-.hero-planner-icon-link{position:relative;z-index:3;width:50px;height:50px;margin-top:18px;border-radius:50%;display:grid;place-items:center;background:rgba(247,243,236,.94);color:#173d39;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.14);transition:transform .2s ease,background .2s ease;animation:heroPlannerPulse 1.15s ease-in-out infinite!important;will-change:transform,box-shadow}
-.hero-planner-icon-link:hover{transform:translateY(-2px) scale(1.03);background:#fff}
-.hero-planner-icon-link svg{width:28px;height:28px}
-@media(max-width:850px){.hero-planner-icon-link{width:48px;height:48px;margin-top:16px}.hero-planner-icon-link svg{width:27px;height:27px}}
-@media(max-width:620px){.hero-planner-icon-link{width:46px;height:46px;margin-top:15px}.hero-planner-icon-link svg{width:26px;height:26px}}
-
-@media(prefers-reduced-motion:reduce){.hero-planner-icon-link{animation:none}}
-
+.hero-planner-icon-link{position:absolute;right:clamp(22px,4vw,64px);top:28%;transform:translateY(-50%);z-index:3;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(247,243,236,.94);color:#173d39;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.14);transition:background .2s ease;animation:heroPlannerPulse 1.15s ease-in-out infinite!important;will-change:transform,box-shadow}
+.hero-planner-icon-link:hover{background:#fff}
+.hero-planner-icon-link svg{width:25px;height:25px;animation:heroPlannerPinPulse 1.15s ease-in-out infinite!important}
+@media(max-width:850px){.hero-planner-icon-link{right:24px;top:27%;width:42px;height:42px}.hero-planner-icon-link svg{width:24px;height:24px}}
+@media(max-width:620px){.hero-planner-icon-link{right:20px;top:26%;width:40px;height:40px}.hero-planner-icon-link svg{width:23px;height:23px}}
+@media(prefers-reduced-motion:reduce){.hero-planner-icon-link,.hero-planner-icon-link svg{animation:none!important}}
 @keyframes heroPlannerPulse{
-  0%,100%{transform:scale(1);box-shadow:0 8px 24px rgba(0,0,0,.16),0 0 0 0 rgba(237,189,133,.70)}
-  50%{transform:scale(1.14);box-shadow:0 11px 30px rgba(0,0,0,.22),0 0 0 18px rgba(237,189,133,0)}
+  0%,100%{transform:translateY(-50%) scale(1);box-shadow:0 8px 24px rgba(0,0,0,.16),0 0 0 0 rgba(237,189,133,.70)}
+  50%{transform:translateY(-50%) scale(1.14);box-shadow:0 11px 30px rgba(0,0,0,.22),0 0 0 18px rgba(237,189,133,0)}
 }
-.hero-planner-icon-link svg{animation:heroPlannerPinPulse 1.15s ease-in-out infinite!important}
 @keyframes heroPlannerPinPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
