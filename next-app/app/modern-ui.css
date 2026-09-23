@@ -28,6 +28,14 @@
  }
 }
 
+/* Scientific team portraits: cleaner daylight treatment without the dark photo outline */
+:root:not([data-theme="dark"]) .researcher-card img,
+:root:not([data-theme="dark"]) .team-card img,
+body:not(.dark-mode) .researcher-card img,
+body:not(.dark-mode) .team-card img{
+  border:0!important;outline:0!important;box-shadow:0 7px 22px rgba(20,55,50,.08)!important;
+}
+
 /* Partner cards: keep institutional logos optically centered and consistently scaled */
 .partner-card:not(.partner-text){text-align:center;align-items:center}
 .partner-card:not(.partner-text) img{
