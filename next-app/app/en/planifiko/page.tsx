@@ -10,11 +10,11 @@ export const metadata: Metadata={title:"Plan your visit | Lezha Turistike",descr
 
 const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"]] | order(coalesce(plannerOrder,999) asc){
  "id":_id,"type":_type,"name":coalesce(titulliEn,emriEn,titulli,emri),
- "kind":select(_type=="destinacion"=>coalesce(kategoria,"Destinacion"),_type=="kulinari"=>coalesce(kategoria,"Kulinari"),_type=="akomodim"=>coalesce(lloji,"Akomodim"),"Vend"),
+ "kind":select(_type=="destinacion"=>select(kategoria=="histori"=>"History",kategoria=="natyre"=>"Nature",kategoria=="arkeologji"=>"Archaeology","Destination"),_type=="kulinari"=>select(kategoria=="restorant"=>"Restaurant",kategoria=="agroturizem"=>"Agritourism",kategoria=="kantine"=>"Winery",kategoria=="bar-kafe"=>"Bar / Café",kategoria=="produkte-lokale"=>"Local products","Cuisine"),_type=="akomodim"=>select(lloji=="hotel"=>"Hotel",lloji=="bujtine"=>"Guesthouse",lloji=="resort"=>"Resort",lloji=="apartament"=>"Apartment",lloji=="camping"=>"Camping","Accommodation"),"Place"),
  "desc":coalesce(pershkrimiEn,pershkrimi,"Discover this place during your visit to Lezha."),
  "lat":coalesce(lokacioni.lat,0),"lng":coalesce(lokacioni.lng,0),"image":foto.asset->url,
- "duration":coalesce(kohezgjatja,"1 orë"),"time":coalesce(oraRekomanduar,"Sipas itinerarit"),plannerFeatured,
+ "duration":coalesce(kohezgjatjaEn,kohezgjatja,"1 hour"),"time":coalesce(oraRekomanduarEn,oraRekomanduar,"According to itinerary"),plannerFeatured,
  "tags":coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[coalesce(zona,""),coalesce(adresa,"")]
 }`;
 
-export default async function PlanVisitPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="en" current="kontakt"/><main id="home"><PlannerClient cmsPlaces={places} locale="en"/></main><BackToTop/><SiteFooter locale="en"/></>}
+export default async function PlanVisitPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="en" current="planifiko"/><main id="home"><PlannerClient cmsPlaces={places} locale="en"/></main><BackToTop locale="en"/><SiteFooter locale="en"/></>}
