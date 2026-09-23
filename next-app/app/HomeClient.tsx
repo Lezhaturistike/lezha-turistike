@@ -52,6 +52,10 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
 
             <p>{content.text6}</p>
 
+            <Link className="hero-planner-link" href={localizedPath("/planifiko", locale)} aria-label={locale === "en" ? "Plan your visit" : "Planifiko vizitën"} title={locale === "en" ? "Plan your visit" : "Planifiko vizitën"}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"/><circle cx="12" cy="10" r="2.7"/></svg>
+            </Link>
+
             <div className="hero-actions">
               <Link className="button primary" href={localizedPath(content.href7, locale)}>
                 {content.text8}{" "}
