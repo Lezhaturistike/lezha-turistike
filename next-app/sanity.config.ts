@@ -7,10 +7,11 @@ import { kulinari } from "./sanity/schemaTypes/kulinari";
 import { kulinariReview } from "./sanity/schemaTypes/kulinariReview";
 import { researcher } from "./sanity/schemaTypes/researcher";
 import { akomodim } from "./sanity/schemaTypes/akomodim";
+import { mapsCoordinatesPlugin } from "./sanity/mapsCoordinatesPlugin";
 
 export default defineConfig({
   name: "default", title: "Lezha Turistike", basePath: "/studio", projectId: "ko1ud3ml", dataset: "production",
-  plugins: [structureTool({structure:(S)=>S.list().title("Përmbajtja").items([
+  plugins: [mapsCoordinatesPlugin(), structureTool({structure:(S)=>S.list().title("Përmbajtja").items([
     ...Object.entries(pageDefinitions).map(([key,page])=>S.listItem().title(page.title).id(page.name).child(S.document().schemaType(page.name).documentId(`page-${key}`).title(page.title))),
     S.divider(),
     ...S.documentTypeListItems().filter((item)=>["destinacion","kulinari","akomodim","kulinariReview","researcher"].includes(item.getId()||"")),
