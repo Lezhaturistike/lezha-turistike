@@ -5,3 +5,30 @@
 .planner .actionGrid .action{align-items:center!important;justify-content:center!important;text-align:center!important;overflow:hidden!important}.planner .actionGrid .action>span{width:auto!important;height:auto!important;min-width:0!important;min-height:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:0 0 3px!important;display:grid!important;place-items:center!important}.planner .actionGrid .action>span::before,.planner .actionGrid .action>span::after{display:none!important;content:none!important}.planner .actionGrid .action svg{width:31px!important;height:31px!important;border:0!important;border-radius:0!important;background:transparent!important;padding:0!important;transition:transform .22s ease!important}.planner .actionGrid .action:hover svg{transform:translateY(-3px) scale(1.09)!important}.planner .actionGrid .action b,.planner .actionGrid .action small{width:100%!important;text-align:center!important}
 @media(max-width:620px){.planner .hero{padding-top:62px!important;padding-bottom:48px!important}.planner .hero h1{font-size:clamp(3.1rem,16vw,4.2rem)!important}.planner .search{height:60px!important;padding-left:17px!important}.planner .searchBox{margin-top:28px!important}.planner .popular{margin-left:10px!important;margin-right:10px!important}}
 @media print{@page{size:A4 portrait;margin:12mm}body{background:#fff!important}.planner .hero,.planner .builder,.planner .actions,header,footer,.back-to-top{display:none!important}.planner{padding:0!important}.planner .route{display:block!important;max-width:none!important;padding:0!important}.planner .routeHead{margin-bottom:8mm!important}.planner .routeAdvice{margin:0 0 6mm!important}.planner .routeGrid{display:flex!important;flex-direction:column!important;gap:7mm!important}.planner .routeGrid .mapWrap{order:-1!important;position:relative!important;top:auto!important;break-inside:avoid!important}.planner .routeGrid .map{height:115mm!important;min-height:115mm!important;border-radius:10px!important}.planner .routeGrid .strip,.planner .routeGrid .routeLink{display:none!important}.planner .timeline{display:grid!important;grid-template-columns:1fr 1fr!important;gap:0 8mm!important;border-top:1px solid #ccc!important}.planner .stop{break-inside:avoid!important;padding:4mm 0!important}.planner .stop>img{display:none!important}.planner .remove{display:none!important}.planner .stop p{display:block!important}.leaflet-control-container{display:none!important}}
+
+
+/* Planner theme corrections */
+html[data-theme="dark"] .planner .hero{background:#101c1a!important;color:#f0f5f2!important}
+html[data-theme="dark"] .planner .hero h1{color:#f0f5f2!important}
+html[data-theme="dark"] .planner .hero p{color:#c5d2cd!important}
+html[data-theme="dark"] .planner .search{background:#162724!important;color:#f0f5f2!important;border-color:#ffffff2e!important;box-shadow:0 16px 45px rgba(0,0,0,.28)!important}
+html[data-theme="dark"] .planner .search input{color:#f0f5f2!important}
+html[data-theme="dark"] .planner .search input::placeholder{color:#aebdb7!important}
+html[data-theme="dark"] .planner .search button{background:#223632!important;color:#f0f5f2!important}
+html[data-theme="dark"] .planner .popular{color:#b8c6c1!important}
+html[data-theme="dark"] .planner .results{background:#162724!important;color:#f0f5f2!important;border-color:#ffffff26!important}
+html[data-theme="dark"] .planner .results button{color:#f0f5f2!important}
+html[data-theme="dark"] .planner .results button:hover{background:#ffffff0d!important}
+html[data-theme="dark"] .planner .results em{color:#edbd85!important}
+html[data-theme="dark"] .planner .overline{color:#edbd85!important}
+html[data-theme="dark"] .planner .chips button:not(.on){color:#e4ece8!important;border-color:#ffffff32!important}
+html[data-theme="dark"] .planner .choices>b,
+html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
+
+@media(max-width:620px){
+ .planner .builderInline{overflow:visible!important}
+ .planner .choices{grid-template-columns:minmax(0,1fr)!important}
+ .planner .chips,.planner .choiceScroll{max-width:100%!important}
+ .planner .builderActions{grid-template-columns:minmax(0,1fr) minmax(118px,.48fr)!important;align-items:stretch!important}
+ .planner .generate,.planner .clearTour{min-width:0!important;white-space:normal!important}
+}
