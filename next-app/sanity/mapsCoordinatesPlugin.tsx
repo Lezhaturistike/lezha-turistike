@@ -48,7 +48,7 @@ function LocationFromMapsInput(props:Props){
   }catch(e){setMessage(e instanceof Error?e.message:'Koordinatat nuk u gjetën nga ky link.')}
   finally{setLoading(false)}
  },[harta,props])
- return <Stack space={3}>
+ return <Stack space={3 as any}>
   {props.renderDefault(props)}
   <Card padding={3} radius={2} tone="transparent" border>
    <Flex gap={3} align="center" wrap="wrap">
