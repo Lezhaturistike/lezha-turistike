@@ -1200,20 +1200,20 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
 
 /* FINAL footer/mobile overrides */
 .site-footer .logo .logo-mark.logo-castle{
-  background:transparent!important;
-  color:#fff!important;
+  background:#fff!important;
+  color:#102d2d!important;
   border-color:#fff!important;
 }
 .site-footer .logo .logo-mark.logo-castle i{
   background:currentColor!important;
-  color:#fff!important;
-  border-color:#fff!important;
+  color:#102d2d!important;
+  border-color:#102d2d!important;
 }
 .site-footer .logo .logo-mark.logo-castle i:before{
   background:linear-gradient(90deg,currentColor 0 28%,transparent 28% 36%,currentColor 36% 64%,transparent 64% 72%,currentColor 72% 100%)!important;
 }
 .site-footer .logo .logo-mark.logo-castle i:nth-child(2):after{
-  background:#102d2d!important;
+  background:#fff!important;
 }
 .mobile-theme-toggle{display:none!important}
 @media(max-width:850px){
