@@ -13,6 +13,8 @@ export async function POST(request:Request){
     const rating=Number(body.rating);
     if(!placeId||!Number.isInteger(rating)||rating<1||rating>5) return NextResponse.json({error:"Vlerësim i pavlefshëm."},{status:400});
     const client=createClient({projectId,dataset,apiVersion:"2026-09-20",useCdn:false,token});
+    const placeExists=await client.fetch('count(*[_type=="kulinari" && _id==$id]) > 0',{id:placeId});
+    if(!placeExists) return NextResponse.json({error:"Vendi nuk u gjet."},{status:404});
     await client.create({_type:"kulinariReview",place:{_type:"reference",_ref:placeId},rating,createdAt:new Date().toISOString()});
     const stats=await client.fetch('{"rating": math::avg(*[_type=="kulinariReview" && place._ref==$id].rating), "reviewCount": count(*[_type=="kulinariReview" && place._ref==$id])}',{id:placeId});
     return NextResponse.json(stats);
