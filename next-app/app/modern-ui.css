@@ -450,3 +450,46 @@ html[data-theme="dark"] .plan-visit-cta{background:#164638!important}
  html[data-theme="dark"] .header .nav.open{background:#0F3D2E!important}
  .destinations .places{gap:16px}
 }
+
+
+/* Fidelity pass: History, Archaeology, WebGIS and Gallery */
+.history-book{background:#0F3D2E!important;color:#fff;border:0!important;border-radius:0!important;box-shadow:none!important}
+.history-book .story-copy h1{font-family:Georgia,"Times New Roman",serif;color:#fff;letter-spacing:-.04em}
+.history-book .story-copy h1 em{color:#D4B483}
+.history-book .story-copy p{color:rgba(255,255,255,.84)}
+.history-book .story-links a{color:#fff}
+.history-book .history-book-nav button{border-color:rgba(255,255,255,.28);color:#fff}
+.archaeology .archaeology-intro{border-radius:16px;overflow:hidden;box-shadow:0 8px 28px rgba(15,61,46,.07)}
+.archaeology .archaeology-grid article{background:#fffdf9!important;border:1px solid rgba(15,61,46,.1)!important;border-radius:16px!important;box-shadow:0 8px 28px rgba(15,61,46,.065)!important}
+.archaeology .archaeology-grid article>span{color:#2E7D5B}
+.archaeology .archaeology-grid h3{font-family:Georgia,"Times New Roman",serif;color:#0F3D2E;letter-spacing:-.025em}
+.archaeology .archaeology-grid p,.archaeology .source-line{color:#52615c}
+.archaeology .source-line a{color:#0F3D2E}
+html[data-theme="dark"] .archaeology .archaeology-grid article{background:#164638!important;border-color:rgba(255,255,255,.11)!important}
+html[data-theme="dark"] .archaeology .archaeology-grid h3,html[data-theme="dark"] .archaeology .archaeology-grid p,html[data-theme="dark"] .archaeology .source-line,html[data-theme="dark"] .archaeology .source-line a{color:#fff!important}
+html[data-theme="dark"] .archaeology .archaeology-grid article>span{color:#D4B483!important}
+.gis-section .gis-feature,.gis-section .gis-embed{background:#fffdf9!important;border:1px solid rgba(15,61,46,.1)!important;border-radius:16px!important;box-shadow:0 8px 28px rgba(15,61,46,.065)!important}
+.gis-section .gis-visual-overlay{background:linear-gradient(0deg,rgba(15,61,46,.82),rgba(15,61,46,.08) 72%)!important}
+.gis-section .gis-visual-overlay a{color:#fff}
+.gis-section .gis-list a{border-color:rgba(15,61,46,.1)!important;color:#0F3D2E}
+.gis-section .gis-list small{color:#66766f}
+.gis-section .gis-embed-heading h3{font-family:Georgia,"Times New Roman",serif;color:#0F3D2E}
+.gis-section .gis-tab{background:transparent;border:1px solid rgba(15,61,46,.18);color:#0F3D2E}
+.gis-section .gis-tab.active{background:#0F3D2E!important;border-color:#0F3D2E!important;color:#fff!important}
+.gis-section .gis-frame{border-radius:14px;border-color:rgba(15,61,46,.1);overflow:hidden}
+.gis-section .gis-embed-bottom{color:#0F3D2E}
+.gis-section .gis-embed-bottom a{color:#0F3D2E}
+html[data-theme="dark"] .gis-section .gis-feature,html[data-theme="dark"] .gis-section .gis-embed{background:#164638!important;border-color:rgba(255,255,255,.11)!important}
+html[data-theme="dark"] .gis-section .gis-list a,html[data-theme="dark"] .gis-section .gis-list small,html[data-theme="dark"] .gis-section .gis-embed-heading h3,html[data-theme="dark"] .gis-section .gis-embed-bottom,html[data-theme="dark"] .gis-section .gis-embed-bottom a{color:#fff!important}
+html[data-theme="dark"] .gis-section .gis-tab{color:#fff;border-color:rgba(255,255,255,.24)}
+html[data-theme="dark"] .gis-section .gis-tab.active{background:#2E7D5B!important;border-color:#2E7D5B!important}
+.gallery-section .gallery-grid{gap:14px}
+.gallery-section .gallery-photo{border-radius:16px!important;overflow:hidden;border:1px solid rgba(15,61,46,.1)!important;box-shadow:0 8px 24px rgba(15,61,46,.065)!important;background:#fffdf9!important}
+.gallery-section .gallery-photo img{transition:transform .42s ease,filter .42s ease}
+.gallery-section .gallery-photo span{background:linear-gradient(0deg,rgba(15,61,46,.82),transparent);color:#fff!important}
+@media(hover:hover){.gallery-section .gallery-photo:hover img{transform:scale(1.035);filter:saturate(.96)}}
+html[data-theme="dark"] .gallery-section .gallery-photo{background:#164638!important;border-color:rgba(255,255,255,.11)!important;box-shadow:0 8px 24px rgba(0,0,0,.18)!important}
+@media(max-width:760px){
+ .archaeology .archaeology-grid,.gallery-section .gallery-grid{gap:12px}
+ .gis-section .gis-feature,.gis-section .gis-embed,.gallery-section .gallery-photo,.archaeology .archaeology-intro,.archaeology .archaeology-grid article{border-radius:14px!important}
+}
