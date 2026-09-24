@@ -42,3 +42,8 @@ html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
 .planner .leaflet-popup-pane{z-index:700!important}
 .planner .leaflet-tooltip-pane{z-index:650!important}
 .header{position:sticky!important;top:0!important;z-index:1000!important;isolation:isolate!important}
+
+
+/* Planner itinerary text contrast — light mode only */
+html:not([data-theme="dark"]) .planner .stop em{color:#667a73!important;opacity:.78!important}
+html:not([data-theme="dark"]) .planner .stop p{color:#536b65!important;opacity:1!important}
