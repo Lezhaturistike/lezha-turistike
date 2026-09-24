@@ -2,7 +2,8 @@
 import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import BackToTop from "@/app/components/BackToTop";
-import Link from 'next/link'\nimport { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 type Destinacion = {_id:string;titulli:string;kategoria:string;pershkrimi?:string;permbledhje?:string;cfareSheh?:string[];keshilleVizite?:string;kohezgjatja?:string;oraRekomanduar?:string;fotoUrl?:string;galeriaUrls?:string[];burimi?:string;burimiTitull?:string;harta?:string}
 type Place = Destinacion & {tag:string;cardText:string;alt:string;big?:boolean;natureId?:boolean}
