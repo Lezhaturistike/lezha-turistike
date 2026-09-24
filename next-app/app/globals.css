@@ -1172,3 +1172,18 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
  color:#fff!important;
  border-color:#fff!important;
 }
+
+
+/* Mobile header: always expose the light/dark control next to the menu button */
+@media(max-width:850px){
+ .header>.theme-toggle{
+  display:grid!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:relative!important;
+  z-index:110!important;
+  margin-left:auto!important;
+  margin-right:6px!important;
+ }
+ .header>.menu-btn{flex:0 0 auto!important}
+}
