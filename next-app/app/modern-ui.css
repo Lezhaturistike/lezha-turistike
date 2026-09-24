@@ -48,3 +48,74 @@ html[data-theme="dark"] .gis-feature,
 html[data-theme="dark"] .gis-embed{background:var(--ui-surface);border-color:var(--ui-line)}
 html[data-theme="dark"] .gis-list a:hover{background:var(--ui-soft)}
 
+
+
+/* 2026 visual refresh — Lezha Turistike: botanical heritage palette */
+:root{
+  --brand-primary:#0f3d2e;
+  --brand-secondary:#2e7d5b;
+  --brand-accent:#d4b483;
+  --brand-bg:#f8f6f1;
+  --brand-ink:#1f2937;
+  --brand-muted:#6b7280;
+  --ui-ink:var(--brand-primary);
+  --ui-accent:var(--brand-accent);
+  --ui-soft:#f2f4ee;
+  --ui-line:rgba(15,61,46,.12);
+  --ui-shadow:0 10px 30px rgba(15,61,46,.07);
+  --ui-shadow-hover:0 18px 44px rgba(15,61,46,.13);
+}
+body{background:var(--brand-bg);color:var(--brand-ink)}
+.header{background:rgba(248,246,241,.96);border-bottom:1px solid rgba(15,61,46,.08);box-shadow:0 6px 24px rgba(15,61,46,.035)}
+.logo{color:var(--brand-primary)}
+.nav a{color:#24342f}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--brand-secondary)}
+.nav a[aria-current="page"]{text-decoration-color:var(--brand-secondary);text-underline-offset:8px}
+.nav-cta{background:linear-gradient(135deg,var(--brand-primary),#176348);color:#fff;padding:13px 23px;box-shadow:0 7px 20px rgba(15,61,46,.16)}
+.nav-cta:hover{background:linear-gradient(135deg,#124a38,var(--brand-secondary))}
+.hero{background:var(--brand-primary)}
+.hero-shade{background:linear-gradient(90deg,rgba(10,38,29,.88) 0%,rgba(10,38,29,.58) 42%,rgba(10,38,29,.06) 82%),linear-gradient(0deg,rgba(8,31,24,.3),transparent 42%)}
+.overline,.overline.light{color:var(--brand-accent)}
+.hero h1 em,.story-copy h2 em{color:#e3c59a}
+.button.primary{background:var(--brand-primary);color:#fff;box-shadow:0 8px 22px rgba(15,61,46,.18)}
+.hero .button.primary{background:#f8f6f1;color:var(--brand-primary)}
+.hero .button.ghost{border-color:rgba(255,255,255,.68);background:rgba(255,255,255,.05);backdrop-filter:blur(6px)}
+.button.dark,.filter.active,.filter:hover{background:var(--brand-primary);border-color:var(--brand-primary)}
+.button.outline{border-color:rgba(15,61,46,.45);color:var(--brand-primary)}
+.quick{background:#fbfaf6;border-color:rgba(15,61,46,.1)}
+.quick-intro,.tag{color:#98734a}
+.quick a span{background:#edf2ec;color:var(--brand-secondary)}
+.quick a:hover,.place a:hover{color:var(--brand-secondary)}
+.home-directory,.section{background-color:transparent}
+.directory-card,.place,.science-grid article,.archaeology-grid article,.partner-card,.video-card{background:#fffdf9;border-color:rgba(15,61,46,.1)}
+.directory-card:hover,.place:hover{border-color:rgba(46,125,91,.28)}
+.place a,.research-links>a{color:var(--brand-secondary)}
+.story-section,footer{background:#0d2d25}
+.gis-section,.archaeology,.gallery-section{background:#eef2eb}
+.culinary{background:#9b704b}
+.back-to-top{background:var(--brand-primary)}
+.back-to-top:hover{background:var(--brand-accent);color:var(--brand-primary)}
+html[data-theme="dark"]{
+  --brand-bg:#0d1f1b;
+  --brand-ink:#eef5f1;
+  --brand-muted:#a9b7b0;
+  --ui-surface:#132923;
+  --ui-soft:#18352d;
+  --ui-line:rgba(238,245,241,.12);
+  --ui-shadow:0 10px 34px rgba(0,0,0,.2);
+  --ui-shadow-hover:0 20px 48px rgba(0,0,0,.3);
+}
+html[data-theme="dark"] body{background:var(--brand-bg);color:var(--brand-ink)}
+html[data-theme="dark"] .header{background:rgba(10,31,26,.96);border-bottom-color:rgba(255,255,255,.08)}
+html[data-theme="dark"] .logo,html[data-theme="dark"] .nav a{color:#edf5f1}
+html[data-theme="dark"] .nav a:hover,html[data-theme="dark"] .nav a[aria-current="page"]{color:#d9bd91}
+html[data-theme="dark"] .nav-cta{background:linear-gradient(135deg,#1f7657,#2e8c68)}
+html[data-theme="dark"] .directory-card,html[data-theme="dark"] .place,html[data-theme="dark"] .science-grid article,html[data-theme="dark"] .archaeology-grid article,html[data-theme="dark"] .partner-card,html[data-theme="dark"] .video-card{background:#132923;border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .quick{background:#10251f;border-color:rgba(255,255,255,.08)}
+html[data-theme="dark"] .quick a{border-color:rgba(255,255,255,.1)}
+html[data-theme="dark"] .quick a span{background:#19372e;color:#bcd9ca}
+html[data-theme="dark"] .gis-section,html[data-theme="dark"] .archaeology,html[data-theme="dark"] .gallery-section{background:#10231e}
+@media(max-width:850px){
+  .nav.open{background:#fbfaf6;border-top:1px solid rgba(15,61,46,.08)}
+  html[data-theme="dark"] .nav.open{background:#10251f;border-top-color:rgba(255,255,255,.08)}
+}
