@@ -397,3 +397,56 @@ html[data-theme="dark"] .plan-visit-cta{background:var(--lt-surface);border-colo
  main:not(#studio-root) .section-top h1,main:not(#studio-root) .contact-intro h1{line-height:1}
  .place,.directory-card,.science-grid article,.archaeology-grid article,.partner-card,.video-card{border-radius:14px}
 }
+
+
+/* Inner-page fidelity pass + official logo theme behavior */
+.header .logo{color:#0F3D2E!important}
+html[data-theme="dark"] .header{background:#0F3D2E!important;border-bottom-color:rgba(255,255,255,.12)!important}
+html[data-theme="dark"] .header .logo{color:#fff!important}
+html[data-theme="dark"] .header .nav a{color:rgba(255,255,255,.9)!important}
+html[data-theme="dark"] .header .nav a:hover,html[data-theme="dark"] .header .nav a[aria-current="page"]{color:#fff!important}
+html[data-theme="dark"] .header .language-switch{border-color:rgba(255,255,255,.26)!important}
+html[data-theme="dark"] .header .language-switch a,html[data-theme="dark"] .header .language-switch>span{color:#fff!important}
+html[data-theme="dark"] .header .nav-cta{background:#2E7D5B!important;color:#fff!important}
+html[data-theme="dark"] .header .menu-btn{color:#fff!important;border-color:rgba(255,255,255,.18)!important}
+html[data-theme="dark"] .header .theme-toggle{color:#fff!important;border-color:rgba(255,255,255,.18)!important}
+.site-footer .logo{color:#fff!important}
+
+/* Destination / cuisine cards inherit the Home proportions */
+.destinations .section-top{padding-bottom:10px}
+.destinations .places{gap:22px}
+.destinations .place{background:#fffdf9;border:1px solid rgba(15,61,46,.1);border-radius:16px;box-shadow:0 8px 28px rgba(15,61,46,.065)}
+.destinations .place-image{overflow:hidden}
+.destinations .place-image img{transition:transform .45s ease}
+@media(hover:hover){.destinations .place:hover .place-image img{transform:scale(1.025)}}
+.destinations .place-body h3{font-family:Georgia,"Times New Roman",serif;color:#0F3D2E;letter-spacing:-.025em}
+.destinations .place-body>p{color:#52615c;line-height:1.65}
+.destinations .tag{background:rgba(212,180,131,.22);color:#74572f}
+.destinations .place-link,.destinations .place-link-button{color:#0F3D2E!important;font-weight:750}
+.destinations .place-link-button{background:transparent;border:1px solid rgba(15,61,46,.22);border-radius:999px;box-shadow:none}
+@media(hover:hover){.destinations .place-link-button:hover{background:#0F3D2E;color:#fff!important;border-color:#0F3D2E}}
+html[data-theme="dark"] .destinations .place{background:#164638!important;border-color:rgba(255,255,255,.11)!important}
+html[data-theme="dark"] .destinations .place-body h3,html[data-theme="dark"] .destinations .place-body>p,html[data-theme="dark"] .destinations .place-link,html[data-theme="dark"] .destinations .place-link-button{color:#fff!important}
+html[data-theme="dark"] .destinations .place-link-button{border-color:rgba(255,255,255,.28)}
+html[data-theme="dark"] .destinations .tag{background:rgba(212,180,131,.2);color:#f0d8b4}
+
+/* Science + partners: same editorial hierarchy and surfaces */
+.science .science-grid article,.science .video-card,.science .researcher-card,.partners .partner-card{background:#fffdf9;border:1px solid rgba(15,61,46,.1);border-radius:16px;box-shadow:0 8px 28px rgba(15,61,46,.065)}
+.science .science-grid h3,.science .video-heading h3,.science .researcher-card h4,.partners .partner-card strong{color:#0F3D2E}
+.science .research-links{border-color:rgba(15,61,46,.14)}
+html[data-theme="dark"] .science .science-grid article,html[data-theme="dark"] .science .video-card,html[data-theme="dark"] .science .researcher-card,html[data-theme="dark"] .partners .partner-card{background:#164638!important;border-color:rgba(255,255,255,.11)!important;color:#fff!important}
+html[data-theme="dark"] .science .science-grid h3,html[data-theme="dark"] .science .video-heading h3,html[data-theme="dark"] .science .researcher-card h4,html[data-theme="dark"] .partners .partner-card strong{color:#fff!important}
+
+/* Contact follows the same palette instead of legacy green */
+.contact-hero,.contact-explore{background:#F8F6F1!important}
+.contact-intro h1,.contact-explore h2{font-family:Georgia,"Times New Roman",serif;color:#0F3D2E}
+.contact-explore nav{border-color:rgba(15,61,46,.15)!important}
+.contact-explore nav a{border-color:rgba(15,61,46,.15)!important;color:#0F3D2E!important}
+.plan-visit-cta{border-color:rgba(15,61,46,.18)!important;background:#fffdf9!important;color:#0F3D2E!important}
+html[data-theme="dark"] .contact-hero,html[data-theme="dark"] .contact-explore{background:#0F3D2E!important}
+html[data-theme="dark"] .contact-intro h1,html[data-theme="dark"] .contact-explore h2,html[data-theme="dark"] .contact-explore nav a,html[data-theme="dark"] .plan-visit-cta{color:#fff!important}
+html[data-theme="dark"] .plan-visit-cta{background:#164638!important}
+@media(max-width:850px){
+ html[data-theme="dark"] .header .nav.open{background:#0F3D2E!important}
+ .destinations .places{gap:16px}
+}
