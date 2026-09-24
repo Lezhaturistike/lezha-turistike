@@ -25,7 +25,7 @@ const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(
    oraRekomanduar match "*Pasdite*"=>"Afternoon, especially 1–2 hours before sunset · 60–90 min",
    oraRekomanduar
  ),"According to itinerary"),plannerFeatured,
- "tags":coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[coalesce(zona,""),coalesce(adresa,"")]
+ "tags":array::compact(coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[zona,adresa])
 }`;
 
 export default async function PlanVisitPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="en" current="planifiko"/><main id="home"><PlannerClient cmsPlaces={places} locale="en"/></main><BackToTop locale="en"/><SiteFooter locale="en"/></>}
