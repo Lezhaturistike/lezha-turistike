@@ -245,7 +245,9 @@ const verifiedLocations={
  "Qyteti antik i Lissusit":{_type:'geopoint',lat:41.78281,lng:19.64306},
  "Memoriali i Skënderbeut":{_type:'geopoint',lat:41.782667,lng:19.643267},
  "Obelisku i Kuvendit të Lezhës":{_type:'geopoint',lat:41.78068,lng:19.64443},
- "Lagunat Kune–Vain":{_type:'geopoint',lat:41.75203,lng:19.60733}
+ "Lagunat Kune–Vain":{_type:'geopoint',lat:41.75203,lng:19.60733},
+ "Shëngjini":{_type:'geopoint',lat:41.78854,lng:19.59706},
+ "Rana e Hedhun":{_type:'geopoint',lat:41.8280045,lng:19.5482576}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
