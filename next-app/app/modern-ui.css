@@ -571,3 +571,17 @@ html.modal-open,body.modal-open{overflow:hidden!important;height:100%!important}
  .dialog-backdrop{height:100dvh!important;max-height:100dvh!important;padding:10px!important}
  .place-dialog{max-height:none!important;overflow:visible!important;margin:0 auto!important}
 }
+
+
+/* Header brand: castle mark follows the green wordmark on the light menu */
+html:not([data-theme="dark"]) .header .logo,
+html[data-theme="light"] .header .logo,
+html:not([data-theme="dark"]) .header .logo .logo-mark,
+html[data-theme="light"] .header .logo .logo-mark,
+html:not([data-theme="dark"]) .header .logo .logo-castle,
+html[data-theme="light"] .header .logo .logo-castle,
+html:not([data-theme="dark"]) .header .logo .logo-castle i,
+html[data-theme="light"] .header .logo .logo-castle i{
+ color:#0F3D2E!important;
+ border-color:#0F3D2E!important;
+}
