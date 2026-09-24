@@ -260,7 +260,8 @@ const verifiedLocations={
  "Shtëpia e At Gjergj Fishtës":{_type:'geopoint',lat:41.882225,lng:19.663111},
  "Kisha e Kuvendit të Arbnit":{_type:'geopoint',lat:41.73174,lng:19.64649},
  "Kisha e Troshanit":{_type:'geopoint',lat:41.88492,lng:19.71837},
- "Kisha Zemra e Krishtit":{_type:'geopoint',lat:41.84706,lng:19.68957}
+ "Kisha Zemra e Krishtit":{_type:'geopoint',lat:41.84706,lng:19.68957},
+ "Kisha e Shën Shtjefnit":{_type:'geopoint',lat:41.8685,lng:19.6148}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
