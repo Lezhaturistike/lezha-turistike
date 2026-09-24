@@ -1261,7 +1261,7 @@ html[data-theme="dark"] .nav.open .mobile-theme-toggle{border-top-color:#3a5650!
 /* Mobile spacing between partner/institution cards */
 @media(max-width:620px){
   .research-partners .partner-grid{
-    gap:14px;
+    gap:22px;
   }
   .research-partners .partner-card{
     margin-bottom:0;
