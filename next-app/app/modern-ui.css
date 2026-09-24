@@ -596,3 +596,21 @@ html[data-theme="light"] .header .logo .logo-castle i{
  color:#FFFFFF!important;
  border-color:#FFFFFF!important;
 }
+
+
+/* FINAL component-safe footer/mobile overrides */
+.site-footer .logo .logo-mark.logo-castle{
+  background:transparent!important;
+  color:#fff!important;
+}
+.site-footer .logo .logo-mark.logo-castle i{
+  background:currentColor!important;
+  color:#fff!important;
+}
+.site-footer .logo .logo-mark.logo-castle i:nth-child(2):after{
+  background:#102d2d!important;
+}
+@media(max-width:850px){
+  .header>.theme-toggle{display:none!important}
+  .nav.open .mobile-theme-toggle{display:flex!important}
+}
