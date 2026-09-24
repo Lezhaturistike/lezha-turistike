@@ -1163,27 +1163,36 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
 .site-footer .logo{color:#fff!important}
 .site-footer .logo b{color:#fff!important}
 .site-footer .logo-mark.logo-castle{
- background:#fff!important;
- color:#102d2d!important;
+ background:transparent!important;
+ color:#fff!important;
  border-color:#fff!important;
 }
 .site-footer .logo-mark.logo-castle i{
+ background:currentColor!important;
+ color:#fff!important;
+ border-color:#fff!important;
+}
+.site-footer .logo-castle i:nth-child(2):after{
  background:#102d2d!important;
- color:#102d2d!important;
- border-color:#102d2d!important;
 }
 
 
-/* Mobile header: always expose the light/dark control next to the menu button */
+/* Mobile theme control lives inside the open menu; keep the top bar compact */
+.mobile-theme-toggle{display:none}
 @media(max-width:850px){
- .header>.theme-toggle{
+ .header>.theme-toggle{display:none!important}
+ .nav .mobile-theme-toggle{
+  display:flex;
+  align-items:center;
+  padding-top:10px;
+  margin-top:6px;
+  border-top:1px solid #d6dfd9;
+ }
+ .nav .mobile-theme-toggle .theme-toggle{
   display:grid!important;
   visibility:visible!important;
   opacity:1!important;
-  position:relative!important;
-  z-index:110!important;
-  margin-left:auto!important;
-  margin-right:6px!important;
  }
+ html[data-theme="dark"] .nav .mobile-theme-toggle{border-top-color:#3a5650}
  .header>.menu-btn{flex:0 0 auto!important}
 }
