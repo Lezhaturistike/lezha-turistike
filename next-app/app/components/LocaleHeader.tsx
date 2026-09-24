@@ -6,14 +6,11 @@ import {localizedPath, type Locale} from "@/sanity/lib/localize";
 const navigation = [
   ["", "Home", "Home"],
   ["destinacione", "Destinacione", "Destinations"],
-  ["galeri", "Galeri", "Gallery"],
+  ["histori", "Histori & Arkeologji", "History & Archaeology"],
   ["kulinari", "Kulinari", "Cuisine"],
-  ["histori", "Histori", "History"],
-  ["arkeologji", "Arkeologji", "Archaeology"],
   ["webgis", "Web GIS", "Web GIS"],
-  ["shkenca", "Punime shkencore", "Scientific research"],
-  ["partneret", "Partnerët", "Partners"],
-  ["kontakt", "Kontakt", "Contact"],
+  ["galeri", "Galeri", "Gallery"],
+  ["kontakt", "Na kontakto", "Contact"],
 ] as const;
 
 export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Locale; current?: string}) {
