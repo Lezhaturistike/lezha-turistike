@@ -614,3 +614,22 @@ html[data-theme="light"] .header .logo .logo-castle i{
   .header>.theme-toggle{display:none!important}
   .nav.open .mobile-theme-toggle{display:flex!important}
 }
+
+
+/* Night-mode header brand: match the current footer logo treatment */
+html[data-theme="dark"] .header .logo,
+html[data-theme="dark"] .header .logo .logo-mark,
+html[data-theme="dark"] .header .logo .logo-castle,
+html[data-theme="dark"] .header .logo .logo-castle i{
+  color:#FFFFFF!important;
+  border-color:#FFFFFF!important;
+}
+html[data-theme="dark"] .header .logo .logo-mark.logo-castle{
+  background:transparent!important;
+}
+html[data-theme="dark"] .header .logo .logo-mark.logo-castle i{
+  background:currentColor!important;
+}
+html[data-theme="dark"] .header .logo .logo-mark.logo-castle i:nth-child(2):after{
+  background:var(--brand-primary)!important;
+}
