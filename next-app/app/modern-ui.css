@@ -224,13 +224,6 @@ html[data-theme="dark"] .hero-subtitle{color:#fff}
 }
 
 
-/* Official header logo stays botanical green in both themes */
-html[data-theme="dark"] .header .logo{color:var(--brand-primary)!important}
-html[data-theme="dark"] .header .logo-castle i:nth-child(2):after{background:#f8f6f1}
-html[data-theme="dark"] .header{background:rgba(248,246,241,.97)}
-html[data-theme="dark"] .header .nav a{color:#24342f}
-html[data-theme="dark"] .header .nav a:hover,html[data-theme="dark"] .header .nav a[aria-current="page"]{color:var(--brand-secondary)}
-html[data-theme="dark"] .header .language-switch,html[data-theme="dark"] .header .language-switch a{color:#24342f}
 
 
 /* HOME REFERENCE — pixel-faithful light/dark composition */
