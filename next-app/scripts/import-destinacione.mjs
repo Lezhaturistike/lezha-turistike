@@ -233,13 +233,18 @@ const resources=[
 const normalize=(v='')=>v.toLocaleLowerCase('sq').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')
 const existing=await client.fetch('*[_type == "destinacion"]{_id,titulli}')
 const byTitle=new Map(existing.map(doc=>[normalize(doc.titulli),doc]))
-let created=0, skipped=0
-console.log(`🚀 Katalogu: ${resources.length} destinacione. Në CMS: ${existing.length}.`)
+let created=0, updated=0
+console.log(`🚀 Sinkronizim CMS: ${resources.length} destinacione. Në CMS: ${existing.length}.`)
 for(const item of resources){
  const match=byTitle.get(normalize(item.titulli))
- if(match){console.log(`⏭️  EKZISTON: ${item.titulli}`);skipped++;continue}
  const {_id,...fields}=item
- await client.create({_id,_type:'destinacion',...fields},{visibility:'sync'})
- console.log(`✅ KRIJUAR: ${item.titulli}`);created++
+ if(match){
+   // Plotëson vetëm fushat e katalogut; foto/galeri/lokacion/planner fields ekzistuese nuk preken.
+   await client.patch(match._id).set(fields).commit({visibility:'sync'})
+   console.log(`🔄 PËRDITËSUAR: ${item.titulli}`);updated++
+ }else{
+   await client.create({_id,_type:'destinacion',...fields},{visibility:'sync'})
+   console.log(`✅ KRIJUAR: ${item.titulli}`);created++
+ }
 }
-console.log(`\n🎉 Përfundoi: ${created} krijuar, ${skipped} të paprekura sepse ekzistonin.`)
+console.log(`\n🎉 Përfundoi: ${updated} përditësuar, ${created} krijuar. Foto/galeri/lokacion/planner fields nuk u fshinë.`)
