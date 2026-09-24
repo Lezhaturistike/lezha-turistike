@@ -1267,3 +1267,22 @@ html[data-theme="dark"] .nav.open .mobile-theme-toggle{border-top-color:#3a5650!
     margin-bottom:0;
   }
 }
+
+
+/* Scientific research institution cards — add breathing room between cards */
+.research-partners .partner-grid{
+  gap:clamp(14px,1.8vw,24px)!important;
+  border-top:0!important;
+  border-bottom:0!important;
+}
+.research-partners .partner-card,
+.research-partners .partner-card:nth-child(2n),
+.research-partners .partner-card:nth-child(3n),
+.research-partners .partner-card:nth-last-child(-n+2),
+.research-partners .partner-card:nth-last-child(-n+3){
+  border:1px solid #d7ded8!important;
+  border-radius:18px;
+}
+@media(max-width:620px){
+  .research-partners .partner-grid{gap:14px!important}
+}
