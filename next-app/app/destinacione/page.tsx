@@ -146,6 +146,70 @@ const officialResources = [
     cfareSheh: ["Vendin e lidhur me familjen e Fishtës", "Peizazhin kulturor të zonës", "Një pikë të kujtesës letrare shqiptare"],
     keshilleVizite: "Mos e paraqit si objekt me akses të garantuar; kontrollo gjendjen dhe mundësinë e vizitës paraprakisht.", kohezgjatja: "30–45 min", oraRekomanduar: "Gjatë ditës",
     burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Shtepia+e+Gjergj+Fishtes+Fishte+Lezhe"
+  },
+  {
+    _id: "bashkia-zoja-nunenciate", titulli: "Kisha e Zojës Nunenciate", kategoria: "histori",
+    permbledhje: "Trashëgimi françeskane e lidhur me traditën e hershme të urdhrit në Lezhë.",
+    pershkrimi: "Kisha njihet edhe si Kisha e Dom Lleshit. Tradita historike e paraqitur nga Bashkia Lezhë e lidh praninë françeskane në qytet me shekullin XIII.",
+    cfareSheh: ["Trashëgimi kishtare françeskane", "Arkitekturë dhe histori fetare", "Peizazhin kulturor të Lezhës"],
+    keshilleVizite: "Respekto funksionin fetar dhe kontrollo aksesin para vizitës.", kohezgjatja: "30–45 min", oraRekomanduar: "Gjatë ditës",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+e+Zojes+Nunenciate+Lezhe"
+  },
+  {
+    _id: "bashkia-kisha-ortodokse", titulli: "Kisha Ortodokse e Metamorfozës", kategoria: "histori",
+    permbledhje: "Kishë ortodokse bashkëkohore në Lezhë, e ndërtuar në fillim të viteve 2000.",
+    pershkrimi: "Kisha e Metamorfozës ndodhet në një pozicion të dukshëm në qytet. Ndërtimi nisi në vitin 2000 dhe përfundoi në vitin 2005.",
+    cfareSheh: ["Arkitekturën e kishës", "Hapësirën fetare ortodokse", "Kontekstin urban të qendrës"],
+    keshilleVizite: "Vizitoje me respekt për shërbesat dhe komunitetin fetar.", kohezgjatja: "20–30 min", oraRekomanduar: "Gjatë ditës",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+Ortodokse+Metamorfozes+Lezhe"
+  },
+  {
+    _id: "bashkia-xhamia", titulli: "Xhamia e qytetit", kategoria: "histori",
+    permbledhje: "Objekt i kultit islam në qytetin e Lezhës, pjesë e peizazhit fetar bashkëkohor.",
+    pershkrimi: "Xhamia e qytetit përfaqëson një nga objektet e kultit të Lezhës dhe plotëson mozaikun e trashëgimisë dhe jetës fetare të qytetit.",
+    cfareSheh: ["Arkitekturën e objektit të kultit", "Peizazhin fetar të qytetit", "Qendrën urbane të Lezhës"],
+    keshilleVizite: "Respekto oraret e faljeve dhe rregullat e objektit të kultit.", kohezgjatja: "20–30 min", oraRekomanduar: "Jashtë orareve të faljes",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Xhamia+Lezhe"
+  },
+  {
+    _id: "bashkia-shen-shtjefni", titulli: "Kisha e Shën Shtjefnit", kategoria: "histori",
+    permbledhje: "Rrënoja kishtare pranë Drinit dhe fshatit të vjetër të Blinishtit.",
+    pershkrimi: "Kisha lidhet me Blinishtin mesjetar dhe, sipas burimit institucional, u ndërtua në shekullin XIII. Sot është shumë e dëmtuar dhe bimësia ka pushtuar pjesë të mureve.",
+    cfareSheh: ["Rrënojat e kishës", "Bimësinë mbi muret historike", "Peizazhin pranë Drinit"],
+    keshilleVizite: "Trajtoje si pikë eksplorimi historik dhe verifiko aksesin në terren.", kohezgjatja: "30–45 min", oraRekomanduar: "Paradite",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+Shen+Shtjefnit+Blinisht+Lezhe"
+  },
+  {
+    _id: "bashkia-troshan", titulli: "Kisha e Troshanit", kategoria: "histori",
+    permbledhje: "Kuvend françeskan rrëzë malit të Troshanit, i lidhur me figura të rëndësishme të kulturës shqiptare.",
+    pershkrimi: "Kisha u ndërtua në gjysmën e dytë të shekullit XIX. Në kuvendin françeskan funksionoi një kolegj ku kontribuuan figura si Gjergj Fishta, Luigj Gurakuqi dhe Shtjefën Gjeçovi.",
+    cfareSheh: ["Kishën dhe kuvendin françeskan", "Vendin e lidhur me historinë e arsimit", "Peizazhin rrëzë malit të Troshanit"],
+    keshilleVizite: "Kombinoje me itinerarin kulturor të Fishtës dhe Zadrimës.", kohezgjatja: "45–60 min", oraRekomanduar: "Paradite",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+Troshan+Lezhe"
+  },
+  {
+    _id: "bashkia-shen-premta", titulli: "Kisha e Shën Premtës", kategoria: "histori",
+    permbledhje: "Monument kishtar në Balldre me arkitekturë gotike dhe shtresa të rëndësishme historike.",
+    pershkrimi: "Kisha e Shën Premtës ndodhet në Balldre mbi një kodër shkëmbore. Burimi institucional evidenton arkitekturën njënefëshe, qemerët prej guri dhe një mbishkrim restaurimi të vitit 1462.",
+    cfareSheh: ["Arkitekturë kishtare gotike", "Qemerët prej guri", "Mbishkrimin historik të restaurimit"],
+    keshilleVizite: "Një ndalesë me vlerë për itineraret e arkitekturës dhe trashëgimisë fetare.", kohezgjatja: "45 min", oraRekomanduar: "Paradite",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+Shen+Premtes+Balldre"
+  },
+  {
+    _id: "bashkia-martiret", titulli: "Kisha e Martirëve", kategoria: "histori",
+    permbledhje: "Kishë moderne në Blinisht me përkujtimore kushtuar martirëve dhe viktimave.",
+    pershkrimi: "Kisha u bekua në vitin 1992 në ndërtesën e ish-Pallatit të Kulturës në Blinisht. Brenda saj ndodhen elemente përkujtimore me rëndësi për historinë e komunitetit.",
+    cfareSheh: ["Arkitekturën moderne", "Përkujtimoret e martirëve", "Hapësirën e memories së komunitetit"],
+    keshilleVizite: "Respekto karakterin përkujtimor dhe fetar të vendit.", kohezgjatja: "30–45 min", oraRekomanduar: "Gjatë ditës",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+e+Martireve+Blinisht+Lezhe"
+  },
+  {
+    _id: "bashkia-zemra-krishtit", titulli: "Kisha Zemra e Krishtit", kategoria: "histori",
+    permbledhje: "Kishë historike në Kallmet, dikur me funksion katedraleje për dioqezën e Lezhës.",
+    pershkrimi: "Kisha Zemra e Krishtit u ndërtua në fillim të shekullit XX nga Imzot Luigj Bumçi. Pas dëmtimeve dhe ndryshimit të përdorimit gjatë komunizmit, ajo u rikonstruktua pas viteve 1990.",
+    cfareSheh: ["Arkitekturën e kishës", "Trashëgiminë katolike të Kallmetit", "Historinë e dioqezës së Lezhës"],
+    keshilleVizite: "Kombinoje me Shën Eufeminë për një itinerar të Kallmetit.", kohezgjatja: "30–45 min", oraRekomanduar: "Paradite",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Kisha+Zemra+e+Krishtit+Kallmet"
   }
 ]
 
