@@ -230,12 +230,24 @@ const resources=[
   }
 ]
 
+
+const religiousTitles=new Set(["Katedralja e qytetit","Kisha e Shën Eufemisë","Kisha e Kuvendit të Arbnit","Kisha e Zojës Nunenciate","Kisha Ortodokse e Metamorfozës","Xhamia e qytetit","Kisha e Shën Shtjefnit","Kisha e Troshanit","Kisha e Shën Premtës","Kisha e Martirëve","Kisha Zemra e Krishtit"])
+const urbanTitles=new Set(["Ura e vjetër e qytetit","Shtëpia e Mlikajve","Pallati i Kulturës","Biblioteka e qytetit"])
+const archaeologyTitles=new Set(["Qyteti antik i Lissusit","Akrolisi"])
+const natureTitles=new Set(["Lumi Drin dhe shëtitorja","Rana e Hedhun","Shëngjini","Lagunat Kune–Vain","Plazhi i Tales"])
+const classify=(item)=>{
+ const kategoria=religiousTitles.has(item.titulli)?'fetare':urbanTitles.has(item.titulli)?'kulture-urbane':archaeologyTitles.has(item.titulli)?'arkeologji':natureTitles.has(item.titulli)?'natyre':'histori'
+ const plannerTags=kategoria==='fetare'?['Trashëgimi fetare','Histori & Arkeologji','E kombinuar']:kategoria==='kulture-urbane'?['Kulturë urbane','Eksplorim','E kombinuar']:kategoria==='arkeologji'?['Histori & Arkeologji','Eksplorim','E kombinuar']:kategoria==='natyre'?['Natyrë & Bregdet','Eksplorim','E kombinuar']:['Histori & Arkeologji','Eksplorim','E kombinuar']
+ return {...item,kategoria,plannerTags}
+}
+const catalog=resources.map(classify)
+
 const normalize=(v='')=>v.toLocaleLowerCase('sq').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')
 const existing=await client.fetch('*[_type == "destinacion"]{_id,titulli}')
 const byTitle=new Map(existing.map(doc=>[normalize(doc.titulli),doc]))
 let created=0, updated=0
-console.log(`🚀 Sinkronizim CMS: ${resources.length} destinacione. Në CMS: ${existing.length}.`)
-for(const item of resources){
+console.log(`🚀 Sinkronizim CMS: ${catalog.length} destinacione. Në CMS: ${existing.length}.`)
+for(const item of catalog){
  const match=byTitle.get(normalize(item.titulli))
  const {_id,...fields}=item
  if(match){
