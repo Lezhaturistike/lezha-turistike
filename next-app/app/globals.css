@@ -1187,3 +1187,17 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
  }
  .header>.menu-btn{flex:0 0 auto!important}
 }
+
+
+/* Footer castle mark: force a clean white silhouette on the green footer. */
+.site-footer .logo-mark.logo-castle{
+  width:43px!important;
+  height:43px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:#fff!important;
+  color:#fff!important;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M7 8h7v6h6V8h8v6h6V8h7v12l-4 4v16H11V24l-4-4V8Zm10 27h14V24H17v11Zm4-7h6v7h-6v-7Z'/%3E%3C/svg%3E") center/contain no-repeat!important;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='black' d='M7 8h7v6h6V8h8v6h6V8h7v12l-4 4v16H11V24l-4-4V8Zm10 27h14V24H17v11Zm4-7h6v7h-6v-7Z'/%3E%3C/svg%3E") center/contain no-repeat!important;
+}
+.site-footer .logo-mark.logo-castle i{display:none!important}
