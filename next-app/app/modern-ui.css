@@ -184,3 +184,41 @@ html[data-theme="dark"] .hero-plan-divider{background:rgba(255,255,255,.4)}
 html[data-theme="dark"] .hero-plan-thumbs>span{border-color:rgba(255,255,255,.72)}
 html[data-theme="dark"] .hero-plan-map{background:#267557;border-color:rgba(255,255,255,.13);box-shadow:0 0 0 1px rgba(92,181,140,.35),0 0 22px rgba(48,148,108,.28)}
 @media(max-width:620px){.hero-plan-strip{gap:9px;margin-top:24px}.hero-plan-thumbs>span{width:36px;height:36px}.hero-plan-divider{height:34px}.hero-plan-copy{font-size:.66rem;min-width:76px}.hero-plan-map{width:44px;height:44px;border-width:4px}}
+
+
+/* Exact approved hero composition — desktop + mobile */
+.hero-content{top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;padding-top:36px;padding-bottom:22px}
+.hero-content .overline{font-size:.78rem;letter-spacing:.18em;font-weight:700;margin-bottom:4px}
+.hero-content h1{font-size:clamp(4.2rem,5.6vw,6.25rem);line-height:.9;margin:8px 0 5px}
+.hero-subtitle{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.45rem,1.7vw,2rem);line-height:1.1;margin:0 0 15px;color:var(--brand-primary);font-weight:700}
+.hero-content>p{margin:0;max-width:475px}
+.hero-actions{margin-top:21px}
+.hero-plan-strip{margin-top:22px}
+.hero-count{display:none}
+html[data-theme="dark"] .hero-subtitle{color:#fff}
+@media(min-width:851px){
+ .hero{height:calc(100vh - 76px);min-height:590px;max-height:780px}
+ .hero-content{max-width:620px}
+}
+@media(max-width:850px){
+ .hero{height:calc(100svh - 70px);min-height:650px;max-height:820px}
+ .hero-content{justify-content:flex-start;padding:76px 22px 24px;max-width:100%}
+ .hero-content h1{font-size:clamp(4rem,17vw,5.8rem);margin-top:8px}
+ .hero-subtitle{font-size:clamp(1.35rem,6vw,1.8rem);margin-bottom:13px}
+ .hero-content>p{font-size:.94rem;max-width:390px}
+ .hero-actions{margin-top:19px}
+ .hero-plan-strip{margin-top:20px}
+}
+@media(max-width:520px){
+ .hero{min-height:690px}
+ .hero-content{padding-top:62px}
+ .hero-actions{display:flex;flex-direction:column;align-items:flex-start;width:100%}
+ .hero-actions .button{width:auto;min-width:190px}
+ .hero-plan-strip{margin-top:18px;transform-origin:left center}
+}
+@media(max-width:380px){
+ .hero{min-height:720px}
+ .hero-content{padding-left:18px;padding-right:18px}
+ .hero-content h1{font-size:3.75rem}
+ .hero-plan-strip{transform:scale(.92)}
+}
