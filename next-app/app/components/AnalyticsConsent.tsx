@@ -81,7 +81,7 @@ export default function AnalyticsConsent(){
           <strong>Ju zgjidhni si përdoren të dhënat.</strong>
           <p>Përdorim Google Analytics vetëm me pëlqimin tuaj për të kuptuar në mënyrë të përmbledhur si përdoret Lezha Turistike. Nuk përdorim të dhënat për reklama të personalizuara.</p>
           <p className="lt-consent-en">We use Google Analytics only with your consent to understand aggregate website usage.</p>
-          <a className="lt-consent-policy" href="/cookies"><span>Cookie Policy</span><svg className="lt-policy-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6.5 5H11V9.5" /></svg></a>
+          <a className="lt-consent-policy" href={typeof window!=="undefined"&&window.location.pathname.startsWith("/en")?"/en/cookies":"/cookies"}><span>Cookie Policy</span><svg className="lt-policy-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6.5 5H11V9.5" /></svg></a>
         </div>
         <div className="lt-consent-actions">
           <button type="button" className="lt-consent-secondary" onClick={()=>choose("denied")}>Refuzo <small>Reject</small></button>
