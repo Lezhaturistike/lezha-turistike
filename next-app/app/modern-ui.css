@@ -308,3 +308,92 @@ html[data-theme="dark"] .reference-home-hero .hero-plan-map{background:var(--ref
  .reference-home-hero .hero-actions{flex-direction:column;align-items:flex-start}
  .reference-home-hero .button{width:auto}
 }
+
+
+/* Shared design system for all internal pages — follows approved Home */
+:root{
+ --lt-primary:#0F3D2E;--lt-secondary:#2E7D5B;--lt-accent:#D4B483;
+ --lt-bg:#F8F6F1;--lt-text:#1F2937;--lt-muted:#8B7280;
+ --lt-surface:#fffdf9;--lt-border:rgba(15,61,46,.12);
+ --lt-radius:16px;--lt-pill:999px;
+ --lt-shadow:0 8px 28px rgba(15,61,46,.07);
+ --lt-shadow-hover:0 16px 38px rgba(15,61,46,.12);
+}
+body{background:var(--lt-bg);color:var(--lt-text)}
+main:not(#studio-root) .section{background:var(--lt-bg);color:var(--lt-text)}
+main:not(#studio-root) .section-top{align-items:end}
+main:not(#studio-root) .section-top .overline,
+main:not(#studio-root) .contact-intro>.overline{color:var(--lt-secondary);font-size:.72rem;letter-spacing:.18em;font-weight:800}
+main:not(#studio-root) .section-top h1,
+main:not(#studio-root) .contact-intro h1{font-family:Georgia,"Times New Roman",serif;color:var(--lt-primary);font-weight:500;letter-spacing:-.045em;line-height:.98}
+main:not(#studio-root) .section-top>p,
+main:not(#studio-root) .contact-intro>p{color:#52615c}
+.place,.directory-card,.science-grid article,.archaeology-grid article,.partner-card,.video-card,.contact-card,.gis-feature,.gis-embed{
+ background:var(--lt-surface);border:1px solid var(--lt-border);border-radius:var(--lt-radius);box-shadow:var(--lt-shadow);overflow:hidden;
+ transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.place:hover,.directory-card:hover,.science-grid article:hover,.archaeology-grid article:hover,.partner-card:hover,.video-card:hover{
+ transform:translateY(-2px);border-color:rgba(46,125,91,.3);box-shadow:var(--lt-shadow-hover)
+}
+.tag{display:inline-flex;width:max-content;border-radius:var(--lt-pill);background:rgba(212,180,131,.2);color:#795a31;padding:6px 10px;letter-spacing:.08em}
+.button,.filter,.gis-tab,.place-link-button{border-radius:var(--lt-pill)}
+.button.primary,.button.dark,.filter.active,.gis-tab.active{background:var(--lt-primary);border-color:var(--lt-primary);color:#fff}
+.button.primary:hover,.button.dark:hover,.filter.active:hover,.gis-tab.active:hover{background:var(--lt-secondary);border-color:var(--lt-secondary)}
+.button.outline{background:transparent;border-color:rgba(15,61,46,.42);color:var(--lt-primary)}
+.button.outline:hover{background:var(--lt-primary);color:#fff;border-color:var(--lt-primary)}
+.filter{background:transparent;border-color:rgba(15,61,46,.18);color:var(--lt-primary)}
+.filter:hover{background:rgba(46,125,91,.08);border-color:var(--lt-secondary);color:var(--lt-primary)}
+.place-link,.place-link-button{color:var(--lt-primary)!important}
+.place-link-button{border:1px solid rgba(15,61,46,.18);background:transparent;padding:10px 15px}
+.place-link-button:hover{background:var(--lt-primary);color:#fff!important}
+.dialog-backdrop{background:rgba(7,28,29,.64)}
+.place-dialog{background:var(--lt-surface);color:var(--lt-text);border-radius:18px;border:1px solid var(--lt-border);box-shadow:0 28px 80px rgba(7,28,29,.28);overflow:hidden}
+.place-dialog .dialog-close{background:var(--lt-surface);color:var(--lt-primary)}
+input,textarea,select{border-color:var(--lt-border)!important;border-radius:14px!important;background:var(--lt-surface)!important;color:var(--lt-text)!important}
+input:focus,textarea:focus,select:focus{outline:2px solid rgba(46,125,91,.24)!important;border-color:var(--lt-secondary)!important}
+.contact-hero,.contact-explore{background:var(--lt-bg)!important}
+.plan-visit-cta{border-color:var(--lt-border)!important;border-radius:16px!important;background:var(--lt-surface)}
+.plan-visit-cta:hover{background:rgba(46,125,91,.06)!important}
+.story-section{background:#0F3D2E;color:#fff}
+.story-copy .overline.light{color:#e2c79f}
+.story-copy h1,.story-copy h2{font-family:Georgia,"Times New Roman",serif}
+.site-footer{background:#0b2f25;color:#fff;border-top:1px solid rgba(212,180,131,.22)}
+.site-footer .footer-bottom{border-color:rgba(255,255,255,.13)}
+html[data-theme="dark"]{
+ --lt-bg:#0F3D2E;--lt-text:#fff;--lt-muted:#d2dbd6;
+ --lt-surface:#143f34;--lt-border:rgba(255,255,255,.13);
+ --lt-shadow:0 8px 28px rgba(0,0,0,.18);--lt-shadow-hover:0 16px 38px rgba(0,0,0,.28);
+}
+html[data-theme="dark"] body,
+html[data-theme="dark"] main:not(#studio-root) .section,
+html[data-theme="dark"] .contact-hero,
+html[data-theme="dark"] .contact-explore{background:var(--lt-bg)!important;color:#fff}
+html[data-theme="dark"] main:not(#studio-root) .section-top h1,
+html[data-theme="dark"] main:not(#studio-root) .contact-intro h1{color:#fff}
+html[data-theme="dark"] main:not(#studio-root) .section-top>p,
+html[data-theme="dark"] main:not(#studio-root) .contact-intro>p{color:#d9e3de}
+html[data-theme="dark"] .place,
+html[data-theme="dark"] .directory-card,
+html[data-theme="dark"] .science-grid article,
+html[data-theme="dark"] .archaeology-grid article,
+html[data-theme="dark"] .partner-card,
+html[data-theme="dark"] .video-card,
+html[data-theme="dark"] .contact-card,
+html[data-theme="dark"] .gis-feature,
+html[data-theme="dark"] .gis-embed,
+html[data-theme="dark"] .place-dialog,
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select{background:var(--lt-surface)!important;color:#fff!important;border-color:var(--lt-border)!important}
+html[data-theme="dark"] .tag{background:rgba(212,180,131,.18);color:#ead4b2}
+html[data-theme="dark"] .button.outline{border-color:rgba(255,255,255,.45);color:#fff}
+html[data-theme="dark"] .filter{border-color:rgba(255,255,255,.2);color:#fff}
+html[data-theme="dark"] .filter:hover{background:rgba(255,255,255,.08);color:#fff}
+html[data-theme="dark"] .place-link,html[data-theme="dark"] .place-link-button{color:#fff!important}
+html[data-theme="dark"] .place-link-button{border-color:rgba(255,255,255,.2)}
+html[data-theme="dark"] .plan-visit-cta{background:var(--lt-surface);border-color:var(--lt-border)!important}
+@media(max-width:850px){
+ main:not(#studio-root) .section-top{align-items:start}
+ main:not(#studio-root) .section-top h1,main:not(#studio-root) .contact-intro h1{line-height:1}
+ .place,.directory-card,.science-grid article,.archaeology-grid article,.partner-card,.video-card{border-radius:14px}
+}
