@@ -6,7 +6,7 @@ import PlannerClient,{type PlannerPlace} from "../../planifiko/PlannerClient";
 import {client} from "@/sanity/lib/client";
 import "../../planifiko/planifiko.css";
 
-export const metadata: Metadata={title:"Plan your visit | Lezha Turistike",description:"Build a personalized itinerary in Lezha based on your time, interests, food and accommodation."};
+export const metadata: Metadata={title:"Plan your visit | Lezha Turistike",description:"Build a personalized itinerary in Lezha based on your time, interests, food and accommodation.",alternates:{canonical:"https://lezhaturistike.com/en/planifiko",languages:{"sq-AL":"https://lezhaturistike.com/planifiko","en":"https://lezhaturistike.com/en/planifiko","x-default":"https://lezhaturistike.com/planifiko"}}};
 
 const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(lokacioni.lat) && defined(lokacioni.lng)] | order(coalesce(plannerOrder,999) asc){
  "id":_id,"type":_type,"name":coalesce(titulliEn,emriEn,titulli,emri),
