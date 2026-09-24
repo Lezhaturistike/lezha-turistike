@@ -8,11 +8,11 @@ import "./planifiko.css";
 
 export const metadata: Metadata={title:"Planifiko vizitën | Lezha Turistike",description:"Ndërto një itinerar të personalizuar në Lezhë sipas kohës, interesave, ushqimit dhe akomodimit."};
 
-const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"]] | order(coalesce(plannerOrder,999) asc){
+const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(lokacioni.lat) && defined(lokacioni.lng)] | order(coalesce(plannerOrder,999) asc){
  "id":_id,"type":_type,"name":coalesce(titulli,emri),
  "kind":select(_type=="destinacion"=>coalesce(kategoria,"Destinacion"),_type=="kulinari"=>coalesce(kategoria,"Kulinari"),_type=="akomodim"=>coalesce(lloji,"Akomodim"),"Vend"),
  "desc":coalesce(pershkrimi,"Zbulo këtë vend gjatë vizitës në Lezhë."),
- "lat":coalesce(lokacioni.lat,0),"lng":coalesce(lokacioni.lng,0),"image":foto.asset->url,
+ "lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,
  "duration":coalesce(kohezgjatja,"1 orë"),"time":coalesce(oraRekomanduar,"Sipas itinerarit"),plannerFeatured,
  "tags":coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[coalesce(zona,""),coalesce(adresa,"")]
 }`;
