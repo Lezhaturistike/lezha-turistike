@@ -1286,3 +1286,44 @@ html[data-theme="dark"] .nav.open .mobile-theme-toggle{border-top-color:#3a5650!
 @media(max-width:620px){
   .research-partners .partner-grid{gap:24px!important}
 }
+
+
+/* Institution section final polish: integrated with science page + dark mode */
+.research-partners{
+  margin-top:72px!important;
+  background:transparent!important;
+  border-top:1px solid #dce4dc!important;
+  border-bottom:0!important;
+  overflow:visible!important;
+}
+.research-partners:after{display:none!important}
+.research-partners .partner-grid{background:transparent!important}
+.research-partners .partner-card{
+  background:#f8faf7!important;
+  border:1px solid #d7ded8!important;
+  box-shadow:none!important;
+}
+.research-partners .partner-card:hover{
+  background:#fff!important;
+  border-color:#aebfb5!important;
+  transform:translateY(-2px);
+}
+html[data-theme="dark"] .research-partners{
+  background:transparent!important;
+  border-top-color:#29453f!important;
+}
+html[data-theme="dark"] .research-partners .section-top h2{color:#f0f5f2!important}
+html[data-theme="dark"] .research-partners .section-top>p{color:#aabbb5!important}
+html[data-theme="dark"] .research-partners .partner-card,
+html[data-theme="dark"] .research-partners .partner-card:hover{
+  background:#14332f!important;
+  border-color:#31534c!important;
+}
+html[data-theme="dark"] .research-partners .partner-card:hover{background:#193b36!important}
+html[data-theme="dark"] .research-partners .partner-card strong{color:#edf5f1!important}
+html[data-theme="dark"] .research-partners .partner-card small{color:#aabbb5!important}
+html[data-theme="dark"] .research-partners .partner-card>span{color:#9bc9b3!important}
+html[data-theme="dark"] .research-partners .partner-card.partner-text:before{color:#9bc9b3!important;border-color:#42665d!important}
+@media(max-width:620px){
+  .research-partners{margin-top:52px!important;padding-left:0!important;padding-right:0!important}
+}
