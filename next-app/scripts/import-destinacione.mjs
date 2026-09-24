@@ -263,7 +263,9 @@ const verifiedLocations={
  "Kisha Zemra e Krishtit":{_type:'geopoint',lat:41.84706,lng:19.68957},
  "Kisha e Shën Shtjefnit":{_type:'geopoint',lat:41.8685,lng:19.6148},
  "Ura e vjetër e qytetit":{_type:'geopoint',lat:41.786961,lng:19.6409476},
- "Kisha e Martirëve":{_type:'geopoint',lat:41.8825725,lng:19.6326055}
+ "Kisha e Martirëve":{_type:'geopoint',lat:41.8825725,lng:19.6326055},
+ "Akrolisi":{_type:'geopoint',lat:41.77877590622475,lng:19.661229195210108},
+ "Lumi Drin dhe shëtitorja":{_type:'geopoint',lat:41.781122857893514,lng:19.642454468433908}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
