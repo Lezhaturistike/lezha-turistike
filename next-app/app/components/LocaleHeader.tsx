@@ -34,6 +34,7 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
           <span aria-hidden="true">/</span>
           <Link href={localizedPath(currentPath, "en")} hrefLang="en" lang="en" aria-current={locale === "en" ? "true" : undefined}>EN</Link>
         </span>
+        <span className="mobile-theme-toggle"><ThemeToggle /></span>
       </nav>
       <ThemeToggle />
       <MenuButton />
