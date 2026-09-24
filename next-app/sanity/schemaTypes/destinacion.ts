@@ -1,7 +1,7 @@
 import {defineField, defineType} from 'sanity'
 export const destinacion=defineType({name:'destinacion',title:'Destinacione',type:'document',fields:[
  defineField({name:'titulli',title:'Titulli',type:'string',validation:(Rule)=>Rule.required()}),defineField({name:'titulliEn',title:'Title (EN)',type:'string'}),
- defineField({name:'kategoria',title:'Kategoria',type:'string',options:{list:[{title:'Histori',value:'histori'},{title:'Natyrë',value:'natyre'},{title:'Arkeologji',value:'arkeologji'}]}}),
+ defineField({name:'kategoria',title:'Kategoria',type:'string',options:{list:[{title:'Histori & Kulturë',value:'histori'},{title:'Arkeologji',value:'arkeologji'},{title:'Trashëgimi fetare',value:'fetare'},{title:'Natyrë & Bregdet',value:'natyre'},{title:'Arkitekturë & Kulturë urbane',value:'kulture-urbane'}]}}),
  defineField({name:'pershkrimi',title:'Përshkrimi',type:'text',rows:5}),defineField({name:'pershkrimiEn',title:'Description (EN)',type:'text',rows:5}),
  defineField({name:'permbledhje',title:'Përmbledhje për kartën',type:'text',rows:3,description:'Tekst i shkurtër turistik për kartën. Nëse lihet bosh përdoret përshkrimi.'}),defineField({name:'permbledhjeEn',title:'Card summary (EN)',type:'text',rows:3}),
  defineField({name:'cfareSheh',title:'Çfarë do të shohësh',type:'array',of:[{type:'string'}],description:'Pikat kryesore që vizitori zbulon në këtë destinacion.'}),defineField({name:'cfareShehEn',title:'What you will see (EN)',type:'array',of:[{type:'string'}]}),
@@ -12,6 +12,6 @@ export const destinacion=defineType({name:'destinacion',title:'Destinacione',typ
  defineField({name:'zona',title:'Zona / lokaliteti',type:'string',description:'P.sh. Lezhë, Shëngjin, Tale, Kune-Vain. Përdoret edhe nga kërkimi.'}),
  defineField({name:'searchKeywords',title:'Fjalë kyçe për kërkim',type:'array',of:[{type:'string'}],description:'Sinonime dhe kërkime tipike, p.sh. kala, castle, panoramë, familje, perëndim.'}),
  defineField({name:'kohezgjatja',title:'Kohëzgjatja e rekomanduar',type:'string'}),defineField({name:'kohezgjatjaEn',title:'Recommended duration (EN)',type:'string'}),defineField({name:'oraRekomanduar',title:'Ora / momenti i rekomanduar',type:'string'}),defineField({name:'oraRekomanduarEn',title:'Recommended time (EN)',type:'string'}),
- defineField({name:'plannerTags',title:'Interesat në planner',type:'array',of:[{type:'string'}],options:{list:[{title:'Histori & Arkeologji',value:'Histori & Arkeologji'},{title:'Natyrë & Bregdet',value:'Natyrë & Bregdet'},{title:'Kulinari',value:'Kulinari'},{title:'Eksplorim',value:'Eksplorim'},{title:'E kombinuar',value:'E kombinuar'}]}}),
+ defineField({name:'plannerTags',title:'Interesat në planner',type:'array',of:[{type:'string'}],options:{list:[{title:'Histori & Arkeologji',value:'Histori & Arkeologji'},{title:'Natyrë & Bregdet',value:'Natyrë & Bregdet'},{title:'Kulinari',value:'Kulinari'},{title:'Eksplorim',value:'Eksplorim'},{title:'E kombinuar',value:'E kombinuar'},{title:'Trashëgimi fetare',value:'Trashëgimi fetare'},{title:'Kulturë urbane',value:'Kulturë urbane'}]}}),
  defineField({name:'plannerFeatured',title:'Sugjero në Planifiko vizitën',type:'boolean',initialValue:false}),defineField({name:'plannerOrder',title:'Renditja në itinerar',type:'number'})
 ],preview:{select:{title:'titulli',subtitle:'kategoria',media:'foto'}}})
