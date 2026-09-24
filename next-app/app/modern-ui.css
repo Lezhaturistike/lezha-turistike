@@ -546,3 +546,28 @@ main#home:has(> .planner) .planner .mapFirst .leaflet-container{z-index:1!import
  .dialog-backdrop{padding:10px!important}
  .place-dialog{max-height:calc(100dvh - 20px)!important;border-radius:16px!important}
 }
+
+
+/* Reliable modal scrolling on desktop + touch devices */
+html.modal-open,body.modal-open{overflow:hidden!important;height:100%!important}
+.dialog-backdrop{
+ display:block!important;
+ overflow-y:auto!important;
+ overflow-x:hidden!important;
+ height:100dvh!important;
+ max-height:100dvh!important;
+ -webkit-overflow-scrolling:touch!important;
+ touch-action:pan-y!important;
+}
+.place-dialog{
+ display:block!important;
+ max-height:none!important;
+ min-height:0!important;
+ overflow:visible!important;
+ margin:0 auto!important;
+}
+.place-dialog>.dialog-close{position:sticky!important;top:10px!important;float:right!important}
+@media(max-width:620px){
+ .dialog-backdrop{height:100dvh!important;max-height:100dvh!important;padding:10px!important}
+ .place-dialog{max-height:none!important;overflow:visible!important;margin:0 auto!important}
+}
