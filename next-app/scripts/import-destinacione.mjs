@@ -257,7 +257,10 @@ const verifiedLocations={
  "Kisha e Shën Eufemisë":{_type:'geopoint',lat:41.85293,lng:19.71139},
  "Kisha e Zojës Nunenciate":{_type:'geopoint',lat:41.78546,lng:19.63914},
  "Kisha Ortodokse e Metamorfozës":{_type:'geopoint',lat:41.78167,lng:19.64094},
- "Shtëpia e At Gjergj Fishtës":{_type:'geopoint',lat:41.882225,lng:19.663111}
+ "Shtëpia e At Gjergj Fishtës":{_type:'geopoint',lat:41.882225,lng:19.663111},
+ "Kisha e Kuvendit të Arbnit":{_type:'geopoint',lat:41.73174,lng:19.64649},
+ "Kisha e Troshanit":{_type:'geopoint',lat:41.88492,lng:19.71837},
+ "Kisha Zemra e Krishtit":{_type:'geopoint',lat:41.84706,lng:19.68957}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
