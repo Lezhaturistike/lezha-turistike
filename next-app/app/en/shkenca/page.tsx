@@ -209,10 +209,6 @@ export default async function ShkencaPage() {
                 </a>
               ))}
             </div>
-            <p className="source-line">
-              {partnerContent.text4}{" "}
-              <a href={partnerContent.href5} target="_blank" rel="noopener noreferrer">{partnerContent.text6}</a>.
-            </p>
           </section>
         </section>
       </main>
