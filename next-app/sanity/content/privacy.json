@@ -3,62 +3,69 @@
   "eyebrowEn": "PRIVACY",
   "title": "Politika e Privatësisë",
   "titleEn": "Privacy Policy",
-  "intro": "Kjo politikë shpjegon si Lezha Turistike trajton informacionin gjatë përdorimit të faqes, përfshirë përdorimin e Google Analytics me pëlqimin e vizitorit.",
-  "introEn": "This policy explains how Lezha Turistike handles information when you use the website, including the use of Google Analytics with visitor consent.",
-  "updated": "Përditësuar: 22 shtator 2026",
-  "updatedEn": "Updated: 22 September 2026",
+  "intro": "Kjo politikë shpjegon si Lezha Turistike trajton informacionin gjatë përdorimit të faqes dhe funksioneve të saj, përfshirë Planifiko Vizitën, hartat interaktive, vlerësimet dhe analitikën me pëlqim.",
+  "introEn": "This policy explains how Lezha Turistike handles information when you use the website and its features, including Plan Your Visit, interactive maps, ratings and consent-based analytics.",
+  "updated": "Përditësuar: 24 shtator 2026",
+  "updatedEn": "Updated: 24 September 2026",
   "sections": [
     {
       "_key": "privacy-1",
       "heading": "Të dhënat dhe qëllimi",
       "headingEn": "Data and purpose",
-      "body": "Faqja nuk kërkon krijimin e një llogarie nga vizitorët. Kur na kontaktoni me email, informacioni që dërgoni përdoret për t’ju përgjigjur dhe për komunikimin që keni kërkuar. Infrastrukturat e hosting-ut dhe shërbimet teknike mund të përpunojnë të dhëna teknike, si adresa IP, koha e kërkesës, pajisja ose të dhëna të ngjashme, për siguri dhe funksionim.",
-      "bodyEn": "Visitors are not required to create an account. If you contact us by email, the information you send is used to respond and for the communication you requested. Hosting and technical infrastructure may process technical data such as IP address, request time, device information or similar data for security and operation."
+      "body": "Faqja nuk kërkon krijimin e një llogarie nga vizitorët. Kur na kontaktoni me email, informacioni që dërgoni përdoret për t’ju përgjigjur dhe për komunikimin që keni kërkuar. Infrastruktura e hosting-ut dhe shërbimet teknike mund të përpunojnë të dhëna teknike, si adresa IP, koha e kërkesës, lloji i pajisjes ose shfletuesit dhe të dhëna të ngjashme, për siguri, diagnostikim dhe funksionim të faqes.",
+      "bodyEn": "Visitors are not required to create an account. If you contact us by email, the information you send is used to respond and for the communication you requested. Hosting and technical infrastructure may process technical data such as IP address, request time, device or browser type and similar information for security, diagnostics and website operation."
     },
     {
       "_key": "privacy-2",
-      "heading": "Google Analytics",
-      "headingEn": "Google Analytics",
-      "body": "Lezha Turistike përdor Google Analytics 4 për të kuptuar në mënyrë të përmbledhur si përdoret faqja, për shembull vizitat, faqet e shikuara, ndërveprimet dhe të dhëna të përgjithshme teknike. Google Analytics aktivizohet sipas zgjedhjes së pëlqimit të vizitorit për analitikën. Informacioni i mbledhur përpunohet nga Google sipas kushteve dhe politikave të veta. Ne nuk i kërkojmë Google Analytics të mbledhë emrin ose adresën tuaj të emailit për këtë qëllim dhe nuk e përdorim këtë konfigurim për reklama të personalizuara.",
-      "bodyEn": "Lezha Turistike uses Google Analytics 4 to understand aggregate website usage, such as visits, pages viewed, interactions and general technical information. Google Analytics is activated according to the visitor’s analytics consent choice. Information collected through Analytics is processed by Google under its own terms and policies. We do not ask Google Analytics to collect your name or email address for this purpose, and we do not use this configuration for personalised advertising."
+      "heading": "Planifiko Vizitën dhe itineraret",
+      "headingEn": "Plan Your Visit and itineraries",
+      "body": "Funksioni “Planifiko Vizitën” përpunon zgjedhjet që bëni për kohën e vizitës, interesat, mënyrën e lëvizjes dhe ndalesat për të krijuar itinerarin. Kur zgjidhni “Ruaj”, itinerari ruhet në localStorage në pajisjen tuaj. Kur ndani itinerarin, parametrat e turit mund të përfshihen në URL. Funksioni QR përdor një shërbim të jashtëm për gjenerimin e kodit QR nga lidhja e itinerarit. Lezha Turistike nuk kërkon emër, email apo llogari për krijimin e një itinerari.",
+      "bodyEn": "The “Plan Your Visit” feature processes your choices for visit duration, interests, transport mode and stops to build an itinerary. When you choose “Save”, the itinerary is stored in localStorage on your device. When you share an itinerary, tour parameters may be included in the URL. The QR feature uses an external service to generate a QR code from the itinerary link. Lezha Turistike does not require a name, email or account to create an itinerary."
     },
     {
       "_key": "privacy-3",
-      "heading": "Pëlqimi dhe zgjedhja juaj",
-      "headingEn": "Consent and your choice",
-      "body": "Kur kërkohet pëlqim, mund të pranoni ose refuzoni analitikën nga banneri i privatësisë. Zgjedhja ruhet lokalisht në shfletues që faqja të kujtojë preferencën tuaj. Mund ta ndryshoni zgjedhjen duke pastruar ruajtjen/cookies e faqes në shfletues dhe duke bërë përsëri zgjedhjen kur shfaqet banneri. Refuzimi i analitikës nuk pengon përdorimin bazë të faqes.",
-      "bodyEn": "Where consent is required, you can accept or reject analytics through the privacy banner. Your choice is stored locally in the browser so the website can remember your preference. You can change your choice by clearing this website’s storage/cookies in your browser and choosing again when the banner appears. Rejecting analytics does not prevent basic use of the website."
+      "heading": "Google Analytics",
+      "headingEn": "Google Analytics",
+      "body": "Lezha Turistike përdor Google Analytics 4 për të kuptuar në mënyrë të përmbledhur përdorimin e faqes, si vizitat, faqet e shikuara dhe ndërveprimet. Analytics aktivizohet sipas zgjedhjes suaj të pëlqimit kur pëlqimi kërkohet. Informacioni përpunohet nga Google sipas kushteve dhe politikave të veta. Konfigurimi ynë nuk synon mbledhjen e emrit ose adresës suaj të emailit dhe nuk përdoret për reklama të personalizuara.",
+      "bodyEn": "Lezha Turistike uses Google Analytics 4 to understand aggregate website usage, such as visits, pages viewed and interactions. Analytics is activated according to your consent choice where consent is required. Information is processed by Google under its own terms and policies. Our configuration is not intended to collect your name or email address and is not used for personalised advertising."
     },
     {
       "_key": "privacy-4",
-      "heading": "Preferencat dhe vlerësimet",
-      "headingEn": "Preferences and ratings",
-      "body": "Day/Night Mode ruan lokalisht në shfletues preferencën e temës. Te Kulinaria, shfletuesi ruan lokalisht faktin që një vend është vlerësuar, ndërsa vlerësimi 1–5 dërgohet në sistemin e faqes dhe ruhet në Sanity për llogaritjen e rezultatit të përgjithshëm. Ky funksion nuk kërkon emër apo email.",
-      "bodyEn": "Day/Night Mode stores the selected theme locally in your browser. In Cuisine, the browser locally remembers that a place has been rated, while the 1–5 rating is sent to the website system and stored in Sanity to calculate the aggregate rating. This feature does not request a name or email."
+      "heading": "Pëlqimi dhe preferencat",
+      "headingEn": "Consent and preferences",
+      "body": "Zgjedhja juaj për analitikën ruhet lokalisht në shfletues që faqja të kujtojë preferencën. Day/Night Mode ruan po ashtu lokalisht preferencën e temës. Refuzimi i analitikës nuk pengon përdorimin bazë të faqes. Mund t’i rivendosni këto zgjedhje duke fshirë të dhënat e ruajtura të faqes nga shfletuesi.",
+      "bodyEn": "Your analytics choice is stored locally in the browser so the website can remember your preference. Day/Night Mode also stores the selected theme locally. Rejecting analytics does not prevent basic use of the website. You can reset these choices by clearing this website’s stored data in your browser."
     },
     {
       "_key": "privacy-5",
-      "heading": "Shërbime të jashtme",
-      "headingEn": "External services",
-      "body": "Faqja përmban ose lidh shërbime të palëve të treta, përfshirë Google Analytics, ArcGIS/Web GIS dhe lidhje drejt faqeve, hartave, rrjeteve sociale ose burimeve shkencore. Kur hapni ose ndërveproni me këto shërbime, ofruesi përkatës mund të përpunojë të dhëna sipas politikave të veta.",
-      "bodyEn": "The website uses, embeds or links to third-party services, including Google Analytics, ArcGIS/Web GIS and links to websites, maps, social networks or scientific sources. When you open or interact with these services, the relevant provider may process data under its own policies."
+      "heading": "Vlerësimet e Kulinarisë",
+      "headingEn": "Cuisine ratings",
+      "body": "Te Kulinaria, shfletuesi ruan lokalisht faktin që një vend është vlerësuar, ndërsa vlerësimi 1–5 dërgohet në sistemin e faqes dhe ruhet në Sanity për llogaritjen e rezultatit të përgjithshëm. Ky funksion nuk kërkon emër ose email.",
+      "bodyEn": "In Cuisine, the browser locally remembers that a place has been rated, while the 1–5 rating is sent to the website system and stored in Sanity to calculate the aggregate rating. This feature does not request a name or email."
     },
     {
       "_key": "privacy-6",
-      "heading": "Ruajtja dhe siguria",
-      "headingEn": "Retention and security",
-      "body": "Synojmë të kufizojmë të dhënat në atë që nevojitet për funksionimin, sigurinë, komunikimin, analitikën e pranuar dhe funksionet që kërkon vizitori. Të dhënat që kontrollohen drejtpërdrejt nga ne mbahen vetëm për aq kohë sa nevojiten për qëllimin përkatës ose sa kërkohet nga detyrimet ligjore. Për të dhënat e përpunuara nga shërbime të jashtme zbatohen edhe politikat dhe konfigurimet e tyre të ruajtjes.",
-      "bodyEn": "We aim to limit data to what is necessary for operation, security, communication, consented analytics and visitor-requested functions. Data directly controlled by us is retained only as long as necessary for the relevant purpose or legal obligations. Data processed by external services is also subject to their retention policies and configurations."
+      "heading": "Shërbime dhe përmbajtje të jashtme",
+      "headingEn": "External services and content",
+      "body": "Faqja përdor, integron ose lidh shërbime të palëve të treta, përfshirë Google Analytics, ArcGIS/Web GIS, Google Maps, YouTube, shërbimin e kodit QR dhe lidhje drejt faqeve, rrjeteve sociale ose burimeve shkencore. Kur hapni ose ndërveproni me këto shërbime, ofruesi përkatës mund të marrë të dhëna teknike dhe të përdorë cookies ose teknologji të ngjashme sipas politikave të veta.",
+      "bodyEn": "The website uses, embeds or links to third-party services, including Google Analytics, ArcGIS/Web GIS, Google Maps, YouTube, the QR-code service and links to websites, social networks or scientific sources. When you open or interact with these services, the relevant provider may receive technical data and use cookies or similar technologies under its own policies."
     },
     {
       "_key": "privacy-7",
+      "heading": "Ruajtja dhe siguria",
+      "headingEn": "Retention and security",
+      "body": "Synojmë të kufizojmë të dhënat në atë që nevojitet për funksionimin, sigurinë, komunikimin, analitikën e pranuar dhe funksionet që kërkon vizitori. Të dhënat që kontrollohen drejtpërdrejt nga ne mbahen vetëm për aq kohë sa nevojiten për qëllimin përkatës ose sa kërkohet nga detyrimet ligjore. Të dhënat e ruajtura në localStorage qëndrojnë në pajisjen tuaj derisa t’i fshini ose derisa faqja/shfletuesi t’i zëvendësojë.",
+      "bodyEn": "We aim to limit data to what is necessary for operation, security, communication, consented analytics and visitor-requested functions. Data directly controlled by us is retained only as long as necessary for the relevant purpose or legal obligations. Data stored in localStorage remains on your device until you delete it or it is replaced by the website/browser."
+    },
+    {
+      "_key": "privacy-8",
       "heading": "Të drejtat tuaja",
       "headingEn": "Your rights",
       "body": "Në varësi të legjislacionit të zbatueshëm, mund të kërkoni informacion, akses, korrigjim ose fshirje të të dhënave personale që kontrollohen nga ne, si dhe të kundërshtoni ose kufizoni përpunimin kur këto të drejta zbatohen. Kur përpunimi mbështetet në pëlqim, mund ta tërhiqni pëlqimin për përdorimin e ardhshëm të analitikës.",
       "bodyEn": "Depending on applicable law, you may request information, access, correction or deletion of personal data controlled by us, and object to or restrict processing where those rights apply. Where processing is based on consent, you may withdraw consent for future analytics use."
     },
     {
-      "_key": "privacy-8",
+      "_key": "privacy-9",
       "heading": "Kontakti",
       "headingEn": "Contact",
       "body": "Për pyetje mbi privatësinë ose për ushtrimin e të drejtave, kontaktoni: lezhaturistike@gmail.com. Identiteti formal i operatorit/përgjegjësit të faqes do të plotësohet sapo të përcaktohet zyrtarisht.",
