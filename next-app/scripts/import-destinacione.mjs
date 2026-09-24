@@ -261,12 +261,14 @@ const verifiedLocations={
  "Kisha e Kuvendit të Arbnit":{_type:'geopoint',lat:41.73174,lng:19.64649},
  "Kisha e Troshanit":{_type:'geopoint',lat:41.88492,lng:19.71837},
  "Kisha Zemra e Krishtit":{_type:'geopoint',lat:41.84706,lng:19.68957},
- "Kisha e Shën Shtjefnit":{_type:'geopoint',lat:41.8685,lng:19.6148}
+ "Kisha e Shën Shtjefnit":{_type:'geopoint',lat:41.8685,lng:19.6148},
+ "Ura e vjetër e qytetit":{_type:'geopoint',lat:41.786961,lng:19.6409476},
+ "Kisha e Martirëve":{_type:'geopoint',lat:41.8825725,lng:19.6326055}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
 const normalize=(v='')=>v.toLocaleLowerCase('sq').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')
-const existing=await client.fetch('*[_type == "destinacion"]{_id,titulli}')
+const existing=await client.fetch('*[_type == "destinacion"]{_id,titulli,lokacioni}')
 const byTitle=new Map(existing.map(doc=>[normalize(doc.titulli),doc]))
 let created=0, updated=0
 console.log(`🚀 Sinkronizim CMS: ${catalog.length} destinacione. Në CMS: ${existing.length}.`)
@@ -274,8 +276,10 @@ for(const item of catalog){
  const match=byTitle.get(normalize(item.titulli))
  const {_id,...fields}=item
  if(match){
-   // Plotëson vetëm fushat e katalogut; foto/galeri/lokacion/planner fields ekzistuese nuk preken.
-   await client.patch(match._id).set(fields).commit({visibility:'sync'})
+   // Sanity është burimi final për lokacionin: një pikë ekzistuese nuk mbishkruhet nga importeri.
+   const safeFields={...fields}
+   if(match.lokacioni) delete safeFields.lokacioni
+   await client.patch(match._id).set(safeFields).commit({visibility:'sync'})
    console.log(`🔄 PËRDITËSUAR: ${item.titulli}`);updated++
  }else{
    await client.create({_id,_type:'destinacion',...fields},{visibility:'sync'})
