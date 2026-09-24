@@ -240,7 +240,14 @@ const classify=(item)=>{
  const plannerTags=kategoria==='fetare'?['Trashëgimi fetare','Histori & Arkeologji','E kombinuar']:kategoria==='kulture-urbane'?['Kulturë urbane','Eksplorim','E kombinuar']:kategoria==='arkeologji'?['Histori & Arkeologji','Eksplorim','E kombinuar']:kategoria==='natyre'?['Natyrë & Bregdet','Eksplorim','E kombinuar']:['Histori & Arkeologji','Eksplorim','E kombinuar']
  return {...item,kategoria,plannerTags}
 }
-const catalog=resources.map(classify)
+const verifiedLocations={
+ "Kalaja e Lezhës":{_type:'geopoint',lat:41.7837,lng:19.65006},
+ "Qyteti antik i Lissusit":{_type:'geopoint',lat:41.78281,lng:19.64306},
+ "Memoriali i Skënderbeut":{_type:'geopoint',lat:41.782667,lng:19.643267},
+ "Obelisku i Kuvendit të Lezhës":{_type:'geopoint',lat:41.78068,lng:19.64443},
+ "Lagunat Kune–Vain":{_type:'geopoint',lat:41.75203,lng:19.60733}
+}
+const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
 const normalize=(v='')=>v.toLocaleLowerCase('sq').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')
 const existing=await client.fetch('*[_type == "destinacion"]{_id,titulli}')
