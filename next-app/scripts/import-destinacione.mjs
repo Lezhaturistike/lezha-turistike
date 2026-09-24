@@ -247,7 +247,11 @@ const verifiedLocations={
  "Obelisku i Kuvendit të Lezhës":{_type:'geopoint',lat:41.78068,lng:19.64443},
  "Lagunat Kune–Vain":{_type:'geopoint',lat:41.75203,lng:19.60733},
  "Shëngjini":{_type:'geopoint',lat:41.78854,lng:19.59706},
- "Rana e Hedhun":{_type:'geopoint',lat:41.8280045,lng:19.5482576}
+ "Rana e Hedhun":{_type:'geopoint',lat:41.8280045,lng:19.5482576},
+ "Katedralja e qytetit":{_type:'geopoint',lat:41.77778,lng:19.64778},
+ "Xhamia e qytetit":{_type:'geopoint',lat:41.7773647,lng:19.6443647},
+ "Pallati i Kulturës":{_type:'geopoint',lat:41.78151,lng:19.6429994},
+ "Biblioteka e qytetit":{_type:'geopoint',lat:41.781947,lng:19.6425248}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
