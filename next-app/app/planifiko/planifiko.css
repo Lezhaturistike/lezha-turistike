@@ -35,15 +35,10 @@ html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
 
 
 
-
-/* Leaflet stacking: popups above map content, always below sticky site header */
+/* Leaflet: keep native pane stacking so desktop tiles render correctly.
+   Only the whole map stays below the sticky site navigation. */
 .planner .mapWrap{position:relative!important;z-index:1!important;isolation:isolate!important}
-.planner .leaflet-container{position:relative!important;z-index:0!important}
-.planner .leaflet-popup-pane{z-index:700!important;pointer-events:auto!important}
+.planner .leaflet-container{z-index:0!important}
+.planner .leaflet-popup-pane{z-index:700!important}
 .planner .leaflet-tooltip-pane{z-index:650!important}
-.planner .leaflet-marker-pane{z-index:600!important}
-.planner .leaflet-shadow-pane{z-index:500!important}
-.planner .leaflet-overlay-pane{z-index:400!important}
-.planner .leaflet-tile-pane{z-index:200!important}
-.planner .leaflet-top,.planner .leaflet-bottom{z-index:800!important}
 .header{position:sticky!important;top:0!important;z-index:1000!important;isolation:isolate!important}
