@@ -11,7 +11,6 @@ const navigation = [
   ["webgis", "Web GIS", "Web GIS"],
   ["galeri", "Galeri", "Gallery"],
   ["shkenca", "Punime shkencore", "Scientific research"],
-  ["partneret", "Partnerët", "Partners"],
   ["kontakt", "Na kontakto", "Contact"],
 ] as const;
 
