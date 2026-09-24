@@ -9,7 +9,8 @@ export function localizeContent<T>(value: T, locale: Locale): T {
   for (const [key, item] of Object.entries(source)) {
     if (key.endsWith("En")) continue;
     const translated = source[key + "En"];
-    result[key] = translated !== undefined && translated !== null && translated !== ""
+    const hasTranslation = translated !== undefined && translated !== null && (typeof translated !== "string" || translated.trim() !== "") && (!Array.isArray(translated) || translated.length > 0);
+    result[key] = hasTranslation
       ? localizeContent(translated, locale)
       : localizeContent(item, locale);
   }
