@@ -3,66 +3,80 @@
   "eyebrowEn": "TERMS",
   "title": "Kushtet e Përdorimit",
   "titleEn": "Terms & Conditions",
-  "intro": "Duke përdorur Lezha Turistike, pranoni këto kushte bazë të përdorimit të përmbajtjes dhe shërbimeve të faqes.",
-  "introEn": "By using Lezha Turistike, you agree to these basic terms governing use of the website and its content.",
-  "updated": "Përditësuar: 22 shtator 2026",
-  "updatedEn": "Updated: 22 September 2026",
+  "intro": "Këto kushte rregullojnë përdorimin e Lezha Turistike, përfshirë përmbajtjen turistike, Planifiko Vizitën, hartat interaktive dhe shërbimet e lidhura.",
+  "introEn": "These terms govern use of Lezha Turistike, including tourism content, Plan Your Visit, interactive maps and related services.",
+  "updated": "Përditësuar: 24 shtator 2026",
+  "updatedEn": "Updated: 24 September 2026",
   "sections": [
     {
       "_key": "terms-1",
       "heading": "Qëllimi i faqes",
       "headingEn": "Purpose",
-      "body": "Lezha Turistike ofron informacion turistik, kulturor, historik, arkeologjik, shkencor dhe hartografik për qëllime informimi dhe promovimi.",
-      "bodyEn": "Lezha Turistike provides tourism, cultural, historical, archaeological, scientific and mapping information for information and promotional purposes."
+      "body": "Lezha Turistike ofron informacion turistik, kulturor, historik, arkeologjik, shkencor dhe hartografik, si dhe mjete digjitale për eksplorimin dhe planifikimin e vizitës në Lezhë. Përmbajtja ka karakter informues dhe promovues.",
+      "bodyEn": "Lezha Turistike provides tourism, cultural, historical, archaeological, scientific and mapping information, together with digital tools for exploring and planning a visit to Lezha. Content is provided for informational and promotional purposes."
     },
     {
       "_key": "terms-2",
-      "heading": "Saktësia e informacionit",
-      "headingEn": "Accuracy",
-      "body": "Përpiqemi ta mbajmë informacionin të saktë dhe të përditësuar, por oraret, çmimet, kontaktet, kushtet e hyrjes, vendndodhjet dhe informacionet e subjekteve të treta mund të ndryshojnë. Për vendime udhëtimi ose rezervime, verifikoni informacionin te ofruesi përkatës.",
-      "bodyEn": "We aim to keep information accurate and current, but opening hours, prices, contacts, admission conditions, locations and third-party information can change. Verify travel or booking information with the relevant provider."
+      "heading": "Planifiko Vizitën",
+      "headingEn": "Plan Your Visit",
+      "body": "Itineraret e krijuara nga “Planifiko Vizitën” bazohen në zgjedhjet e përdoruesit, përmbajtjen e disponueshme, koordinatat, kohëzgjatjet dhe logjikën e optimizimit të faqes. Ato janë sugjerime orientuese dhe nuk përbëjnë shërbim profesional udhëtimi, rezervim apo garanci për rrugën më të shkurtër, kohën reale të udhëtimit, aksesin, sigurinë ose disponueshmërinë e një vendi.",
+      "bodyEn": "Itineraries created by “Plan Your Visit” are based on user choices, available content, coordinates, durations and the website’s optimisation logic. They are guidance only and do not constitute a professional travel service, booking, or a guarantee of the shortest route, real travel time, access, safety or availability of a place."
     },
     {
       "_key": "terms-3",
-      "heading": "Hartat dhe Web GIS",
-      "headingEn": "Maps and Web GIS",
-      "body": "Hartat, koordinatat, aplikacionet Web GIS dhe vizualizimet kanë karakter informues dhe nuk zëvendësojnë dokumentacionin zyrtar, kadastral, ligjor, navigimin profesional ose udhëzimet e autoriteteve.",
-      "bodyEn": "Maps, coordinates, Web GIS applications and visualisations are informational and do not replace official, cadastral or legal documentation, professional navigation or instructions from authorities."
+      "heading": "Saktësia dhe verifikimi",
+      "headingEn": "Accuracy and verification",
+      "body": "Përpiqemi ta mbajmë informacionin të saktë dhe të përditësuar, por oraret, çmimet, kontaktet, kushtet e hyrjes, rrugët, transporti, vendndodhjet, moti dhe informacionet e subjekteve të treta mund të ndryshojnë. Përpara udhëtimit, rezervimit ose vizitës, verifikoni informacionin kritik te ofruesi, institucioni ose autoriteti përkatës.",
+      "bodyEn": "We aim to keep information accurate and current, but opening hours, prices, contacts, admission conditions, routes, transport, locations, weather and third-party information can change. Before travelling, booking or visiting, verify critical information with the relevant provider, institution or authority."
     },
     {
       "_key": "terms-4",
-      "heading": "Privatësia dhe analitika",
-      "headingEn": "Privacy and analytics",
-      "body": "Përdorimi i teknologjive të ruajtjes, Google Analytics dhe shërbimeve të jashtme përshkruhet në Politikën e Privatësisë dhe Politikën e Cookies. Kur kërkohet pëlqim për analitikën, zgjedhja për ta pranuar ose refuzuar trajtohet veçmas nga pranimi i këtyre kushteve të përdorimit.",
-      "bodyEn": "The use of storage technologies, Google Analytics and external services is described in the Privacy Policy and Cookie Policy. Where analytics consent is required, the choice to accept or reject analytics is handled separately from acceptance of these terms of use."
+      "heading": "Hartat, navigimi dhe Web GIS",
+      "headingEn": "Maps, navigation and Web GIS",
+      "body": "Hartat, koordinatat, gjurmët e itinerarit, aplikacionet Web GIS dhe vizualizimet kanë karakter informues. Ato nuk zëvendësojnë dokumentacionin zyrtar, kadastral ose ligjor, navigimin profesional, sinjalistikën në terren apo udhëzimet e autoriteteve. Përdorni gjykimin tuaj dhe respektoni kufizimet, pronën private dhe kushtet reale në terren.",
+      "bodyEn": "Maps, coordinates, itinerary routes, Web GIS applications and visualisations are informational. They do not replace official, cadastral or legal documentation, professional navigation, on-site signage or instructions from authorities. Use your own judgement and respect restrictions, private property and actual on-site conditions."
     },
     {
       "_key": "terms-5",
-      "heading": "Pronësia intelektuale",
-      "headingEn": "Intellectual property",
-      "body": "Tekstet, dizajni, fotografitë, hartat, të dhënat dhe materialet mund të mbrohen nga të drejta autori ose licenca të autorëve, institucioneve dhe partnerëve përkatës. Materialet e palëve të treta mbeten pronë e mbajtësve të tyre të të drejtave.",
-      "bodyEn": "Text, design, photographs, maps, data and materials may be protected by copyright or licences belonging to their authors, institutions and partners. Third-party materials remain the property of their respective rights holders."
+      "heading": "Ruajtja, ndarja dhe QR",
+      "headingEn": "Saving, sharing and QR",
+      "body": "Itineraret mund të ruhen lokalisht në pajisjen tuaj, të ndahen përmes një lidhjeje ose të shfaqen si kod QR. Kushdo që merr një lidhje të ndarë mund të shohë parametrat e itinerarit të përfshirë në të. Mos përfshini ose ndani informacion personal apo sensitiv përmes emërtimit ose shpërndarjes së lidhjeve.",
+      "bodyEn": "Itineraries may be saved locally on your device, shared through a link or displayed as a QR code. Anyone who receives a shared link may see the itinerary parameters included in it. Do not include or share personal or sensitive information through itinerary links."
     },
     {
       "_key": "terms-6",
-      "heading": "Lidhjet e jashtme",
-      "headingEn": "External links",
-      "body": "Faqja mund të lidhet me ArcGIS, Google Maps, faqe institucionale, rrjete sociale dhe burime të tjera. Lezha Turistike nuk kontrollon përmbajtjen, disponueshmërinë apo politikat e këtyre shërbimeve.",
-      "bodyEn": "The website may link to ArcGIS, Google Maps, institutional websites, social networks and other resources. Lezha Turistike does not control their content, availability or policies."
+      "heading": "Shërbimet e palëve të treta",
+      "headingEn": "Third-party services",
+      "body": "Faqja mund të hapë ose integrojë ArcGIS, Google Maps, YouTube, shërbime QR, faqe institucionale, rrjete sociale dhe burime të tjera. Lezha Turistike nuk kontrollon përmbajtjen, disponueshmërinë, kushtet, politikat e privatësisë ose funksionimin e këtyre shërbimeve.",
+      "bodyEn": "The website may open or embed ArcGIS, Google Maps, YouTube, QR services, institutional websites, social networks and other resources. Lezha Turistike does not control their content, availability, terms, privacy policies or operation."
     },
     {
       "_key": "terms-7",
-      "heading": "Përdorimi i pranueshëm",
-      "headingEn": "Acceptable use",
-      "body": "Mos përdorni faqen për ndërhyrje teknike, abuzim me funksionet, përpjekje për akses të paautorizuar ose përdorim që cenon të drejtat e të tjerëve.",
-      "bodyEn": "Do not use the website for technical interference, abuse of functions, unauthorised access attempts or uses that infringe the rights of others."
+      "heading": "Privatësia dhe analitika",
+      "headingEn": "Privacy and analytics",
+      "body": "Përdorimi i localStorage, cookies, Google Analytics dhe shërbimeve të jashtme përshkruhet në Politikën e Privatësisë dhe Politikën e Cookies. Kur kërkohet pëlqim për analitikën, zgjedhja për ta pranuar ose refuzuar trajtohet veçmas nga përdorimi i faqes.",
+      "bodyEn": "The use of localStorage, cookies, Google Analytics and external services is described in the Privacy Policy and Cookie Policy. Where analytics consent is required, the choice to accept or reject it is handled separately from use of the website."
     },
     {
       "_key": "terms-8",
+      "heading": "Pronësia intelektuale",
+      "headingEn": "Intellectual property",
+      "body": "Tekstet, dizajni, fotografitë, videot, hartat, modelet 3D, të dhënat dhe materialet mund të mbrohen nga të drejta autori ose licenca të autorëve, institucioneve dhe partnerëve përkatës. Materialet e palëve të treta mbeten pronë e mbajtësve të tyre të të drejtave. Mos i ripublikoni ose ripërdorni materialet në kundërshtim me të drejtat ose licencat përkatëse.",
+      "bodyEn": "Text, design, photographs, videos, maps, 3D models, data and materials may be protected by copyright or licences belonging to their authors, institutions and partners. Third-party materials remain the property of their respective rights holders. Do not republish or reuse materials contrary to applicable rights or licences."
+    },
+    {
+      "_key": "terms-9",
+      "heading": "Përdorimi i pranueshëm",
+      "headingEn": "Acceptable use",
+      "body": "Mos përdorni faqen për ndërhyrje teknike, abuzim me funksionet, automatizim keqdashës, përpjekje për akses të paautorizuar, shpërndarje përmbajtjeje të paligjshme ose përdorim që cenon të drejtat e të tjerëve apo funksionimin e platformës.",
+      "bodyEn": "Do not use the website for technical interference, abuse of functions, malicious automation, unauthorised access attempts, distribution of unlawful content or uses that infringe others’ rights or disrupt the platform."
+    },
+    {
+      "_key": "terms-10",
       "heading": "Ndryshimet",
       "headingEn": "Changes",
-      "body": "Këto kushte mund të përditësohen kur ndryshojnë funksionet, përmbajtja ose kërkesat ligjore. Versioni i publikuar në këtë faqe është versioni aktual.",
-      "bodyEn": "These terms may be updated when features, content or legal requirements change. The version published on this page is the current version."
+      "body": "Funksionet dhe përmbajtja e platformës zhvillohen vazhdimisht. Këto kushte mund të përditësohen kur ndryshojnë funksionet, shërbimet ose kërkesat ligjore. Data e përditësimit shfaqet në krye të faqes dhe versioni i publikuar është versioni aktual.",
+      "bodyEn": "Platform features and content continue to evolve. These terms may be updated when features, services or legal requirements change. The update date appears at the top of the page and the published version is the current version."
     }
   ]
 }
