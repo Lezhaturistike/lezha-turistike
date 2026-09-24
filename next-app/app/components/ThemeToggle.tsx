@@ -23,7 +23,7 @@ export default function ThemeToggle() {
 
   return (
     <button type="button" className="theme-toggle" onClick={toggleTheme}
-      aria-label={theme === "dark" ? "Aktivizo pamjen e ditës" : "Aktivizo pamjen e natës"}
+      aria-label={theme === "dark" ? "Switch to light mode / Aktivizo pamjen e ditës" : "Switch to dark mode / Aktivizo pamjen e natës"}
       title={theme === "dark" ? "Day mode" : "Night mode"}>
       <svg className="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
