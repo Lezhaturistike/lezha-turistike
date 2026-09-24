@@ -252,7 +252,12 @@ const verifiedLocations={
  "Xhamia e qytetit":{_type:'geopoint',lat:41.7773647,lng:19.6443647},
  "Pallati i Kulturës":{_type:'geopoint',lat:41.78151,lng:19.6429994},
  "Biblioteka e qytetit":{_type:'geopoint',lat:41.781947,lng:19.6425248},
- "Kisha e Shën Premtës":{_type:'geopoint',lat:41.8183,lng:19.6403}
+ "Kisha e Shën Premtës":{_type:'geopoint',lat:41.8183,lng:19.6403},
+ "Plazhi i Tales":{_type:'geopoint',lat:41.68594,lng:19.57745},
+ "Kisha e Shën Eufemisë":{_type:'geopoint',lat:41.85293,lng:19.71139},
+ "Kisha e Zojës Nunenciate":{_type:'geopoint',lat:41.78546,lng:19.63914},
+ "Kisha Ortodokse e Metamorfozës":{_type:'geopoint',lat:41.78167,lng:19.64094},
+ "Shtëpia e At Gjergj Fishtës":{_type:'geopoint',lat:41.882225,lng:19.663111}
 }
 const catalog=resources.map(classify).map(item=>verifiedLocations[item.titulli]?{...item,lokacioni:verifiedLocations[item.titulli]}:item)
 
