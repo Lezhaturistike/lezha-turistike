@@ -1247,3 +1247,12 @@ html[data-theme="dark"] .nav.open .mobile-theme-toggle{border-top-color:#3a5650!
 .research-partners .source-line a{color:#315f55;text-underline-offset:3px}
 @media(max-width:900px){.research-partners{padding:45px 25px}.research-partners .section-top{display:block}.research-partners .section-top>p{margin-top:22px}.research-partners .partner-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-partners .partner-card,.research-partners .partner-card:nth-child(3n){border-right:1px solid #d7ded8;border-bottom:1px solid #d7ded8}.research-partners .partner-card:nth-child(2n){border-right:0}.research-partners .partner-card:nth-last-child(-n+2){border-bottom:0}}
 @media(max-width:620px){.research-partners{margin-top:64px;padding:38px 20px}.research-partners .section-top h2{font-size:clamp(2.25rem,11vw,3.2rem)}.research-partners .partner-grid{display:grid;grid-template-columns:1fr}.research-partners .partner-card,.research-partners .partner-card:nth-child(2n),.research-partners .partner-card:nth-child(3n),.research-partners .partner-card:nth-last-child(-n+2){border-right:0;border-bottom:1px solid #d7ded8;margin:0;min-height:230px}.research-partners .partner-card:last-child{border-bottom:0}}
+
+
+/* Remove the extra white card/background below institution logos */
+.research-partners .partner-grid,
+.research-partners .partner-card,
+.research-partners .partner-card:hover{
+  background:transparent!important;
+  box-shadow:none!important;
+}
