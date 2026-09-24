@@ -38,8 +38,8 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
       </nav>
       <ThemeToggle />
       <MenuButton />
-      <Link className="nav-cta" href={localizedPath("/webgis", locale)}>
-        {locale === "en" ? "Open map" : "Hap hartën"} <span className="arrow-icon" aria-hidden="true">↗</span>
+      <Link className="nav-cta" href={localizedPath("/planifiko", locale)}>
+        {locale === "en" ? "Plan your visit" : "Planifiko"}
       </Link>
     </header>
   );
