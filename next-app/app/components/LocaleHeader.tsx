@@ -21,7 +21,7 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
   return (
     <header className="header">
       <Link href={localizedPath("/", locale)} className="logo" aria-label="Lezha Turistike">
-        <span className="logo-mark">L<span>✦</span></span>
+        <span className="logo-mark logo-castle" aria-hidden="true"><i></i><i></i><i></i></span>
         <span>LEZHA<br/><b>TURISTIKE</b></span>
       </Link>
       <nav className="nav" id="nav" aria-label={locale === "en" ? "Main navigation" : "Navigimi kryesor"}>
