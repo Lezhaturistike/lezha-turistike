@@ -47,29 +47,3 @@ html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
 /* Planner itinerary text contrast — light mode only */
 html:not([data-theme="dark"]) .planner .stop em{color:#667a73!important;opacity:.78!important}
 html:not([data-theme="dark"]) .planner .stop p{color:#536b65!important;opacity:1!important}
-
-
-/* Planifiko palette aligned with approved Home */
-.planner .hero{background:#F8F6F1!important;color:#1F2937!important}
-.planner .hero h1{font-family:Georgia,"Times New Roman",serif!important;color:#0F3D2E!important;letter-spacing:-.045em!important}
-.planner .hero p{color:#52615c!important}
-.planner .overline{color:#2E7D5B!important}
-.planner .search{background:#fffdf9!important;color:#0F3D2E!important;border-color:rgba(15,61,46,.14)!important;box-shadow:0 12px 34px rgba(15,61,46,.08)!important}
-.planner .search input{color:#0F3D2E!important}
-.planner .search input::placeholder{color:#8B7280!important}
-.planner .search button{background:rgba(46,125,91,.09)!important;color:#0F3D2E!important}
-.planner .popular{color:#8B7280!important}
-.planner .results{background:#fffdf9!important;color:#0F3D2E!important;border-color:rgba(15,61,46,.12)!important}
-.planner .results button{color:#0F3D2E!important}
-.planner .results button:hover{background:rgba(46,125,91,.07)!important}
-.planner .results em{color:#8a673b!important}
-.planner .chips button.on{background:#0F3D2E!important;border-color:#0F3D2E!important;color:#fff!important}
-.planner .generate{background:#0F3D2E!important;color:#fff!important}
-html[data-theme="dark"] .planner .hero{background:#0F3D2E!important;color:#fff!important}
-html[data-theme="dark"] .planner .hero h1{color:#fff!important}
-html[data-theme="dark"] .planner .hero p{color:#d8e2dd!important}
-html[data-theme="dark"] .planner .overline{color:#D4B483!important}
-html[data-theme="dark"] .planner .search,html[data-theme="dark"] .planner .results{background:#164638!important;color:#fff!important;border-color:rgba(255,255,255,.14)!important}
-html[data-theme="dark"] .planner .search input,html[data-theme="dark"] .planner .results button{color:#fff!important}
-html[data-theme="dark"] .planner .search button{background:rgba(255,255,255,.09)!important;color:#fff!important}
-html[data-theme="dark"] .planner .chips button.on,html[data-theme="dark"] .planner .generate{background:#2E7D5B!important;border-color:#2E7D5B!important;color:#fff!important}
