@@ -148,6 +148,22 @@ const officialResources = [
     burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Shtepia+e+Gjergj+Fishtes+Fishte+Lezhe"
   },
   {
+    _id: "bashkia-pallati-kultures", titulli: "Pallati i Kulturës", kategoria: "histori",
+    permbledhje: "Qendër e jetës kulturore të Lezhës, me festivale, kuvende dhe aktivitete artistike.",
+    pershkrimi: "Pallati i Kulturës është një hapësirë funksionale e qytetit ku zhvillohen periodikisht veprimtari kulturore dhe edukuese, përfshirë festivale, kuvende, rapsodi dhe muzikë folklorike.",
+    cfareSheh: ["Aktivitete kulturore dhe artistike", "Traditën folklorike lokale", "Një pikë aktive të jetës kulturore të qytetit"],
+    keshilleVizite: "Vlera e vizitës rritet kur përkon me një aktivitet ose festival; kontrollo programin paraprakisht.", kohezgjatja: "30–90 min", oraRekomanduar: "Sipas programit të aktiviteteve",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Pallati+i+Kultures+Lezhe"
+  },
+  {
+    _id: "bashkia-biblioteka", titulli: "Biblioteka e qytetit", kategoria: "histori",
+    permbledhje: "Biblioteka publike e Lezhës, hapësirë leximi, informacioni dhe aktivitetesh kulturore.",
+    pershkrimi: "Biblioteka Publike e Lezhës është ndërtuar në vitin 2001 dhe përfshin pesë salla leximi. Përveç shërbimit bibliotekar, hapësirat përdoren edhe për seminare, ekspozita, panaire dhe takime kulturore.",
+    cfareSheh: ["Arkitekturën e bibliotekës", "Sallat dhe hapësirat e leximit", "Aktivitete kulturore kur janë në program"],
+    keshilleVizite: "Burimi i Bashkisë publikon orar pune nga e hëna në të premte; verifiko orarin aktual para vizitës.", kohezgjatja: "30–60 min", oraRekomanduar: "Gjatë orarit të punës",
+    burimi: "https://lezha.gov.al/resurset-turistike/", burimiTitull: "Bashkia Lezhë – Resurset Turistike", harta: "https://www.google.com/maps/search/?api=1&query=Biblioteka+Publike+Lezhe"
+  },
+  {
     _id: "bashkia-zoja-nunenciate", titulli: "Kisha e Zojës Nunenciate", kategoria: "histori",
     permbledhje: "Trashëgimi françeskane e lidhur me traditën e hershme të urdhrit në Lezhë.",
     pershkrimi: "Kisha njihet edhe si Kisha e Dom Lleshit. Tradita historike e paraqitur nga Bashkia Lezhë e lidh praninë françeskane në qytet me shekullin XIII.",
