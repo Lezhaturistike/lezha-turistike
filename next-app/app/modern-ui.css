@@ -585,3 +585,13 @@ html[data-theme="light"] .header .logo .logo-castle i{
  color:#0F3D2E!important;
  border-color:#0F3D2E!important;
 }
+
+
+/* Footer brand: castle mark and wordmark stay white on the green footer */
+.site-footer .logo,
+.site-footer .logo .logo-mark,
+.site-footer .logo .logo-castle,
+.site-footer .logo .logo-castle i{
+ color:#FFFFFF!important;
+ border-color:#FFFFFF!important;
+}
