@@ -1147,3 +1147,13 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
 .footer-lindimaps-wordmark b{font-weight:850;color:inherit}
 .footer-lindimaps-wordmark i{font-style:normal;font-weight:850;background:linear-gradient(90deg,#4799eb,#31c7c2);-webkit-background-clip:text;background-clip:text;color:transparent}
 @media(max-width:620px){.footer-credit{justify-content:center}.footer-credit-label{font-size:.64rem}.footer-lindimaps-wordmark{font-size:.68rem}}
+
+
+/* Home hero digital guide CTA */
+.hero-actions .hero-digital-guide{display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden;transition:transform .22s ease,background .22s ease,border-color .22s ease,color .22s ease}
+.hero-actions .hero-digital-guide::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.13) 50%,transparent 80%);transform:translateX(-130%);transition:transform .55s ease;pointer-events:none}
+.hero-actions .hero-digital-guide:hover{transform:translateY(-2px)}
+.hero-actions .hero-digital-guide:hover::before{transform:translateX(130%)}
+.hero-actions .hero-digital-guide .digital-guide-arrow{font-size:1rem;line-height:1;transition:transform .22s ease}
+.hero-actions .hero-digital-guide:hover .digital-guide-arrow{transform:translateX(3px)}
+@media(prefers-reduced-motion:reduce){.hero-actions .hero-digital-guide,.hero-actions .hero-digital-guide::before,.hero-actions .hero-digital-guide .digital-guide-arrow{transition:none}}
