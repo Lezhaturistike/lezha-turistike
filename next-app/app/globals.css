@@ -1136,3 +1136,14 @@ main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, 
   .section-top>*{min-width:0;max-width:100%}
   .filters{max-width:100%;box-sizing:border-box}
 }
+
+
+/* Minimal LINDIMAPS developer signature */
+.footer-credit{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+.footer-credit>a{display:inline-flex;align-items:center;gap:4px;color:inherit;text-decoration:none;opacity:.62;transition:opacity .2s ease}
+.footer-credit>a:hover{opacity:1}
+.footer-credit-label{font-size:.68rem;letter-spacing:.02em}
+.footer-lindimaps-wordmark{font-size:.72rem;line-height:1;font-style:normal;font-weight:800;letter-spacing:-.035em;white-space:nowrap}
+.footer-lindimaps-wordmark b{font-weight:850;color:inherit}
+.footer-lindimaps-wordmark i{font-style:normal;font-weight:850;background:linear-gradient(90deg,#4799eb,#31c7c2);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media(max-width:620px){.footer-credit{justify-content:center}.footer-credit-label{font-size:.64rem}.footer-lindimaps-wordmark{font-size:.68rem}}
