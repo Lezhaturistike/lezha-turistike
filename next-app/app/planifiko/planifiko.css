@@ -34,11 +34,18 @@ html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
 }
 
 
-/* Keep Leaflet map labels/controls below the sticky site navigation */
-.planner .mapWrap,
-.planner .map,
-.planner .leaflet-container{position:relative;z-index:0!important}
-.planner .leaflet-pane,
-.planner .leaflet-top,
-.planner .leaflet-bottom{z-index:auto!important}
-.header{isolation:isolate}
+
+
+/* Leaflet stacking: popups above map content, always below sticky site header */
+.planner .mapWrap{position:relative!important;z-index:1!important;isolation:isolate!important}
+.planner .leaflet-container{position:relative!important;z-index:0!important}
+.planner .leaflet-map-pane{z-index:1!important}
+.planner .leaflet-tile-pane{z-index:2!important}
+.planner .leaflet-overlay-pane{z-index:4!important}
+.planner .leaflet-shadow-pane{z-index:5!important}
+.planner .leaflet-marker-pane{z-index:6!important}
+.planner .leaflet-tooltip-pane{z-index:7!important}
+.planner .leaflet-popup-pane{z-index:8!important;pointer-events:auto!important}
+.planner .leaflet-control{position:relative!important;z-index:9!important}
+.planner .planner-popup{z-index:1!important}
+.header{position:sticky!important;top:0!important;z-index:1000!important;isolation:isolate!important}
