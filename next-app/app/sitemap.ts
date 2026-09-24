@@ -13,6 +13,7 @@ const routes = [
   "/shkenca",
   "/partneret",
   "/kontakt",
+  "/planifiko",
   "/privacy",
   "/terms",
   "/cookies",
