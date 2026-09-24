@@ -1126,3 +1126,13 @@ html[data-theme="dark"] .directory-arrow{color:#edbd85}
   }
   .gallery-section .gallery-photo:hover{transform:none}
 }
+
+
+/* Layout stability pass — prevent media and grid/flex children from escaping their containers */
+main, .section, .section-top, .places, .gallery-grid, .gis-feature, .gis-embed, .partner-grid, .archaeology-grid, .science-grid{min-width:0}
+.place, .place-body, .place-image, .gallery-photo, .gis-feature>*, .gis-embed>*, .partner-card, .archaeology-grid>*, .science-grid>*{min-width:0;max-width:100%;box-sizing:border-box}
+.place-image img, .gallery-photo img, .partner-card img, .dialog-gallery img{max-width:100%}
+@media(max-width:620px){
+  .section-top>*{min-width:0;max-width:100%}
+  .filters{max-width:100%;box-sizing:border-box}
+}
