@@ -13,7 +13,18 @@ const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"]] | order(co
  "kind":select(_type=="destinacion"=>select(kategoria=="histori"=>"History",kategoria=="natyre"=>"Nature",kategoria=="arkeologji"=>"Archaeology","Destination"),_type=="kulinari"=>select(kategoria=="restorant"=>"Restaurant",kategoria=="agroturizem"=>"Agritourism",kategoria=="kantine"=>"Winery",kategoria=="bar-kafe"=>"Bar / Café",kategoria=="produkte-lokale"=>"Local products","Cuisine"),_type=="akomodim"=>select(lloji=="hotel"=>"Hotel",lloji=="bujtine"=>"Guesthouse",lloji=="resort"=>"Resort",lloji=="apartament"=>"Apartment",lloji=="camping"=>"Camping","Accommodation"),"Place"),
  "desc":coalesce(pershkrimiEn,pershkrimi,"Discover this place during your visit to Lezha."),
  "lat":coalesce(lokacioni.lat,0),"lng":coalesce(lokacioni.lng,0),"image":foto.asset->url,
- "duration":coalesce(kohezgjatjaEn,kohezgjatja,"1 hour"),"time":coalesce(oraRekomanduarEn,oraRekomanduar,"According to itinerary"),plannerFeatured,
+ "duration":coalesce(kohezgjatjaEn,select(
+   kohezgjatja=="1 orë"=>"1 hour",
+   kohezgjatja=="2 orë"=>"2 hours",
+   kohezgjatja=="30 min"=>"30 min",
+   kohezgjatja=="45 min"=>"45 min",
+   kohezgjatja
+ ),"1 hour"),
+ "time":coalesce(oraRekomanduarEn,select(
+   oraRekomanduar=="Sipas itinerarit"=>"According to itinerary",
+   oraRekomanduar match "*Pasdite*"=>"Afternoon, especially 1–2 hours before sunset · 60–90 min",
+   oraRekomanduar
+ ),"According to itinerary"),plannerFeatured,
  "tags":coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[coalesce(zona,""),coalesce(adresa,"")]
 }`;
 
