@@ -68,6 +68,19 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
               </Link>
             </div>
 
+            <div className="hero-plan-strip" aria-label={locale === "en" ? "Plan your visit" : "Planifiko vizitën"}>
+              <div className="hero-plan-thumbs" aria-hidden="true">
+                <span><Image src="/images/lezha.jpeg" alt="" fill sizes="44px" /></span>
+                <span><Image src="/images/kala-3.jpeg" alt="" fill sizes="44px" /></span>
+                <span><Image src="/images/akrolisi.jpeg" alt="" fill sizes="44px" /></span>
+              </div>
+              <span className="hero-plan-divider" aria-hidden="true"></span>
+              <span className="hero-plan-copy">{locale === "en" ? <>Plan your visit<br/>to Lezhë</> : <>Planifiko vizitën<br/>tënde në Lezhë</>}</span>
+              <Link className="hero-plan-map" href={localizedPath("/planifiko", locale)} aria-label={locale === "en" ? "Open the digital guide" : "Hap guidën digjitale"}>
+                <span aria-hidden="true">⌖</span>
+              </Link>
+            </div>
+
           </div>
 
           <div className="hero-count">
