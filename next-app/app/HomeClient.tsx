@@ -42,15 +42,12 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
           <div className="hero-shade"></div>
 
           <div className="hero-content">
-            <span className="overline light">{content.text3}</span>
+            <span className="overline light">{locale === "en" ? "WELCOME TO" : "MIRË SE VINI NË"}</span>
 
-            <h1>
-              {content.text4}
-              <br />
-              <em>{content.text5}</em>
-            </h1>
+            <h1>Lezhë</h1>
+            <h2 className="hero-subtitle">{locale === "en" ? "History, Nature, Culture" : "Histori, Natyrë, Kulturë"}</h2>
 
-            <p>{content.text6}</p>
+            <p>{locale === "en" ? "Discover a territory rich in heritage, nature and authentic experiences, brought together in one unforgettable journey." : "Zbuloni një territor unik ku trashëgimia, natyra dhe përvoja autentike ndërthuren në një udhëtim të paharrueshëm."}</p>
 
             <div className="hero-actions">
               <Link className="button primary" href={localizedPath(content.href7, locale)}>
