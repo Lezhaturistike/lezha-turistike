@@ -167,3 +167,20 @@ html[data-theme="dark"] .hero .button.ghost{background:transparent;color:#fff;bo
  html[data-theme="dark"] .hero-shade{background:linear-gradient(90deg,rgba(7,28,29,.93),rgba(7,28,29,.43)),linear-gradient(0deg,rgba(7,28,29,.55),transparent)}
  .hero h1{font-size:clamp(3.6rem,15vw,5.4rem)}
 }
+
+
+/* Hero planning strip from approved reference */
+.hero-plan-strip{display:flex;align-items:center;gap:13px;margin-top:27px;width:max-content;max-width:100%;color:var(--brand-primary)}
+.hero-plan-thumbs{display:flex;gap:4px}
+.hero-plan-thumbs>span{position:relative;width:43px;height:43px;border-radius:50%;overflow:hidden;border:2px solid rgba(248,246,241,.92);box-shadow:0 2px 8px rgba(15,61,46,.13)}
+.hero-plan-thumbs img{object-fit:cover}
+.hero-plan-divider{width:1px;height:38px;background:rgba(15,61,46,.42);margin:0 3px}
+.hero-plan-copy{font-size:.72rem;line-height:1.2;font-weight:600;min-width:88px}
+.hero-plan-map{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;text-decoration:none;color:#fff;background:var(--brand-primary);border:5px solid rgba(248,246,241,.72);box-shadow:0 0 0 1px rgba(15,61,46,.18),0 5px 18px rgba(15,61,46,.24);transition:transform .2s ease,box-shadow .2s ease}
+.hero-plan-map span{font-size:1.35rem;line-height:1}
+@media(hover:hover){.hero-plan-map:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 0 1px rgba(15,61,46,.2),0 9px 24px rgba(15,61,46,.28)}}
+html[data-theme="dark"] .hero-plan-strip{color:#fff}
+html[data-theme="dark"] .hero-plan-divider{background:rgba(255,255,255,.4)}
+html[data-theme="dark"] .hero-plan-thumbs>span{border-color:rgba(255,255,255,.72)}
+html[data-theme="dark"] .hero-plan-map{background:#267557;border-color:rgba(255,255,255,.13);box-shadow:0 0 0 1px rgba(92,181,140,.35),0 0 22px rgba(48,148,108,.28)}
+@media(max-width:620px){.hero-plan-strip{gap:9px;margin-top:24px}.hero-plan-thumbs>span{width:36px;height:36px}.hero-plan-divider{height:34px}.hero-plan-copy{font-size:.66rem;min-width:76px}.hero-plan-map{width:44px;height:44px;border-width:4px}}
