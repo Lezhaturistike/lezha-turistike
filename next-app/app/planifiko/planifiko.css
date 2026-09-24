@@ -32,3 +32,13 @@ html[data-theme="dark"] .planner .choices b{color:#f0f5f2!important}
  .planner .builderActions{grid-template-columns:minmax(0,1fr) minmax(118px,.48fr)!important;align-items:stretch!important}
  .planner .generate,.planner .clearTour{min-width:0!important;white-space:normal!important}
 }
+
+
+/* Keep Leaflet map labels/controls below the sticky site navigation */
+.planner .mapWrap,
+.planner .map,
+.planner .leaflet-container{position:relative;z-index:0!important}
+.planner .leaflet-pane,
+.planner .leaflet-top,
+.planner .leaflet-bottom{z-index:auto!important}
+.header{isolation:isolate}
