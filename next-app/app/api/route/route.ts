@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
     const coordinates = Array.isArray(body?.coordinates) ? body.coordinates : []
     if (coordinates.length < 2 || coordinates.length > 50) return NextResponse.json({error:'At least two valid stops are required.'},{status:400})
     const clean = coordinates.map((p:unknown)=>Array.isArray(p)&&p.length===2?[Number(p[0]),Number(p[1])]:null)
-    if (clean.some((p:any)=>!p||!Number.isFinite(p[0])||!Number.isFinite(p[1]))) return NextResponse.json({error:'Invalid coordinates.'},{status:400})
+    if (clean.some((p:any)=>!p||!Number.isFinite(p[0])||!Number.isFinite(p[1])||p[0] < -180||p[0] > 180||p[1] < -90||p[1] > 90||(p[0]===0&&p[1]===0))) return NextResponse.json({error:'Invalid coordinates.'},{status:400})
     const profile = PROFILES[String(body?.transport)] || 'driving-car'
     const response = await fetch(`${ORS_URL}/${profile}/geojson`,{
       method:'POST',
