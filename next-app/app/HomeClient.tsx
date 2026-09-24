@@ -36,7 +36,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       {/* MAIN */}
       <main id="home">
         {/* HERO */}
-        <section className="hero">
+        <section className="hero reference-home-hero">
           <Image key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fill priority sizes="100vw" style={{objectFit:"cover"}} />
 
           <div className="hero-shade"></div>
@@ -51,18 +51,12 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
 
             <div className="hero-actions">
               <Link className="button primary" href={localizedPath(content.href7, locale)}>
-                {content.text8}{" "}
-                <span>
-                  <span className="arrow-icon" aria-hidden="true">
-                    ↗
-                  </span>
-                </span>
+                {locale === "en" ? "Discover destinations" : "Zbulo destinacionet"}
               </Link>
 
               <Link className="button ghost hero-digital-guide" href={localizedPath("/planifiko", locale)}>
                 {locale === "en" ? "Explore the Digital Guide" : "Eksploro guidën digjitale"}
-                <span className="digital-guide-arrow" aria-hidden="true">→</span>
-              </Link>
+               </Link>
             </div>
 
             <div className="hero-plan-strip" aria-label={locale === "en" ? "Plan your visit" : "Planifiko vizitën"}>
@@ -74,7 +68,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
               <span className="hero-plan-divider" aria-hidden="true"></span>
               <span className="hero-plan-copy">{locale === "en" ? <>Plan your visit<br/>to Lezhë</> : <>Planifiko vizitën<br/>tënde në Lezhë</>}</span>
               <Link className="hero-plan-map" href={localizedPath("/planifiko", locale)} aria-label={locale === "en" ? "Open the digital guide" : "Hap guidën digjitale"}>
-                <span aria-hidden="true">⌖</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5 8.5 4l7 2.5 5-2.5v13.5l-5 2.5-7-2.5-5 2.5V6.5Z"/><path d="M8.5 4v13.5M15.5 6.5V20"/></svg>
               </Link>
             </div>
 
