@@ -6,6 +6,7 @@ import LocaleHeader from "@/app/components/LocaleHeader";
 import { getPageContent } from "@/sanity/lib/content";
 export const dynamic = "force-dynamic";
 import defaults from "@/sanity/content/shkenca.json";
+import partnerDefaults from "@/sanity/content/partneret.json";
 import BackToTop from "@/app/components/BackToTop";
 
 import Link from "next/link";
@@ -14,7 +15,9 @@ import {client} from "@/sanity/lib/client";
 type Researcher = { _id?: string; name: string; academicTitle?: string; role?: string; institution?: string; bio?: string; photoUrl?: string; researchGate?: string; googleScholar?: string; orcid?: string; linkedin?: string; institutionalProfile?: string; email?: string };
 
 export default async function ShkencaPage() {
-  const content = localizeContent(await getPageContent("shkenca", defaults), "en");
+  const [rawScience, rawPartners] = await Promise.all([getPageContent("shkenca", defaults), getPageContent("partneret", partnerDefaults)]);
+  const content = localizeContent(rawScience, "en");
+  const partnerContent = localizeContent(rawPartners, "en");
   const fallbackResearchers = [
     {name:"Neritan Ceka", institution:"Academy of Sciences of Albania", role:"Archaeology / cultural heritage"},
     {name:"Edmond Hoxha", institution:"Polytechnic University of Tirana · Faculty of Geology and Mining", role:"Geology and scientific coordination", email:"ehoxha63@gmail.com"},
@@ -188,6 +191,29 @@ export default async function ShkencaPage() {
             <p className="research-team-source">Source of authorship and affiliations: the project’s scientific chapter, IntechOpen, 2026.</p>
           </section>
 
+          <section id="partneret" className="partners research-partners" aria-labelledby="partners-title">
+            <div className="section-top">
+              <div>
+                <span className="overline">{partnerContent.text1}</span>
+                <h2 id="partners-title">{partnerContent.text2}</h2>
+              </div>
+              <p>{partnerContent.text3}</p>
+            </div>
+            <div className="partner-grid">
+              {partnerContent.partners.map((item, index) => (
+                <a key={item._key} className={`partner-card${rawPartners.partners[index]?.role === "FINANCUES" ? " funder" : ""}${!item.image ? " partner-text" : ""}`} href={item.url} target="_blank" rel="noopener noreferrer">
+                  <span>{item.role}</span>
+                  {item.image && <img src={item.image} alt={item.alt || item.title} loading="lazy" decoding="async" />}
+                  <strong>{item.title}</strong>
+                  {item.subtitle && <small>{item.subtitle}</small>}
+                </a>
+              ))}
+            </div>
+            <p className="source-line">
+              {partnerContent.text4}{" "}
+              <a href={partnerContent.href5} target="_blank" rel="noopener noreferrer">{partnerContent.text6}</a>.
+            </p>
+          </section>
         </section>
       </main>
 
