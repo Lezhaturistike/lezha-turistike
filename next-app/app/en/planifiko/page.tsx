@@ -8,11 +8,11 @@ import "../../planifiko/planifiko.css";
 
 export const metadata: Metadata={title:"Plan your visit | Lezha Turistike",description:"Build a personalized itinerary in Lezha based on your time, interests, food and accommodation."};
 
-const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"]] | order(coalesce(plannerOrder,999) asc){
+const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(lokacioni.lat) && defined(lokacioni.lng)] | order(coalesce(plannerOrder,999) asc){
  "id":_id,"type":_type,"name":coalesce(titulliEn,emriEn,titulli,emri),
- "kind":select(_type=="destinacion"=>select(kategoria=="histori"=>"History",kategoria=="natyre"=>"Nature",kategoria=="arkeologji"=>"Archaeology","Destination"),_type=="kulinari"=>select(kategoria=="restorant"=>"Restaurant",kategoria=="agroturizem"=>"Agritourism",kategoria=="kantine"=>"Winery",kategoria=="bar-kafe"=>"Bar / Café",kategoria=="produkte-lokale"=>"Local products","Cuisine"),_type=="akomodim"=>select(lloji=="hotel"=>"Hotel",lloji=="bujtine"=>"Guesthouse",lloji=="resort"=>"Resort",lloji=="apartament"=>"Apartment",lloji=="camping"=>"Camping","Accommodation"),"Place"),
+ "kind":select(_type=="destinacion"=>select(kategoria=="histori"=>"History",kategoria=="natyre"=>"Nature",kategoria=="arkeologji"=>"Archaeology",kategoria=="fetare"=>"Religious Heritage",kategoria=="kulture-urbane"=>"Urban Culture","Destination"),_type=="kulinari"=>select(kategoria=="restorant"=>"Restaurant",kategoria=="agroturizem"=>"Agritourism",kategoria=="kantine"=>"Winery",kategoria=="bar-kafe"=>"Bar / Café",kategoria=="produkte-lokale"=>"Local products","Cuisine"),_type=="akomodim"=>select(lloji=="hotel"=>"Hotel",lloji=="bujtine"=>"Guesthouse",lloji=="resort"=>"Resort",lloji=="apartament"=>"Apartment",lloji=="camping"=>"Camping","Accommodation"),"Place"),
  "desc":coalesce(pershkrimiEn,pershkrimi,"Discover this place during your visit to Lezha."),
- "lat":coalesce(lokacioni.lat,0),"lng":coalesce(lokacioni.lng,0),"image":foto.asset->url,
+ "lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,
  "duration":coalesce(kohezgjatjaEn,select(
    kohezgjatja=="1 orë"=>"1 hour",
    kohezgjatja=="2 orë"=>"2 hours",
