@@ -176,3 +176,22 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  .plannerV2 .mapCanvas .mapWrap{position:absolute!important}
  .plannerV2 .mapCanvas .map{position:absolute!important}
 }
+
+/* Mobile search results containment + centered QR modal */
+@media(max-width:760px){
+ .plannerV2 .searchFloat{box-sizing:border-box!important;max-width:calc(100vw - 24px)!important}
+ .plannerV2 .searchResults{left:0!important;right:0!important;width:100%!important;max-width:100%!important;box-sizing:border-box!important;max-height:min(54dvh,430px)!important;overflow-x:hidden!important;overflow-y:auto!important;padding:6px!important}
+ .plannerV2 .searchResults>button{box-sizing:border-box!important;width:100%!important;max-width:100%!important;grid-template-columns:42px minmax(0,1fr) auto!important;gap:8px!important;padding:7px!important;overflow:hidden!important}
+ .plannerV2 .searchResults>button>span{min-width:0!important;overflow:hidden!important}
+ .plannerV2 .searchResults b,.plannerV2 .searchResults small{overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important}
+ .plannerV2 .searchResults em{max-width:64px!important;white-space:nowrap!important;font-size:.58rem!important}
+ .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:42px!important;height:42px!important}
+ .plannerV2 .qrModal{display:flex!important;align-items:center!important;justify-content:center!important;padding:14px!important;box-sizing:border-box!important}
+ .plannerV2 .qrModal>div{position:relative!important;left:auto!important;right:auto!important;top:auto!important;transform:none!important;margin:auto!important;width:min(330px,calc(100vw - 28px))!important;max-width:100%!important;box-sizing:border-box!important;padding:25px 16px 20px!important}
+ .plannerV2 .qrModal img{display:block!important;margin:0 auto!important;width:min(220px,68vw)!important;height:auto!important}
+}
+@media(max-width:390px){
+ .plannerV2 .searchResults>button{grid-template-columns:38px minmax(0,1fr) auto!important}
+ .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:38px!important;height:38px!important}
+ .plannerV2 .searchResults em{max-width:54px!important;font-size:.54rem!important}
+}
