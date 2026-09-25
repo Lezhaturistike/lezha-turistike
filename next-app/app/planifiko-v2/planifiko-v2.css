@@ -81,3 +81,9 @@ html[data-theme="dark"] .selectedCards>button{background:#142522f2;border-color:
  .leftBottomCluster .selectedCards{margin-left:210px!important;max-width:none!important;width:calc(100% - 210px)!important;padding:3px 4px 7px!important}
  .leftBottomCluster .selectedCards>button{flex:1 0 225px!important;max-width:285px}
 }
+
+/* Desktop: let destination rail use the full free map width */
+@media(min-width:1101px){
+ .leftBottomCluster{right:28px!important}
+ .leftBottomCluster .selectedCards{padding-right:4px!important}
+}
