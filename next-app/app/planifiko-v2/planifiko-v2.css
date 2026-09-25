@@ -210,3 +210,35 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:32px!important;height:32px!important}
  .plannerV2 .searchResults em{width:42px!important;max-width:42px!important}
 }
+
+/* Mobile search width refinement: keep search + result list comfortably inside viewport */
+@media(max-width:760px){
+ .plannerV2 .searchFloat{
+   left:22px!important;
+   right:22px!important;
+   width:auto!important;
+   max-width:calc(100vw - 44px)!important;
+   margin:0 auto!important;
+ }
+ .plannerV2 .searchResults{
+   left:4px!important;
+   right:4px!important;
+   width:calc(100% - 8px)!important;
+   max-width:calc(100% - 8px)!important;
+   margin:0!important;
+   box-sizing:border-box!important;
+ }
+}
+@media(max-width:390px){
+ .plannerV2 .searchFloat{
+   left:18px!important;
+   right:18px!important;
+   max-width:calc(100vw - 36px)!important;
+ }
+ .plannerV2 .searchResults{
+   left:3px!important;
+   right:3px!important;
+   width:calc(100% - 6px)!important;
+   max-width:calc(100% - 6px)!important;
+ }
+}
