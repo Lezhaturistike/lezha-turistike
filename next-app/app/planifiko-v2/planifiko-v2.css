@@ -242,3 +242,23 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
    max-width:calc(100% - 6px)!important;
  }
 }
+
+/* iPhone/mobile Safari: prevent focus zoom and keep search results above floating controls */
+@media(max-width:760px){
+ .plannerV2 .searchFloat input{
+   font-size:16px!important;
+   line-height:1.2!important;
+   min-width:0!important;
+ }
+ .plannerV2 .searchFloat{z-index:950!important}
+ .plannerV2 .searchResults{
+   z-index:960!important;
+   max-height:min(44dvh,340px)!important;
+   overscroll-behavior:contain!important;
+   -webkit-overflow-scrolling:touch!important;
+ }
+ .plannerV2 .themesToggle,
+ .plannerV2 .plannerToggle{z-index:700!important}
+ .plannerV2 .thematicCard.mobileOpen,
+ .plannerV2 .plannerPanel.mobileOpen{z-index:850!important}
+}
