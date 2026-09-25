@@ -73,3 +73,11 @@ html[data-theme="dark"] .selectedCards>button{background:#142522f2;border-color:
  .selectedCards>button{flex-basis:86vw!important}
  .routeTitle{display:block!important}.routeActions{margin-top:8px}
 }
+
+/* Desktop: keep the large map, move selected destination carousel into the free lower map band */
+@media(min-width:1101px){
+ .leftBottomCluster{display:block!important;max-width:none!important;right:430px!important}
+ .leftBottomCluster .summaryCard{position:absolute!important;left:0;bottom:0;width:195px!important}
+ .leftBottomCluster .selectedCards{margin-left:210px!important;max-width:none!important;width:calc(100% - 210px)!important;padding:3px 4px 7px!important}
+ .leftBottomCluster .selectedCards>button{flex:1 0 225px!important;max-width:285px}
+}
