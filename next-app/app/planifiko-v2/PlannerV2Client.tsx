@@ -1,5 +1,5 @@
 'use client';
-import {useMemo,useRef,useState} from 'react';
+import {useEffect,useMemo,useRef,useState} from 'react';
 import LiveTourMap,{type MapPlace} from '../planifiko/LiveTourMap';
 
 export type PlannerPlace={id:string;type:string;name:string;kind?:string;desc?:string;lat:number;lng:number;image?:string;duration?:string;plannerFeatured?:boolean;tags?:string[]};
@@ -24,6 +24,7 @@ export default function PlannerV2Client({cmsPlaces=[],locale='sq'}:{cmsPlaces:Pl
  const[interest,setInterest]=useState('E kombinuar'),[time,setTime]=useState('1 ditë'),[transport,setTransport]=useState('Makinë');
  const[stops,setStops]=useState<PlannerPlace[]>([]),[active,setActive]=useState(0),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[qr,setQr]=useState(false),[mobileFloat,setMobileFloat]=useState<'themes'|'planner'|null>(null);
  const searchRef=useRef<HTMLDivElement|null>(null);
+ useEffect(()=>{const close=(e:PointerEvent)=>{if(searchOpen&&searchRef.current&&!searchRef.current.contains(e.target as Node)){setSearchOpen(false);(document.activeElement as HTMLElement|null)?.blur?.()}};document.addEventListener('pointerdown',close);return()=>document.removeEventListener('pointerdown',close)},[searchOpen]);
  const en=locale==='en';
  const interestEN:Record<string,string>={'Histori & Arkeologji':'History & Archaeology','Trashëgimi fetare':'Religious heritage','Kulturë urbane':'Urban culture','Natyrë & Bregdet':'Nature & Coast','Kulinari':'Culinary','Eksplorim':'Exploration','E kombinuar':'Combined'};
  const timeEN:Record<string,string>={'3–4 orë':'3–4 hours','1 ditë':'1 day','2 ditë':'2 days','3 ditë':'3 days'};
@@ -51,7 +52,7 @@ export default function PlannerV2Client({cmsPlaces=[],locale='sq'}:{cmsPlaces:Pl
   <div className="mapCanvas"><LiveTourMap places={mapPlaces} active={Math.min(active,Math.max(0,mapPlaces.length-1))} onActive={setActive} transport={transport} locale={locale}/></div>
 
   <div className="searchFloat" ref={searchRef}>
-   <label><span>⌕</span><input value={query} onFocus={()=>{setSearchOpen(true);setMobileFloat(null)}} onChange={e=>{setQuery(e.target.value);setSearchOpen(true);setMobileFloat(null)}} placeholder={en?"Search destinations, restaurants and accommodation...":"Kërko destinacione, restorante dhe akomodim..."}/>{query&&<button onClick={()=>setQuery('')}>×</button>}</label>
+   <label><span>⌕</span><input value={query} onFocus={()=>{setSearchOpen(true);setMobileFloat(null)}} onChange={e=>{setQuery(e.target.value);setSearchOpen(true);setMobileFloat(null)}} placeholder={en?"Search destinations, restaurants and accommodation...":"Kërko destinacione, restorante dhe akomodim..."}/>{query&&<button onClick={()=>{setQuery('');setSearchOpen(false);(document.activeElement as HTMLElement|null)?.blur?.()}}>×</button>}</label>
    {searchOpen&&<div className="searchResults">{matches.length?matches.map(p=><button key={p.id} type="button" onPointerDown={e=>e.preventDefault()} onClick={()=>add(p)}>{p.image?<img src={p.image} alt=""/>:<i>◎</i>}<span><b>{p.name}</b><small>{p.kind||(en?'Destination':'Destinacion')} · {p.type==='kulinari'?(en?'Culinary':'Kulinari'):p.type==='akomodim'?(en?'Accommodation':'Akomodim'):(en?'Destination':'Destinacion')}</small></span><em>{stops.some(s=>s.id===p.id)?(en?'In tour':'Në tur'):(en?'＋ Add':'＋ Shto')}</em></button>):<p>{en?'No results found.':'Nuk u gjet rezultat.'}</p>}</div>}
   </div>
 
