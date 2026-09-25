@@ -500,3 +500,16 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!im
 
 .plannerV2 .summaryCard .timeBreakdown{display:block;margin-top:7px;padding-top:7px;border-top:1px solid #173d3918;font-size:.58rem;line-height:1.35;color:#66736f;font-weight:700}
 html[data-theme="dark"] .plannerV2 .summaryCard .timeBreakdown{border-color:#ffffff18;color:#aebdb8}
+
+/* Clean itinerary summary metrics */
+.plannerV2 .summaryCard .summaryMetric{display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:7px;padding:6px 0;border-bottom:1px solid #173d3912}
+.plannerV2 .summaryCard .summaryMetric:last-child{border-bottom:0}
+.plannerV2 .summaryCard .summaryMetric>span{width:18px;text-align:center;color:#2e7d5b;font-size:.78rem}
+.plannerV2 .summaryCard .summaryMetric>small{font-size:.58rem;font-weight:700;color:#77827f;letter-spacing:0;text-transform:none}
+.plannerV2 .summaryCard .summaryMetric>b{font-size:.72rem;font-weight:850;color:#173d39;white-space:nowrap}
+.plannerV2 .summaryCard .tourMetric{margin-top:2px;padding-top:8px}
+.plannerV2 .summaryCard .tourMetric>b{color:#2e7d5b}
+html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric{border-color:#ffffff16}
+html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric>small{color:#aebdb8}
+html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric>b{color:#eef6f3}
+html[data-theme="dark"] .plannerV2 .summaryCard .tourMetric>b{color:#d4b483}
