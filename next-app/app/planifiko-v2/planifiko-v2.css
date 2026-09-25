@@ -425,3 +425,9 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!im
  body.plannerV2Printing .mapActions,
  body.plannerV2Printing .qrModal{display:none!important}
 }
+
+/* Final action set: three reference-style cards */
+.plannerV2 .mapActions{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:620px!important;margin:0 auto!important;gap:10px!important}
+@media(max-width:760px){
+ .plannerV2 .mapActions{grid-template-columns:repeat(3,1fr)!important;max-width:none!important}
+}
