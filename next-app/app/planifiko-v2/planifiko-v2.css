@@ -123,3 +123,21 @@ html[data-theme="dark"] .mapActions{background:#101c1a}html[data-theme="dark"] .
  .mapActions .takeAction{height:72px;min-width:0;border-radius:15px;padding:7px}.mapActions .takeAction b{font-size:.68rem}.mapActions .takeAction small{display:none}
 }
 html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ffffff20;color:#edf5f2}
+
+/* Header-safe map stage: all V2 controls stay below the site navigation */
+.plannerV2{--site-header-h:74px}
+.plannerStage{isolation:isolate}
+.searchFloat,.thematicCard,.plannerPanel,.mobileFloatToggle{z-index:40!important}
+@media(max-width:760px){
+ .plannerV2{height:calc(100dvh - var(--site-header-h));min-height:calc(100svh - var(--site-header-h));overflow:hidden}
+ .plannerStage{height:100%!important;min-height:100%!important}
+ .mapCanvas,.mapCanvas>div,.mapCanvas .mapWrap,.mapCanvas .map,.mapCanvas .host{height:100%!important;min-height:100%!important}
+ .searchFloat{top:10px!important}
+ .themesToggle,.plannerToggle{top:72px!important}
+ .thematicCard.mobileOpen,.plannerPanel.mobileOpen{top:122px!important;max-height:calc(100% - 136px)!important}
+ .mapActions{position:absolute;z-index:38;right:10px;bottom:10px;width:auto;background:transparent!important;padding:0!important;grid-template-columns:repeat(3,58px)!important;gap:5px!important}
+ .mapActions .takeAction{height:58px!important;width:58px!important;background:#fffffff2!important;backdrop-filter:blur(14px);box-shadow:0 8px 22px #163b3428;border-color:#ffffff!important}
+ .mapActions .takeAction small{display:none!important}.mapActions .takeAction b{font-size:.54rem;line-height:1.05;text-align:center}.mapActions .actionIcon{font-size:.95rem}
+ html[data-theme="dark"] .mapActions .takeAction{background:#142522f2!important;border-color:#ffffff20!important}
+}
+@media(max-width:520px){.plannerV2{--site-header-h:64px}}
