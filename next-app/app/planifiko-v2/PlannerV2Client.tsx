@@ -1,5 +1,5 @@
 'use client';
-import {useMemo,useState} from 'react';
+import {useMemo,useRef,useState} from 'react';
 import LiveTourMap,{type MapPlace} from '../planifiko/LiveTourMap';
 
 export type PlannerPlace={id:string;type:string;name:string;kind?:string;desc?:string;lat:number;lng:number;image?:string;duration?:string;plannerFeatured?:boolean;tags?:string[]};
@@ -22,7 +22,7 @@ const parseMin=(v='1 orë')=>{const h=v.match(/(\d+(?:[.,]\d+)?)\s*(?:h|or[ëe])
 export default function PlannerV2Client({cmsPlaces=[]}:{cmsPlaces:PlannerPlace[]}){
  const source=useMemo(()=>cmsPlaces.filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&p.lat!==0&&p.lng!==0),[cmsPlaces]);
  const[interest,setInterest]=useState('E kombinuar'),[time,setTime]=useState('1 ditë'),[transport,setTransport]=useState('Makinë');
- const[stops,setStops]=useState<PlannerPlace[]>([]),[active,setActive]=useState(0),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[qr,setQr]=useState(false);
+ const[stops,setStops]=useState<PlannerPlace[]>([]),[active,setActive]=useState(0),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[qr,setQr]=useState(false);\n const searchRef=useRef<HTMLDivElement|null>(null);
  const matches=useMemo(()=>{const q=norm(query);const list=q?source.filter(p=>norm([p.name,p.kind,p.desc,...(p.tags||[])].filter(Boolean).join(' ')).includes(q)):source;return list.slice(0,12)},[query,source]);
  const add=(p:PlannerPlace)=>{if(stops.some(x=>x.id===p.id)){setActive(stops.findIndex(x=>x.id===p.id));setSearchOpen(false);return}const next=optimize([...stops,p]);setStops(next);setActive(next.findIndex(x=>x.id===p.id));setQuery('');setSearchOpen(false)};
  const generate=()=>{const keys:Record<string,string[]>={
@@ -42,7 +42,7 @@ export default function PlannerV2Client({cmsPlaces=[]}:{cmsPlaces:PlannerPlace[]
  return <div className="plannerV2"><section className="plannerStage">
   <div className="mapCanvas"><LiveTourMap places={mapPlaces} active={Math.min(active,Math.max(0,mapPlaces.length-1))} onActive={setActive} transport={transport}/></div>
 
-  <div className="searchFloat">
+  <div className="searchFloat" ref={searchRef} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setSearchOpen(false)}}>
    <label><span>⌕</span><input value={query} onFocus={()=>setSearchOpen(true)} onChange={e=>{setQuery(e.target.value);setSearchOpen(true)}} placeholder="Kërko destinacione, restorante dhe akomodim..."/>{query&&<button onClick={()=>setQuery('')}>×</button>}</label>
    {searchOpen&&<div className="searchResults">{matches.length?matches.map(p=><button key={p.id} onClick={()=>add(p)}>{p.image?<img src={p.image} alt=""/>:<i>◎</i>}<span><b>{p.name}</b><small>{p.kind||'Destinacion'} · {p.type==='kulinari'?'Kulinari':p.type==='akomodim'?'Akomodim':'Destinacion'}</small></span><em>{stops.some(s=>s.id===p.id)?'Në tur':'＋ Shto'}</em></button>):<p>Nuk u gjet rezultat.</p>}</div>}
   </div>
@@ -57,10 +57,10 @@ export default function PlannerV2Client({cmsPlaces=[]}:{cmsPlaces:PlannerPlace[]
    <button className="generateV2" onClick={generate}>Gjenero itinerarin <span>→</span></button>
   </div>
 
-  <div className="summaryCard"><small>ITINERARI I SUGJERUAR</small><div><span>⌖</span><b>{stops.length||'—'} ndalesa</b></div><div><span>↝</span><b>{stops.length?distance.toFixed(1):'—'} km</b></div><div><span>◷</span><b>{stops.length?Math.max(20,travelMinutes)+' min':'—'}</b></div></div>
+  <div className="leftBottomCluster"><div className="summaryCard"><small>ITINERARI I SUGJERUAR</small><div><span>⌖</span><b>{stops.length||'—'} ndalesa</b></div><div><span>↝</span><b>{stops.length?distance.toFixed(1):'—'} km</b></div><div><span>◷</span><b>{stops.length?Math.max(20,travelMinutes)+' min':'—'}</b></div></div>{stops.length>0&&<div className="selectedCards">{stops.map((p,i)=><button key={p.id} className={active===i?'active':''} onClick={()=>setActive(i)}>{p.image?<img src={p.image} alt=""/>:<span className="noPhoto">◎</span>}<span className="selectedText"><small>DESTINACIONI {i+1}</small><b>{p.name}</b><em>{p.desc||p.kind||'Ndalesë në itinerarin tënd.'}</em></span>{i<stops.length-1&&<strong className="nextArrow">→</strong>}</button>)}</div>}</div>
  </section>
 
- {stops.length>0&&<section className="routeStrip"><div className="routeTitle"><div><span>ITINERARI YT</span><h2>{time} në Lezhë</h2></div><div className="routeActions"><button onClick={share}>↗ <span>Ndaje</span></button><button onClick={()=>setQr(true)}>▦ <span>QR Code</span></button></div></div><div className="stopStrip">{stops.map((p,i)=><button key={p.id} className={active===i?'active':''} onClick={()=>setActive(i)}><span>{i+1}</span><div><b>{p.name}</b><small>{p.kind||'Destinacion'}</small></div></button>)}</div></section>}
+ {stops.length>0&&<section className="routeStrip"><div className="routeTitle"><div><span>ITINERARI YT</span><h2>{time} në Lezhë</h2></div><div className="routeActions"><button onClick={share} className="takeAction"><span className="actionIcon">↗</span><b>Ndaje</b><small>Dërgo itinerarin</small></button><button onClick={()=>setQr(true)} className="takeAction"><span className="actionIcon">▦</span><b>QR Code</b><small>Hape në telefon</small></button></div></div><div className="stopStrip">{stops.map((p,i)=><button key={p.id} className={active===i?'active':''} onClick={()=>setActive(i)}><span>{i+1}</span><div><b>{p.name}</b><small>{p.kind||'Destinacion'}</small></div></button>)}</div></section>}
  {qr&&<div className="qrModal" onClick={()=>setQr(false)}><div onClick={e=>e.stopPropagation()}><button className="qrClose" onClick={()=>setQr(false)}>×</button><small>TURI IM / QR</small><h3>Skano dhe vazhdo në telefon</h3><img src={qrUrl} alt="QR Code"/><p>{time} · {interest}<br/>{stops.length} ndalesa · {transport}</p></div></div>}
  </div>
 }
