@@ -12,3 +12,4 @@ const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(
 "desc":coalesce(pershkrimi,"Zbulo këtë vend gjatë vizitës në Lezhë."),"lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,
 "duration":coalesce(kohezgjatja,"1 orë"),plannerFeatured,"tags":array::compact(coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[zona,adresa])}`;
 export default async function Page(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="sq" current="planifiko"/><main><PlannerV2Client cmsPlaces={places}/></main><BackToTop/><SiteFooter locale="sq"/></>}
+
