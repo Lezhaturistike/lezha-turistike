@@ -22,7 +22,8 @@ const parseMin=(v='1 orë')=>{const h=v.match(/(\d+(?:[.,]\d+)?)\s*(?:h|or[ëe])
 export default function PlannerV2Client({cmsPlaces=[]}:{cmsPlaces:PlannerPlace[]}){
  const source=useMemo(()=>cmsPlaces.filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&p.lat!==0&&p.lng!==0),[cmsPlaces]);
  const[interest,setInterest]=useState('E kombinuar'),[time,setTime]=useState('1 ditë'),[transport,setTransport]=useState('Makinë');
- const[stops,setStops]=useState<PlannerPlace[]>([]),[active,setActive]=useState(0),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[qr,setQr]=useState(false);\n const searchRef=useRef<HTMLDivElement|null>(null);
+ const[stops,setStops]=useState<PlannerPlace[]>([]),[active,setActive]=useState(0),[query,setQuery]=useState(''),[searchOpen,setSearchOpen]=useState(false),[qr,setQr]=useState(false);
+ const searchRef=useRef<HTMLDivElement|null>(null);
  const matches=useMemo(()=>{const q=norm(query);const list=q?source.filter(p=>norm([p.name,p.kind,p.desc,...(p.tags||[])].filter(Boolean).join(' ')).includes(q)):source;return list.slice(0,12)},[query,source]);
  const add=(p:PlannerPlace)=>{if(stops.some(x=>x.id===p.id)){setActive(stops.findIndex(x=>x.id===p.id));setSearchOpen(false);return}const next=optimize([...stops,p]);setStops(next);setActive(next.findIndex(x=>x.id===p.id));setQuery('');setSearchOpen(false)};
  const generate=()=>{const keys:Record<string,string[]>={
