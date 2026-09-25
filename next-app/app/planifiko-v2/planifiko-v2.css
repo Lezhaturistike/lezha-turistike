@@ -342,3 +342,40 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction small{color:#aebdb8!i
  body.plannerV2Printing .selectedCards .noPhoto{display:block!important}
  body.plannerV2Printing .nextArrow{display:none!important}
 }
+
+/* Six planner actions — reference layout: icon / title / supporting text */
+.plannerV2 .mapActions{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:760px;margin:0 auto;padding:18px!important;gap:10px!important}
+.plannerV2 .mapActions .takeAction{min-height:126px!important;padding:16px 10px!important;border-radius:20px!important;background:#f8f6f1!important;border:1px solid #173d3920!important;box-shadow:none!important}
+.plannerV2 .mapActions .actionIcon{width:32px!important;height:32px!important;font-size:1.35rem!important;margin-bottom:5px}
+.plannerV2 .mapActions .actionIcon svg{width:28px!important;height:28px!important}
+.plannerV2 .mapActions .takeAction b{font-size:.92rem!important;line-height:1.08!important;text-align:center}
+.plannerV2 .mapActions .takeAction small{display:block!important;font-size:.68rem!important;line-height:1.2!important;text-align:center;color:#7b8087!important;max-width:110px}
+html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!important}
+@media(max-width:760px){
+ .plannerV2 .mapActions{grid-template-columns:repeat(3,1fr)!important;max-width:none!important;padding:10px!important;gap:7px!important}
+ .plannerV2 .mapActions .takeAction{height:112px!important;min-height:112px!important;padding:10px 4px!important;border-radius:16px!important}
+ .plannerV2 .mapActions .actionIcon{width:28px!important;height:28px!important;margin-bottom:3px}
+ .plannerV2 .mapActions .actionIcon svg{width:25px!important;height:25px!important}
+ .plannerV2 .mapActions .takeAction b{font-size:.72rem!important}
+ .plannerV2 .mapActions .takeAction small{display:block!important;font-size:.56rem!important;max-width:88px!important}
+}
+
+/* Print: map is its own clean panel; numbered destination cards retain photo + description */
+@media print{
+ body.plannerV2Printing .plannerStage{height:178mm!important;padding:0!important}
+ body.plannerV2Printing .mapCanvas{left:0!important;right:0!important;top:0!important;bottom:auto!important;height:112mm!important;min-height:112mm!important}
+ body.plannerV2Printing .mapCanvas>div,
+ body.plannerV2Printing .mapCanvas .mapWrap,
+ body.plannerV2Printing .mapCanvas .map,
+ body.plannerV2Printing .mapCanvas .host{height:112mm!important;min-height:112mm!important}
+ body.plannerV2Printing .leftBottomCluster{left:0!important;right:0!important;bottom:0!important;height:62mm!important;display:block!important;background:#fff!important;padding:4mm!important;box-sizing:border-box!important}
+ body.plannerV2Printing .summaryCard{display:none!important}
+ body.plannerV2Printing .selectedCards{height:54mm!important;width:100%!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:3mm!important;overflow:visible!important}
+ body.plannerV2Printing .selectedCards>button{height:54mm!important;display:grid!important;grid-template-columns:32mm minmax(0,1fr)!important;align-items:stretch!important;padding:0!important;border:1px solid #173d3926!important;border-radius:4mm!important;overflow:hidden!important;background:#fff!important;color:#173d39!important}
+ body.plannerV2Printing .selectedCards img,
+ body.plannerV2Printing .selectedCards .noPhoto{width:32mm!important;height:54mm!important;object-fit:cover!important;border-radius:0!important}
+ body.plannerV2Printing .selectedText{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;padding:3mm!important;text-align:left!important}
+ body.plannerV2Printing .selectedText small{display:block!important;font-size:7pt!important;letter-spacing:.06em!important;color:#2e7d5b!important}
+ body.plannerV2Printing .selectedText b{display:block!important;font-size:10pt!important;line-height:1.12!important;margin:1mm 0!important}
+ body.plannerV2Printing .selectedText em{display:-webkit-box!important;-webkit-line-clamp:4!important;-webkit-box-orient:vertical!important;overflow:hidden!important;font-size:7pt!important;line-height:1.28!important;font-style:normal!important;color:#596562!important}
+}
