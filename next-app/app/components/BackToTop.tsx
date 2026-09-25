@@ -10,13 +10,14 @@ export default function BackToTop({locale="sq"}:{locale?:"sq"|"en"}) {
     return () => window.removeEventListener("scroll", update);
   }, []);
   return (
-    <a
+    <button
+      type="button"
       className={`back-to-top${visible ? " visible" : ""}`}
-      href="#home"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label={locale === "en" ? "Back to top" : "Ngjitu në krye të faqes"}
       title={locale === "en" ? "Back to top" : "Ngjitu lart"}
     >
       ↑
-    </a>
+    </button>
   );
 }
