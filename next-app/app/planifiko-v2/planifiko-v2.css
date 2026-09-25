@@ -294,3 +294,51 @@ html[data-theme="dark"] .plannerV2 .searchResults>button:hover,
 html[data-theme="dark"] .plannerV2 .searchResults>button:focus-visible{background:#ffffff0d!important}
 html[data-theme="dark"] .plannerV2 .searchResults small{color:#afc0ba!important}
 html[data-theme="dark"] .plannerV2 .searchResults em{color:#d4b483!important}
+
+/* Planner action bar: same compact card language as the production UI */
+.plannerV2 .mapActions{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 18px}
+.plannerV2 .mapActions .takeAction{
+ min-height:78px;border:1px solid #173d3920;border-radius:16px;background:#fff;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+ text-decoration:none;color:#173d39;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.plannerV2 .mapActions .takeAction:hover{transform:translateY(-2px);box-shadow:0 10px 26px #173d3918;border-color:#2e7d5b55}
+.plannerV2 .mapActions .actionIcon{width:24px;height:24px;display:grid;place-items:center;font-size:1.05rem}
+.plannerV2 .mapActions .mapActionIcon svg{width:20px;height:20px}
+.plannerV2 .mapActions .takeAction b{font-size:.72rem}.plannerV2 .mapActions .takeAction small{font-size:.58rem;color:#6b7280}
+html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!important;color:#eef6f3!important;border-color:#ffffff20!important}
+html[data-theme="dark"] .plannerV2 .mapActions .takeAction small{color:#aebdb8!important}
+@media(max-width:760px){
+ .plannerV2 .mapActions{grid-template-columns:repeat(4,1fr)!important;padding:10px 10px 14px!important;gap:6px!important}
+ .plannerV2 .mapActions .takeAction{height:72px!important;min-height:72px!important;padding:5px 2px!important;border-radius:13px!important}
+ .plannerV2 .mapActions .takeAction b{font-size:.58rem!important}.plannerV2 .mapActions .takeAction small{display:none!important}
+}
+
+/* Print/PDF: preserve the actual itinerary composition — map fitted to all route stops + selected destination cards */
+@media print{
+ @page{size:A4 landscape;margin:8mm}
+ body.plannerV2Printing *{visibility:hidden!important}
+ body.plannerV2Printing .plannerV2,
+ body.plannerV2Printing .plannerV2 *{visibility:visible!important}
+ body.plannerV2Printing .plannerV2{position:absolute!important;inset:0!important;width:100%!important;background:#fff!important}
+ body.plannerV2Printing .plannerStage{position:relative!important;width:100%!important;height:178mm!important;min-height:178mm!important;overflow:hidden!important;background:#eef2ef!important}
+ body.plannerV2Printing .mapCanvas,
+ body.plannerV2Printing .mapCanvas>div,
+ body.plannerV2Printing .mapCanvas .mapWrap,
+ body.plannerV2Printing .mapCanvas .map,
+ body.plannerV2Printing .mapCanvas .host{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:100%!important;border-radius:0!important}
+ body.plannerV2Printing .searchFloat,
+ body.plannerV2Printing .thematicCard,
+ body.plannerV2Printing .plannerPanel,
+ body.plannerV2Printing .mobileFloatToggle,
+ body.plannerV2Printing .mapActions,
+ body.plannerV2Printing .leaflet-control-container,
+ body.plannerV2Printing .qrModal{display:none!important}
+ body.plannerV2Printing .leftBottomCluster{display:flex!important;position:absolute!important;left:8mm!important;right:8mm!important;bottom:8mm!important;z-index:999!important;gap:8px!important;align-items:flex-end!important}
+ body.plannerV2Printing .summaryCard{display:block!important;flex:0 0 46mm!important;background:#fffffff2!important;box-shadow:none!important}
+ body.plannerV2Printing .selectedCards{display:flex!important;flex:1!important;gap:5px!important;overflow:visible!important}
+ body.plannerV2Printing .selectedCards>button{display:flex!important;flex:1 1 0!important;min-width:0!important;max-width:none!important;background:#fffffff2!important;box-shadow:none!important}
+ body.plannerV2Printing .selectedCards img,
+ body.plannerV2Printing .selectedCards .noPhoto{display:block!important}
+ body.plannerV2Printing .nextArrow{display:none!important}
+}
