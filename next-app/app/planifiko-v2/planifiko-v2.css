@@ -431,3 +431,5 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!im
 @media(max-width:760px){
  .plannerV2 .mapActions{grid-template-columns:repeat(3,1fr)!important;max-width:none!important}
 }
+
+/* deployment refresh: planner-v2 actions */
