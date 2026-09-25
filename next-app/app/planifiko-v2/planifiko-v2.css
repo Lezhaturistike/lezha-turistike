@@ -195,3 +195,18 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:38px!important;height:38px!important}
  .plannerV2 .searchResults em{max-width:54px!important;font-size:.54rem!important}
 }
+
+/* Extra-small mobile search: denser list, always inside viewport */
+@media(max-width:760px){
+ .plannerV2 .searchResults{max-height:min(46dvh,360px)!important;border-radius:15px!important;padding:4px!important}
+ .plannerV2 .searchResults>button{grid-template-columns:36px minmax(0,1fr) 48px!important;gap:6px!important;padding:5px!important;border-radius:10px!important;min-height:46px!important}
+ .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:36px!important;height:36px!important;border-radius:9px!important}
+ .plannerV2 .searchResults b{font-size:.69rem!important;line-height:1.15!important}
+ .plannerV2 .searchResults small{font-size:.54rem!important;margin-top:1px!important}
+ .plannerV2 .searchResults em{width:48px!important;max-width:48px!important;text-align:center!important;font-size:.51rem!important;overflow:hidden!important;text-overflow:ellipsis!important}
+}
+@media(max-width:360px){
+ .plannerV2 .searchResults>button{grid-template-columns:32px minmax(0,1fr) 42px!important;gap:5px!important}
+ .plannerV2 .searchResults img,.plannerV2 .searchResults i{width:32px!important;height:32px!important}
+ .plannerV2 .searchResults em{width:42px!important;max-width:42px!important}
+}
