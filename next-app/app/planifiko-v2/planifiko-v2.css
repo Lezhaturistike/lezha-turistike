@@ -141,3 +141,26 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  html[data-theme="dark"] .mapActions .takeAction{background:#142522f2!important;border-color:#ffffff20!important}
 }
 @media(max-width:520px){.plannerV2{--site-header-h:64px}}
+
+/* Planner V2 layout corrections: header-safe desktop + true full mobile map */
+@media(min-width:761px){
+ .plannerPanel{top:118px!important;max-height:calc(100% - 146px)!important}
+ .thematicCard{top:118px!important}
+ .searchFloat{top:26px!important}
+}
+@media(max-width:760px){
+ .plannerV2{height:auto!important;min-height:0!important;overflow:visible!important}
+ .plannerStage{height:100svh!important;min-height:100svh!important;overflow:hidden!important}
+ .mapCanvas,.mapCanvas>div,.mapCanvas .mapWrap,.mapCanvas .map,.mapCanvas .host{height:100svh!important;min-height:100svh!important}
+ .thematicCard.mobileOpen{display:block!important;left:12px!important;right:auto!important;top:122px!important;width:205px!important;max-height:min(420px,calc(100svh - 145px))!important;padding:12px!important;overflow:auto!important}
+ .thematicCard.mobileOpen>div{display:block!important;overflow:visible!important;padding:0!important}
+ .thematicCard.mobileOpen>div>button{display:flex!important;width:100%!important;min-width:0!important;min-height:0!important;margin:0!important;border:0!important;border-top:1px solid #173d3917!important;border-radius:0!important;padding:9px 2px!important;background:transparent!important}
+ .plannerPanel.mobileOpen{left:12px!important;right:12px!important;top:122px!important;width:auto!important;max-height:calc(100svh - 142px)!important;padding:13px!important;border-radius:18px!important;overflow:auto!important}
+ .plannerPanel.mobileOpen .panelHead{padding-bottom:8px}.plannerPanel.mobileOpen .panelHead h1{font-size:1.15rem}.plannerPanel.mobileOpen .panelHead .pin{width:32px;height:32px}
+ .plannerPanel.mobileOpen .step{margin-top:10px}.plannerPanel.mobileOpen .pills{gap:4px;margin-top:5px}.plannerPanel.mobileOpen .pills button{padding:6px 7px;font-size:.58rem}
+ .plannerPanel.mobileOpen .transport{margin-top:6px}.plannerPanel.mobileOpen .transport button{padding:6px 2px}
+ .plannerPanel.mobileOpen .generateV2{margin-top:10px;padding:10px 12px}.plannerPanel.mobileOpen .plannerMiniActions{margin-top:5px}
+ .mapActions{position:relative!important;right:auto!important;bottom:auto!important;width:100%!important;background:#f8faf9!important;padding:10px 12px 14px!important;grid-template-columns:repeat(3,1fr)!important;gap:6px!important}
+ .mapActions .takeAction{width:100%!important;height:70px!important;background:transparent!important;box-shadow:none!important;border-color:#173d3929!important}
+ html[data-theme="dark"] .mapActions{background:#101c1a!important}html[data-theme="dark"] .mapActions .takeAction{background:transparent!important;border-color:#ffffff24!important}
+}
