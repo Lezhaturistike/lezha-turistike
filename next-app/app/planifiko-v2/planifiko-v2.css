@@ -262,3 +262,35 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  .plannerV2 .thematicCard.mobileOpen,
  .plannerV2 .plannerPanel.mobileOpen{z-index:850!important}
 }
+
+/* Publish polish: consistent search surface in dark mode */
+html[data-theme="dark"] .plannerV2 .searchFloat>label{
+ background:#142522f2!important;
+ border-color:#ffffff20!important;
+ color:#edf5f2!important;
+ box-shadow:0 12px 32px #00000042!important;
+}
+html[data-theme="dark"] .plannerV2 .searchFloat input{
+ background:transparent!important;
+ color:#f4f8f6!important;
+ caret-color:#d4b483!important;
+ -webkit-text-fill-color:#f4f8f6!important;
+}
+html[data-theme="dark"] .plannerV2 .searchFloat input::placeholder{color:#b6c5c0!important;opacity:.78!important}
+html[data-theme="dark"] .plannerV2 .searchFloat>label>span,
+html[data-theme="dark"] .plannerV2 .searchFloat>label>button{color:#dce8e4!important}
+html[data-theme="dark"] .plannerV2 .searchResults{
+ background:#142522f5!important;
+ border-color:#ffffff1f!important;
+ color:#edf5f2!important;
+ box-shadow:0 18px 44px #00000052!important;
+}
+html[data-theme="dark"] .plannerV2 .searchResults>button{
+ background:transparent!important;
+ border-color:#ffffff14!important;
+ color:#edf5f2!important;
+}
+html[data-theme="dark"] .plannerV2 .searchResults>button:hover,
+html[data-theme="dark"] .plannerV2 .searchResults>button:focus-visible{background:#ffffff0d!important}
+html[data-theme="dark"] .plannerV2 .searchResults small{color:#afc0ba!important}
+html[data-theme="dark"] .plannerV2 .searchResults em{color:#d4b483!important}
