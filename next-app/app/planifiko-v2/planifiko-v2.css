@@ -164,3 +164,15 @@ html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ff
  .mapActions .takeAction{width:100%!important;height:70px!important;background:transparent!important;box-shadow:none!important;border-color:#173d3929!important}
  html[data-theme="dark"] .mapActions{background:#101c1a!important}html[data-theme="dark"] .mapActions .takeAction{background:transparent!important;border-color:#ffffff24!important}
 }
+
+/* Definitive mobile fullscreen override: LiveTourMap has scoped 42vh/300px mobile rules */
+@media(max-width:760px){
+ .plannerV2 .plannerStage{height:100dvh!important;min-height:100dvh!important}
+ .plannerV2 .mapCanvas{position:absolute!important;inset:0!important;height:100%!important;min-height:100%!important}
+ .plannerV2 .mapCanvas>div,
+ .plannerV2 .mapCanvas .mapWrap,
+ .plannerV2 .mapCanvas .map,
+ .plannerV2 .mapCanvas .host{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:100%!important;max-height:none!important;border-radius:0!important}
+ .plannerV2 .mapCanvas .mapWrap{position:absolute!important}
+ .plannerV2 .mapCanvas .map{position:absolute!important}
+}
