@@ -87,3 +87,10 @@ html[data-theme="dark"] .selectedCards>button{background:#142522f2;border-color:
  .leftBottomCluster{right:28px!important}
  .leftBottomCluster .selectedCards{padding-right:4px!important}
 }
+
+/* Planner controls + three itinerary actions */
+.mapLogo{display:grid!important;place-items:center!important}.mapLogo svg{width:22px;height:22px}
+.plannerButtons{margin-top:14px}.plannerButtons .generateV2{margin-top:0}.plannerMiniActions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:7px}.plannerMiniActions button{border:1px solid #173d3926;background:#fff9;border-radius:12px;padding:9px 8px;font:inherit;font-size:.68rem;font-weight:800;color:var(--lezha);cursor:pointer}.plannerMiniActions button:hover{background:#e4eeeb}.plannerMiniActions button:disabled{opacity:.4;cursor:not-allowed}
+.routeActions .takeAction{text-decoration:none}.routeActions a.takeAction{box-sizing:border-box}.mapActionIcon svg{width:22px;height:22px;display:block}
+@media(min-width:1101px){.routeActions{display:grid!important;grid-template-columns:repeat(3,122px)!important}}
+@media(max-width:760px){.plannerButtons{margin-top:12px}.plannerMiniActions button{padding:8px 6px;font-size:.63rem}.routeActions{display:grid!important;grid-template-columns:repeat(3,1fr)!important;width:100%}.routeActions .takeAction{min-width:0!important;width:100%!important}.mapActionIcon svg{width:19px;height:19px}}
