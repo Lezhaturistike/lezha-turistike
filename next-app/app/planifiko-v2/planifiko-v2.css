@@ -497,3 +497,6 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!im
  html[data-theme="dark"] .plannerV2 .mapActions .takeAction b{color:#eef6f3!important}
  html[data-theme="dark"] .plannerV2 .mapActions .takeAction small{color:#aeb8b5!important}
 }
+
+.plannerV2 .summaryCard .timeBreakdown{display:block;margin-top:7px;padding-top:7px;border-top:1px solid #173d3918;font-size:.58rem;line-height:1.35;color:#66736f;font-weight:700}
+html[data-theme="dark"] .plannerV2 .summaryCard .timeBreakdown{border-color:#ffffff18;color:#aebdb8}
