@@ -46,9 +46,9 @@ export default function PlannerV2Client({cmsPlaces=[],locale='sq'}:{cmsPlaces:Pl
  return <div className="plannerV2"><section className="plannerStage">
   <div className="mapCanvas"><LiveTourMap places={mapPlaces} active={Math.min(active,Math.max(0,mapPlaces.length-1))} onActive={setActive} transport={transport} locale={locale}/></div>
 
-  <div className="searchFloat" ref={searchRef} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setSearchOpen(false)}}>
+  <div className="searchFloat" ref={searchRef}>
    <label><span>⌕</span><input value={query} onFocus={()=>{setSearchOpen(true);setMobileFloat(null)}} onChange={e=>{setQuery(e.target.value);setSearchOpen(true);setMobileFloat(null)}} placeholder={en?"Search destinations, restaurants and accommodation...":"Kërko destinacione, restorante dhe akomodim..."}/>{query&&<button onClick={()=>setQuery('')}>×</button>}</label>
-   {searchOpen&&<div className="searchResults">{matches.length?matches.map(p=><button key={p.id} onClick={()=>add(p)}>{p.image?<img src={p.image} alt=""/>:<i>◎</i>}<span><b>{p.name}</b><small>{p.kind||'Destinacion'} · {p.type==='kulinari'?'Kulinari':p.type==='akomodim'?'Akomodim':'Destinacion'}</small></span><em>{stops.some(s=>s.id===p.id)?'Në tur':'＋ Shto'}</em></button>):<p>Nuk u gjet rezultat.</p>}</div>}
+   {searchOpen&&<div className="searchResults">{matches.length?matches.map(p=><button key={p.id} type="button" onPointerDown={e=>e.preventDefault()} onClick={()=>add(p)}>{p.image?<img src={p.image} alt=""/>:<i>◎</i>}<span><b>{p.name}</b><small>{p.kind||'Destinacion'} · {p.type==='kulinari'?'Kulinari':p.type==='akomodim'?'Akomodim':'Destinacion'}</small></span><em>{stops.some(s=>s.id===p.id)?'Në tur':'＋ Shto'}</em></button>):<p>Nuk u gjet rezultat.</p>}</div>}
   </div>
 
   <button className="mobileFloatToggle themesToggle" onClick={()=>{setMobileFloat(mobileFloat==='themes'?null:'themes');setSearchOpen(false)}}>{en?'Thematic tours':'Ture tematike'} <span>⌄</span></button><div className={'thematicCard '+(mobileFloat==='themes'?'mobileOpen':'')}><small>{en?'THEMATIC TOURS':'TURE TEMATIKE'}</small><h3>{en?'Ready-made itineraries':'Itinerare të gatshme'}</h3><div>{thematic.map(t=><button key={t.id} onClick={()=>loadTheme(t)}><span><b>{t.name}</b><small>Hap itinerarin</small></span><em>→</em></button>)}</div></div>
