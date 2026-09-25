@@ -379,3 +379,49 @@ html[data-theme="dark"] .plannerV2 .mapActions .takeAction{background:#142522!im
  body.plannerV2Printing .selectedText b{display:block!important;font-size:10pt!important;line-height:1.12!important;margin:1mm 0!important}
  body.plannerV2Printing .selectedText em{display:-webkit-box!important;-webkit-line-clamp:4!important;-webkit-box-orient:vertical!important;overflow:hidden!important;font-size:7pt!important;line-height:1.28!important;font-style:normal!important;color:#596562!important}
 }
+
+/* Dedicated print document: never print the website shell */
+.plannerV2 .printTitle{display:none}
+@media print{
+ @page{size:A4 landscape;margin:7mm}
+ html,body{width:100%!important;height:auto!important;margin:0!important;padding:0!important;background:#fff!important}
+ body.plannerV2Printing header,
+ body.plannerV2Printing footer,
+ body.plannerV2Printing nav,
+ body.plannerV2Printing [class*="backToTop"],
+ body.plannerV2Printing [class*="BackToTop"]{display:none!important}
+ body.plannerV2Printing main{display:block!important;margin:0!important;padding:0!important;width:100%!important;max-width:none!important}
+ body.plannerV2Printing .plannerV2{position:static!important;width:100%!important;height:190mm!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#fff!important;print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
+ body.plannerV2Printing .printTitle{display:flex!important;height:12mm!important;align-items:center!important;justify-content:space-between!important;padding:0 2mm!important;color:#173d39!important;font-size:8pt!important;letter-spacing:.05em!important}
+ body.plannerV2Printing .printTitle b{font-size:12pt!important}
+ body.plannerV2Printing .plannerStage{position:relative!important;height:178mm!important;min-height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;break-inside:avoid!important;page-break-inside:avoid!important}
+ body.plannerV2Printing .mapCanvas{position:absolute!important;inset:0 0 auto 0!important;height:116mm!important;min-height:116mm!important;overflow:hidden!important}
+ body.plannerV2Printing .mapCanvas>div,
+ body.plannerV2Printing .mapCanvas .mapWrap,
+ body.plannerV2Printing .mapCanvas .map,
+ body.plannerV2Printing .mapCanvas .host{position:absolute!important;inset:0!important;width:100%!important;height:116mm!important;min-height:116mm!important;max-height:116mm!important;border-radius:3mm!important;overflow:hidden!important}
+ body.plannerV2Printing .mapCanvas .strip,
+ body.plannerV2Printing .mapCanvas .routeLink,
+ body.plannerV2Printing .mapCanvas .top,
+ body.plannerV2Printing .mapCanvas .warn,
+ body.plannerV2Printing .mapCanvas .missing,
+ body.plannerV2Printing .mapCanvas .leaflet-popup,
+ body.plannerV2Printing .mapCanvas .leaflet-control-container{display:none!important}
+ body.plannerV2Printing .leftBottomCluster{position:absolute!important;left:0!important;right:0!important;bottom:0!important;height:58mm!important;padding:4mm 0 0!important;margin:0!important;background:#fff!important;z-index:50!important;display:block!important;overflow:hidden!important}
+ body.plannerV2Printing .summaryCard{display:none!important}
+ body.plannerV2Printing .selectedCards{display:grid!important;width:100%!important;height:54mm!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:2.5mm!important;padding:0!important;margin:0!important;overflow:hidden!important}
+ body.plannerV2Printing .selectedCards>button{display:grid!important;width:auto!important;height:54mm!important;min-width:0!important;grid-template-columns:29mm minmax(0,1fr)!important;padding:0!important;margin:0!important;border:1px solid #173d3925!important;border-radius:3mm!important;overflow:hidden!important;background:#fff!important;color:#173d39!important;box-shadow:none!important}
+ body.plannerV2Printing .selectedCards img,
+ body.plannerV2Printing .selectedCards .noPhoto{display:block!important;width:29mm!important;height:54mm!important;min-width:29mm!important;object-fit:cover!important;border-radius:0!important}
+ body.plannerV2Printing .selectedText{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important;padding:2.5mm!important;text-align:left!important}
+ body.plannerV2Printing .selectedText small{display:block!important;font-size:6.5pt!important;color:#2e7d5b!important;letter-spacing:.05em!important}
+ body.plannerV2Printing .selectedText b{display:block!important;font-size:9pt!important;line-height:1.1!important;margin:1mm 0!important}
+ body.plannerV2Printing .selectedText em{display:-webkit-box!important;-webkit-line-clamp:5!important;-webkit-box-orient:vertical!important;overflow:hidden!important;font-size:6.4pt!important;line-height:1.23!important;font-style:normal!important;color:#596562!important}
+ body.plannerV2Printing .nextArrow{display:none!important}
+ body.plannerV2Printing .searchFloat,
+ body.plannerV2Printing .thematicCard,
+ body.plannerV2Printing .plannerPanel,
+ body.plannerV2Printing .mobileFloatToggle,
+ body.plannerV2Printing .mapActions,
+ body.plannerV2Printing .qrModal{display:none!important}
+}
