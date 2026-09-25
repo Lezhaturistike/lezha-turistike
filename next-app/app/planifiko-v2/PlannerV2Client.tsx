@@ -39,12 +39,12 @@ export default function PlannerV2Client({cmsPlaces=[],locale='sq'}:{cmsPlaces:Pl
  const mapPlaces:MapPlace[]=stops.map(p=>({name:p.name,lat:p.lat,lng:p.lng,note:p.kind||'Destinacion',description:p.desc,image:p.image}));
  const distance=stops.slice(1).reduce((n,p,i)=>n+km(stops[i],p),0),speed=transport==='Në këmbë'?4.5:transport==='Biçikletë'?15:38,travelMinutes=Math.round(distance/speed*60);
  const shareUrl=()=>{if(typeof window==='undefined')return'';const u=new URL(window.location.href);u.searchParams.set('koha',time);u.searchParams.set('interesi',interest);u.searchParams.set('transporti',transport);if(stops.length)u.searchParams.set('ndalesat',stops.map(s=>s.id).join(','));return u.toString()};
- const share=async()=>{const u=shareUrl();try{if(navigator.share)await navigator.share({title:'Itinerari im në Lezhë',url:u});else await navigator.clipboard.writeText(u)}catch{}};
+ const share=async()=>{const u=shareUrl();try{if(navigator.share)await navigator.share({title:en?'My itinerary in Lezha':'Itinerari im në Lezhë',url:u});else await navigator.clipboard.writeText(u)}catch{}};
  const googleMapsUrl=stops.length?`https://www.google.com/maps/dir/?api=1&origin=${stops[0].lat},${stops[0].lng}&destination=${stops.at(-1)!.lat},${stops.at(-1)!.lng}&waypoints=${stops.slice(1,-1).map(p=>`${p.lat},${p.lng}`).join('|')}&travelmode=${transport==='Në këmbë'?'walking':transport==='Biçikletë'?'bicycling':'driving'}`:'https://www.google.com/maps';
  const actionLabels=en?{share:'Share',shareSub:'Send itinerary',qr:'QR Code',qrSub:'Open on phone',map:'Open map',mapSub:'Full navigation'}:{share:'Ndaje',shareSub:'Dërgo itinerarin',qr:'QR Code',qrSub:'Hape në telefon',map:'Hap hartën',mapSub:'Navigim i plotë'};
  const qrUrl=`https://quickchart.io/qr?size=280&margin=2&text=${encodeURIComponent(shareUrl())}`;
  return <div className="plannerV2"><section className="plannerStage">
-  <div className="mapCanvas"><LiveTourMap places={mapPlaces} active={Math.min(active,Math.max(0,mapPlaces.length-1))} onActive={setActive} transport={transport}/></div>
+  <div className="mapCanvas"><LiveTourMap places={mapPlaces} active={Math.min(active,Math.max(0,mapPlaces.length-1))} onActive={setActive} transport={transport} locale={locale}/></div>
 
   <div className="searchFloat" ref={searchRef} onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node))setSearchOpen(false)}}>
    <label><span>⌕</span><input value={query} onFocus={()=>{setSearchOpen(true);setMobileFloat(null)}} onChange={e=>{setQuery(e.target.value);setSearchOpen(true);setMobileFloat(null)}} placeholder={en?"Search destinations, restaurants and accommodation...":"Kërko destinacione, restorante dhe akomodim..."}/>{query&&<button onClick={()=>setQuery('')}>×</button>}</label>
