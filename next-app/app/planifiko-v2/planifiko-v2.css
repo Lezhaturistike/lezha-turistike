@@ -94,3 +94,11 @@ html[data-theme="dark"] .selectedCards>button{background:#142522f2;border-color:
 .routeActions .takeAction{text-decoration:none}.routeActions a.takeAction{box-sizing:border-box}.mapActionIcon svg{width:22px;height:22px;display:block}
 @media(min-width:1101px){.routeActions{display:grid!important;grid-template-columns:repeat(3,122px)!important}}
 @media(max-width:760px){.plannerButtons{margin-top:12px}.plannerMiniActions button{padding:8px 6px;font-size:.63rem}.routeActions{display:grid!important;grid-template-columns:repeat(3,1fr)!important;width:100%}.routeActions .takeAction{min-width:0!important;width:100%!important}.mapActionIcon svg{width:19px;height:19px}}
+
+/* Desktop: action cards sit directly under the right edge of the map */
+@media(min-width:1101px){
+ .routeStrip{position:relative}
+ .routeTitle{display:block!important}
+ .routeActions{position:absolute!important;right:24px!important;top:28px!important;margin:0!important;display:grid!important;grid-template-columns:repeat(3,120px)!important;gap:0!important}
+ .routeActions .takeAction{height:86px!important;min-height:86px!important;min-width:120px!important;border-radius:18px!important}
+}
