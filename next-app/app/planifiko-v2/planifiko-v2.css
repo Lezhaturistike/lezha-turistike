@@ -513,3 +513,5 @@ html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric{border-color:#fff
 html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric>small{color:#aebdb8}
 html[data-theme="dark"] .plannerV2 .summaryCard .summaryMetric>b{color:#eef6f3}
 html[data-theme="dark"] .plannerV2 .summaryCard .tourMetric>b{color:#d4b483}
+
+/* deployment refresh: planner-v2 rollback trigger */
