@@ -102,3 +102,24 @@ html[data-theme="dark"] .selectedCards>button{background:#142522f2;border-color:
  .routeActions{position:absolute!important;right:24px!important;top:28px!important;margin:0!important;display:grid!important;grid-template-columns:repeat(3,120px)!important;gap:0!important}
  .routeActions .takeAction{height:86px!important;min-height:86px!important;min-width:120px!important;border-radius:18px!important}
 }
+
+/* V2 compact actions + mobile floating controls */
+.mobileFloatToggle{display:none}
+.mapActions{display:grid;grid-template-columns:repeat(3,120px);gap:0;background:#f8faf9;padding:28px 24px 28px;justify-content:end}
+.mapActions .takeAction{height:86px;border:1px solid #173d3929;background:transparent;border-radius:18px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:inherit;text-decoration:none;font:inherit;cursor:pointer}.mapActions .takeAction:hover{background:var(--lezha)!important;color:var(--cream)!important}.mapActions .takeAction b{font-size:.85rem}.mapActions .takeAction small{font-size:.6rem;opacity:.58}
+html[data-theme="dark"] .mapActions{background:#101c1a}html[data-theme="dark"] .mapActions .takeAction{border-color:#ffffff24;color:#edf5f2}
+@media(max-width:760px){
+ .plannerStage{height:calc(100svh - 58px)!important;min-height:690px!important}
+ .mapCanvas .mapWrap,.mapCanvas .map,.mapCanvas .host{height:100%!important;min-height:100%!important}
+ .mobileFloatToggle{display:flex;position:absolute;z-index:720;height:42px;align-items:center;justify-content:space-between;border:1px solid #fff;background:#fffffff2;backdrop-filter:blur(16px);box-shadow:0 10px 28px #163b342c;border-radius:14px;padding:0 13px;color:var(--lezha);font-size:.68rem;font-weight:900}
+ .themesToggle{left:12px;top:76px;width:142px}.plannerToggle{right:12px;top:76px;width:154px}
+ .thematicCard,.plannerPanel{display:none!important}
+ .thematicCard.mobileOpen{display:block!important;left:12px!important;right:12px!important;top:126px!important;width:auto!important;max-height:50svh!important;overflow:auto!important;z-index:850!important}
+ .plannerPanel.mobileOpen{display:block!important;left:12px!important;right:12px!important;top:126px!important;width:auto!important;max-height:calc(100svh - 150px)!important;overflow:auto!important;z-index:850!important}
+ .leftBottomCluster{bottom:14px!important}
+ .leftBottomCluster .summaryCard{width:165px!important}
+ .selectedCards>button{flex-basis:min(80vw,275px)!important}
+ .mapActions{grid-template-columns:repeat(3,1fr);gap:6px;padding:10px 12px 14px;background:#f8faf9}
+ .mapActions .takeAction{height:72px;min-width:0;border-radius:15px;padding:7px}.mapActions .takeAction b{font-size:.68rem}.mapActions .takeAction small{display:none}
+}
+html[data-theme="dark"] .mobileFloatToggle{background:#142522f2;border-color:#ffffff20;color:#edf5f2}
