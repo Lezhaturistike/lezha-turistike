@@ -538,3 +538,14 @@ html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2!important
  .plannerPanel::-webkit-scrollbar{width:6px}.plannerPanel::-webkit-scrollbar-thumb{background:#8da39d66;border-radius:999px}
 }
 @media(max-width:760px){.selectedStop .removeStop{top:7px!important;right:7px!important;width:27px!important;height:27px!important}}
+
+/* Desktop: reserve the lower map rail for generated itinerary cards */
+@media(min-width:761px){
+ .plannerPanel{
+  top:102px!important;
+  bottom:auto!important;
+  max-height:calc(100% - 300px)!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain!important;
+ }
+}
