@@ -556,3 +556,20 @@ html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2!important
 .reorderBtn:hover{background:#173d39;color:#fff}
 html[data-theme="dark"] .reorderBtn{background:#142522e8;color:#edf5f2;border-color:#ffffff2a}
 @media(max-width:760px){.reorderBtn{width:24px;height:24px}}
+
+
+/* Final mobile + dark-mode audit: preserve approved layout, improve legibility/touch */
+@media(max-width:760px){
+ .plannerV2 .searchFloat input{font-size:16px!important}
+ .plannerV2 .plannerPanel,.plannerV2 .thematicCard,.plannerV2 .searchResults{overscroll-behavior:contain}
+ .plannerV2 .selectedCards{padding-right:12px!important}
+ .plannerV2 .selectedStop{scroll-snap-align:start}
+ .plannerV2 .reorderBtn{touch-action:manipulation}
+}
+html[data-theme="dark"] .plannerV2 .searchFloat input{color:#edf5f2!important}
+html[data-theme="dark"] .plannerV2 .searchFloat input::placeholder{color:#aebdb8!important;opacity:.82}
+html[data-theme="dark"] .plannerV2 .fieldHint{color:#b7c5c1!important;opacity:.82}
+html[data-theme="dark"] .plannerV2 .dayLabel{color:#d4b483!important}
+html[data-theme="dark"] .plannerV2 .selectedText small{color:#b9d7ce!important}
+html[data-theme="dark"] .plannerV2 .selectedText em{color:#c5d1cd!important;opacity:.82}
+html[data-theme="dark"] .plannerV2 .plannerMiniActions button{background:#142522!important;color:#edf5f2!important;border-color:#ffffff24!important}
