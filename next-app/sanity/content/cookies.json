@@ -5,15 +5,15 @@
   "titleEn": "Cookie Policy",
   "intro": "Kjo faqe shpjegon cookies, localStorage, analitikën dhe teknologjitë e palëve të treta që lidhen me funksionet aktuale të Lezha Turistike.",
   "introEn": "This page explains cookies, localStorage, analytics and third-party technologies related to the current Lezha Turistike features.",
-  "updated": "Përditësuar: 24 shtator 2026",
-  "updatedEn": "Updated: 24 September 2026",
+  "updated": "Përditësuar: 26 shtator 2026",
+  "updatedEn": "Updated: 26 September 2026",
   "sections": [
     {
       "_key": "cookies-1",
       "heading": "Çfarë ruhet në shfletues",
       "headingEn": "What is stored in your browser",
-      "body": "Lezha Turistike përdor localStorage për funksione të faqes. Aktualisht ai mund të përdoret për preferencën Day/Night Mode, zgjedhjen tuaj të privatësisë/analitikës, kujtesën lokale të vlerësimeve të Kulinarisë dhe itinerarin që ruani me “Ruaj” te Planifiko Vizitën. localStorage nuk është cookie; është ruajtje lokale në pajisjen tuaj.",
-      "bodyEn": "Lezha Turistike uses localStorage for website functions. It may currently be used for the Day/Night Mode preference, your privacy/analytics choice, local Cuisine rating memory and an itinerary you save using “Save” in Plan Your Visit. localStorage is not a cookie; it is local storage on your device."
+      "body": "Lezha Turistike përdor localStorage për disa preferenca të faqes. Aktualisht ai mund të përdoret për preferencën Day/Night Mode, zgjedhjen tuaj të privatësisë/analitikës dhe kujtesën lokale të vlerësimeve të Kulinarisë. localStorage nuk është cookie; është ruajtje lokale në pajisjen tuaj.",
+      "bodyEn": "Lezha Turistike uses localStorage for some website preferences. It may currently be used for the Day/Night Mode preference, your privacy/analytics choice and local Cuisine rating memory. localStorage is not a cookie; it is local storage on your device."
     },
     {
       "_key": "cookies-2",
@@ -40,8 +40,8 @@
       "_key": "cookies-5",
       "heading": "Planifiko Vizitën",
       "headingEn": "Plan Your Visit",
-      "body": "Kur përdorni “Ruaj”, itinerari dhe zgjedhjet përkatëse ruhen në localStorage në pajisjen tuaj. Ndarja e turit përdor një URL që mund të përmbajë kohën, interesin, transportin dhe identifikuesit e ndalesave. Gjenerimi i QR Code ngarkon një imazh nga një shërbim i jashtëm duke i kaluar lidhjen e itinerarit për ta koduar.",
-      "bodyEn": "When you use “Save”, the itinerary and related choices are stored in localStorage on your device. Tour sharing uses a URL that may contain duration, interest, transport and stop identifiers. QR-code generation loads an image from an external service and passes the itinerary link to that service for encoding."
+      "body": "Planifiko Vizitën mund të krijojë një lidhje të ndashme që përmban parametrat e itinerarit, si kohën, interesin, transportin, ndalesat dhe ndarjen sipas ditëve. Gjenerimi i QR Code ngarkon një imazh nga një shërbim i jashtëm duke i kaluar lidhjen e itinerarit për ta koduar.",
+      "bodyEn": "Plan Your Visit can create a shareable link containing itinerary parameters such as duration, interest, transport, stops and day grouping. QR-code generation loads an image from an external service and passes the itinerary link to that service for encoding."
     },
     {
       "_key": "cookies-6",
@@ -61,8 +61,8 @@
       "_key": "cookies-8",
       "heading": "Si t’i fshini ose rivendosni",
       "headingEn": "How to delete or reset storage",
-      "body": "Mund të fshini cookies dhe localStorage nga cilësimet e shfletuesit. Kjo mund të rivendosë Day/Night Mode, zgjedhjen e privatësisë, kujtesën e vlerësimeve dhe itinerarin e ruajtur. Pas fshirjes, disa preferenca duhet të zgjidhen përsëri.",
-      "bodyEn": "You can delete cookies and localStorage through your browser settings. This may reset Day/Night Mode, your privacy choice, rating memory and saved itinerary. After clearing storage, some preferences will need to be selected again."
+      "body": "Mund të fshini cookies dhe localStorage nga cilësimet e shfletuesit. Kjo mund të rivendosë Day/Night Mode, zgjedhjen e privatësisë dhe kujtesën e vlerësimeve. Pas fshirjes, disa preferenca duhet të zgjidhen përsëri.",
+      "bodyEn": "You can delete cookies and localStorage through your browser settings. This may reset Day/Night Mode, your privacy choice and rating memory. After clearing storage, some preferences will need to be selected again."
     },
     {
       "_key": "cookies-9",
