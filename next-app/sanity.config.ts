@@ -7,6 +7,7 @@ import { kulinari } from "./sanity/schemaTypes/kulinari";
 import { kulinariReview } from "./sanity/schemaTypes/kulinariReview";
 import { researcher } from "./sanity/schemaTypes/researcher";
 import { akomodim } from "./sanity/schemaTypes/akomodim";
+import { plannerTour } from "./sanity/schemaTypes/plannerTour";
 import { mapsCoordinatesPlugin } from "./sanity/mapsCoordinatesPlugin";
 
 export default defineConfig({
@@ -14,8 +15,8 @@ export default defineConfig({
   plugins: [mapsCoordinatesPlugin(), structureTool({structure:(S)=>S.list().title("Përmbajtja").items([
     ...Object.entries(pageDefinitions).map(([key,page])=>S.listItem().title(page.title).id(page.name).child(S.document().schemaType(page.name).documentId(`page-${key}`).title(page.title))),
     S.divider(),
-    ...S.documentTypeListItems().filter((item)=>["destinacion","kulinari","akomodim","kulinariReview","researcher"].includes(item.getId()||"")),
+    ...S.documentTypeListItems().filter((item)=>["destinacion","kulinari","akomodim","plannerTour","kulinariReview","researcher"].includes(item.getId()||"")),
   ])})],
   document:{newDocumentOptions:(options)=>options.filter((option)=>!pageSchemas.some((page)=>page.name===option.templateId)),actions:(actions,context)=>pageSchemas.some((page)=>page.name===context.schemaType)?actions.filter((action)=>!["delete","duplicate"].includes(action.action||"")):actions},
-  schema:{types:[destinacion,kulinari,akomodim,kulinariReview,researcher,...pageSchemas]},
+  schema:{types:[destinacion,kulinari,akomodim,plannerTour,kulinariReview,researcher,...pageSchemas]},
 });
