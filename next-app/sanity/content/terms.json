@@ -5,8 +5,8 @@
   "titleEn": "Terms & Conditions",
   "intro": "Këto kushte rregullojnë përdorimin e Lezha Turistike, përfshirë përmbajtjen turistike, Planifiko Vizitën, hartat interaktive dhe shërbimet e lidhura.",
   "introEn": "These terms govern use of Lezha Turistike, including tourism content, Plan Your Visit, interactive maps and related services.",
-  "updated": "Përditësuar: 24 shtator 2026",
-  "updatedEn": "Updated: 24 September 2026",
+  "updated": "Përditësuar: 26 shtator 2026",
+  "updatedEn": "Updated: 26 September 2026",
   "sections": [
     {
       "_key": "terms-1",
@@ -40,8 +40,8 @@
       "_key": "terms-5",
       "heading": "Ruajtja, ndarja dhe QR",
       "headingEn": "Saving, sharing and QR",
-      "body": "Itineraret mund të ruhen lokalisht në pajisjen tuaj, të ndahen përmes një lidhjeje ose të shfaqen si kod QR. Kushdo që merr një lidhje të ndarë mund të shohë parametrat e itinerarit të përfshirë në të. Mos përfshini ose ndani informacion personal apo sensitiv përmes emërtimit ose shpërndarjes së lidhjeve.",
-      "bodyEn": "Itineraries may be saved locally on your device, shared through a link or displayed as a QR code. Anyone who receives a shared link may see the itinerary parameters included in it. Do not include or share personal or sensitive information through itinerary links."
+      "body": "Itineraret mund të ndahen përmes një lidhjeje ose të shfaqen si kod QR. Kushdo që merr një lidhje të ndarë mund të shohë parametrat e itinerarit të përfshirë në të. Mos përfshini ose ndani informacion personal apo sensitiv përmes shpërndarjes së lidhjeve.",
+      "bodyEn": "Itineraries may be shared through a link or displayed as a QR code. Anyone who receives a shared link may see the itinerary parameters included in it. Do not include or share personal or sensitive information through shared itinerary links."
     },
     {
       "_key": "terms-6",
