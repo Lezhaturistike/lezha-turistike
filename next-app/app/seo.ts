@@ -30,7 +30,7 @@ export function pageMetadata(slug: keyof typeof seoPages, locale: "sq"|"en"): Me
   return {
     title, description,
     alternates:{canonical:url,languages:{"sq-AL":sq,"en":en,"x-default":sq}},
-    openGraph:{title,description,url,siteName:"Lezha Turistike",locale:locale==="en"?"en_US":"sq_AL",type:"website"},
-    twitter:{card:"summary_large_image",title,description},
+    openGraph:{title,description,url,siteName:"Lezha Turistike",locale:locale==="en"?"en_US":"sq_AL",alternateLocale:[locale==="en"?"sq_AL":"en_US"],type:"website",images:[{url:`${BASE}/opengraph-image`,width:1200,height:630,alt:"Lezha Turistike — Udhëzues digjital për Lezhën"}]},
+    twitter:{card:"summary_large_image",title,description,images:[`${BASE}/opengraph-image`]},
   };
 }
