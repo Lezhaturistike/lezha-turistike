@@ -8,6 +8,7 @@ const navigation = [
   ["destinacione", "Destinacione", "Destinations"],
   ["histori", "Histori & Arkeologji", "History & Archaeology"],
   ["kulinari", "Kulinari", "Cuisine"],
+  ["akomodim", "Akomodim", "Accommodation"],
   ["webgis", "Web GIS", "Web GIS"],
   ["galeri", "Galeri", "Gallery"],
   ["shkenca", "Punime shkencore", "Scientific research"],
