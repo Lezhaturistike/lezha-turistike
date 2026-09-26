@@ -25,7 +25,9 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   const t = ui[locale];
   const slides = content.heroSlides?.length ? content.heroSlides : [{_key:"default", image:content.src1, alt:content.alt2, caption:""}];
   const [slide, setSlide] = useState(0);
+  const [heroLoaded, setHeroLoaded] = useState(false);
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
+  useEffect(() => { setHeroLoaded(false); }, [slide]);
   const activeSlide = slides[slide] || slides[0];
 
   return (
@@ -37,7 +39,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
       <main id="home">
         {/* HERO */}
         <section className="hero reference-home-hero">
-          <Image key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fill priority sizes="100vw" style={{objectFit:"cover"}} />
+          <Image key={activeSlide._key || slide} className="hero-slide-image" src={activeSlide.image || content.src1} alt={activeSlide.alt || content.alt2} fill priority={slide===0} sizes="100vw" quality={82} onLoad={()=>setHeroLoaded(true)} style={{objectFit:"cover",opacity:heroLoaded?1:0,transition:"opacity .35s ease"}} />
 
           <div className="hero-shade"></div>
 
