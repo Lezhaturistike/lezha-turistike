@@ -521,3 +521,9 @@ html[data-theme="dark"] .plannerV2 .summaryCard .tourMetric>b{color:#d4b483}
 .selectedStop .removeStop:hover{transform:scale(1.08);background:#173d39;color:#fff}
 html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2;color:#edf5f2;border-color:#ffffff2e}
 @media(max-width:760px){.selectedStop .removeStop{right:9px;top:27px;width:27px;height:27px;font-size:17px}}
+
+/* Keep remove control visually inside the destination card */
+.selectedStop{overflow:visible}
+.selectedStop .removeStop{top:23px!important;right:6px!important;transform:none!important;box-sizing:border-box}
+.selectedStop>button:first-of-type{overflow:hidden}
+@media(max-width:760px){.selectedStop .removeStop{top:22px!important;right:6px!important}}
