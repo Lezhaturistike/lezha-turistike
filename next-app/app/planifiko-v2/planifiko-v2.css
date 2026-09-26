@@ -517,7 +517,7 @@ html[data-theme="dark"] .plannerV2 .summaryCard .tourMetric>b{color:#d4b483}
 /* deployment refresh: planner-v2 rollback trigger */
 
 /* Removable itinerary stops */
-.selectedStop .removeStop{position:absolute;z-index:8;right:7px;top:24px;width:24px;height:24px;border:1px solid #173d3924;border-radius:50%;background:#fffffff2;color:#173d39;display:grid;place-items:center;padding:0;font:700 16px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 5px 14px #163b3424;transition:transform .16s ease,background .16s ease}
+.selectedStop .removeStop{position:absolute;z-index:8;right:10px;top:28px;width:24px;height:24px;border:1px solid #173d3924;border-radius:50%;background:#fffffff2;color:#173d39;display:grid;place-items:center;padding:0;font:700 16px/1 Arial,sans-serif;cursor:pointer;box-shadow:0 5px 14px #163b3424;transition:transform .16s ease,background .16s ease}
 .selectedStop .removeStop:hover{transform:scale(1.08);background:#173d39;color:#fff}
 html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2;color:#edf5f2;border-color:#ffffff2e}
-@media(max-width:760px){.selectedStop .removeStop{right:6px;top:23px;width:27px;height:27px;font-size:17px}}
+@media(max-width:760px){.selectedStop .removeStop{right:9px;top:27px;width:27px;height:27px;font-size:17px}}
