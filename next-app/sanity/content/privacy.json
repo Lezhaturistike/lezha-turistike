@@ -5,8 +5,8 @@
   "titleEn": "Privacy Policy",
   "intro": "Kjo politikë shpjegon si Lezha Turistike trajton informacionin gjatë përdorimit të faqes dhe funksioneve të saj, përfshirë Planifiko Vizitën, hartat interaktive, vlerësimet dhe analitikën me pëlqim.",
   "introEn": "This policy explains how Lezha Turistike handles information when you use the website and its features, including Plan Your Visit, interactive maps, ratings and consent-based analytics.",
-  "updated": "Përditësuar: 24 shtator 2026",
-  "updatedEn": "Updated: 24 September 2026",
+  "updated": "Përditësuar: 26 shtator 2026",
+  "updatedEn": "Updated: 26 September 2026",
   "sections": [
     {
       "_key": "privacy-1",
@@ -19,8 +19,8 @@
       "_key": "privacy-2",
       "heading": "Planifiko Vizitën dhe itineraret",
       "headingEn": "Plan Your Visit and itineraries",
-      "body": "Funksioni “Planifiko Vizitën” përpunon zgjedhjet që bëni për kohën e vizitës, interesat, mënyrën e lëvizjes dhe ndalesat për të krijuar itinerarin. Kur zgjidhni “Ruaj”, itinerari ruhet në localStorage në pajisjen tuaj. Kur ndani itinerarin, parametrat e turit mund të përfshihen në URL. Funksioni QR përdor një shërbim të jashtëm për gjenerimin e kodit QR nga lidhja e itinerarit. Lezha Turistike nuk kërkon emër, email apo llogari për krijimin e një itinerari.",
-      "bodyEn": "The “Plan Your Visit” feature processes your choices for visit duration, interests, transport mode and stops to build an itinerary. When you choose “Save”, the itinerary is stored in localStorage on your device. When you share an itinerary, tour parameters may be included in the URL. The QR feature uses an external service to generate a QR code from the itinerary link. Lezha Turistike does not require a name, email or account to create an itinerary."
+      "body": "Funksioni “Planifiko Vizitën” përpunon zgjedhjet që bëni për kohën e vizitës, interesat, mënyrën e lëvizjes, pikënisjen dhe ndalesat për të krijuar itinerarin. Kur ndani itinerarin, parametrat e turit mund të përfshihen në URL. Funksioni QR përdor një shërbim të jashtëm për gjenerimin e kodit QR nga lidhja e itinerarit. Lezha Turistike nuk kërkon emër, email apo llogari për krijimin e një itinerari.",
+      "bodyEn": "The “Plan Your Visit” feature processes your choices for visit duration, interests, transport mode, starting point and stops to build an itinerary. When you share an itinerary, tour parameters may be included in the URL. The QR feature uses an external service to generate a QR code from the itinerary link. Lezha Turistike does not require a name, email or account to create an itinerary."
     },
     {
       "_key": "privacy-3",
@@ -54,8 +54,8 @@
       "_key": "privacy-7",
       "heading": "Ruajtja dhe siguria",
       "headingEn": "Retention and security",
-      "body": "Synojmë të kufizojmë të dhënat në atë që nevojitet për funksionimin, sigurinë, komunikimin, analitikën e pranuar dhe funksionet që kërkon vizitori. Të dhënat që kontrollohen drejtpërdrejt nga ne mbahen vetëm për aq kohë sa nevojiten për qëllimin përkatës ose sa kërkohet nga detyrimet ligjore. Të dhënat e ruajtura në localStorage qëndrojnë në pajisjen tuaj derisa t’i fshini ose derisa faqja/shfletuesi t’i zëvendësojë.",
-      "bodyEn": "We aim to limit data to what is necessary for operation, security, communication, consented analytics and visitor-requested functions. Data directly controlled by us is retained only as long as necessary for the relevant purpose or legal obligations. Data stored in localStorage remains on your device until you delete it or it is replaced by the website/browser."
+      "body": "Synojmë të kufizojmë të dhënat në atë që nevojitet për funksionimin, sigurinë, komunikimin, analitikën e pranuar dhe funksionet që kërkon vizitori. Të dhënat që kontrollohen drejtpërdrejt nga ne mbahen vetëm për aq kohë sa nevojiten për qëllimin përkatës ose sa kërkohet nga detyrimet ligjore. Preferencat e ruajtura në localStorage qëndrojnë në pajisjen tuaj derisa t’i fshini ose derisa faqja/shfletuesi t’i zëvendësojë.",
+      "bodyEn": "We aim to limit data to what is necessary for operation, security, communication, consented analytics and visitor-requested functions. Data directly controlled by us is retained only as long as necessary for the relevant purpose or legal obligations. Preferences stored in localStorage remain on your device until you delete them or they are replaced by the website/browser."
     },
     {
       "_key": "privacy-8",
