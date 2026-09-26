@@ -17,5 +17,6 @@ export default async function KulinariPage() {
       "reviewCount": count(*[_type == "kulinariReview" && place._ref == ^._id])
     }
   `);
-  return <KulinariClient kulinari={kulinari} />;
+  const jsonLd={"@context":"https://schema.org","@type":"ItemList",name:"Kulinari në Lezhë",itemListElement:kulinari.map((item:any,index:number)=>({"@type":"ListItem",position:index+1,item:{"@type":"Restaurant",name:item.titulli,description:item.pershkrimi,image:item.fotoUrl,address:item.adresa,telephone:item.telefoni,url:item.website}}))};
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd).replace(/</g,"\\u003c")}}/><KulinariClient kulinari={kulinari} /></>;
 }
