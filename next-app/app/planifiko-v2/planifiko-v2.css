@@ -527,3 +527,14 @@ html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2;color:#ed
 .selectedStop .removeStop{top:23px!important;right:6px!important;transform:none!important;box-sizing:border-box}
 .selectedStop>button:first-of-type{overflow:hidden}
 @media(max-width:760px){.selectedStop .removeStop{top:22px!important;right:6px!important}}
+
+/* Desktop usability: compact scrollable planner + remove control inside cards */
+.selectedStop>button{overflow:visible!important}
+.selectedStop .removeStop{position:absolute!important;z-index:12!important;top:8px!important;right:8px!important;width:24px!important;height:24px!important;border:1px solid #173d3924!important;border-radius:50%!important;background:#fffffff2!important;color:#173d39!important;display:grid!important;place-items:center!important;font:700 16px/1 Arial,sans-serif!important;box-shadow:0 4px 12px #163b3422!important;cursor:pointer!important}
+.selectedStop .removeStop:hover{background:#173d39!important;color:#fff!important}
+html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2!important;color:#edf5f2!important;border-color:#ffffff2e!important}
+@media(min-width:761px){
+ .plannerPanel{top:102px!important;bottom:28px!important;max-height:none!important;overflow-y:auto!important;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8da39d55 transparent}
+ .plannerPanel::-webkit-scrollbar{width:6px}.plannerPanel::-webkit-scrollbar-thumb{background:#8da39d66;border-radius:999px}
+}
+@media(max-width:760px){.selectedStop .removeStop{top:7px!important;right:7px!important;width:27px!important;height:27px!important}}
