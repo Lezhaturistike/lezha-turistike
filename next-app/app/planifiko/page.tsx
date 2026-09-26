@@ -2,19 +2,18 @@ import type {Metadata} from "next";
 import LocaleHeader from "@/app/components/LocaleHeader";
 import SiteFooter from "@/app/components/SiteFooter";
 import BackToTop from "@/app/components/BackToTop";
-import PlannerClient,{type PlannerPlace} from "./PlannerClient";
+import PlannerV2Client,{type PlannerPlace,type PlannerTheme} from "../planifiko-v2/PlannerV2Client";
 import {client} from "@/sanity/lib/client";
-import "./planifiko.css";
+import "../planifiko-v2/planifiko-v2.css";
 
-export const metadata: Metadata={title:"Planifiko vizitën | Lezha Turistike",description:"Ndërto një itinerar të personalizuar në Lezhë sipas kohës, interesave, ushqimit dhe akomodimit.",alternates:{canonical:"https://lezhaturistike.com/planifiko",languages:{"sq-AL":"https://lezhaturistike.com/planifiko","en":"https://lezhaturistike.com/en/planifiko","x-default":"https://lezhaturistike.com/planifiko"}}};
+export const metadata:Metadata={title:"Planifiko vizitën | Lezha Turistike",description:"Krijo guidën tënde digjitale në Lezhë sipas interesave, kohës dhe mënyrës së lëvizjes.",alternates:{canonical:"https://lezhaturistike.com/planifiko",languages:{"sq-AL":"https://lezhaturistike.com/planifiko","en":"https://lezhaturistike.com/en/planifiko","x-default":"https://lezhaturistike.com/planifiko"}}};
+const plannerQuery=`*[_type in ["destinacion","kulinari"] && defined(lokacioni.lat) && defined(lokacioni.lng)] | order(coalesce(plannerOrder,999) asc){
+"id":_id,"type":_type,"name":coalesce(titulli,emri),"kind":select(_type=="destinacion"=>coalesce(kategoria,"Destinacion"),_type=="kulinari"=>coalesce(kategoria,"Kulinari"),_type=="akomodim"=>coalesce(lloji,"Akomodim"),"Vend"),
+"desc":coalesce(pershkrimi,"Zbulo këtë vend gjatë vizitës në Lezhë."),"lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,
+"duration":coalesce(kohezgjatja,"1 orë"),"preferredTime":coalesce(momentiRekomanduar,"anytime"),"preferredTimeNote":oraRekomanduar,"openingTime":plannerOpeningTime,"closingTime":plannerClosingTime,plannerFeatured,"thematicTours":coalesce(plannerThematicTours,[]),"tags":array::compact(coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[zona,adresa])}`;
+const themesQuery=`*[_type=="plannerTour" && aktiv != false] | order(coalesce(renditja,999) asc){"id":_id,"name":titulli,"nameEn":titulliEn,"desc":pershkrimi,"descEn":pershkrimiEn,"interest":coalesce(interesi,"E kombinuar"),"places":ndalesat[]->{ "id":_id,"type":_type,"name":coalesce(titulli,emri),"kind":select(_type=="destinacion"=>coalesce(kategoria,"Destinacion"),_type=="kulinari"=>coalesce(kategoria,"Kulinari"),_type=="akomodim"=>coalesce(lloji,"Akomodim"),"Vend"),"desc":coalesce(pershkrimi,"Zbulo këtë vend gjatë vizitës në Lezhë."),"lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,"duration":coalesce(kohezgjatja,"1 orë"),plannerFeatured,"tags":coalesce(plannerTags,[])}}`;
+export default async function Page(){let places:PlannerPlace[]=[],themes:PlannerTheme[]=[];try{[places,themes]=await Promise.all([client.fetch(plannerQuery,{}, {next:{revalidate:60}}),client.fetch(themesQuery,{}, {next:{revalidate:60}})])}catch{}return <><LocaleHeader locale="sq" current="planifiko"/><main><PlannerV2Client cmsPlaces={places} cmsThemes={themes}/></main><BackToTop/><SiteFooter locale="sq"/></>}
 
-const plannerQuery=`*[_type in ["destinacion","kulinari","akomodim"] && defined(lokacioni.lat) && defined(lokacioni.lng)] | order(coalesce(plannerOrder,999) asc){
- "id":_id,"type":_type,"name":coalesce(titulli,emri),
- "kind":select(_type=="destinacion"=>coalesce(kategoria,"Destinacion"),_type=="kulinari"=>coalesce(kategoria,"Kulinari"),_type=="akomodim"=>coalesce(lloji,"Akomodim"),"Vend"),
- "desc":coalesce(pershkrimi,"Zbulo këtë vend gjatë vizitës në Lezhë."),
- "lat":lokacioni.lat,"lng":lokacioni.lng,"image":foto.asset->url,
- "duration":coalesce(kohezgjatja,"1 orë"),"time":coalesce(oraRekomanduar,"Sipas itinerarit"),plannerFeatured,
- "tags":array::compact(coalesce(plannerTags,[])+coalesce(searchKeywords,[])+[zona,adresa])
-}`;
 
-export default async function PlanifikoPage(){let places:PlannerPlace[]=[];try{places=await client.fetch(plannerQuery,{}, {next:{revalidate:60}})}catch{}return <><LocaleHeader locale="sq" current="planifiko"/><main id="home"><PlannerClient cmsPlaces={places}/></main><BackToTop/><SiteFooter locale="sq"/></>}
+
+
