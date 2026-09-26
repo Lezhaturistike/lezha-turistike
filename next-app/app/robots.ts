@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/studio/", "/api/"],
+      disallow: ["/studio/", "/api/", "/planifiko-v2", "/en/planifiko-v2"],
     },
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
