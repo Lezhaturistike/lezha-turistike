@@ -549,3 +549,10 @@ html[data-theme="dark"] .selectedStop .removeStop{background:#142522f2!important
   overscroll-behavior:contain!important;
  }
 }
+
+/* Lightweight manual itinerary order */
+.reorderControls{position:absolute;right:7px;bottom:7px;display:flex;gap:3px;z-index:10}
+.reorderBtn{width:22px;height:22px;border:1px solid #173d3920;border-radius:50%;background:#ffffffdc;color:#173d39;display:grid;place-items:center;font:800 18px/1 Arial,sans-serif;cursor:pointer}
+.reorderBtn:hover{background:#173d39;color:#fff}
+html[data-theme="dark"] .reorderBtn{background:#142522e8;color:#edf5f2;border-color:#ffffff2a}
+@media(max-width:760px){.reorderBtn{width:24px;height:24px}}
