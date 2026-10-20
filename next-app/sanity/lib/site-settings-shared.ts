@@ -5,6 +5,73 @@ export type SiteMenuItem = {
   labelEn: string;
   visible?: boolean;
 };
+export const defaultFooterText = {
+  "footerDescriptionLeadSq": "Një qytet për t’u zbuluar.",
+  "footerDescriptionLeadEn": "A city waiting to be discovered.",
+  "footerDescriptionBodySq": "Histori, natyrë dhe trashëgimi kulturore, të lidhura përmes hartave dhe rrëfimeve.",
+  "footerDescriptionBodyEn": "History, nature and cultural heritage connected through maps and stories.",
+  "footerLocationSq": "LEZHË · SHQIPËRI",
+  "footerLocationEn": "LEZHË · ALBANIA",
+  "footerExploreHeadingSq": "Eksploro",
+  "footerExploreHeadingEn": "Explore",
+  "footerContactHeadingSq": "Le të lidhemi",
+  "footerContactHeadingEn": "Let's connect",
+  "footerContactInfoSq": "Për informacion dhe bashkëpunime.",
+  "footerContactInfoEn": "For information and collaboration.",
+  "footerAddressLine1Sq": "Rruga e Kalasë",
+  "footerAddressLine1En": "Castle Road",
+  "footerAddressLine2Sq": "Lezhë, Shqipëri",
+  "footerAddressLine2En": "Lezhë, Albania",
+  "footerContactLinkLabelSq": "Na kontakto",
+  "footerContactLinkLabelEn": "Contact us",
+  "footerMottoSq": "Njih historinë. Eksploro natyrën. Zbulo Lezhën.",
+  "footerMottoEn": "Know the history. Explore nature. Discover Lezhë.",
+  "footerPrivacyLabelSq": "Privatësia",
+  "footerPrivacyLabelEn": "Privacy",
+  "footerTermsLabelSq": "Kushtet",
+  "footerTermsLabelEn": "Terms",
+  "footerCookiesLabelSq": "Cookie Policy",
+  "footerCookiesLabelEn": "Cookie Policy",
+  "footerDeveloperPrefixSq": "Developed by",
+  "footerDeveloperPrefixEn": "Developed by",
+  "footerDeveloperBold": "LINDI",
+  "footerDeveloperItalic": "MAPS",
+  "footerCopyrightOwner": "Lezha Turistike"
+} as const;
+export const footerTextFieldLabels: Record<keyof typeof defaultFooterText,string> = {
+  "footerDescriptionLeadSq": "Përshkrimi i shkurtër · Shqip",
+  "footerDescriptionLeadEn": "Përshkrimi i shkurtër · English",
+  "footerDescriptionBodySq": "Përshkrimi kryesor · Shqip",
+  "footerDescriptionBodyEn": "Përshkrimi kryesor · English",
+  "footerLocationSq": "Vendndodhja me shkronja kapitale · Shqip",
+  "footerLocationEn": "Vendndodhja me shkronja kapitale · English",
+  "footerExploreHeadingSq": "Titulli i navigimit · Shqip",
+  "footerExploreHeadingEn": "Titulli i navigimit · English",
+  "footerContactHeadingSq": "Titulli i kontaktit · Shqip",
+  "footerContactHeadingEn": "Titulli i kontaktit · English",
+  "footerContactInfoSq": "Teksti i kontaktit · Shqip",
+  "footerContactInfoEn": "Teksti i kontaktit · English",
+  "footerAddressLine1Sq": "Adresa – Rreshti 1 · Shqip",
+  "footerAddressLine1En": "Adresa – Rreshti 1 · English",
+  "footerAddressLine2Sq": "Adresa – Rreshti 2 · Shqip",
+  "footerAddressLine2En": "Adresa – Rreshti 2 · English",
+  "footerContactLinkLabelSq": "Butoni i kontaktit · Shqip",
+  "footerContactLinkLabelEn": "Butoni i kontaktit · English",
+  "footerMottoSq": "Motoja në fund · Shqip",
+  "footerMottoEn": "Motoja në fund · English",
+  "footerPrivacyLabelSq": "Etiketa Politika e Privatësisë · Shqip",
+  "footerPrivacyLabelEn": "Etiketa Privacy Policy · English",
+  "footerTermsLabelSq": "Etiketa Kushtet · Shqip",
+  "footerTermsLabelEn": "Etiketa Terms · English",
+  "footerCookiesLabelSq": "Etiketa Cookies · Shqip",
+  "footerCookiesLabelEn": "Etiketa Cookies · English",
+  "footerDeveloperPrefixSq": "Fraza e zhvilluesit · Shqip",
+  "footerDeveloperPrefixEn": "Fraza e zhvilluesit · English",
+  "footerDeveloperBold": "Emri i zhvilluesit – pjesa e parë (me shkronja të trasha)",
+  "footerDeveloperItalic": "Emri i zhvilluesit – pjesa e dytë (me shkronja të pjerrëta)",
+  "footerCopyrightOwner": "Emri i subjektit në Copyright (viti gjenerohet vetë)"
+};
+export type FooterText = {[K in keyof typeof defaultFooterText]: string};
 export type SiteSettings = {
   headerMenu: SiteMenuItem[];
   footerMenu: SiteMenuItem[];
@@ -16,7 +83,10 @@ export type SiteSettings = {
   showPlannerCta: boolean;
   plannerCtaSq: string;
   plannerCtaEn: string;
-};
+  footerContactTarget: string;
+  footerDeveloperUrl: string;
+  footerDeveloperVisible: boolean;
+} & FooterText;
 export const allowedMenuSlugs = [
   "home", "destinacione", "histori", "kulinari", "akomodim",
   "webgis", "galeri", "shkenca", "kontakt", "partneret",
@@ -30,6 +100,10 @@ export const defaultSiteSettings: SiteSettings = {
   showPlannerCta: true,
   plannerCtaSq: "Planifiko",
   plannerCtaEn: "Plan your visit",
+  footerContactTarget: "/kontakt",
+  footerDeveloperUrl: "https://lindimaps.com/",
+  footerDeveloperVisible: true,
+  ...defaultFooterText,
   headerMenu: [
     { _key: "home", slug: "home", labelSq: "Home", labelEn: "Home", visible: true },
     { _key: "destinacione", slug: "destinacione", labelSq: "Destinacione", labelEn: "Destinations", visible: true },

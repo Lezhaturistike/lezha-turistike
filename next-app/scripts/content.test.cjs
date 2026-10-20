@@ -123,3 +123,17 @@ test('one public contact email updates SQ/EN legal text without replacing resear
   assert.equal(resolveSiteContactEmail('Email studiuesi: ehoxha63@gmail.com',next),'Email studiuesi: ehoxha63@gmail.com');
   assert.equal(resolveSiteContactEmail('Pa adresë email',next),'Pa adresë email');
 });
+
+test('institutional footer has complete bilingual defaults and approved links', () => {
+  const {defaultSiteSettings,defaultFooterText,footerTextFieldLabels} = load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  for(const [field,value] of Object.entries(defaultFooterText)){
+    assert.ok(typeof value==='string' && value.trim(),field);
+    assert.equal(defaultSiteSettings[field],value);
+    assert.ok(footerTextFieldLabels[field]);
+  }
+  assert.equal(defaultSiteSettings.footerContactTarget,'/kontakt');
+  assert.equal(defaultSiteSettings.footerDeveloperUrl,'https://lindimaps.com/');
+  assert.equal(defaultSiteSettings.footerDeveloperVisible,true);
+  assert.equal(defaultSiteSettings.footerDeveloperBold,'LINDI');
+  assert.equal(defaultSiteSettings.footerDeveloperItalic,'MAPS');
+});

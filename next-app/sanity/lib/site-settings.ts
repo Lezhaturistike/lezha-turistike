@@ -1,6 +1,6 @@
 import "server-only";
 import {client} from "./client";
-import {allowedMenuSlugs,defaultSiteSettings,type SiteMenuItem,type SiteSettings} from "./site-settings-shared";
+import {allowedMenuSlugs,defaultSiteSettings,defaultFooterText,type FooterText,type SiteMenuItem,type SiteSettings} from "./site-settings-shared";
 
 const validSlugs=new Set<string>(allowedMenuSlugs);
 const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -32,6 +32,29 @@ function safeEmail(value:unknown,fallback:string){
 function safeImage(value:unknown){
   return typeof value==="string"&&imagePattern.test(value)?value:"";
 }
+const footerTargets=new Set(["/kontakt","/planifiko"]);
+function safeFooterTarget(value:unknown){
+  return typeof value==="string"&&footerTargets.has(value)?value:defaultSiteSettings.footerContactTarget;
+}
+function safeDeveloperUrl(value:unknown){
+  if(typeof value!=="string"||value.length>2048)return defaultSiteSettings.footerDeveloperUrl;
+  try{
+    const url=new URL(value);
+    if(url.protocol!=="https:"||!url.hostname||url.username||url.password)return defaultSiteSettings.footerDeveloperUrl;
+    return url.href;
+  }catch{return defaultSiteSettings.footerDeveloperUrl;}
+}
+function safeFooterText(input:Record<string,unknown>):FooterText{
+  const normalized={} as Record<keyof FooterText,string>;
+  for(const key of Object.keys(defaultFooterText) as Array<keyof FooterText>){
+    const value=input[key];
+    // Empty published values use the current label; a typo cannot silently erase the footer.
+    normalized[key]=typeof value==="string"&&value.trim()&&value.length<=1500
+      ? value
+      : defaultFooterText[key];
+  }
+  return normalized;
+}
 export async function getSiteSettings():Promise<SiteSettings>{
   try{
     const result=await client.fetch<Record<string,unknown>|null>(
@@ -41,11 +64,17 @@ export async function getSiteSettings():Promise<SiteSettings>{
         publicEmail,contactRecipientEmail,showPlannerCta,plannerCtaSq,plannerCtaEn,
         "headerLogoLight":headerLogoLight.asset->url,
         "headerLogoDark":headerLogoDark.asset->url,
-        "footerLogo":footerLogo.asset->url
+        "footerLogo":footerLogo.asset->url,
+        footerContactTarget,footerDeveloperUrl,footerDeveloperVisible,
+        footerDescriptionLeadSq,footerDescriptionLeadEn,footerDescriptionBodySq,footerDescriptionBodyEn,footerLocationSq,footerLocationEn,footerExploreHeadingSq,footerExploreHeadingEn,footerContactHeadingSq,footerContactHeadingEn,footerContactInfoSq,footerContactInfoEn,footerAddressLine1Sq,footerAddressLine1En,footerAddressLine2Sq,footerAddressLine2En,footerContactLinkLabelSq,footerContactLinkLabelEn,footerMottoSq,footerMottoEn,footerPrivacyLabelSq,footerPrivacyLabelEn,footerTermsLabelSq,footerTermsLabelEn,footerCookiesLabelSq,footerCookiesLabelEn,footerDeveloperPrefixSq,footerDeveloperPrefixEn,footerDeveloperBold,footerDeveloperItalic,footerCopyrightOwner
       }`,{}, {perspective:"published",cache:"no-store",timeout:7000}
     );
     if(!result)return defaultSiteSettings;
     return {
+      ...safeFooterText(result),
+      footerContactTarget:safeFooterTarget(result.footerContactTarget),
+      footerDeveloperUrl:safeDeveloperUrl(result.footerDeveloperUrl),
+      footerDeveloperVisible:result.footerDeveloperVisible!==false,
       headerMenu:safeMenu(result.headerMenu,defaultSiteSettings.headerMenu),
       footerMenu:safeMenu(result.footerMenu,defaultSiteSettings.footerMenu),
       publicEmail:safeEmail(result.publicEmail,defaultSiteSettings.publicEmail),

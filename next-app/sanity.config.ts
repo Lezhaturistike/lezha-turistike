@@ -14,7 +14,7 @@ import {siteSettingsSchema} from "./sanity/schemaTypes/siteSettings";
 export default defineConfig({
   name: "default", title: "Lezha Turistike", basePath: "/studio", projectId: "ko1ud3ml", dataset: "production",
   plugins: [mapsCoordinatesPlugin(), structureTool({structure:(S)=>S.list().title("Përmbajtja").items([
-    S.listItem().title("Konfigurimi i faqes · Logo, menu, email").id("site-settings").child(S.document().schemaType("siteSettings").documentId("site-settings").title("Konfigurimi i faqes")),
+    S.listItem().title("Konfigurimi i faqes · Logo, menu, email, footer").id("site-settings").child(S.document().schemaType("siteSettings").documentId("site-settings").title("Konfigurimi i faqes")),
     S.divider(),
     ...Object.entries(pageDefinitions).map(([key,page])=>S.listItem().title(page.title).id(page.name).child(S.document().schemaType(page.name).documentId(`page-${key}`).title(page.title))),
     S.divider(),

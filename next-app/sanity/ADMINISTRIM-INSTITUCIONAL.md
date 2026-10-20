@@ -46,3 +46,20 @@ Lidhjet `mailto:` përditësohen bashkë me email-in e shfaqur. Shndërrimi prek
 
 ### Për dërgimin e mesazheve
 `Email-i pritës i formularit` është **fushë tjetër** për siguri dhe privatësi. Vlera do të pranohet vetëm nëse është në `CONTACT_ALLOWED_RECIPIENTS` të serverit. `CONTACT_TO_EMAIL` ka përparësi mbi CMS. Dërguesi teknik `kontakt@lezhaturistike.com` kërkon verifikim të domain-it në Resend dhe nuk ndryshohet automatikisht.
+
+## Administrimi i plotë i Footer-it
+
+Në Studio hapni **Konfigurimi i faqes → Administrimi i Footer-it** (tab i veçantë brenda dokumentit).
+Mund të ndryshoni logon, lidhjet dhe renditjen e menusë së footer-it, email-in publik,
+titujt e navigimit dhe kontaktit, përshkrimet kryesore, adresën, vendndodhjen, moton,
+tekstet e butonit të kontaktit, etiketat ligjore dhe pjesën e copyright/zhvilluesit.
+Fushat me emërtim *Sq/En* kontrollojnë tekstin në gjuhën përkatëse.
+
+- Butoni i kontaktit zgjedh midis faqes Kontakt dhe Planifiko; nuk pranon linke të pakontrolluara.
+- URL e zhvilluesit pranon vetëm HTTPS dhe hapet në një skedë të re.
+- Viti i copyright-it përditësohet automatikisht; emri i titullarit është i ndryshueshëm.
+- Nëse mungon një fushë në dokumentin Sanity, përdoret **përmbajtja ekzistuese** e faqes.
+- Lidhjet Privatësia, Kushtet, Cookies mbeten gjithmonë të aksesueshme; mund të ndryshohen etiketat e tyre, por jo rrugët.
+- Opsioni për të fshehur kreditin e zhvilluesit duhet përdorur vetëm pas verifikimit të të drejtave dhe marrëveshjeve të atribuimit.
+- Email-i publik është i përbashkët me faqet ligjore dhe ndjek një burim të vetëm; email-i pritës i formularit është i veçantë për arsye sigurie.
+- Për siguri, ruani dokumentin dhe testoni paraprakisht pamjet Light/Dark, SQ/EN dhe mobile përpara dorëzimit zyrtar.
