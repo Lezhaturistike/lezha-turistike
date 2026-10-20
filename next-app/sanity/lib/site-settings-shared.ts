@@ -80,6 +80,8 @@ export type SiteSettings = {
   headerLogoLight: string;
   headerLogoDark: string;
   footerLogo: string;
+  cookieLogo: string;
+  faviconImage: string;
   showPlannerCta: boolean;
   plannerCtaSq: string;
   plannerCtaEn: string;
@@ -97,6 +99,8 @@ export const defaultSiteSettings: SiteSettings = {
   headerLogoLight: "",
   headerLogoDark: "",
   footerLogo: "",
+  cookieLogo: "",
+  faviconImage: "",
   showPlannerCta: true,
   plannerCtaSq: "Planifiko",
   plannerCtaEn: "Plan your visit",
@@ -140,4 +144,9 @@ export function menuItemPath(slug: string): string {
 export function resolveSiteContactEmail(value: string, publicEmail: string): string {
   if (typeof value !== "string" || typeof publicEmail !== "string") return value;
   return value.replace(/(?:lezhaturistike|lezhalezha2024)@gmail\.com/gi, publicEmail);
+}
+
+/** Use a dedicated cookie logo if present; otherwise follow the CMS brand. */
+export function cookieBrandImage(settings:Pick<SiteSettings,"cookieLogo"|"headerLogoDark"|"headerLogoLight"|"footerLogo">):string{
+  return settings.cookieLogo || settings.headerLogoDark || settings.footerLogo || settings.headerLogoLight || "";
 }

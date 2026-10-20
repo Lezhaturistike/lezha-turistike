@@ -65,6 +65,8 @@ export async function getSiteSettings():Promise<SiteSettings>{
         "headerLogoLight":headerLogoLight.asset->url,
         "headerLogoDark":headerLogoDark.asset->url,
         "footerLogo":footerLogo.asset->url,
+        "cookieLogo":cookieLogo.asset->url,
+        "faviconImage":faviconImage.asset->url,
         footerContactTarget,footerDeveloperUrl,footerDeveloperVisible,
         footerDescriptionLeadSq,footerDescriptionLeadEn,footerDescriptionBodySq,footerDescriptionBodyEn,footerLocationSq,footerLocationEn,footerExploreHeadingSq,footerExploreHeadingEn,footerContactHeadingSq,footerContactHeadingEn,footerContactInfoSq,footerContactInfoEn,footerAddressLine1Sq,footerAddressLine1En,footerAddressLine2Sq,footerAddressLine2En,footerContactLinkLabelSq,footerContactLinkLabelEn,footerMottoSq,footerMottoEn,footerPrivacyLabelSq,footerPrivacyLabelEn,footerTermsLabelSq,footerTermsLabelEn,footerCookiesLabelSq,footerCookiesLabelEn,footerDeveloperPrefixSq,footerDeveloperPrefixEn,footerDeveloperBold,footerDeveloperItalic,footerCopyrightOwner
       }`,{}, {perspective:"published",cache:"no-store",timeout:7000}
@@ -82,6 +84,8 @@ export async function getSiteSettings():Promise<SiteSettings>{
       headerLogoLight:safeImage(result.headerLogoLight),
       headerLogoDark:safeImage(result.headerLogoDark),
       footerLogo:safeImage(result.footerLogo),
+      cookieLogo:safeImage(result.cookieLogo),
+      faviconImage:safeImage(result.faviconImage),
       showPlannerCta:result.showPlannerCta!==false,
       plannerCtaSq:typeof result.plannerCtaSq==="string"&&result.plannerCtaSq.trim()?result.plannerCtaSq:defaultSiteSettings.plannerCtaSq,
       plannerCtaEn:typeof result.plannerCtaEn==="string"&&result.plannerCtaEn.trim()?result.plannerCtaEn:defaultSiteSettings.plannerCtaEn,

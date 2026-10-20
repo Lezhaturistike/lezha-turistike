@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: { default: "Lezha Turistike | Destinacione, histori dhe trashëgimi", template: "%s | Lezha Turistike" },
   description: "Eksploro Lezhën përmes destinacioneve, historisë, arkeologjisë, kulinarisë, Web GIS dhe kërkimit shkencor.",
   applicationName: "Lezha Turistike",
+  icons: {icon:[{url:"/api/site-icon",sizes:"any"}]},
   alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "sq_AL", alternateLocale: ["en_US"], siteName: "Lezha Turistike", url: "https://lezhaturistike.com", title: "Lezha Turistike | Destinacione, histori dhe trashëgimi", description: "Eksploro Lezhën përmes destinacioneve, historisë, arkeologjisë, kulinarisë, Web GIS dhe kërkimit shkencor.", images: [{url:"/opengraph-image",width:1200,height:630,alt:"Lezha Turistike — Udhëzues digjital për Lezhën"}] },
   twitter: { card: "summary_large_image", title: "Lezha Turistike", description: "Destinacione, histori, arkeologji, kulinari, Web GIS dhe kërkim shkencor në Lezhë.", images:["/opengraph-image"] },

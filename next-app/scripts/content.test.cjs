@@ -137,3 +137,13 @@ test('institutional footer has complete bilingual defaults and approved links', 
   assert.equal(defaultSiteSettings.footerDeveloperBold,'LINDI');
   assert.equal(defaultSiteSettings.footerDeveloperItalic,'MAPS');
 });
+
+test('cookie consent uses dedicated logo or current brand fallback',()=>{
+  const {cookieBrandImage,defaultSiteSettings}=load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  assert.equal(cookieBrandImage(defaultSiteSettings),'');
+  const logo='https://cdn.sanity.io/images/project/production/logo.png';
+  assert.equal(cookieBrandImage({...defaultSiteSettings,headerLogoDark:logo}),logo);
+  assert.equal(cookieBrandImage({...defaultSiteSettings,headerLogoDark:logo,cookieLogo:'https://cdn.sanity.io/images/project/production/cookie.png'}),'https://cdn.sanity.io/images/project/production/cookie.png');
+  assert.equal(cookieBrandImage({...defaultSiteSettings,footerLogo:logo}),logo);
+  assert.equal(defaultSiteSettings.faviconImage,'');
+});

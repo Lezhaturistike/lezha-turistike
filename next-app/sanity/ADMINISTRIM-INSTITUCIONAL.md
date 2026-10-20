@@ -63,3 +63,13 @@ Fushat me emërtim *Sq/En* kontrollojnë tekstin në gjuhën përkatëse.
 - Opsioni për të fshehur kreditin e zhvilluesit duhet përdorur vetëm pas verifikimit të të drejtave dhe marrëveshjeve të atribuimit.
 - Email-i publik është i përbashkët me faqet ligjore dhe ndjek një burim të vetëm; email-i pritës i formularit është i veçantë për arsye sigurie.
 - Për siguri, ruani dokumentin dhe testoni paraprakisht pamjet Light/Dark, SQ/EN dhe mobile përpara dorëzimit zyrtar.
+
+## Logo e Cookies dhe Favicon nga Sanity
+
+Në **Konfigurimi i faqes → Pamja dhe menuja**:
+- `Logo te shiriti Cookies`: imazh transparent i përshtatur për sfond të errët. Nëse lihet bosh, përdoret automatikisht logoja Dark e header-it, ose logoja e footer-it, ose logoja Light. Në mungesë të të gjithave, shfaqet logoja aktuale me kalanë dhe shkrimin LEZHA TURISTIKE. Simboli i vjetër "L✦" nuk përdoret më.
+- `Favicon · Ikona e shfletuesit`: rekomandohet imazh katror PNG ose WebP, 512×512 px. Pa imazh të ngarkuar kthehet **SVG-ja ekzistuese e kalasë**.
+- Endpoint `/api/site-icon` e lexon vlerën e publikuar nga Sanity dhe kthen favicon-in për të dyja gjuhët. HTML përdor `/api/site-icon` në vend të ikonës statike `app/icon.svg`.
+- Përditësimet e favicon-it nga CMS nuk kërkojnë deploy. Browser-at dhe Google mund ta mbajnë ikonën e vjetër në cache për një periudhë.
+- Ndryshimi i favicon-it nuk ndryshon automatikisht posterin OpenGraph/social share ose ikonat e llogarive të rrjeteve sociale. Për ato kërkohet konfigurim i veçantë.
+- Ndryshimet për admin janë të disponueshme fillimisht vetëm në Preview, pasi të kalojë build-i. Mos publikoni të dhëna testimi në Sanity `production` pa backup.

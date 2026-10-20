@@ -1,6 +1,9 @@
 "use client";
 
 import Script from "next/script";
+import Image from "next/image";
+import {useSiteSettings} from "./SiteSettingsProvider";
+import {cookieBrandImage} from "@/sanity/lib/site-settings-shared";
 import {useEffect, useState} from "react";
 
 const GA_ID = "G-5FMBPFYTNX";
@@ -15,6 +18,8 @@ declare global {
 }
 
 export default function AnalyticsConsent(){
+  const settings=useSiteSettings();
+  const brandImage=cookieBrandImage(settings);
   const [consent,setConsent]=useState<Consent>(null);
   const [ready,setReady]=useState(false);
 
@@ -75,7 +80,16 @@ export default function AnalyticsConsent(){
 
     {ready && consent===null && <div className="lt-consent-wrap">
       <div className="lt-consent-card" role="dialog" aria-modal="false" aria-label="Preferencat e privatësisë" aria-live="polite">
-        <div className="lt-consent-icon" aria-hidden="true">L<span>✦</span></div>
+        <div className="lt-consent-brand" role="img" aria-label="Lezha Turistike">
+          {brandImage ? (
+            <Image src={brandImage} width={160} height={64} alt="" unoptimized />
+          ) : (
+            <>
+              <span className="logo-mark logo-castle" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span className="lt-consent-wordmark">LEZHA<b>TURISTIKE</b></span>
+            </>
+          )}
+        </div>
         <div className="lt-consent-copy">
           <span className="lt-consent-kicker">PRIVATËSIA & ANALITIKA</span>
           <strong>Ju zgjidhni si përdoren të dhënat.</strong>
@@ -93,8 +107,11 @@ export default function AnalyticsConsent(){
     <style jsx>{`
       .lt-consent-wrap{position:fixed;z-index:99999;left:0;right:0;bottom:0;padding:20px clamp(18px,4vw,54px);pointer-events:none}
       .lt-consent-card{pointer-events:auto;max-width:1240px;margin:0 auto;background:#102d2d;color:#f5f6f1;border:1px solid rgba(237,189,133,.36);box-shadow:0 18px 60px rgba(5,25,24,.28);display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:22px;padding:22px 24px}
-      .lt-consent-icon{width:48px;height:48px;border-radius:50%;background:#edbd85;color:#153b38;display:grid;place-items:center;font:400 27px Georgia,serif;position:relative;flex:none}
-      .lt-consent-icon span{position:absolute;right:7px;top:5px;font:700 8px Arial,sans-serif}
+      .lt-consent-brand{width:155px;max-width:100%;display:flex;align-items:center;gap:8px;color:#f5f6f1;min-height:48px;flex:none}
+      .lt-consent-brand :global(.logo-mark.logo-castle){flex:none;color:#f5f6f1;background:transparent}
+      .lt-consent-wordmark{display:flex;flex-direction:column;gap:4px;line-height:1;letter-spacing:.12em;font-size:11px;font-weight:700}
+      .lt-consent-wordmark b{font-size:11px;font-weight:800}
+      .lt-consent-brand :global(img){max-width:155px;height:auto;max-height:62px;width:auto;object-fit:contain;object-position:left center}
       .lt-consent-copy{min-width:0}
       .lt-consent-kicker{display:block;color:#edbd85;font-size:10px;font-weight:800;letter-spacing:.16em;margin-bottom:5px}
       .lt-consent-copy strong{display:block;font-size:17px;letter-spacing:-.02em;margin-bottom:5px}
@@ -114,8 +131,11 @@ export default function AnalyticsConsent(){
       .lt-consent-primary>span{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:16px}
       @media(max-width:760px){
         .lt-consent-wrap{padding:12px}
-        .lt-consent-card{grid-template-columns:40px 1fr;gap:12px;padding:17px;border-radius:2px}
-        .lt-consent-icon{width:40px;height:40px;font-size:23px;align-self:start}
+        .lt-consent-card{grid-template-columns:98px minmax(0,1fr);gap:12px;padding:17px;border-radius:2px}
+        .lt-consent-brand{width:98px;gap:5px;align-self:start}
+        .lt-consent-brand :global(.logo-mark.logo-castle){transform:scale(.72);transform-origin:left center;margin-right:-9px}
+        .lt-consent-wordmark,.lt-consent-wordmark b{font-size:8px}
+        .lt-consent-brand :global(img){max-width:98px;max-height:46px}
         .lt-consent-copy strong{font-size:15px}
         .lt-consent-copy p{font-size:11.5px;line-height:1.48}
         .lt-consent-copy .lt-consent-en{display:none}
@@ -125,8 +145,10 @@ export default function AnalyticsConsent(){
         .lt-consent-actions button{min-height:46px}
       }
       @media(max-width:390px){
-        .lt-consent-icon{display:none}
-        .lt-consent-card{grid-template-columns:1fr;padding:15px}
+        .lt-consent-card{grid-template-columns:82px minmax(0,1fr);padding:15px}
+        .lt-consent-brand{width:82px;gap:2px}
+        .lt-consent-wordmark,.lt-consent-wordmark b{font-size:7px}
+        .lt-consent-brand :global(img){max-width:82px}
         .lt-consent-actions{grid-column:1}
       }
     `}</style>
