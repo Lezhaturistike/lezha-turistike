@@ -201,3 +201,40 @@ test('CMS bootstrap does not publish a draft implicitly',()=>{
   assert.ok(!Object.hasOwn(draft.values,'footerContactHeadingSq'));
   assert.ok(plan.some(x=>x.id==='page-home'&&x.action==='create'));
 });
+
+test('submenu fields are optional; existing navigation defaults contain no submenu items',()=>{
+  const {defaultSiteSettings,safeSubMenuHref} = load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  assert.ok(defaultSiteSettings.headerMenu.every(item=>!item.subMenu?.length));
+  assert.equal(safeSubMenuHref('/histori#arkeologji'),'/histori#arkeologji');
+  assert.equal(safeSubMenuHref('/webgis?view=3d'),'/webgis?view=3d');
+  assert.equal(safeSubMenuHref('https://example.org/'), 'https://example.org/');
+  for(const value of ['javascript:alert(1)','//other.site','/../admin','/a\\\\b','http://example.org','https://user:pass@example.org']){
+    assert.equal(safeSubMenuHref(value),null,value);
+  }
+});
+test('published submenu values keep safe SQ/EN links and ignore invisible/unsafe links',async()=>{
+  const shared=load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  const item={slug:'histori',labelSq:'Histori',labelEn:'History',visible:true,
+    subMenu:[
+      {_key:'a',labelSq:'Arkeologji',labelEn:'Archaeology',href:'/histori#arkeologji',visible:true},
+      {_key:'b',labelSq:'Fshehur',labelEn:'Hidden',href:'/histori#secret',visible:false},
+      {_key:'c',labelSq:'Gabim',labelEn:'Invalid',href:'javascript:alert(1)',visible:true}
+    ]};
+  const {getSiteSettings}=load(path.join(root,'sanity/lib/site-settings.ts'),{
+    'server-only':{},'./site-settings-shared':shared,
+    './client':{client:{fetch:async()=>({headerMenu:[item]})}},
+  });
+  const settings=plain(await getSiteSettings());
+  assert.equal(settings.headerMenu.length,1);
+  assert.equal(settings.headerMenu[0].subMenu.length,2);
+  assert.equal(settings.headerMenu[0].subMenu[0].href,'/histori#arkeologji');
+  assert.equal(settings.headerMenu[0].subMenu[1].visible,false);
+  assert.equal(plain(shared.defaultSiteSettings.headerMenu).every(entry=>!entry.subMenu),true);
+  const {localizedPath}=load(path.join(root,'sanity/lib/localize.ts'));
+  assert.equal(localizedPath(settings.headerMenu[0].subMenu[0].href,'en'),'/en/histori#arkeologji');
+});
+test('mobile navigation closes on real links rather than submenu toggle buttons',()=>{
+  const source=fs.readFileSync(path.join(root,'app/components/MenuButton.tsx'),'utf8');
+  assert.match(source,/closest\("a"\)/);
+  assert.match(source,/addEventListener\("click", closeOnNavigation\)/);
+});
