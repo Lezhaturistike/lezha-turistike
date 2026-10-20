@@ -10,9 +10,11 @@ import { akomodim } from "./sanity/schemaTypes/akomodim";
 import { plannerTour } from "./sanity/schemaTypes/plannerTour";
 import { mapsCoordinatesPlugin } from "./sanity/mapsCoordinatesPlugin";
 import {siteSettingsSchema} from "./sanity/schemaTypes/siteSettings";
+import BootstrapCurrentValuesTool from "./sanity/BootstrapCurrentValuesTool";
 
 export default defineConfig({
   name: "default", title: "Lezha Turistike", basePath: "/studio", projectId: "ko1ud3ml", dataset: "production",
+  tools:[{name:"mbush-vlerat",title:"Mbush vlerat aktuale",component:BootstrapCurrentValuesTool}],
   plugins: [mapsCoordinatesPlugin(), structureTool({structure:(S)=>S.list().title("Përmbajtja").items([
     S.listItem().title("Konfigurimi i faqes · Logo, menu, email, footer").id("site-settings").child(S.document().schemaType("siteSettings").documentId("site-settings").title("Konfigurimi i faqes")),
     S.divider(),
