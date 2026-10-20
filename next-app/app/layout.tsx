@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import AnalyticsConsent from "./components/AnalyticsConsent";
+import {SiteSettingsProvider} from "./components/SiteSettingsProvider";
+import {getSiteSettings} from "@/sanity/lib/site-settings";
 import "./globals.css";
 import "./modern-ui.css";
 
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
 
 const websiteJsonLd = { "@context": "https://schema.org", "@type": "WebSite", "@id": "https://lezhaturistike.com/#website", url: "https://lezhaturistike.com/", name: "Lezha Turistike", alternateName: "Lezha Tourism", description: "Platformë digjitale për eksplorimin e destinacioneve, historisë, arkeologjisë, kulinarisë, Web GIS dhe kërkimit shkencor në Lezhë.", inLanguage: ["sq", "en"] };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
-  return <html lang="sq" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col"><script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c")}} />{children}<AnalyticsConsent /></body></html>;
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const settings=await getSiteSettings();
+  return <html lang="sq" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}><body className="min-h-full flex flex-col"><script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(websiteJsonLd).replace(/</g, "\\u003c")}} /><SiteSettingsProvider settings={settings}>{children}</SiteSettingsProvider><AnalyticsConsent /></body></html>;
 }

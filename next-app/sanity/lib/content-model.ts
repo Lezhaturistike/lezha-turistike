@@ -45,6 +45,8 @@ export function normalizeContent(
               : `${field.name}-${index}`,
           ...normalizeContent(field.fields || [], item, {}),
         }));
+    } else if (field.type === "boolean") {
+      result[field.name] = typeof value === "boolean" ? value : (typeof fallback[field.name] === "boolean" ? fallback[field.name] : true);
     } else {
       let text =
         typeof value === "string" ? value : (fallback[field.name] ?? "");

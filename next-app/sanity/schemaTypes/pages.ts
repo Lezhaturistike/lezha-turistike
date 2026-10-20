@@ -62,6 +62,7 @@ function schemaField(field: FieldDefinition): SanityField {
       description:
         "Ngarkoni një foto për ta zëvendësuar. Fotografia origjinale ruhet gjatë migrimit.",
     });
+  if (field.type === "boolean") return defineField({...base,type:"boolean",initialValue:true});
   if (field.type === "url")
     return defineField({
       ...base,

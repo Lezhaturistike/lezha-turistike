@@ -244,8 +244,103 @@
             "name": "url",
             "title": "Lidhja",
             "type": "url"
+          },
+          {
+            "name": "visible",
+            "title": "Shfaq kartën",
+            "type": "boolean"
           }
         ]
+      },
+      {
+        "name": "heroWelcome",
+        "title": "Hero – Mirëseardhja (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroWelcomeEn",
+        "title": "Hero – Welcome (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroTitle",
+        "title": "Hero – Titulli kryesor (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroTitleEn",
+        "title": "Hero – Main title (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSubtitle",
+        "title": "Hero – Nëntitulli (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroSubtitleEn",
+        "title": "Hero – Subtitle (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroDescription",
+        "title": "Hero – Përshkrimi (SQ)",
+        "type": "text"
+      },
+      {
+        "name": "heroDescriptionEn",
+        "title": "Hero – Description (EN)",
+        "type": "text"
+      },
+      {
+        "name": "heroPrimaryLabel",
+        "title": "Hero – Butoni kryesor (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroPrimaryLabelEn",
+        "title": "Hero – Primary button (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryLabel",
+        "title": "Hero – Butoni i dytë (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryLabelEn",
+        "title": "Hero – Secondary button (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryUrl",
+        "title": "Hero – Lidhja e butonit të dytë",
+        "type": "url"
+      },
+      {
+        "name": "heroThumb1",
+        "title": "Hero – Foto e vogël 1",
+        "type": "image"
+      },
+      {
+        "name": "heroThumb2",
+        "title": "Hero – Foto e vogël 2",
+        "type": "image"
+      },
+      {
+        "name": "heroThumb3",
+        "title": "Hero – Foto e vogël 3",
+        "type": "image"
+      },
+      {
+        "name": "showQuickLinks",
+        "title": "Shfaq lidhjet e shpejta",
+        "type": "boolean"
+      },
+      {
+        "name": "showDirectory",
+        "title": "Shfaq kartat e rubrikave",
+        "type": "boolean"
       }
     ]
   },
