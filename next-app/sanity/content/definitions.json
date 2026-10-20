@@ -318,19 +318,85 @@
         "type": "url"
       },
       {
-        "name": "heroThumb1",
-        "title": "Hero – Foto e vogël 1",
-        "type": "image"
-      },
-      {
-        "name": "heroThumb2",
-        "title": "Hero – Foto e vogël 2",
-        "type": "image"
-      },
-      {
-        "name": "heroThumb3",
-        "title": "Hero – Foto e vogël 3",
-        "type": "image"
+        "name": "heroCircles",
+        "title": "Tre fotografitë rrethore · Zgjidh faqet",
+        "type": "array",
+        "min": 3,
+        "max": 3,
+        "fields": [
+          {
+            "name": "image",
+            "title": "Fotografia rrethore",
+            "type": "image"
+          },
+          {
+            "name": "page",
+            "title": "Faqja që do të hapet kur klikohet",
+            "type": "string",
+            "options": {
+              "list": [
+                {
+                  "title": "Faqja kryesore",
+                  "value": "/"
+                },
+                {
+                  "title": "Destinacione",
+                  "value": "/destinacione"
+                },
+                {
+                  "title": "Histori & Arkeologji",
+                  "value": "/histori"
+                },
+                {
+                  "title": "Kulinari",
+                  "value": "/kulinari"
+                },
+                {
+                  "title": "Akomodim",
+                  "value": "/akomodim"
+                },
+                {
+                  "title": "Web GIS",
+                  "value": "/webgis"
+                },
+                {
+                  "title": "Galeri",
+                  "value": "/galeri"
+                },
+                {
+                  "title": "Punime shkencore",
+                  "value": "/shkenca"
+                },
+                {
+                  "title": "Kontakt",
+                  "value": "/kontakt"
+                },
+                {
+                  "title": "Planifiko vizitën",
+                  "value": "/planifiko"
+                },
+                {
+                  "title": "Partnerët (te Punime shkencore)",
+                  "value": "/shkenca#partneret"
+                },
+                {
+                  "title": "Arkeologji (te Histori)",
+                  "value": "/histori#arkeologji"
+                }
+              ]
+            }
+          },
+          {
+            "name": "label",
+            "title": "Përshkrimi i fotos (SQ)",
+            "type": "string"
+          },
+          {
+            "name": "labelEn",
+            "title": "Photo description (EN)",
+            "type": "string"
+          }
+        ]
       },
       {
         "name": "showQuickLinks",

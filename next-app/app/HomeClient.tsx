@@ -29,6 +29,19 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
   useEffect(() => { setHeroLoaded(false); }, [slide]);
   const activeSlide = slides[slide] || slides[0];
+  const circlePages = new Set([
+    "/", "/destinacione", "/histori", "/kulinari", "/akomodim",
+    "/webgis", "/galeri", "/shkenca", "/kontakt", "/planifiko",
+    "/shkenca#partneret", "/histori#arkeologji",
+  ]);
+  // Old Sanity documents may still hold empty image fields. Always keep three visible.
+  const circles = (content.heroCircles?.length === 3 ? content.heroCircles : defaults.heroCircles)
+    .map((item, i) => ({
+      key: item._key || defaults.heroCircles[i]._key,
+      image: item.image || defaults.heroCircles[i].image,
+      page: circlePages.has(item.page) ? item.page : defaults.heroCircles[i].page,
+      label: item.label || defaults.heroCircles[i].label,
+    }));
 
   return (
     <>
@@ -62,10 +75,17 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             </div>
 
             <div className="hero-plan-strip" aria-label={locale === "en" ? "Plan your visit" : "Planifiko vizitën"}>
-              <div className="hero-plan-thumbs" aria-hidden="true">
-                <span><Image src={content.heroThumb1} alt="" fill sizes="44px" /></span>
-                <span><Image src={content.heroThumb2} alt="" fill sizes="44px" /></span>
-                <span><Image src={content.heroThumb3} alt="" fill sizes="44px" /></span>
+              <div className="hero-plan-thumbs" aria-label={locale === "en" ? "Explore featured pages" : "Eksploro rubrikat e përzgjedhura"}>
+                {circles.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={localizedPath(item.page, locale)}
+                    aria-label={item.label}
+                    title={item.label}
+                  >
+                    <Image src={item.image} alt="" fill sizes="44px" />
+                  </Link>
+                ))}
               </div>
               <span className="hero-plan-divider" aria-hidden="true"></span>
               <span className="hero-plan-copy">{locale === "en" ? <>Plan your visit<br/>to Lezhë</> : <>Planifiko vizitën<br/>tënde në Lezhë</>}</span>

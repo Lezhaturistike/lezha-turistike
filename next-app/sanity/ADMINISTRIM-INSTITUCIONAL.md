@@ -19,3 +19,15 @@ Në dokumentin Faqja kryesore mund të ndryshohen tekstet e Hero, titujt SQ/EN, 
 ## Pranimi
 
 Para integrimit në main: `npm run build`, `npm test`, `npm run lint`, krahasim vizual pa konfigurim CMS, testim SQ/EN, Light/Dark/mobile, test menuje, testim email-i me adresë të miratuar dhe backup të Sanity. Nuk kryhet publikimi pa miratim.
+
+## Tre fotografitë rrethore në Hero
+
+Studio > **Faqja kryesore** > **Tre fotografitë rrethore · Zgjidh faqet**.
+Ky është një grup me saktësisht **3** elemente. Për çdo element:
+1. Ngarko fotografinë nga Sanity (fusha **Fotografia rrethore**).
+2. Te **Faqja që do të hapet kur klikohet** zgjidh rubrikën në listën e lejuar.
+3. Plotëso përshkrimin në shqip dhe anglisht.
+4. Mund të ndryshosh renditjen me drag & drop.
+5. Kliko **Publish** dhe kontrollo lidhjet në SQ/EN.
+
+**Siguria e pamjes:** nëse dokumenti i vjetër nuk ka grupin, ose një foto nuk është ngarkuar, faqja ruan automatikisht 3 fotot ekzistuese dhe lidhjet përkatëse. Fshehja e një tab-i në header nuk heq mundësinë e hapjes së faqes nga këto foto.

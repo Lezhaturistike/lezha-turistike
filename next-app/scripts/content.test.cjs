@@ -89,3 +89,27 @@ test('English internal links retain the matching page, query and fragment withou
   }
   for (const url of ['/en/galeri', '/assets/map.pdf', '/api/reviews', '//example.com', 'https://example.com', 'mailto:hello@example.com', '#photos']) assert.equal(localizedPath(url, 'en'), url);
 });
+
+test('missing uploaded hero images use original local photos rather than empty URLs', () => {
+  const fallback = require('../sanity/content/home.json');
+  const fields = model.pageDefinitions.home.fields;
+  const missing = Object.fromEntries(['heroCircles','src1'].map(k => [k, k==='heroCircles' ? [] : '']));
+  const result = plain(model.normalizeContent(fields, missing, fallback));
+  assert.equal(result.src1, fallback.src1);
+  assert.equal(result.heroCircles.length, 3);
+  for (let i=0; i<3; i++) {
+    assert.equal(result.heroCircles[i].image, fallback.heroCircles[i].image);
+    assert.equal(result.heroCircles[i].page, fallback.heroCircles[i].page);
+  }
+});
+test('hero circles keep edited target page while missing image uses client fallback', () => {
+  const fallback = require('../sanity/content/home.json');
+  const fields = model.pageDefinitions.home.fields;
+  const updated = fallback.heroCircles.map(x => ({...x}));
+  updated[0].page = '/webgis';
+  updated[1].image = 'https://cdn.sanity.io/images/demo/production/abc.jpg';
+  const actual = plain(model.normalizeContent(fields, {heroCircles: updated}, fallback));
+  assert.equal(actual.heroCircles[0].page, '/webgis');
+  assert.equal(actual.heroCircles[1].image, updated[1].image);
+  assert.equal(actual.heroCircles.length, 3);
+});

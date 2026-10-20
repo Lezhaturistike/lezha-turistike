@@ -141,9 +141,29 @@
   "heroSecondaryLabel": "Eksploro guidën digjitale",
   "heroSecondaryLabelEn": "Explore the Digital Guide",
   "heroSecondaryUrl": "/planifiko",
-  "heroThumb1": "/images/lezha.jpeg",
-  "heroThumb2": "/images/kala-3.jpeg",
-  "heroThumb3": "/images/akrolisi.jpeg",
   "showQuickLinks": true,
-  "showDirectory": true
+  "showDirectory": true,
+  "heroCircles": [
+    {
+      "_key": "hero-circle-destinacione",
+      "image": "/images/lezha.jpeg",
+      "page": "/destinacione",
+      "label": "Destinacione",
+      "labelEn": "Destinations"
+    },
+    {
+      "_key": "hero-circle-histori",
+      "image": "/images/kala-3.jpeg",
+      "page": "/histori",
+      "label": "Histori & Arkeologji",
+      "labelEn": "History & Archaeology"
+    },
+    {
+      "_key": "hero-circle-shkenca",
+      "image": "/images/akrolisi.jpeg",
+      "page": "/shkenca",
+      "label": "Punime shkencore",
+      "labelEn": "Scientific research"
+    }
+  ]
 }
