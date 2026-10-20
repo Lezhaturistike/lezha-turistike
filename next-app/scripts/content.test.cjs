@@ -147,3 +147,57 @@ test('cookie consent uses dedicated logo or current brand fallback',()=>{
   assert.equal(cookieBrandImage({...defaultSiteSettings,footerLogo:logo}),logo);
   assert.equal(defaultSiteSettings.faviconImage,'');
 });
+
+
+test('CMS bootstrap creates only missing singleton documents with current published values',()=>{
+  const shared=load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  const bootstrap=load(path.join(root,'sanity/lib/cms-bootstrap.ts'),{'./site-settings-shared':shared});
+  const plan=plain(bootstrap.planCMSBootstrap([]));
+  assert.equal(plan.length,2);
+  const settings=plan.find(x=>x.id==='site-settings');
+  const home=plan.find(x=>x.id==='page-home');
+  assert.equal(settings.action,'create');
+  assert.equal(settings.values.publicEmail,'lezhaturistike@gmail.com');
+  assert.equal(settings.values.footerMottoSq,'Njih historinë. Eksploro natyrën. Zbulo Lezhën.');
+  assert.equal(settings.values.headerMenu.length,9);
+  assert.equal(settings.values.footerMenu.length,7);
+  assert.equal(home.values.heroCircles.length,3);
+  assert.equal(home.values.heroCircles[0].image.originalPath,'/images/lezha.jpeg');
+  assert.equal(home.values.showDirectory,true);
+});
+test('CMS bootstrap preserves existing edits and only fills genuinely missing fields',()=>{
+  const shared=load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  const bootstrap=load(path.join(root,'sanity/lib/cms-bootstrap.ts'),{'./site-settings-shared':shared});
+  const documents=[
+    {_id:'site-settings',_type:'siteSettings',publicEmail:'new@municipality.example',footerMottoSq:'Moto e re',footerMenu:[]},
+    {_id:'page-home',_type:'homePage',heroTitle:'Titull i ndryshuar',showDirectory:false,directory:[
+      {_key:'directory-1',title:'Rubrika e re'},
+      {_key:'directory-2',visible:false,title:'E fshehur'}
+    ]},
+  ];
+  const plan=plain(bootstrap.planCMSBootstrap(documents));
+  const settings=plan.find(x=>x.id==='site-settings').values;
+  assert.ok(!Object.hasOwn(settings,'publicEmail'));
+  assert.ok(!Object.hasOwn(settings,'footerMottoSq'));
+  assert.ok(!Object.hasOwn(settings,'footerMenu'));
+  assert.equal(settings.footerLocationSq,'LEZHË · SHQIPËRI');
+  const home=plan.find(x=>x.id==='page-home').values;
+  assert.ok(!Object.hasOwn(home,'heroTitle'));
+  assert.ok(!Object.hasOwn(home,'showDirectory'));
+  assert.ok(!Object.hasOwn(home,'directory'));
+  assert.equal(home['directory[_key=="directory-1"].visible'],true);
+  assert.ok(!Object.hasOwn(home,'directory[_key=="directory-2"].visible'));
+  assert.equal(home.heroCircles.length,3);
+});
+test('CMS bootstrap does not publish a draft implicitly',()=>{
+  const shared=load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  const bootstrap=load(path.join(root,'sanity/lib/cms-bootstrap.ts'),{'./site-settings-shared':shared});
+  const plan=plain(bootstrap.planCMSBootstrap([
+    {_id:'drafts.site-settings',_type:'siteSettings',footerContactHeadingSq:'Titull draft'}
+  ]));
+  assert.ok(plan.every(x=>x.id!=='site-settings'));
+  assert.ok(plan.some(x=>x.id==='drafts.site-settings'));
+  const draft=plan.find(x=>x.id==='drafts.site-settings');
+  assert.ok(!Object.hasOwn(draft.values,'footerContactHeadingSq'));
+  assert.ok(plan.some(x=>x.id==='page-home'&&x.action==='create'));
+});
