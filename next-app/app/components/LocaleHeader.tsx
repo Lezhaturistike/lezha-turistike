@@ -1,32 +1,24 @@
+"use client";
 import Link from "next/link";
 import MenuButton from "@/app/components/MenuButton";
+import {useSiteSettings} from "./SiteSettingsProvider";
+import BrandLogo,{brandClass} from "./BrandLogo";
+import {menuItemPath} from "@/sanity/lib/site-settings-shared";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import {localizedPath, type Locale} from "@/sanity/lib/localize";
 
-const navigation = [
-  ["", "Home", "Home"],
-  ["destinacione", "Destinacione", "Destinations"],
-  ["histori", "Histori & Arkeologji", "History & Archaeology"],
-  ["kulinari", "Kulinari", "Cuisine"],
-  ["akomodim", "Akomodim", "Accommodation"],
-  ["webgis", "Web GIS", "Web GIS"],
-  ["galeri", "Galeri", "Gallery"],
-  ["shkenca", "Punime shkencore", "Scientific research"],
-  ["kontakt", "Na kontakto", "Contact"],
-] as const;
-
 export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Locale; current?: string}) {
   const currentPath = current ? `/${current}` : "/";
+  const settings=useSiteSettings();
   return (
     <header className="header">
-      <Link href={localizedPath("/", locale)} className="logo" aria-label="Lezha Turistike">
-        <span className="logo-mark logo-castle" aria-hidden="true"><i></i><i></i><i></i></span>
-        <span>LEZHA<br/><b>TURISTIKE</b></span>
+      <Link href={localizedPath("/", locale)} className={brandClass("header",settings)} aria-label="Lezha Turistike">
+        <BrandLogo/>
       </Link>
       <nav className="nav" id="nav" aria-label={locale === "en" ? "Main navigation" : "Navigimi kryesor"}>
-        {navigation.map(([slug, sq, en]) => (
-          <Link key={slug} href={localizedPath(slug ? `/${slug}` : "/", locale)} aria-current={current === slug ? "page" : undefined}>
-            {locale === "en" ? en : sq}
+        {settings.headerMenu.filter(item=>item.visible!==false).map(item=>(
+          <Link key={item.slug} href={localizedPath(menuItemPath(item.slug),locale)} aria-current={current===(item.slug==="home"?"":item.slug)?"page":undefined}>
+            {locale==="en"?item.labelEn:item.labelSq}
           </Link>
         ))}
         <span className="language-switch" aria-label={locale === "en" ? "Language" : "Gjuha"}>
@@ -38,9 +30,9 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
       </nav>
       <ThemeToggle />
       <MenuButton />
-      <Link className="nav-cta" href={localizedPath("/planifiko", locale)}>
-        {locale === "en" ? "Plan your visit" : "Planifiko"}
-      </Link>
+      {settings.showPlannerCta&&<Link className="nav-cta" href={localizedPath("/planifiko",locale)}>
+        {locale==="en"?settings.plannerCtaEn:settings.plannerCtaSq}
+      </Link>}
     </header>
   );
 }

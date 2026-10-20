@@ -5,6 +5,8 @@ export type FieldDefinition = {
   title: string;
   type: string;
   min?: number;
+  max?: number;
+  options?: {list: {title: string; value: string}[]};
   fields?: FieldDefinition[];
 };
 export type PageKey = keyof typeof definitions;
@@ -32,7 +34,7 @@ export function normalizeContent(
   for (const field of fields) {
     const value = input[field.name];
     if (field.type === "array") {
-      if (!Array.isArray(value) || (field.min && value.length < field.min)) {
+      if (!Array.isArray(value) || (field.min && value.length < field.min) || (field.max && value.length > field.max)) {
         result[field.name] = fallback[field.name] || [];
         continue;
       }
@@ -45,10 +47,16 @@ export function normalizeContent(
               : `${field.name}-${index}`,
           ...normalizeContent(field.fields || [], item, {}),
         }));
+    } else if (field.type === "boolean") {
+      result[field.name] = typeof value === "boolean" ? value : (typeof fallback[field.name] === "boolean" ? fallback[field.name] : true);
     } else {
       let text =
         typeof value === "string" ? value : (fallback[field.name] ?? "");
       if (typeof text !== "string") text = "";
+      // GROQ projects missing CMS images as ""; retain the bundled image until an upload exists.
+      if (field.type === "image" && !text && typeof fallback[field.name] === "string") {
+        text = fallback[field.name] as string;
+      }
       if (
         (field.type === "url" || field.type === "image") &&
         text &&

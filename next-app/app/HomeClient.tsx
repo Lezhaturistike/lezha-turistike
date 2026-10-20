@@ -29,6 +29,19 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
   useEffect(() => { if (slides.length < 2) return; const timer = window.setInterval(() => setSlide((v) => (v + 1) % slides.length), 5000); return () => window.clearInterval(timer); }, [slides.length]);
   useEffect(() => { setHeroLoaded(false); }, [slide]);
   const activeSlide = slides[slide] || slides[0];
+  const circlePages = new Set([
+    "/", "/destinacione", "/histori", "/kulinari", "/akomodim",
+    "/webgis", "/galeri", "/shkenca", "/kontakt", "/planifiko",
+    "/shkenca#partneret", "/histori#arkeologji",
+  ]);
+  // Old Sanity documents may still hold empty image fields. Always keep three visible.
+  const circles = (content.heroCircles?.length === 3 ? content.heroCircles : defaults.heroCircles)
+    .map((item, i) => ({
+      key: item._key || defaults.heroCircles[i]._key,
+      image: item.image || defaults.heroCircles[i].image,
+      page: circlePages.has(item.page) ? item.page : defaults.heroCircles[i].page,
+      label: item.label || defaults.heroCircles[i].label,
+    }));
 
   return (
     <>
@@ -44,28 +57,35 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
           <div className="hero-shade"></div>
 
           <div className="hero-content">
-            <span className="overline light">{locale === "en" ? "WELCOME TO" : "MIRË SE VINI NË"}</span>
+            <span className="overline light">{content.heroWelcome}</span>
 
-            <h1>Lezhë</h1>
-            <h2 className="hero-subtitle">{locale === "en" ? "History, Nature, Culture" : "Histori, Natyrë, Kulturë"}</h2>
+            <h1>{content.heroTitle}</h1>
+            <h2 className="hero-subtitle">{content.heroSubtitle}</h2>
 
-            <p>{locale === "en" ? "Discover a territory rich in heritage, nature and authentic experiences, brought together in one unforgettable journey." : "Zbuloni një territor unik ku trashëgimia, natyra dhe përvoja autentike ndërthuren në një udhëtim të paharrueshëm."}</p>
+            <p>{content.heroDescription}</p>
 
             <div className="hero-actions">
               <Link className="button primary" href={localizedPath(content.href7, locale)}>
-                {locale === "en" ? "Discover destinations" : "Zbulo destinacionet"}
+                {content.heroPrimaryLabel}
               </Link>
 
-              <Link className="button ghost hero-digital-guide" href={localizedPath("/planifiko", locale)}>
-                {locale === "en" ? "Explore the Digital Guide" : "Eksploro guidën digjitale"}
+              <Link className="button ghost hero-digital-guide" href={localizedPath(content.heroSecondaryUrl, locale)}>
+                {content.heroSecondaryLabel}
                </Link>
             </div>
 
             <div className="hero-plan-strip" aria-label={locale === "en" ? "Plan your visit" : "Planifiko vizitën"}>
-              <div className="hero-plan-thumbs" aria-hidden="true">
-                <span><Image src="/images/lezha.jpeg" alt="" fill sizes="44px" /></span>
-                <span><Image src="/images/kala-3.jpeg" alt="" fill sizes="44px" /></span>
-                <span><Image src="/images/akrolisi.jpeg" alt="" fill sizes="44px" /></span>
+              <div className="hero-plan-thumbs" aria-label={locale === "en" ? "Explore featured pages" : "Eksploro rubrikat e përzgjedhura"}>
+                {circles.map((item) => (
+                  <Link
+                    key={item.key}
+                    href={localizedPath(item.page, locale)}
+                    aria-label={item.label}
+                    title={item.label}
+                  >
+                    <Image src={item.image} alt="" fill sizes="44px" />
+                  </Link>
+                ))}
               </div>
               <span className="hero-plan-divider" aria-hidden="true"></span>
               <span className="hero-plan-copy">{locale === "en" ? <>Plan your visit<br/>to Lezhë</> : <>Planifiko vizitën<br/>tënde në Lezhë</>}</span>
@@ -84,7 +104,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
         </section>
 
         {/* QUICK LINKS */}
-        <section className="quick" aria-label="Eksploro sipas interesit">
+        {content.showQuickLinks!==false&&<section className="quick" aria-label="Eksploro sipas interesit">
           <span className="quick-intro">{content.text13}</span>
 
           <Link href={localizedPath(content.href14, locale)}>
@@ -104,10 +124,10 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
             {content.text19}
             <b aria-hidden="true">↗</b>
           </Link>
-        </section>
+        </section>}
 
         {/* DIRECTORY */}
-        <section
+        {content.showDirectory!==false&&<section
           className="home-directory section"
           aria-labelledby="directory-title"
         >
@@ -122,7 +142,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
           </div>
 
           <div className="directory-grid">
-            {content.directory.map((item) => (
+            {content.directory.filter(item=>(item as typeof item & {visible?:boolean}).visible!==false).map((item) => (
               <Link key={item._key} className="directory-card" href={localizedPath(item.url, locale)}>
                 <span>{item.label}</span>
                 <h2>{item.title}</h2>
@@ -133,7 +153,7 @@ export default function HomePage({ content, locale = "sq" }: { content: HomeCont
               </Link>
             ))}
           </div>
-        </section>
+        </section>}
       </main>
 
       {/* BACK TO TOP */}

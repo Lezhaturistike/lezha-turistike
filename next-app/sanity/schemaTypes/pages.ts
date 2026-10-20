@@ -27,7 +27,13 @@ const defaults = {
   terms,
   cookies,
 };
-const optional = new Set(["image", "alt", "subtitle", "caveat"]);
+const optional = new Set([
+  "image", "alt", "subtitle", "caveat",
+  // These fields were added after some documents had already been published.
+  // A single unrelated edit must not require filling them out afresh.
+  "heroWelcome", "heroTitle", "heroSubtitle", "heroDescription",
+  "heroPrimaryLabel", "heroSecondaryLabel", "heroSecondaryUrl",
+]);
 function schemaField(field: FieldDefinition): SanityField {
   const base = { name: field.name, title: field.title };
   if (field.type === "array")
@@ -45,7 +51,13 @@ function schemaField(field: FieldDefinition): SanityField {
           preview: { select: { title: "title", subtitle: "label" } },
         },
       ],
-      validation: (rule) => (field.min ? rule.required().min(field.min) : rule),
+      validation: (rule) => {
+        // A missing newly introduced array must not block saving older documents.
+        // When present, the 3-photo constraint is enforced.
+        let validated = field.min !== undefined ? rule.min(field.min) : rule;
+        if (field.max !== undefined) validated = validated.max(field.max);
+        return validated;
+      },
     });
   if (field.type === "image")
     return defineField({
@@ -62,13 +74,20 @@ function schemaField(field: FieldDefinition): SanityField {
       description:
         "Ngarkoni një foto për ta zëvendësuar. Fotografia origjinale ruhet gjatë migrimit.",
     });
+  if (field.type === "string" && field.options?.list) {
+    return defineField({
+      ...base, type:"string",
+      options:{list:field.options.list},
+      validation:rule=>rule.required(),
+    });
+  }
+  if (field.type === "boolean") return defineField({...base,type:"boolean",initialValue:true});
   if (field.type === "url")
     return defineField({
       ...base,
       type: "url",
       validation: (rule) =>
-        rule
-          .required()
+        (optional.has(field.name) ? rule : rule.required())
           .uri({
             allowRelative: true,
             scheme: ["http", "https", "mailto", "tel"],

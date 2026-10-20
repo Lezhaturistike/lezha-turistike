@@ -244,8 +244,169 @@
             "name": "url",
             "title": "Lidhja",
             "type": "url"
+          },
+          {
+            "name": "visible",
+            "title": "Shfaq kartën",
+            "type": "boolean"
           }
         ]
+      },
+      {
+        "name": "heroWelcome",
+        "title": "Hero – Mirëseardhja (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroWelcomeEn",
+        "title": "Hero – Welcome (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroTitle",
+        "title": "Hero – Titulli kryesor (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroTitleEn",
+        "title": "Hero – Main title (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSubtitle",
+        "title": "Hero – Nëntitulli (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroSubtitleEn",
+        "title": "Hero – Subtitle (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroDescription",
+        "title": "Hero – Përshkrimi (SQ)",
+        "type": "text"
+      },
+      {
+        "name": "heroDescriptionEn",
+        "title": "Hero – Description (EN)",
+        "type": "text"
+      },
+      {
+        "name": "heroPrimaryLabel",
+        "title": "Hero – Butoni kryesor (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroPrimaryLabelEn",
+        "title": "Hero – Primary button (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryLabel",
+        "title": "Hero – Butoni i dytë (SQ)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryLabelEn",
+        "title": "Hero – Secondary button (EN)",
+        "type": "string"
+      },
+      {
+        "name": "heroSecondaryUrl",
+        "title": "Hero – Lidhja e butonit të dytë",
+        "type": "url"
+      },
+      {
+        "name": "heroCircles",
+        "title": "Tre fotografitë rrethore · Zgjidh faqet",
+        "type": "array",
+        "min": 3,
+        "max": 3,
+        "fields": [
+          {
+            "name": "image",
+            "title": "Fotografia rrethore",
+            "type": "image"
+          },
+          {
+            "name": "page",
+            "title": "Faqja që do të hapet kur klikohet",
+            "type": "string",
+            "options": {
+              "list": [
+                {
+                  "title": "Faqja kryesore",
+                  "value": "/"
+                },
+                {
+                  "title": "Destinacione",
+                  "value": "/destinacione"
+                },
+                {
+                  "title": "Histori & Arkeologji",
+                  "value": "/histori"
+                },
+                {
+                  "title": "Kulinari",
+                  "value": "/kulinari"
+                },
+                {
+                  "title": "Akomodim",
+                  "value": "/akomodim"
+                },
+                {
+                  "title": "Web GIS",
+                  "value": "/webgis"
+                },
+                {
+                  "title": "Galeri",
+                  "value": "/galeri"
+                },
+                {
+                  "title": "Punime shkencore",
+                  "value": "/shkenca"
+                },
+                {
+                  "title": "Kontakt",
+                  "value": "/kontakt"
+                },
+                {
+                  "title": "Planifiko vizitën",
+                  "value": "/planifiko"
+                },
+                {
+                  "title": "Partnerët (te Punime shkencore)",
+                  "value": "/shkenca#partneret"
+                },
+                {
+                  "title": "Arkeologji (te Histori)",
+                  "value": "/histori#arkeologji"
+                }
+              ]
+            }
+          },
+          {
+            "name": "label",
+            "title": "Përshkrimi i fotos (SQ)",
+            "type": "string"
+          },
+          {
+            "name": "labelEn",
+            "title": "Photo description (EN)",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "name": "showQuickLinks",
+        "title": "Shfaq lidhjet e shpejta",
+        "type": "boolean"
+      },
+      {
+        "name": "showDirectory",
+        "title": "Shfaq kartat e rubrikave",
+        "type": "boolean"
       }
     ]
   },
@@ -1272,17 +1433,17 @@
       },
       {
         "name": "href9",
-        "title": "Lidhja — mailto:lezhalezha2024@gmail.com",
+        "title": "Fushë historike (joaktive) – Email-in zyrtar ndryshojeni te Konfigurimi i faqes",
         "type": "url"
       },
       {
         "name": "text10",
-        "title": "Teksti i lidhjes — lezhalezha2024@gmail.com",
+        "title": "Fushë historike (joaktive) – Email-in zyrtar ndryshojeni te Konfigurimi i faqes",
         "type": "string"
       },
       {
         "name": "text10En",
-        "title": "Teksti i lidhjes — lezhalezha2024@gmail.com (EN)",
+        "title": "Fushë historike (joaktive) – Email-in zyrtar ndryshojeni te Konfigurimi i faqes (EN)",
         "type": "string"
       },
       {

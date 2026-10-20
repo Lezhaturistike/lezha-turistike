@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --test scripts/content.test.cjs",
-    "import:pages": "node scripts/import-pages.mjs"
+    "import:pages": "node scripts/import-pages.mjs",
+    "sanity:seed:preview": "node scripts/seed-cms-defaults.mjs --dry-run",
+    "sanity:seed:apply": "node scripts/seed-cms-defaults.mjs --apply"
   },
   "dependencies": {
     "@sanity/vision": "^6.15.0",

@@ -1,7 +1,7 @@
 import {NextResponse} from "next/server";
+import {getSiteSettings} from "@/sanity/lib/site-settings";
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
-const TO_EMAIL = "lezhaturistike@gmail.com";
 const FROM_EMAIL = "Lezha Turistike <kontakt@lezhaturistike.com>";
 
 function escapeHtml(value: string) {
@@ -40,6 +40,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ok: false, error: "Invalid email address."}, {status: 400});
     }
 
+    const settings=await getSiteSettings();
+    const allowed=new Set((process.env.CONTACT_ALLOWED_RECIPIENTS||"lezhaturistike@gmail.com").split(",").map(v=>v.trim().toLowerCase()).filter(Boolean));
+    const requested=(process.env.CONTACT_TO_EMAIL||settings.contactRecipientEmail).trim().toLowerCase();
+    if(!allowed.has(requested)){
+      console.error("Recipient address is not approved by CONTACT_ALLOWED_RECIPIENTS");
+      return NextResponse.json({ok:false,error:"Contact destination is not configured."},{status:503});
+    }
+    const destination=requested;
     const response = await fetch(RESEND_ENDPOINT, {
       method: "POST",
       headers: {
@@ -48,7 +56,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: FROM_EMAIL,
-        to: [TO_EMAIL],
+        to: [destination],
         reply_to: email,
         subject: `[Lezha Turistike] ${subject}`,
         html: `
