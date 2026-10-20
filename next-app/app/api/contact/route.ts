@@ -43,7 +43,11 @@ export async function POST(request: Request) {
     const settings=await getSiteSettings();
     const allowed=new Set((process.env.CONTACT_ALLOWED_RECIPIENTS||"lezhaturistike@gmail.com").split(",").map(v=>v.trim().toLowerCase()).filter(Boolean));
     const requested=(process.env.CONTACT_TO_EMAIL||settings.contactRecipientEmail).trim().toLowerCase();
-    const destination=allowed.has(requested)?requested:"lezhaturistike@gmail.com";
+    if(!allowed.has(requested)){
+      console.error("Recipient address is not approved by CONTACT_ALLOWED_RECIPIENTS");
+      return NextResponse.json({ok:false,error:"Contact destination is not configured."},{status:503});
+    }
+    const destination=requested;
     const response = await fetch(RESEND_ENDPOINT, {
       method: "POST",
       headers: {
