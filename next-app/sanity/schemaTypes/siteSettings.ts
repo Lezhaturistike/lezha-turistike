@@ -1,5 +1,17 @@
 import {defineField,defineType} from "sanity";
 import {allowedMenuSlugs,defaultSiteSettings} from "../lib/site-settings-shared";
+// Sanity custom validation values are untyped; validate their shape before reading fields.
+function uniqueMenuSlugs(value: unknown): true | string {
+  if (!Array.isArray(value)) return true;
+  const slugs = value.map((item: unknown) => {
+    if (item === null || typeof item !== "object") return undefined;
+    const slug = (item as {slug?: unknown}).slug;
+    return typeof slug === "string" ? slug : undefined;
+  }).filter((slug): slug is string => typeof slug === "string");
+  return new Set(slugs).size === slugs.length
+    ? true
+    : "Rubrikat nuk duhet të përsëriten.";
+}
 const menuItem={
   type:"object" as const,
   name:"siteMenuItem",
@@ -27,8 +39,8 @@ export const siteSettingsSchema=defineType({
     defineField({name:"headerLogoLight",title:"Logo në header · Light Mode",type:"image",options:{hotspot:true},description:"Lëre bosh për logon aktuale të faqes."}),
     defineField({name:"headerLogoDark",title:"Logo në header · Dark Mode",type:"image",options:{hotspot:true},description:"Lëre bosh për logon aktuale të faqes."}),
     defineField({name:"footerLogo",title:"Logo në footer",type:"image",options:{hotspot:true},description:"Lëre bosh për logon aktuale të faqes."}),
-    defineField({name:"headerMenu",title:"Menuja kryesore · renditje dhe fshehje",type:"array",of:[menuItem],description:"Tërhiq rubrikat për të ndryshuar renditjen. Fshehja e lidhjes nuk fshin faqen.",validation:Rule=>Rule.custom(value=>{if(!Array.isArray(value))return true;const ids=value.map(item=>item?.slug).filter(Boolean);return new Set(ids).size===ids.length?true:"Rubrikat nuk duhet të përsëriten.";})}),
-    defineField({name:"footerMenu",title:"Menuja në fund të faqes",type:"array",of:[menuItem],validation:Rule=>Rule.custom(value=>{if(!Array.isArray(value))return true;const ids=value.map(item=>item?.slug).filter(Boolean);return new Set(ids).size===ids.length?true:"Rubrikat nuk duhet të përsëriten.";})}),
+    defineField({name:"headerMenu",title:"Menuja kryesore · renditje dhe fshehje",type:"array",of:[menuItem],description:"Tërhiq rubrikat për të ndryshuar renditjen. Fshehja e lidhjes nuk fshin faqen.",validation:Rule=>Rule.custom(uniqueMenuSlugs)}),
+    defineField({name:"footerMenu",title:"Menuja në fund të faqes",type:"array",of:[menuItem],validation:Rule=>Rule.custom(uniqueMenuSlugs)}),
     defineField({name:"showPlannerCta",title:"Shfaq butonin Planifiko",type:"boolean",initialValue:true}),
     defineField({name:"plannerCtaSq",title:"Teksti i butonit SQ",type:"string"}),
     defineField({name:"plannerCtaEn",title:"Teksti i butonit EN",type:"string"}),
