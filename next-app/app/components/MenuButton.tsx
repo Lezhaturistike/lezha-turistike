@@ -10,11 +10,16 @@ export default function MenuButton() {
     const escape = (event: KeyboardEvent) => {
       if (event.key === "Escape") close();
     };
-    nav?.addEventListener("click", close);
+    // A submenu chevron is a button: keep the mobile navigation open
+    // until a real navigation link is clicked.
+    const closeOnNavigation = (event: MouseEvent) => {
+      if (event.target instanceof Element && event.target.closest("a")) close();
+    };
+    nav?.addEventListener("click", closeOnNavigation);
     document.addEventListener("keydown", escape);
     return () => {
       nav?.classList.remove("open");
-      nav?.removeEventListener("click", close);
+      nav?.removeEventListener("click", closeOnNavigation);
       document.removeEventListener("keydown", escape);
     };
   }, [open]);

@@ -1,5 +1,5 @@
 import {defineField,defineType} from "sanity";
-import {allowedMenuSlugs,defaultSiteSettings,defaultFooterText,footerTextFieldLabels} from "../lib/site-settings-shared";
+import {allowedMenuSlugs,defaultSiteSettings,defaultFooterText,footerTextFieldLabels,safeSubMenuHref} from "../lib/site-settings-shared";
 // Sanity custom validation values are untyped; validate their shape before reading fields.
 function uniqueMenuSlugs(value: unknown): true | string {
   if (!Array.isArray(value)) return true;
@@ -21,6 +21,23 @@ const menuItem={
     defineField({name:"labelSq",title:"Titulli shqip",type:"string",validation:Rule=>Rule.required()}),
     defineField({name:"labelEn",title:"Titulli anglisht",type:"string",validation:Rule=>Rule.required()}),
     defineField({name:"visible",title:"Shfaq në menu",type:"boolean",initialValue:true}),
+    defineField({
+      name:"subMenu",title:"Nënmenu · opsionale (pa elemente fillimisht)",type:"array",
+      description:"Lëreni bosh për të ruajtur menunë aktuale. Vetëm te menuja kryesore: shtoni lidhje SQ/EN, ndryshoni renditjen dhe dukshmërinë. Nuk krijohen faqe automatikisht.",
+      initialValue:[],
+      of:[{
+        type:"object",name:"siteSubMenuItem",title:"Lidhje e nënmenusë",
+        fields:[
+          defineField({name:"labelSq",title:"Titulli shqip",type:"string",validation:Rule=>Rule.required().max(120)}),
+          defineField({name:"labelEn",title:"Titulli anglisht",type:"string",validation:Rule=>Rule.required().max(120)}),
+          defineField({name:"href",title:"Lidhja (p.sh. /histori#arkeologji)",type:"string",
+            description:"Lidhje e brendshme që fillon me / ose lidhje e jashtme https://. Mos përdorni URL me skripte.",
+            validation:Rule=>Rule.required().custom(value=>safeSubMenuHref(value)!==null||"Shkruani një adresë të brendshme /... ose HTTPS të vlefshme.")}),
+          defineField({name:"visible",title:"Shfaq lidhjen",type:"boolean",initialValue:true}),
+        ],
+        preview:{select:{title:"labelSq",subtitle:"href"}}
+      }]
+    }),
   ],
   preview:{select:{title:"labelSq",subtitle:"slug"}},
 };

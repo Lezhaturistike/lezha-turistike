@@ -85,3 +85,12 @@ Skripti punon me token në mjedisin e zhvilluesit, jo në CMS, dhe përdor `setI
 **Kopjet rezervë:** Skripti ruan një JSON të 4 dokumenteve (faqja kryesore dhe konfigurimi, publikuar/draft). Kjo nuk zëvendëson eksportin e plotë të dataset-it, i cili rekomandohet veçmas. **Nuk kryhet vetvetiu asnjë operacion mbi Sanity.**
 
 **Logot dhe favicon:** Imazhet që ende prodhohen nga kodi (kalaja dhe emri Lezha Turistike) paraqiten si varianti aktual në website edhe kur kutia e ngarkimit është bosh. Një upload në Sanity do të zëvendësojë vetëm variantin përkatës. Nuk kërkohet ri-ngarkimi i logos ekzistuese për të ndryshuar një tekst.
+
+
+## Nënmenutë opsionale të menusë kryesore (pa nënmenu të publikuara)
+
+Te **Konfigurimi i faqes → Pamja dhe menuja → Menuja kryesore**, çdo rubrikë përmban një fushë opsionale **Nënmenu**. Fillimisht është bosh për çdo rubrikë. Në këtë gjendje header-i dhe navigimi mbeten identikë me versionin ekzistues (nuk shfaqet asnjë shigjetë apo dropdown).
+
+Për të krijuar një nënmenu në të ardhmen, hap rubrikën e menusë kryesore dhe te **Nënmenu** shto elemente me titullin në SQ, titullin në EN, lidhjen `/rruga` (ose `/histori#arkeologji`) dhe opsionin shfaq/fshih. Renditja ndryshohet me drag & drop. Mund të përdoren edhe lidhje të jashtme HTTPS, të hapura në skedë të re. Nuk pranohen URL me `javascript:`, `//` ose `http:`. Nuk krijohen faqe automatikisht. Seksionet me fushë bosh shfaqen vetëm si lidhje si më parë.
+
+Në desktop nënmenuja hapet me hover/fokus ose me butonin e vogël të shigjetës; në tablet/telefon hapet e mbyllet me shigjetë pa mbyllur menunë kryesore. Klikimi mbi lidhjen e rubrikës vazhdon të çojë te faqja e rubrikës. ESC mbyll nënmenunë. Ndryshimi i rubrikave dhe nënmenuve ndodh nga Sanity vetëm pas Publish.

@@ -1,10 +1,31 @@
 import "server-only";
 import {client} from "./client";
-import {allowedMenuSlugs,defaultSiteSettings,defaultFooterText,type FooterText,type SiteMenuItem,type SiteSettings} from "./site-settings-shared";
+import {allowedMenuSlugs,defaultSiteSettings,defaultFooterText,safeSubMenuHref,type SiteSubMenuItem,type FooterText,type SiteMenuItem,type SiteSettings} from "./site-settings-shared";
 
 const validSlugs=new Set<string>(allowedMenuSlugs);
 const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const imagePattern=/^https:\/\/cdn\.sanity\.io\/images\//;
+/** Preserve menu order, visibility, translations and valid optional child links. */
+function safeSubMenu(value:unknown):SiteSubMenuItem[]{
+  if(!Array.isArray(value))return [];
+  const result:SiteSubMenuItem[]=[];
+  const seen=new Set<string>();
+  for(const raw of value){
+    if(result.length>=30)break;
+    if(!raw||typeof raw!=="object")continue;
+    const child=raw as Record<string,unknown>;
+    const href=safeSubMenuHref(child.href);
+    const labelSq=typeof child.labelSq==="string"?child.labelSq.trim():"";
+    const labelEn=typeof child.labelEn==="string"?child.labelEn.trim():"";
+    if(!href||!labelSq||!labelEn||labelSq.length>120||labelEn.length>120||seen.has(href))continue;
+    seen.add(href);
+    result.push({
+      _key:typeof child._key==="string"&&child._key.length<=100?child._key:href,
+      href,labelSq,labelEn,visible:child.visible!==false
+    });
+  }
+  return result;
+}
 function safeMenu(value:unknown,fallback:SiteMenuItem[]):SiteMenuItem[]{
   if(!Array.isArray(value))return fallback;
   const seen=new Set<string>();
@@ -21,7 +42,8 @@ function safeMenu(value:unknown,fallback:SiteMenuItem[]):SiteMenuItem[]{
       slug,
       labelSq:typeof item.labelSq==="string"&&item.labelSq.trim()?item.labelSq:previous?.labelSq||slug,
       labelEn:typeof item.labelEn==="string"&&item.labelEn.trim()?item.labelEn:previous?.labelEn||slug,
-      visible:item.visible!==false
+      visible:item.visible!==false,
+      ...(safeSubMenu(item.subMenu).length ? {subMenu:safeSubMenu(item.subMenu)} : {})
     });
   }
   return result;
@@ -59,7 +81,7 @@ export async function getSiteSettings():Promise<SiteSettings>{
   try{
     const result=await client.fetch<Record<string,unknown>|null>(
       `*[_id=="site-settings" && _type=="siteSettings"][0]{
-        headerMenu[]{_key,slug,labelSq,labelEn,visible},
+        headerMenu[]{_key,slug,labelSq,labelEn,visible,subMenu[]{_key,labelSq,labelEn,href,visible}},
         footerMenu[]{_key,slug,labelSq,labelEn,visible},
         publicEmail,contactRecipientEmail,showPlannerCta,plannerCtaSq,plannerCtaEn,
         "headerLogoLight":headerLogoLight.asset->url,

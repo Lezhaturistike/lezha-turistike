@@ -3,7 +3,7 @@ import Link from "next/link";
 import MenuButton from "@/app/components/MenuButton";
 import {useSiteSettings} from "./SiteSettingsProvider";
 import BrandLogo,{brandClass} from "./BrandLogo";
-import {menuItemPath} from "@/sanity/lib/site-settings-shared";
+import OptionalSubMenuItem from "./OptionalSubMenuItem";
 import ThemeToggle from "@/app/components/ThemeToggle";
 import {localizedPath, type Locale} from "@/sanity/lib/localize";
 
@@ -17,9 +17,7 @@ export default function LocaleHeader({locale = "sq", current = ""}: {locale?: Lo
       </Link>
       <nav className="nav" id="nav" aria-label={locale === "en" ? "Main navigation" : "Navigimi kryesor"}>
         {settings.headerMenu.filter(item=>item.visible!==false).map(item=>(
-          <Link key={item.slug} href={localizedPath(menuItemPath(item.slug),locale)} aria-current={current===(item.slug==="home"?"":item.slug)?"page":undefined}>
-            {locale==="en"?item.labelEn:item.labelSq}
-          </Link>
+          <OptionalSubMenuItem key={item.slug} item={item} locale={locale} current={current} />
         ))}
         <span className="language-switch" aria-label={locale === "en" ? "Language" : "Gjuha"}>
           <Link href={currentPath} hrefLang="sq" lang="sq" aria-current={locale === "sq" ? "true" : undefined}>SQ</Link>
