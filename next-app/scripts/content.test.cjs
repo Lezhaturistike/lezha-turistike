@@ -9,7 +9,7 @@ const root = path.resolve(__dirname, '..');
 function load(file, overrides = {}) {
   const exports = {};
   const source = ts.transpileModule(fs.readFileSync(file, 'utf8'), {compilerOptions: {target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, esModuleInterop: true}}).outputText;
-  vm.runInNewContext(source, {exports, console, require: id => {
+  vm.runInNewContext(source, {exports, console, URL, require: id => {
     if (Object.hasOwn(overrides, id)) return overrides[id];
     if (id.endsWith('.json')) return require(path.resolve(path.dirname(file), id));
     return require(id);
