@@ -31,3 +31,18 @@ Ky është një grup me saktësisht **3** elemente. Për çdo element:
 5. Kliko **Publish** dhe kontrollo lidhjet në SQ/EN.
 
 **Siguria e pamjes:** nëse dokumenti i vjetër nuk ka grupin, ose një foto nuk është ngarkuar, faqja ruan automatikisht 3 fotot ekzistuese dhe lidhjet përkatëse. Fshehja e një tab-i në header nuk heq mundësinë e hapjes së faqes nga këto foto.
+
+## Një email publik për të gjithë portalin
+
+Fusha `Konfigurimi i faqes > Email-i publik` është burimi i vetëm i kontaktit zyrtar në ndërfaqen e vizitorit:
+- footer në SQ dhe EN;
+- fundi i faqeve ligjore Privatësia, Kushtet dhe Cookies;
+- përmendja e email-it në trupin e politikës së privatësisë dhe tekste të tjera ligjore të publikuara, edhe kur Sanity ruan tekstin e vjetër.
+- Kontakt: footer-i i pranishëm te faqja Kontakt shfaq automatikisht të njëjtën adresë.
+
+Lidhjet `mailto:` përditësohen bashkë me email-in e shfaqur. Shndërrimi prek vetëm adresat e vjetra të kontaktit të portalit `lezhaturistike@gmail.com` dhe `lezhalezha2024@gmail.com`, jo adresat personale të studiuesve apo subjektet e listuara.
+
+`Kontakt > href9/text10` janë fusha të trashëguara nga një version i vjetër, që **nuk përdoren nga faqja aktuale Kontakt**. Për të shmangur konfuzionin, fusha e email-it institucional duhet ndryshuar vetëm te `Konfigurimi i faqes`.
+
+### Për dërgimin e mesazheve
+`Email-i pritës i formularit` është **fushë tjetër** për siguri dhe privatësi. Vlera do të pranohet vetëm nëse është në `CONTACT_ALLOWED_RECIPIENTS` të serverit. `CONTACT_TO_EMAIL` ka përparësi mbi CMS. Dërguesi teknik `kontakt@lezhaturistike.com` kërkon verifikim të domain-it në Resend dhe nuk ndryshohet automatikisht.

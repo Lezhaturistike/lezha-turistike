@@ -113,3 +113,13 @@ test('hero circles keep edited target page while missing image uses client fallb
   assert.equal(actual.heroCircles[1].image, updated[1].image);
   assert.equal(actual.heroCircles.length, 3);
 });
+
+test('one public contact email updates SQ/EN legal text without replacing researcher addresses', () => {
+  const {resolveSiteContactEmail} = load(path.join(root,'sanity/lib/site-settings-shared.ts'));
+  const next='turizmi@bashkialezhe.gov.al';
+  assert.equal(resolveSiteContactEmail('Kontakti: lezhaturistike@gmail.com',next),'Kontakti: '+next);
+  assert.equal(resolveSiteContactEmail('Contact: lezhaturistike@gmail.com',next),'Contact: '+next);
+  assert.equal(resolveSiteContactEmail('mailto:lezhalezha2024@gmail.com',next),'mailto:'+next);
+  assert.equal(resolveSiteContactEmail('Email studiuesi: ehoxha63@gmail.com',next),'Email studiuesi: ehoxha63@gmail.com');
+  assert.equal(resolveSiteContactEmail('Pa adresë email',next),'Pa adresë email');
+});

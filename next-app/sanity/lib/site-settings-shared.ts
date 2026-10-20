@@ -56,3 +56,14 @@ export function menuItemPath(slug: string): string {
   if (slug === "partneret") return "/shkenca#partneret";
   return "/" + slug;
 }
+
+/**
+ * Replace only the site's known legacy contact addresses in visitor-facing
+ * text. This does not change private/researcher emails or other organizations.
+ * Existing published Sanity text can keep its wording while displaying the
+ * current central public email in all locales.
+ */
+export function resolveSiteContactEmail(value: string, publicEmail: string): string {
+  if (typeof value !== "string" || typeof publicEmail !== "string") return value;
+  return value.replace(/(?:lezhaturistike|lezhalezha2024)@gmail\.com/gi, publicEmail);
+}
