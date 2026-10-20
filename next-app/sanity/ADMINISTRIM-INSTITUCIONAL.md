@@ -74,16 +74,14 @@ Në **Konfigurimi i faqes → Pamja dhe menuja**:
 - Ndryshimi i favicon-it nuk ndryshon automatikisht posterin OpenGraph/social share ose ikonat e llogarive të rrjeteve sociale. Për ato kërkohet konfigurim i veçantë.
 - Ndryshimet për admin janë të disponueshme fillimisht vetëm në Preview, pasi të kalojë build-i. Mos publikoni të dhëna testimi në Sanity `production` pa backup.
 
-## Mbushja fillestare e fushave me vlerat aktuale
+## Vlerat aktuale janë paraplotësuar – pa menu shtesë
 
-Studio > menuja e sipërme **Mbush vlerat aktuale**. Ky është një veprim i kontrolluar, jo një mutacion automatik gjatë hapjes së faqes.
+**Përdorimi i zakonshëm:** Hape `Konfigurimi i faqes` ose `Faqja kryesore`, ndrysho vetëm fushën e dëshiruar dhe kliko `Publish`. Nuk ka mjet apo menu tjetër të quajtur "Mbush vlerat aktuale". Fushat e reja të dokumenteve të krijuara në Sanity kanë vlerat aktuale si initialValue. Fushat opsionale pa imazh të ngarkuar përdorin identitetin vizual të faqes dhe nuk pengojnë publikimin.
 
-1. Klikoni **Rilexo fushat** dhe kontrolloni listën e veprimeve.
-2. Klikoni **Shkarko kopjen JSON** të dokumenteve të prekura dhe ruajeni.
-3. Shënoni konfirmimin dhe klikoni **Mbush fushat tani**.
-4. Kontrolloni te **Konfigurimi i faqes** dhe **Faqja kryesore** që vlerat janë materializuar.
-5. Ndryshimet e mëvonshme bëhen nga fusha përkatëse dhe butoni **Publish** në Sanity.
+**Për dokumentet që ekzistonin PARA këtij përditësimi:** Sanity nuk vendos automatikisht `initialValue` mbi fusha të munguara të dokumenteve tashmë të ruajtura. Për të paraqitur fizikisht vlerat aktuale në çdo fushë, administratori teknik ekzekuton **vetëm një herë**, pas një backup-i, skriptin:
+`npm run sanity:seed:preview` → `npm run sanity:seed:apply`.
+Skripti punon me token në mjedisin e zhvilluesit, jo në CMS, dhe përdor `setIfMissing` që të mos mbishkruajë ndryshimet që ka bërë dikush. Ai përfshin edhe draftet, pa i publikuar pa miratim. Nuk ka hap të veçantë për përdoruesit e zakonshëm.
 
-Skripti plotëson vetëm fushat `undefined`/`null` me patch `setIfMissing`, duke ruajtur gjithë përmbajtjen ekzistuese dhe draftet. Për fotografitë rrethore të munguar, ngarkon në bibliotekën e Sanity tri fotot origjinale nga `/images`. Nëse nuk ekziston dokumenti për një faqe, krijohet versioni bazë; një draft i papublikuar nuk publikohet në heshtje.
+**Kopjet rezervë:** Skripti ruan një JSON të 4 dokumenteve (faqja kryesore dhe konfigurimi, publikuar/draft). Kjo nuk zëvendëson eksportin e plotë të dataset-it, i cili rekomandohet veçmas. **Nuk kryhet vetvetiu asnjë operacion mbi Sanity.**
 
-**Kujdes:** kopja JSON e mjetit mbulon vetëm dokumentet e përzgjedhura; nuk zëvendëson eksportin e plotë të Sanity. Fushat e imazheve të logove mbeten bosh qëllimisht kur logoja aktuale prodhohet nga kodi CSS: faqja vazhdon të shfaqë logon origjinale deri në ngarkimin e një logoje të re. Kjo lejon Bashkinë të menaxhojë të gjitha ndryshimet e mëvonshme pa ndërhyrje në kod.
+**Logot dhe favicon:** Imazhet që ende prodhohen nga kodi (kalaja dhe emri Lezha Turistike) paraqiten si varianti aktual në website edhe kur kutia e ngarkimit është bosh. Një upload në Sanity do të zëvendësojë vetëm variantin përkatës. Nuk kërkohet ri-ngarkimi i logos ekzistuese për të ndryshuar një tekst.
